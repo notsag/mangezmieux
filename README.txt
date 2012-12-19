@@ -1,5 +1,7 @@
 Projet Mangez Mieux
 
+Site Web en Python/Django répondant au besoin : mangez varié et équilibré sans vous fatiguer!
+
 =======================================================================================
 Architecture : Django-app
 =======================================================================================
