@@ -1,26 +1,26 @@
 #-*- coding: utf-8 -*-
 from django.db import models
 
-class Product(models.Model):
-    name = models.CharField(primary_key=True, max_length=25)
+class Produit(models.Model):
+    nom = models.CharField(primary_key=True, max_length=25)
     TYPE_CHOICES = (('V','Viande'),('P','Poisson'),('F','Féculent'),('L','Légume'),('PL','Produit laitier'))
-    product_type = models.CharField(max_length=25, choices=TYPE_CHOICES)
+    type_produit = models.CharField(max_length=25, choices=TYPE_CHOICES)
 
     def __unicode__(self):
-        return self.name
+        return self.nom
 
-class RecipeLine(models.Model):
-    product = models.ForeignKey(Product)
-    quantity = models.IntegerField()
-    UNIT_CHOICES = (('g', 'Grammes'), ('mL', 'millilitres'), ('càc', 'Cuillère à café'), ('càs', 'Cuillère à soupe'))
-    unit = models.CharField(max_length=25, choices=UNIT_CHOICES, null=True)
+class LigneRecette(models.Model):
+    produit = models.ForeignKey(Produit)
+    quantite = models.IntegerField()
+    UNIT_CHOICES = (('g', 'Grammes'), ('mL', 'Millilitres'), ('càc', 'Cuillère à café'), ('càs', 'Cuillère à soupe'))
+    unite = models.CharField(max_length=25, choices=UNIT_CHOICES, null=True)
 
     def __unicode__(self):
-        return u'%d %s %s' % (self.quantity, self.unit, self.product)
+        return u'%d %s %s' % (self.quantite, self.unite, self.produit)
 
-class Recipe(models.Model):
-    name = models.CharField(primary_key=True,max_length=100)
-    lines = models.ManyToManyField(RecipeLine)
+class Recette(models.Model):
+    nom = models.CharField(primary_key=True,max_length=100)
+    lignes = models.ManyToManyField(LigneRecette)
 
     def __unicode__(self):
         return self.name
