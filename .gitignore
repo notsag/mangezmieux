@@ -162,5 +162,6 @@ pip-log.txt
 # Mac crap
 .DS_Store
 
-mangezmieux/settings.py
+mangezmieux\settings.py
+.gitignore
 

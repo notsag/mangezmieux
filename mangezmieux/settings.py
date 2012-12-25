@@ -12,10 +12,10 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'mangezmieux$mangez_mieux',                      # Or path to database file if using sqlite3.
-        'USER': 'mangezmieux',                      # Not used with sqlite3.
-        'PASSWORD': 'asd123',                  # Not used with sqlite3.
-        'HOST': 'mysql.server',                      # Set to empty string for localhost. Not used with sqlite3.
+        'NAME': 'mangez_mieux',                      # Or path to database file if using sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
+        'PASSWORD': 'root',                  # Not used with sqlite3.
+        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
@@ -69,9 +69,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    "/var/www/mangezmieux/mangezmieux/static/",
 )
 
 # List of finder classes that know how to find static files in
@@ -103,9 +101,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'mangezmieux.urls'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    "/var/www/mangezmieux/mangezmieux/templates/"
 )
 
 INSTALLED_APPS = (
@@ -118,6 +114,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'mangezmieux.core',
+    'mangezmieux.home',
 )
 
 # A sample logging configuration. The only tangible logging
