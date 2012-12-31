@@ -1,0 +1,48 @@
+#header {
+    height: 113px;
+    background-color: #d0e274;
+}
+
+#logo {
+    float: left;
+    background-image: url("../img/logo.png");
+    width: 330px;
+    height: 113px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background-color: #d0e274;
+}
+
+#header-right {
+    float: right;
+    height: 113px;
+    width: 610px;
+}
+
+#home-top-right {
+    height: 300px;
+    background-color: #d0e274;
+    margin-left: 0px;
+}
+
+#home-top {
+    margin-top: 20px;
+    font-family: "Calibri";
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#caroussel {
+
+}
+
+#home-bottom {
+     border-radius: 10px 10px 0 0;
+     height: 500px;
+     background-color: black;
+}
