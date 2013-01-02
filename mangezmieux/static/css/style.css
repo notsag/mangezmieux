@@ -24,9 +24,13 @@
     width: 610px;
 }
 
+
+
 #home-top-right {
     height: 300px;
     background-color: #d0e274;
+    /*background-image: url("../img/home-right.png");*/
+    
     margin-left: 0px;
 }
 
@@ -43,6 +47,5 @@
 
 #home-bottom {
      border-radius: 10px 10px 0 0;
-     height: 500px;
      background-color: black;
 }

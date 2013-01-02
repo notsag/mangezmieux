@@ -115,6 +115,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'mangezmieux.core',
     'mangezmieux.home',
+    'mangezmieux.produit',
 )
 
 # A sample logging configuration. The only tangible logging
