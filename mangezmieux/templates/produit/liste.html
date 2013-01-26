@@ -5,7 +5,7 @@
     <h1>Liste des produits</h1>
     <ul>
         {% for produit in produits %}
-            <li>{{ produit.nom }}</li>
+            <li><a href="show/{{produit.nom}}">{{ produit.nom }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}
