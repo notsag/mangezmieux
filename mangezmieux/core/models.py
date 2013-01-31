@@ -1,29 +1,45 @@
 #-*- coding: utf-8 -*-
 from django.db import models
 
+#Unité de mesure pour les quantités
+class Unite(models.Model):
+    nom = models.CharField(max_length=25)
+    abreviation = models.CharField(max_length=4)
+
+    def __unicode__(self):
+        return self.nom
+
+#Type de produit (proteines, féculents...)
+class TypeProduit(models.Model):
+    nom = models.CharField(max_length=15)
+
+    def __unicode__(self):
+        return self.nom
+
+#Produit
 class Produit(models.Model):
     nom = models.CharField(max_length=25)
-    TYPE_CHOICES = (('V','Viande'),('P','Poisson'),('F','Féculent'),('L','Légume'),('PL','Produit laitier'), ('A','Autre'))
-    type_produit = models.CharField(max_length=25, choices=TYPE_CHOICES)
-    #image = models.ImageField(upload_to='/var/www/mangezmieux/mangezmieux/upload/')
+    type_produit = models.ForeignKey(TypeProduit)
+    image = models.ImageField(upload_to='/var/www/mangezmieux/mangezmieux/upload/')
     
     def __unicode__(self):
         return self.nom
 
+#Ligne de recette : quantité d'un produit
 class LigneRecette(models.Model):
     produit = models.ForeignKey(Produit)
     quantite = models.IntegerField()
-    UNIT_CHOICES = (('g', 'Grammes'), ('mL', 'Millilitres'), ('càc', 'Cuillère à café'), ('càs', 'Cuillère à soupe'), ('p','Pièce'))
-    unite = models.CharField(max_length=25, choices=UNIT_CHOICES, null=True)
+    unite = models.ForeignKey(Unite)
 
     def __unicode__(self):
         return u'%d %s %s' % (self.quantite, self.unite, self.produit)
 
+#Recette : composition (lignes) et instructions
 class Recette(models.Model):
     nom = models.CharField(max_length=100)
     lignes = models.ManyToManyField(LigneRecette)
-    #instructions = models.CharField(max_length=500)
-    #image = models.ImageField(upload_to='/var/www/mangezmieux/mangezmieux/upload/')
+    instructions = models.CharField(max_length=500)
+    image = models.ImageField(upload_to='/var/www/mangezmieux/mangezmieux/upload/')
     
     def __unicode__(self):
         return self.nom
