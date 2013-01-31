@@ -12,29 +12,21 @@ class Unite(models.Model):
 #Type de produit (proteines, féculents...)
 class TypeProduit(models.Model):
     nom = models.CharField(max_length=15)
-<<<<<<< HEAD
-
-=======
     parent = models.ForeignKey('self', null = True)
-    
->>>>>>> ajout du modele et du planning
+
     def __unicode__(self):
         return self.nom
 
 #Produit
 class Produit(models.Model):
     nom = models.CharField(max_length=25)
-<<<<<<< HEAD
     type_produit = models.ForeignKey(TypeProduit)
-    image = models.ImageField(upload_to='/var/www/mangezmieux/mangezmieux/upload/')
-=======
     quantite = models.IntegerField()
     unite = models.ForeignKey(Unite)
     valeur_energetique = models.IntegerField()
     type_produit = models.ForeignKey(TypeProduit)
     #image = models.ImageField(upload_to='/var/www/mangezmieux/mangezmieux/upload/')
->>>>>>> ajout du modele et du planning
-    
+
     def __unicode__(self):
         return self.nom
 
@@ -52,15 +44,11 @@ class Recette(models.Model):
     nom = models.CharField(max_length=100)
     lignes = models.ManyToManyField(LigneRecette)
     instructions = models.CharField(max_length=500)
-<<<<<<< HEAD
-    image = models.ImageField(upload_to='/var/www/mangezmieux/mangezmieux/upload/')
-=======
     duree = models.IntegerField()
     difficulte = models.IntegerField()
     est_valide = models.BooleanField()
     #image = models.ImageField(upload_to='/var/www/mangezmieux/mangezmieux/upload/')
->>>>>>> ajout du modele et du planning
-    
+
     def __unicode__(self):
         return self.nom
 
