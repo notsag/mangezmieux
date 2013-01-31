@@ -6,8 +6,8 @@ def liste(request):
     produits = Produit.objects.all()
     return render(request, 'produit/liste.html', locals())
 
-def show(request, name_produit):
-    produits = Produit.objects.filter(nom=name_produit)
+def show(request, id):
+    produits = Produit.objects.filter(pk=id)
     if produits.count() > 0 :
         produit = produits[0]
     return render(request, 'produit/show.html', locals())

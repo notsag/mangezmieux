@@ -116,6 +116,7 @@ INSTALLED_APPS = (
     'mangezmieux.core',
     'mangezmieux.home',
     'mangezmieux.produit',
+    'mangezmieux.planning',
 )
 
 # A sample logging configuration. The only tangible logging
