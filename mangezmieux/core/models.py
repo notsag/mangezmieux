@@ -1,9 +1,10 @@
 #-*- coding: utf-8 -*-
 from django.db import models
+from django.contrib.auth.models import User
 
 #Unité de mesure pour les quantités
 class Unite(models.Model):
-    nom = models.CharField(max_length=25)
+    nom = models.CharField(max_length=25, primary_key=True)
     abreviation = models.CharField(max_length=4)
 
     def __unicode__(self):
@@ -11,7 +12,7 @@ class Unite(models.Model):
 
 #Type de produit (proteines, féculents...)
 class TypeProduit(models.Model):
-    nom = models.CharField(max_length=15)
+    nom = models.CharField(max_length=15, unique=True)
     parent = models.ForeignKey('self', null = True)
 
     def __unicode__(self):
@@ -19,8 +20,9 @@ class TypeProduit(models.Model):
 
 #Produit
 class Produit(models.Model):
-    nom = models.CharField(max_length=25)
-    type_produit = models.ForeignKey(TypeProduit)
+    nom = models.CharField(max_length=25, unique=True)
+    type_produit = models.ForeignKey(TypeProduit, related_name='types')
+    stype_produit = models.ForeignKey(TypeProduit, related_name='soustypes', null=True)
     quantite = models.IntegerField()
     unite = models.ForeignKey(Unite)
     valeur_energetique = models.IntegerField()
@@ -37,37 +39,31 @@ class LigneRecette(models.Model):
     unite = models.ForeignKey(Unite)
 
     def __unicode__(self):
-        return u'%d %s %s' % (self.quantite, self.unite, self.produit)
-
-#Recette : composition (lignes) et instructions
-class Recette(models.Model):
-    nom = models.CharField(max_length=100)
-    lignes = models.ManyToManyField(LigneRecette)
-    instructions = models.CharField(max_length=500)
-    duree = models.IntegerField()
-    difficulte = models.IntegerField()
-    est_valide = models.BooleanField()
-    #image = models.ImageField(upload_to='/var/www/mangezmieux/mangezmieux/upload/')
-
-    def __unicode__(self):
-        return self.nom
-
+        return u'%d %s %s' % (self.quantite, self.unite, self.produit)      
+        
 #Categorie : Categorie de la recette (Dessert, Entree...)
 class Categorie(models.Model):
     nom = models.CharField(max_length=100)
     def __unicode__(self):
         return self.nom
-
-#Ligne de recette : quantité d'un produit
-class LigneProduit(models.Model):
-    produit = models.ForeignKey(Produit)
-    quantite = models.IntegerField()
-    unite = models.ForeignKey(Unite)
+        
+#Recette : composition (lignes) et instructions
+class Recette(models.Model):
+    nom = models.CharField(max_length=100)    
+    lignes = models.ManyToManyField(LigneRecette)
+    instructions = models.CharField(max_length=500)
+    duree = models.IntegerField()
+    difficulte = models.IntegerField()
+    createur = models.ForeignKey(User)
+    est_valide = models.BooleanField()
+    categorie = models.ManyToManyField(Categorie)
+    #image = models.ImageField(upload_to='/var/www/mangezmieux/mangezmieux/upload/')
 
     def __unicode__(self):
-        return u'%d %s %s' % (self.quantite, self.unite, self.produit)
+        return self.nom
 
-#Repas : Repas à un moment donnée à une date
+#Repas : Repas à un moment donné à une date
+# Note  : Vérifier à l'insertion qu'il y a bien SOIT une recette SOIT un produit
 class Repas(models.Model):
     date = models.DateField()
     ordre = models.IntegerField()
@@ -75,3 +71,18 @@ class Repas(models.Model):
     recette = models.ForeignKey(Recette, null = True, blank = True)
     produit = models.ManyToManyField(LigneProduit, null = True, blank = True)
 
+#Commande : commande à une date
+class Commande(models.Model):
+    date = models.DateTimeField()
+    client = models.ForeignKey(User, null = False, blank = False)
+    
+    def __unicode__(self):
+        return self.date    
+    
+#LigneCommande : une ligne issue d'une commande
+class LigneCommande(models.Model):
+    produit = models.ForeignKey(Produit, null = False, blank = False)
+    commande = models.ForeignKey(Commande, null = False, blank = False, related_name='lignes')
+    
+    def __unicode__(self):
+        return self.produit    
