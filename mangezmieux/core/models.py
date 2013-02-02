@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 #Unité de mesure pour les quantités
 class Unite(models.Model):
-    nom = models.CharField(max_length=25, primary_key=True)
+    nom = models.CharField(max_length=25, unique=True)
     abreviation = models.CharField(max_length=4)
 
     def __unicode__(self):
@@ -40,7 +40,16 @@ class LigneRecette(models.Model):
 
     def __unicode__(self):
         return u'%d %s %s' % (self.quantite, self.unite, self.produit)      
-        
+
+#Ligne de produit : quantité d'un produit (utile pour des repas personnalisés)
+class LigneProduit(models.Model):
+    produit = models.ForeignKey(Produit)
+    quantite = models.IntegerField()
+    unite = models.ForeignKey(Unite)
+
+    def __unicode__(self):
+        return u'%d %s %s' % (self.quantite, self.unite, self.produit)      
+	
 #Categorie : Categorie de la recette (Dessert, Entree...)
 class Categorie(models.Model):
     nom = models.CharField(max_length=100)
