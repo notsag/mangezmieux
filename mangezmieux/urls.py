@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^', include('home.urls')),
     url(r'^produit/', include('produit.urls')),
     url(r'^planning/', include('planning.urls')),
+    url(r'^recette/', include('recette.urls'))
 )
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns += staticfiles_urlpatterns()
