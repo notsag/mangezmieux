@@ -13,7 +13,7 @@ class Unite(models.Model):
 #Type de produit (proteines, féculents...)
 class TypeProduit(models.Model):
     nom = models.CharField(max_length=15, unique=True)
-    parent = models.ForeignKey('self', null = True)
+    parent = models.ForeignKey('self', null = True, blank = True)
 
     def __unicode__(self):
         return self.nom
@@ -22,7 +22,7 @@ class TypeProduit(models.Model):
 class Produit(models.Model):
     nom = models.CharField(max_length=25, unique=True)
     type_produit = models.ForeignKey(TypeProduit, related_name='types')
-    stype_produit = models.ForeignKey(TypeProduit, related_name='soustypes', null=True)
+    stype_produit = models.ForeignKey(TypeProduit, related_name='soustypes', null=True, blank = True)
     quantite = models.IntegerField()
     unite = models.ForeignKey(Unite)
     valeur_energetique = models.IntegerField()

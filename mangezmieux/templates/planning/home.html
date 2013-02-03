@@ -3,39 +3,58 @@
 
 {% block content %}
     <h1>Planning</h1>
-    <table class="table table-bordered table-hover">
-        <tr>
-            <td>Lundi</td>
-            <td>Mardi</td>
-            <td>Mercredi</td>
-            <td>Jeudi</td>
-            <td>Vendredi</td>
-            <td>Samedi</td>
-            <td>Dimanche</td>
-        </tr>
-        <tr>
-            <td>
-                <div class="accordion" id="accordion2">
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                                Steak
-                            </a>
-                        </div>
-                        <div id="collapseOne" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Tu vas manger un steak !
+    Debut de semaine : {{debutSemaine}} <br/>
+    Fin de semaine : {{finSemaine}}
+    
+    <ul>
+        {% for repas in repass %}
+            <li>{{ repas.date }}</li>
+        {% endfor %}
+    </ul>
+    
+    {{planning.Sunday.0.recette.nom}}
+    
+    {{val}}
+    <div id="caroussel" class="carousel slide, span8">
+        <div class="carousel-inner">
+            <div class="active item">
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <td>Lundi</td>
+                        <td>Mardi</td>
+                        <td>Mercredi</td>
+                        <td>Jeudi</td>
+                        <td>Vendredi</td>
+                        <td>Samedi</td>
+                        <td>Dimanche</td>
+                    </tr>
+                    {% for ligne in planning %}
+                    <tr>
+                        {% for col in ligne %}
+                        <td>
+                            <div class="accordion" id="accordion{{forloop.parentloop.counter}}{{forloop.counter}}">
+                                <div class="accordion-group">
+                                    <div class="accordion-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion{{forloop.parentloop.counter}}{{forloop.counter}}" href="#collapse{{forloop.parentloop.counter}}{{forloop.counter}}">
+                                            {{col.recette.nom}}
+                                            
+                                        </a>
+                                    </div>
+                                    <div id="collapse{{forloop.parentloop.counter}}{{forloop.counter}}" class="accordion-body collapse">
+                                        <div class="accordion-inner">
+                                            {{col.recette.nom}}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </td>
-            <td>Mardi</td>
-            <td>Mercredi</td>
-            <td>Jeudi</td>
-            <td>Vendredi</td>
-            <td>Samedi</td>
-            <td>Dimanche</td>
-        </tr>
-    </table>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <a class="carousel-control left" href="#caroussel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#caroussel" data-slide="next">&rsaquo;</a>
+    </div>
 {% endblock %}
