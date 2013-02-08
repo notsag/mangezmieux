@@ -26,7 +26,6 @@ class Produit(models.Model):
     quantite = models.IntegerField()
     unite = models.ForeignKey(Unite)
     valeur_energetique = models.IntegerField()
-    type_produit = models.ForeignKey(TypeProduit)
     #image = models.ImageField(upload_to='/var/www/mangezmieux/mangezmieux/upload/')
 
     def __unicode__(self):
