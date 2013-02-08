@@ -4,7 +4,9 @@
 {% block content %}
     <h1>Planning</h1>
     Debut de semaine : {{debutSemaine}} <br/>
-    Fin de semaine : {{finSemaine}}
+    Fin de semaine : {{finSemaine}}<br/>
+    
+    DateS : {{dateS}}<br/>
     
     <ul>
         {% for repas in repass %}
@@ -54,7 +56,7 @@
                 </table>
             </div>
         </div>
-        <a class="carousel-control left" href="#caroussel" data-slide="prev">&lsaquo;</a>
-        <a class="carousel-control right" href="#caroussel" data-slide="next">&rsaquo;</a>
+        <a id="prevPlanning" class="carousel-control left" href="/planning?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
+        <a id="nextPlanning" class="carousel-control right" href="/planning?d={{semaineSuivante|date:"Y-m-d"}}" data-slide="next">&rsaquo;</a>
     </div>
 {% endblock %}

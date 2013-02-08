@@ -3,18 +3,30 @@ from collections import defaultdict
 from datetime import *
 from django.shortcuts import render
 from core.models import *
+import time
+from dateutil import parser
 
 def home(request):
-
+    
+    #On recupere la date passee en parametre get
+    dateS = request.GET.get('d', None)
+    if dateS != None:
+        try:
+            dateC = parser.parse(dateS)
+        except:
+            dateC = date.today()
+    else:
+        dateC = date.today()
+    
     #On calcule la date de debut de semaine
-    debutSemaine = date.today()
+    debutSemaine = dateC
     debutSemaineJour = debutSemaine.strftime('%A')
     while debutSemaineJour != "Monday":
         debutSemaine = debutSemaine + timedelta(days=-1)
         debutSemaineJour = debutSemaine.strftime('%A')
     
     #On calcule la date de fin de semaine    
-    finSemaine = date.today()
+    finSemaine = dateC
     finSemaineJour = debutSemaine.strftime('%A')
     while finSemaineJour != "Sunday":
         finSemaine = finSemaine + timedelta(days=1)
@@ -44,6 +56,10 @@ def home(request):
             planning[repas.ordre][5] = repas
         elif repas.date.strftime('%A') == 'Sunday':
             planning[repas.ordre][6] = repas
+    
+    #On recupere une date de la semaine precedente et une date de la semaine suivante
+    semainePrecedente = dateC + timedelta(days=-7)
+    semaineSuivante = dateC + timedelta(days=7)
     
     #planning = defaultdict(defaultdict)
     
