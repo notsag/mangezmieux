@@ -2,61 +2,79 @@
 {% load static %}
 
 {% block content %}
-    <h1>Planning</h1>
-    Debut de semaine : {{debutSemaine}} <br/>
-    Fin de semaine : {{finSemaine}}<br/>
-    
-    DateS : {{dateS}}<br/>
-    
-    <ul>
-        {% for repas in repass %}
-            <li>{{ repas.date }}</li>
-        {% endfor %}
-    </ul>
-    
-    {{planning.Sunday.0.recette.nom}}
-    
-    {{val}}
-    <div id="caroussel" class="carousel slide, span8">
-        <div class="carousel-inner">
-            <div class="active item">
-                <table class="table table-bordered table-hover">
-                    <tr>
+
+    <div id="planning">
+        <div id="entetePlanning">
+            <p>{{debutSemaine}} - {{finSemaine}}<br><br></p>
+            <a id="prevPlanning" class="carousel-control left" href="/planning?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
+            <a id="nextPlanning" class="carousel-control right" href="/planning?d={{semaineSuivante|date:"Y-m-d"}}" data-slide="next">&rsaquo;</a> 
+        </div>
+        <div id="tableauPlanning">
+           <table class="table table-bordered">
+                <tr class="title">
+                    {% if day == "Monday" %}
+                        <td class="day">Lundi</td>
+                    {% else %}
                         <td>Lundi</td>
+                    {% endif%}
+                    {% if day == "Tuesday" %}
+                        <td class="day">Mardi</td>
+                    {% else %}
                         <td>Mardi</td>
+                    {% endif%}
+                    {% if day == "Wednesday" %}
+                        <td class="day">Mercredi</td>
+                    {% else %}
                         <td>Mercredi</td>
+                    {% endif%}
+                    {% if day == "Thursday" %}
+                        <td class="day">Jeudi</td>
+                    {% else %}
                         <td>Jeudi</td>
+                    {% endif%}
+                    {% if day == "Friday" %}
+                        <td class="day">Vendredi</td>
+                    {% else %}
                         <td>Vendredi</td>
+                    {% endif%}
+                    {% if day == "Saturday" %}
+                        <td class="day">Samedi</td>
+                    {% else %}
                         <td>Samedi</td>
+                    {% endif%}
+                    {% if day == "Sunday" %}
+                        <td class="day">Dimanche</td>
+                    {% else %}
                         <td>Dimanche</td>
-                    </tr>
-                    {% for ligne in planning %}
-                    <tr>
-                        {% for col in ligne %}
-                        <td>
-                            <div class="accordion" id="accordion{{forloop.parentloop.counter}}{{forloop.counter}}">
-                                <div class="accordion-group">
-                                    <div class="accordion-heading">
-                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion{{forloop.parentloop.counter}}{{forloop.counter}}" href="#collapse{{forloop.parentloop.counter}}{{forloop.counter}}">
-                                            {{col.recette.nom}}
-                                            
-                                        </a>
-                                    </div>
-                                    <div id="collapse{{forloop.parentloop.counter}}{{forloop.counter}}" class="accordion-body collapse">
-                                        <div class="accordion-inner">
-                                            {{col.recette.nom}}
-                                        </div>
+                    {% endif%}
+                </tr>
+                {% for ligne in planning %} 
+                <tr>
+                    {% for col in ligne %}
+                    <td>
+                        <div class="accordion" id="accordion{{forloop.parentloop.counter}}{{forloop.counter}}">
+                            <div class="accordion-group">
+                                <div class="accordion-heading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion{{forloop.parentloop.counter}}{{forloop.counter}}" href="#collapse{{forloop.parentloop.counter}}{{forloop.counter}}">
+                                        {{col.recette.nom}}   
+                                    </a>
+                                </div>
+                                <div id="collapse{{forloop.parentloop.counter}}{{forloop.counter}}" class="accordion-body collapse">
+                                    <div class="accordion-inner">
+                                        {{col.recette.nom}}
                                     </div>
                                 </div>
                             </div>
-                        </td>
-                        {% endfor %}
-                    </tr>
+                        </div>
+                    </td>
                     {% endfor %}
-                </table>
-            </div>
+                </tr>
+                {% endfor %}
+            </table>
+             
+            
         </div>
-        <a id="prevPlanning" class="carousel-control left" href="/planning?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
-        <a id="nextPlanning" class="carousel-control right" href="/planning?d={{semaineSuivante|date:"Y-m-d"}}" data-slide="next">&rsaquo;</a>
     </div>
+    
+
 {% endblock %}

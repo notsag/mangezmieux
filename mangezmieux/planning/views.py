@@ -12,7 +12,7 @@ def home(request):
     dateS = request.GET.get('d', None)
     if dateS != None:
         try:
-            dateC = parser.parse(dateS)
+            dateC = parser.parse(dateS).date()
         except:
             dateC = date.today()
     else:
@@ -31,6 +31,10 @@ def home(request):
     while finSemaineJour != "Sunday":
         finSemaine = finSemaine + timedelta(days=1)
         finSemaineJour = finSemaine.strftime('%A')
+        
+    if date.today() < finSemaine and date.today() > debutSemaine:
+        ok = True
+        day = date.today().strftime('%A')
         
     repass = Repas.objects.filter(date__gte = debutSemaine, date__lte = finSemaine).order_by('date','ordre')
     
