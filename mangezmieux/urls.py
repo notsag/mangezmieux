@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('home.urls')),
     url(r'^produit/', include('produit.urls')),
+	url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 )
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns += staticfiles_urlpatterns()

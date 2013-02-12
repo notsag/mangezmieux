@@ -67,9 +67,11 @@ STATIC_URL = '/static/'
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
+AUTH_PROFILE_MODULE = 'auth.Utilisateur'
+
 # Additional locations of static files
 STATICFILES_DIRS = (
-    "/var/www/mangezmieux/mangezmieux/static/",
+    "static/",
 )
 
 # List of finder classes that know how to find static files in
@@ -101,7 +103,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'mangezmieux.urls'
 
 TEMPLATE_DIRS = (
-    "/var/www/mangezmieux/mangezmieux/templates/"
+    "templates/"
 )
 
 INSTALLED_APPS = (
@@ -116,6 +118,7 @@ INSTALLED_APPS = (
     'mangezmieux.core',
     'mangezmieux.home',
     'mangezmieux.produit',
+	'rest_framework',
 )
 
 # A sample logging configuration. The only tangible logging
