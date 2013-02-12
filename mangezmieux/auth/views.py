@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 from django.shortcuts import redirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -29,6 +30,6 @@ def inscription(request):
 			return redirect('post_inscr') #On redirige vers la selection des goûts
 	else:
 		form = FormulaireInscription()
-	return render_to_response('auth/inscription.html')
+	return render_to_response('auth/inscription.html',{'form': form,})
 
 
