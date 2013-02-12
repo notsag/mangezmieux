@@ -44,3 +44,6 @@ class Recette(models.Model):
     def __unicode__(self):
         return self.nom
 
+
+class Repas(models.Model):
+	pass
