@@ -2,6 +2,9 @@ Projet Mangez Mieux
 
 Site Web en Python/Django répondant au besoin : mangez varié et équilibré sans vous fatiguer!
 
+
+Dépendances : django (>= 1.4), djangorestframework, markdown, pyyaml django-filter, python-dateutil
+
 =======================================================================================
 Architecture : Django-app
 =======================================================================================
