@@ -6,4 +6,7 @@ admin.site.register(Produit)
 admin.site.register(LigneRecette)
 admin.site.register(TypeProduit)
 admin.site.register(Unite)
+admin.site.register(Categorie)
+admin.site.register(Repas)
+admin.site.register(LigneProduit)
 
