@@ -118,9 +118,9 @@ INSTALLED_APPS = (
     'mangezmieux.core',
     'mangezmieux.home',
     'mangezmieux.produit',
-	'rest_framework',
+    'rest_framework',
     'mangezmieux.planning',
-	'mangezmieux.auth',
+    'mangezmieux.auth',
 )
 
 # A sample logging configuration. The only tangible logging
