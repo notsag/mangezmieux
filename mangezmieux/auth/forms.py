@@ -2,7 +2,6 @@
 from django.contrib.auth.models import User
 from django import forms
 
-
 class FormulaireInscription(forms.Form):
 	"""
 	Formulaire d'inscription avec : 
@@ -18,16 +17,17 @@ class FormulaireInscription(forms.Form):
 	prenom = forms.CharField(widget=forms.TextInput(), label="Prénom")
 	email = forms.EmailField(widget=forms.TextInput(),label="E-mail")
 	password = forms.CharField(widget=forms.PasswordInput(render_value=False),label="Mot de passe")
-	password2 = forms.CharField(widget=forms.PasswordInput(render_value=False),label="Confirmation du mot de passe")
+	password_confirm = forms.CharField(widget=forms.PasswordInput(render_value=False),label="Confirmation du mot de passe")
 
 
 	def clean(self):
 		"""
 			Fonction vérifiant que les deux mots de passe sont bien identiques
 		"""
-		if 'password1' in self.cleaned_data and 'password2' in self.cleaned_data:
-			if self.cleaned_data['password1'] != self.cleaned_data['password2']:
-				raise forms.ValidationError(_("Les deux mots de passe sont différents."))
+		if 'password' in self.cleaned_data and 'password_confirm' in self.cleaned_data:
+			if self.cleaned_data['password'] != self.cleaned_data['password_confirm']:
+				self._errors['password'] = [u'Les mots de passe doivent être identiques.']
+				self._errors['password_confirm'] = [u'Les mots de passe doivent être identiques.']
 		return self.cleaned_data
 
 	def clean_email(self):
@@ -35,6 +35,14 @@ class FormulaireInscription(forms.Form):
 			Fonction vérifiant que l'adresse email n'est pas déjà utilisée
 		"""
 		if User.objects.filter(email__iexact=self.cleaned_data['email']):
-			raise forms.ValidationError(_("Cette adresse email est déjà associée à un compte."))
+			raise forms.ValidationError("Cette adresse email est déjà associée à un compte.")
 		return self.cleaned_data['email']
+
+	def clean_username(self):
+		"""
+			Fonction vérifiant que l'adresse email n'est pas déjà utilisée
+		"""
+		if User.objects.filter(username__iexact=self.cleaned_data['username']):
+			raise forms.ValidationError("Ce username est déjà associée à un compte.")
+		return self.cleaned_data['username']
 
