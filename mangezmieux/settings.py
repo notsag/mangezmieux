@@ -67,7 +67,7 @@ STATIC_URL = '/static/'
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
-AUTH_PROFILE_MODULE = 'auth.Utilisateur'
+AUTH_PROFILE_MODULE = 'auth.ProfilUtilisateur'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -120,6 +120,7 @@ INSTALLED_APPS = (
     'mangezmieux.produit',
 	'rest_framework',
     'mangezmieux.planning',
+	'mangezmieux.auth',
 )
 
 # A sample logging configuration. The only tangible logging
