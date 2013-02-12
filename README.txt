@@ -6,6 +6,11 @@ Site Web en Python/Django répondant au besoin : mangez varié et équilibré sa
 Architecture : Django-app
 =======================================================================================
 mangezmieux/
+  |- auth/
+  |  |- forms.py     #formulaire de création de compte
+  |  |- models.py    #classe Utilisateur dérivée du module django.contrib.auth
+  |  |- tests.py
+  |  |- views.py
   |- core/           #fichiers du coeur de l'application
   |  |- admin.py     #déclaration des objets administrables
   |  |- models.py    #"classes" de l'application

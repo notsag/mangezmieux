@@ -1,0 +1,10 @@
+=====================
+  MangezMieux Auth
+=====================
+
+Ce module permet de gérer l'authentification dans l'application mangezmieux.
+Il permet d'étendre l'authentification de Django avec les besoins nécessaires <a l'application.
+
+Ce module s'inspire du module django-registration : https://bitbucket.org/ubernostrum/django-registration
+
+
