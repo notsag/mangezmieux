@@ -42,7 +42,7 @@ STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 AUTH_PROFILE_MODULE = 'auth.ProfilUtilisateur'
-LOGIN_REDIRECT_URL = 'mon_compte'
+LOGIN_REDIRECT_URL = '/mon_compte'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
