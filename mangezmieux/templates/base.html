@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-    
+
 <html lang="fr">
     <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
@@ -14,6 +14,11 @@
     </head>
     
     <body>
+	{% if user.is_authenticated %}
+		<div id="login"><a href="/connexion">Connexion</a></div>
+	{% else %}
+			<div id="logged">Bienvenue, {{ user.username }}.<a href="/deconnexion">Déconnexion</a></div>
+	{% endif %}
         <div id="header">
             <div id="header-container" class="container">
                 <div id="logo"></div>

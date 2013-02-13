@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
 from forms import FormulaireInscription
+from django.contrib.auth.decorators import login_required
 
 def inscription(request):
 	"""
@@ -31,9 +32,12 @@ def inscription(request):
 			user.save()
 			new_user = authenticate(username=username, password=password)
 			login(request, new_user)
-			return HttpResponseRedirect('post_inscr') #On redirige vers la selection des goûts
+			return HttpResponseRedirect('/') #On redirige vers la selection des goûts
 	else:
 		form = FormulaireInscription()
 	return render_to_response('auth/inscription.html',{'form': form,},context_instance=RequestContext(request))
 
+@login_required(login_url='/connexion')
+def compte(request):
+	return HttpResponseRedirect('/') #TODO
 

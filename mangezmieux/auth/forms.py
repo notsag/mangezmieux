@@ -12,7 +12,7 @@ class FormulaireInscription(forms.Form):
 		mot de passe avec confirmation
 
 	"""
-	username = forms.RegexField(regex=r'^[\w.@+-]+$',max_length=30,widget=forms.TextInput(),label="Identifiant",error_messages={'Invalide': "L'identifiant ne peut contenir que des caractères alphanumériques, \"@\",\".\",\"+\",\"-\" et\"_\"."})
+	username = forms.RegexField(regex=r'^[\w.@+-]+$',max_length=30,widget=forms.TextInput(),label="Nom d'utilisateur",error_messages={'Invalide': "L'identifiant ne peut contenir que des caractères alphanumériques, \"@\",\".\",\"+\",\"-\" et\"_\"."})
 	nom = forms.CharField(widget=forms.TextInput(), label="Nom")
 	prenom = forms.CharField(widget=forms.TextInput(), label="Prénom")
 	email = forms.EmailField(widget=forms.TextInput(),label="E-mail")
