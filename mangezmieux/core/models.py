@@ -79,6 +79,7 @@ class Repas(models.Model):
     nb_personne = models.IntegerField()
     recette = models.ForeignKey(Recette, null = True, blank = True)
     produit = models.ManyToManyField(LigneProduit, null = True, blank = True)
+    utilisateur = models.ForeignKey(User)
 
 #Commande : commande à une date
 class Commande(models.Model):
