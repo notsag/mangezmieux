@@ -1,68 +1,56 @@
 # Django settings for mangezmieux project.
 
+# DEBUG
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+
+# ADMIN
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
-
 MANAGERS = ADMINS
+SECRET_KEY = 'nm0lvt2y=)b836db1y=u+cvi77a0vic&p3c75ols(9&bcjp7g+'
 
+
+
+# DB
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'mangez_mieux',                      # Or path to database file if using sqlite3.
-        'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': 'root',                  # Not used with sqlite3.
-        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mangez_mieux',    
+        'USER': 'root',            
+        'PASSWORD': 'root',        
+        'HOST': 'localhost',       
+        'PORT': '',                
     }
 }
 
+# Internationalisation
 TIME_ZONE = 'Europe/Paris'
 LANGUAGE_CODE = 'fr-fr'
-
-SITE_ID = 1
-
-# If you set this to False, Django will make some optimizations so as not
-# to load the internationalization machinery.
-USE_I18N = True
-
-# If you set this to False, Django will not format dates, numbers and
-# calendars according to the current locale
-USE_L10N = True
-
-MEDIA_ROOT = '/var/www/mangezmieux/mangezmieux/upload/'
-MEDIA_URL = '/upload/'
-
-STATIC_ROOT = ''
-STATIC_URL = '/static/'
-
-ADMIN_MEDIA_PREFIX = '/static/admin/'
-
-AUTH_PROFILE_MODULE = 'auth.ProfilUtilisateur'
-LOGIN_REDIRECT_URL = '/mon_compte'
-
-REST_FRAMEWORK = {
-		'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
-		'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRenderer',),
-		'PAGINATE_BY': 10
-}
-
-# Additional locations of static files
+USE_I18N = True # Internationalisation
+USE_L10N = True # Formatage des dates et nombres en fonction de la locale
 STATICFILES_DIRS = (
     "static/",
 )
-
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'nm0lvt2y=)b836db1y=u+cvi77a0vic&p3c75ols(9&bcjp7g+'
+SITE_ID = 1
+
+# Chemins HTML, CSS, JS et Upload
+MEDIA_ROOT = '/var/www/mangezmieux/mangezmieux/upload/'
+MEDIA_URL = '/upload/'
+STATIC_ROOT = ''
+STATIC_URL = '/static/'
+ADMIN_MEDIA_PREFIX = '/static/admin/'
+TEMPLATE_DIRS = (
+    "templates/"
+)
+
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -79,12 +67,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
+# URLs primaires
 ROOT_URLCONF = 'mangezmieux.urls'
 
-TEMPLATE_DIRS = (
-    "templates/"
-)
-
+# Modules installés
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -101,6 +87,20 @@ INSTALLED_APPS = (
     'mangezmieux.auth',
 )
 
+
+# AUTH module
+AUTH_PROFILE_MODULE = 'auth.ProfilUtilisateur'
+LOGIN_REDIRECT_URL = '/mon_compte'
+
+# API module
+REST_FRAMEWORK = {
+		'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+		'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRenderer',),
+		'PAGINATE_BY': 10
+}
+
+
+# LOG
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
