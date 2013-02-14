@@ -44,6 +44,11 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 AUTH_PROFILE_MODULE = 'auth.ProfilUtilisateur'
 LOGIN_REDIRECT_URL = '/mon_compte'
 
+REST_FRAMEWORK = {
+		'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+		'PAGINATE_BY': 10
+}
+
 # Additional locations of static files
 STATICFILES_DIRS = (
     "static/",

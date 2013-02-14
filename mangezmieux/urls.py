@@ -13,6 +13,8 @@ urlpatterns = patterns('',
     url(r'^planning/', include('planning.urls')),
     url(r'^recette/', include('recette.urls')),
     url(r'', include('auth.urls')),
+	#API
+	url(r'^api/$', 'auth.views.api_root'),
 )
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
