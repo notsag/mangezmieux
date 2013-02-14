@@ -8,7 +8,11 @@ from dateutil import parser
 
 def home(request):
     
-    #On recupere la date passee en parametre get
+    user = request.user
+    
+    """
+        On recupere la date passee en parametre get
+    """
     dateS = request.GET.get('d', None)
     if dateS != None:
         try:
@@ -18,27 +22,39 @@ def home(request):
     else:
         dateC = date.today()
     
-    #On calcule la date de debut de semaine
+    """
+        On calcule la date de debut de semaine
+    """
     debutSemaine = dateC
     debutSemaineJour = debutSemaine.strftime('%A')
     while debutSemaineJour != "Monday":
         debutSemaine = debutSemaine + timedelta(days=-1)
         debutSemaineJour = debutSemaine.strftime('%A')
     
-    #On calcule la date de fin de semaine    
+    """
+        On calcule la date de fin de semaine
+    """
     finSemaine = dateC
     finSemaineJour = debutSemaine.strftime('%A')
     while finSemaineJour != "Sunday":
         finSemaine = finSemaine + timedelta(days=1)
         finSemaineJour = finSemaine.strftime('%A')
-        
+    
+    """
+        On verifie si on est dans la semaine courange pour mettre en valeur le jour courant
+    """
     if date.today() < finSemaine and date.today() > debutSemaine:
         ok = True
         day = date.today().strftime('%A')
-        
-    repass = Repas.objects.filter(date__gte = debutSemaine, date__lte = finSemaine).order_by('date','ordre')
     
+    """
+        On recupere les repas de la semaine courante
+    """
+    repass = Repas.objects.filter(date__gte = debutSemaine, date__lte = finSemaine, utilisateur = user).order_by('date','ordre')
     
+    """
+        On cree un tableau 3*7 qui represente la semaine courante
+    """
     planning = []
     for i in xrange(3):
         planning.append([])
@@ -61,7 +77,9 @@ def home(request):
         elif repas.date.strftime('%A') == 'Sunday':
             planning[repas.ordre][6] = repas
     
-    #On recupere une date de la semaine precedente et une date de la semaine suivante
+    """
+        On recupere une date de la semaine precedente et une date de la semaine suivante
+    """
     semainePrecedente = dateC + timedelta(days=-7)
     semaineSuivante = dateC + timedelta(days=7)
     
