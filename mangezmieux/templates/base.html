@@ -15,9 +15,9 @@
     
     <body>
 	{% if user.is_authenticated %}
-		<div id="login"><a href="/connexion">Connexion</a></div>
+		<div id="logged">Bienvenue, {{ user.username }}.<a href="/deconnexion">Déconnexion</a></div>
 	{% else %}
-			<div id="logged">Bienvenue, {{ user.username }}.<a href="/deconnexion">Déconnexion</a></div>
+		<div id="login"><a href="/connexion">Connexion</a></div>
 	{% endif %}
         <div id="header">
             <div id="header-container" class="container">
