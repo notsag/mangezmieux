@@ -8,8 +8,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login
 from forms import FormulaireInscription
 from django.contrib.auth.decorators import login_required
-from serializers import UserSerializer
-from core.api import *
+
 
 def inscription(request):
 	"""
@@ -42,18 +41,3 @@ def inscription(request):
 @login_required(login_url='/connexion')
 def compte(request):
 	return HttpResponseRedirect('/') #TODO
-
-class UserList(generics.ListCreateAPIView):
-	"""
-	Point de l'API pour lister les utilisateurs
-	"""
-	model = User
-	serializer_class = UserSerializer
-					
-class UserDetail(generics.RetrieveUpdateDestroyAPIView):
-	"""
-	Point de l'API pour afficher les infos d'un utilisateur
-	"""
-	model = User
-	serializer_class = UserSerializer
-

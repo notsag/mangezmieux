@@ -50,7 +50,10 @@ def home(request):
     """
         On recupere les repas de la semaine courante
     """
-    repass = Repas.objects.filter(date__gte = debutSemaine, date__lte = finSemaine, utilisateur = user).order_by('date','ordre')
+    if user.is_authenticated():
+        repass = Repas.objects.filter(date__gte = debutSemaine, date__lte = finSemaine, utilisateur = user).order_by('date','ordre')
+    else :
+        repass = Repas.objects.filter(date__gte = debutSemaine, date__lte = finSemaine).order_by('date','ordre')
     
     """
         On cree un tableau 3*7 qui represente la semaine courante
