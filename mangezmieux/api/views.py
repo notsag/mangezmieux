@@ -26,8 +26,13 @@ class RepasList(generics.ListCreateAPIView):
     def get_queryset(self):
         dateDebut = self.request.QUERY_PARAMS.get('dd', None)
         dateFin = self.request.QUERY_PARAMS.get('df', None)
-        if dateDebut != None and dateFin != None:
-            return Repas.objects.filter(date__gte = dateDebut, date__lte = dateFin).order_by('date','ordre')
+	userId = self.request.QUERY_PARAMS.get('u', None)
+        if dateDebut != None and dateFin != None and userId != None:
+	    user = User.objects.filter(id = userId)
+	    if user != None:
+		return Repas.objects.filter(date__gte = dateDebut, date__lte = dateFin, utilisateur = user).order_by('date','ordre')
+	    else:
+		return Repas.objects.filter(date__gte = dateDebut, date__lte = dateFin).order_by('date','ordre')
         else:
             return Repas.objects.all()
     

@@ -1,11 +1,14 @@
-# Create your views here
+#-*- coding: utf-8 -*-
 from collections import defaultdict
 from datetime import *
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from core.models import *
 import time
 from dateutil import parser
+from planning.forms import *
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/connexion')
 def home(request):
     
     user = request.user
@@ -90,5 +93,33 @@ def home(request):
     
     #for repas in repass :
     #    planning[repas.date.strftime('%A')][repas.ordre] = repas
-    
+        
     return render(request, 'planning/home.html', locals())
+
+def add_repas(request):
+    """
+        Ajout d'un repas dans la base
+    """
+    if request.method == 'POST':
+        form = RepasForm(data=request.POST, files=request.FILES) #On reprend les données
+        if form.is_valid():
+            r = form.cleaned_data['recette']
+            o = form.cleaned_data['ordre']
+            d = form.cleaned_data['date']
+            n = form.cleaned_data['nbPersonne']
+            
+            recette = Recette.objects.filter(nom = r)[0]
+            
+            repas = Repas()
+            repas.date = d
+            repas.nb_personne = n
+            repas.recette = recette
+            repas.ordre = o
+            repas.utilisateur = request.user
+            repas.save()
+            
+            return redirect('/planning/home')
+        
+        else:
+            return redirect('/')
+    
