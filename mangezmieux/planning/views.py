@@ -118,7 +118,7 @@ def add_repas(request):
             repas.utilisateur = request.user
             repas.save()
             
-            return redirect('/planning/home')
+            return redirect('/planning')
         
         else:
             return redirect('/')
