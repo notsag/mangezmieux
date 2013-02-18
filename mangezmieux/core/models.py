@@ -77,7 +77,7 @@ class Repas(models.Model):
     date = models.DateField()
     ordre = models.IntegerField()
     nb_personne = models.IntegerField()
-    recette = models.ForeignKey(Recette, null = True, blank = True)
+    recette = models.ManyToManyField(Recette, null = True, blank = True)
     produit = models.ManyToManyField(LigneProduit, null = True, blank = True)
     utilisateur = models.ForeignKey(User)
 
