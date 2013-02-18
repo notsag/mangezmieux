@@ -80,12 +80,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'mangezmieux.core',
-    'mangezmieux.home',
-    'mangezmieux.produit',
+    'core',
+    'home',
+    'produit',
     'rest_framework',
-    'mangezmieux.planning',
-    'mangezmieux.auth',
+    'planning',
+    'auth',
 )
 
 
