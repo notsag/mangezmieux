@@ -1,0 +1,9 @@
+{% if user.is_authenticated %}
+<div id="logged">Bienvenue, {{ user.username }}. 
+	<a href="/deconnexion">Déconnexion</a>
+</div>
+{% else %}
+<div id="login">
+	<a href="/connexion">Connexion</a>
+</div>
+{% endif %}
