@@ -69,7 +69,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 # URLs primaires
-ROOT_URLCONF = 'mangezmieux.urls'
+ROOT_URLCONF = 'urls'
 
 # Modules installés
 INSTALLED_APPS = (
