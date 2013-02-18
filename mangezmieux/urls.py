@@ -14,7 +14,6 @@ urlpatterns = patterns('',
     url(r'^recette/', include('recette.urls')),
     url(r'', include('auth.urls')),
     #API
-    url(r'^api/$', 'core.api.api_root'),
     url(r'^api/', include('api.urls')),
 )
 

@@ -4,6 +4,8 @@ from views import *
 
 urlpatterns = patterns('',
 
+	url(r'^$', 'core.api.api_root'),
+
     url(r'^unites/$', UniteList.as_view(), name='unite-list'),
     url(r'^unites/(?P<pk>\d+)/$', UniteDetail.as_view(), name='unite-detail'),
     
