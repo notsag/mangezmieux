@@ -11,7 +11,7 @@ class RecetteSerializer(serializers.HyperlinkedModelSerializer):
 class UserSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
 		model = User
-		fields = ('url', 'username', 'email', 'groups')
+		fields = ('url', 'username', 'email', 'first_name', 'last_name')
                 
 class RepasSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
