@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<form action="/" method="post">
+{% csrf_token %}
+{{ form.email.errors }}
+ <p><label for="id_email">Adresse email de votre compte:</label> {{ form.email }} <input type="submit" value="Réinitialiser" /></p>
+ </form>
+{% endblock %}
