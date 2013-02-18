@@ -86,6 +86,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'planning',
     'auth',
+	'api',
 )
 
 
