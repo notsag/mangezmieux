@@ -3,8 +3,6 @@
 
 {% block content %}
     <div id="planning">
-        {{r}}<br/>
-        {{o}}<br/>
         <div id="entetePlanning">
             <p>{{debutSemaine}} - {{finSemaine}}<br><br></p>
             <a id="prevPlanning" class="carousel-control left" href="/planning?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
@@ -87,60 +85,7 @@
         </div>
     </div>
     
-    <!-- Modal -->
-    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-        <h3 id="myModalLabel">Ajout d'un repas</h3>
-      </div>
-      <div class="modal-body">
-            {% for recette in recettes %}
-                <div class="choixRecette">
-                    {{ recette.nom }}tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
-                </div>
-            {% endfor %}
-            <form action="{% url planning.views.home %}" method="post">{%csrf_token %}
-                {{ form.non_field_errors }}
-                <div class="fieldWrapper">
-                    {{ form.recette.errors }}
-                    <label for="id_recette">Recette :</label>
-                    {{ form.recette }}
-                </div>
-                <div class="fieldWrapper">
-                    {{ form.date.errors }}
-                    <label for="id_date">Date :</label>
-                    <div id="datetimepicker" class="input-append date">
-                        <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
-                        <span class="add-on">
-                          <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-                          </i>
-                        </span>
-                    </div>
-                </div>
-                <div class="fieldWrapper">
-                    {{ form.ordre.errors }}
-                    <label for="id_ordre">Type :</label>
-                    {{ form.ordre }}
-                </div>
-                <div class="fieldWrapper">
-                    {{ form.nbPersonne.errors }}
-                    <label for="id_nbPersonne">Nombre de personnes :</label>
-                    {{ form.nbPersonne }}
-                </div>
-            </form>
-      </div>
-      <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
-        <input type="submit" class="btn btn-primary" value="Enregistrer" />
-      </div>
-    </div>
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Mes recettes</button>
         
-    <script type="text/javascript">
-      $('#datetimepicker').datetimepicker({
-        pickTime: false,
-        format: 'yyyy-MM-dd',
-      });
-    </script>
-
 {% endblock %}
 
