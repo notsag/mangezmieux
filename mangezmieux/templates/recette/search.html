@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	<h1>Recherche</h1>
+	<form action="search" method="get">
+		{{form.as_p}}
+		<p>
+			<input type="submit" value="Rechercher" />
+		</p>
+	</form>
+	<h1>Liste des recettes</h1>
+	<ul>
+		{% for recette in recettes %}
+			<li><a href="show/{{recette.pk}}">{{recette.nom}}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock %}	
