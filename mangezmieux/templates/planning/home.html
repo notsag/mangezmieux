@@ -2,55 +2,8 @@
 {% load static %}
 
 {% block content %}
-    
-    <div id="planning">
-        <div id="entetePlanning">
-            <p>{{debutSemaine}} - {{finSemaine}}<br><br></p>
-            <a id="prevPlanning" class="carousel-control left" href="/planning?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
-            <a id="nextPlanning" class="carousel-control right" href="/planning?d={{semaineSuivante|date:"Y-m-d"}}" data-slide="next">&rsaquo;</a> 
-        </div>
-        <p>Lundi</p>
-        <div class="accordion" id="accordion2">
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                  Petit dejeuner
-                </a>
-              </div>
-              <div id="collapseOne" class="accordion-body collapse in">
-                <div class="accordion-inner">
-                  Anim pariatur cliche...
-                </div>
-              </div>
-            </div>
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                  Dejeuner
-                </a>
-              </div>
-              <div id="collapseTwo" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Anim pariatur cliche...
-                </div>
-              </div>
-            </div>
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                  Diner
-                </a>
-              </div>
-              <div id="collapseThree" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  Anim pariatur cliche...
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
         
-    <!--<div id="planning">
+    <div id="planning">
         <div id="entetePlanning">
             <p>{{debutSemaine}} - {{finSemaine}}<br><br></p>
             <a id="prevPlanning" class="carousel-control left" href="/planning?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
@@ -133,7 +86,7 @@
         </div>
     </div>
     
-    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Mes recettes</button>-->
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Mes recettes</button>
         
 {% endblock %}
 

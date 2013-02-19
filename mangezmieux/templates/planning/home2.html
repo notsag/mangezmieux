@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    
+    <div id="planning2">
+        <div id="entetePlanning">
+            <p>{{debutSemaine}} - {{finSemaine}}<br><br></p>
+            <a id="prevPlanning" class="carousel-control left" href="/planning?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
+            <a id="nextPlanning" class="carousel-control right" href="/planning?d={{semaineSuivante|date:"Y-m-d"}}" data-slide="next">&rsaquo;</a> 
+        </div>
+        {% for ligne in planning %} 
+            {% if forloop.counter == 1 %}
+                {% if day == "Monday" %}
+                    <div class="title day">Lundi</div>
+                {% else %}
+                    <div class="title">Lundi</div>
+                {% endif%}
+            {% endif%}
+            {% if forloop.counter == 2 %}
+                {% if day == "Tuesday" %}
+                    <div class="title day">Mardi</div>
+                {% else %}
+                    <div class="title">Mardi</div>
+                {% endif%}
+            {% endif%}
+            {% if forloop.counter == 3 %}
+                {% if day == "Wednesday" %}
+                    <div class="title day">Mercredi</div>
+                {% else %}
+                    <div class="title">Mercredi</div>
+                {% endif%}
+            {% endif%}
+            {% if forloop.counter == 4 %}
+                {% if day == "Thursday" %}
+                    <div class="title day">Jeudi</div>
+                {% else %}
+                    <div class="title">Jeudi</div>
+                {% endif%}
+            {% endif%}
+            {% if forloop.counter == 5 %}
+                {% if day == "Friday" %}
+                    <div class="title day">Vendredi</div>
+                {% else %}
+                    <div class="title">Vendredi</div>
+                {% endif%}
+            {% endif%}
+            {% if forloop.counter == 6 %}
+                {% if day == "Saturday" %}
+                    <div class="title day">Samedi</div>
+                {% else %}
+                    <div class="title">Samedi</div>
+                {% endif%}
+            {% endif%}
+            {% if forloop.counter == 7 %}
+                {% if day == "Sunday" %}
+                    <div class="title day">Dimanche</div>
+                {% else %}
+                    <div class="title">Dimanche</div>
+                {% endif%}
+            {% endif%}
+            
+            <div class="accordion" id="accordion{{forloop.counter}}">
+                {% for col in ligne %}
+                    <div class="accordion-group">
+                      <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion{{forloop.parentloop.counter}}" href="#{{forloop.parentloop.counter}}{{forloop.counter}}">
+                            {% if forloop.counter == 1 %}
+                                Petit dejeuner ({{col.nb_personne}} pers.)
+                            {% endif%}
+                            {% if forloop.counter == 2 %}
+                                Dejeuner ({{col.nb_personne}} pers.)
+                            {% endif%}
+                            {% if forloop.counter == 3 %}
+                                Diner ({{col.nb_personne}} pers.)
+                            {% endif%}
+                        </a>
+                      </div>
+                      <div id="{{forloop.parentloop.counter}}{{forloop.counter}}" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                        {% if col == 0%}
+                            <div class="ligneRepas vide">Aucun repas</div>
+                        {% endif%}
+                        
+                        {% for re in col.recette.all %}
+                            <div class="ligneRepas"><a href="/recette/show/{{re.id}}">{{re.nom}}</a></div>
+                        {% endfor %}
+
+                        {% for pr in col.produit.all %}
+                            <div class="ligneRepas"><a href="/produit/show/{{pr.produit.id}}">{{pr.produit.nom}}</a> ({{pr.quantite}} {{pr.unite.abreviation}}.)</div>
+                        {% endfor %}
+
+                        </div>
+                      </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+        
+{% endblock %}
+
