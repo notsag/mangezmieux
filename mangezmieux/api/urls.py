@@ -1,10 +1,18 @@
+#-*- coding: utf-8 -*-
 from django.conf.urls.defaults import patterns, include, url
 from rest_framework.urlpatterns import format_suffix_patterns
 from views import *
 
+"""
+URLs relativent aux différents points de l'API.
+Les URLs sont généralement regroupées par modèles. 
+"""
+
 urlpatterns = patterns('',
 
 	url(r'^$', 'core.api.api_root'),
+
+	url(r'^connexion/obtenirToken$', 'rest_framework.authtoken.views.obtain_auth_token'),
 
     url(r'^unites/$', UniteList.as_view(), name='unite-list'),
     url(r'^unites/(?P<pk>\d+)/$', UniteDetail.as_view(), name='unite-detail'),
@@ -46,8 +54,4 @@ urlpatterns = patterns('',
 # Format suffixes
 urlpatterns = format_suffix_patterns(urlpatterns, allowed=['json', 'api'])
 
-# Default login/logout views
-urlpatterns += patterns('',
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-	)
 

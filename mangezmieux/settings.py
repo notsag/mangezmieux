@@ -80,10 +80,11 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'rest_framework',
+	'rest_framework.authtoken',
     'core',
     'home',
     'produit',
-    'rest_framework',
     'planning',
     'auth',
     'api',
@@ -97,6 +98,7 @@ LOGIN_REDIRECT_URL = '/mon_compte'
 # API module
 REST_FRAMEWORK = {
 		'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+		'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.SessionAuthentication','rest_framework.authentication.TokenAuthentication'),
 		'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRenderer',),
 		'PAGINATE_BY': 10
 }
