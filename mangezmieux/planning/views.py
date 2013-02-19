@@ -113,10 +113,10 @@ def add_repas(request):
             repas = Repas()
             repas.date = d
             repas.nb_personne = n
-            repas.recette = recette
             repas.ordre = o
             repas.utilisateur = request.user
             repas.save()
+            repas.recette.add(recette)
             
             return redirect('/planning')
         
