@@ -24,6 +24,34 @@
                 <form class="navbar-search pull-right" action="">
                 	<input class="search-query" type="text" placeholder="Rechercher une recette, un produit...">
                 </form>
+				<ul class="nav pull-right">
+					{% if user.is_authenticated %}
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.first_name|capfirst}} {{ user.last_name|capfirst}}
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="/mon_compte">Mon compte</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="/deconnexion">Déconnexion</a>
+								</li>
+							</ul>
+						</li>
+					{% else %}
+					<li>
+						<a href="/connexion">Connexion</a>
+					</li>
+					<!--
+					<li>
+						<a href="/mot_de_passe_oublie">Mot de passe oublié?</a>
+					</li>
+					-->
+					{% endif %}
+					<li class="divider-vertical"></li>
+				</ul>
 			</div>
 		</div>
 	</div>
