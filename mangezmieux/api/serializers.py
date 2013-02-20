@@ -9,16 +9,6 @@ class UserSerializer(serializers.ModelSerializer):
 		model = User
 		fields = ('username', 'email', 'first_name', 'last_name')
                 
-class RepasSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Repas
-        fields = ('date', 'ordre', 'nb_personne','utilisateur', 'produit', 'recette')
-        
-class ProduitSerializer(serializers.ModelSerializer):
-	class Meta:
-		model = Produit
-		fields = ('nom', 'quantite', 'valeur_energetique', 'type_produit', 'stype_produit', 'unite')
-		
 class UniteSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Unite
@@ -27,14 +17,26 @@ class UniteSerializer(serializers.ModelSerializer):
 class TypeProduitSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = TypeProduit
-		fields = ('nom', 'parent')
+		fields = ('nom',)
+		
+class ProduitSerializer(serializers.ModelSerializer):
+	type_produit = TypeProduitSerializer()
+	stypeProduit = TypeProduitSerializer()
+	unite = UniteSerializer()
+	class Meta:
+		model = Produit
+		fields = ('nom', 'quantite', 'valeur_energetique', 'type_produit', 'stype_produit', 'unite')
 		
 class LigneRecetteSerializer(serializers.ModelSerializer):
+	produit = ProduitSerializer()
+	unite = UniteSerializer()
 	class Meta:
 		model = LigneRecette
 		fields = ('produit', 'quantite', 'unite')
 		
 class LigneProduitSerializer(serializers.ModelSerializer):
+	produit = ProduitSerializer()
+	unite = UniteSerializer()
 	class Meta:
 		model = LigneProduit
 		fields = ('produit', 'quantite', 'unite')
@@ -45,11 +47,13 @@ class CategorieSerializer(serializers.ModelSerializer):
 		fields = ('nom',)
 		
 class CommandeSerializer(serializers.ModelSerializer):
+	client = UserSerializer()
 	class Meta:
 		model = Commande
 		fields = ('date', 'client')
 		
 class LigneCommandeSerializer(serializers.ModelSerializer):
+	commande = CommandeSerializer()
 	class Meta:
 		model = LigneCommande
 		fields = ('produit', 'commande')
@@ -61,4 +65,12 @@ class RecetteSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Recette
 		fields = ('nom', 'lignes', 'instructions', 'duree', 'difficulte', 'createur', 'est_valide', 'categorie')
+
+class RepasSerializer(serializers.ModelSerializer):
+	utilisateur = UserSerializer()
+	produit = ProduitSerializer()
+	recette = RecetteSerializer()
+	class Meta:
+		model = Repas
+		fields = ('date', 'ordre', 'nb_personne','utilisateur', 'produit', 'recette')
 
