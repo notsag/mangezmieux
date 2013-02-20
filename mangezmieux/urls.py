@@ -5,15 +5,12 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('home.urls')),
     url(r'^produit/', include('produit.urls')),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^planning/', include('planning.urls')),
     url(r'^recette/', include('recette.urls')),
     url(r'', include('auth.urls')),
-    #API
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include('api.urls')),
 )
 
