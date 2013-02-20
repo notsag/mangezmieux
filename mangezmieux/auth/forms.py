@@ -1,5 +1,7 @@
 #-*- coding: utf-8 -*-
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserChangeForm
+from django.forms.widgets import HiddenInput
 from django import forms
 
 class FormulaireInscription(forms.Form):
@@ -12,7 +14,7 @@ class FormulaireInscription(forms.Form):
 		mot de passe avec confirmation
 
 	"""
-	username = forms.RegexField(regex=r'^[\w.@+-]+$',max_length=30,widget=forms.TextInput(),label="Identifiant",error_messages={'Invalide': "L'identifiant ne peut contenir que des caractères alphanumériques, \"@\",\".\",\"+\",\"-\" et\"_\"."})
+	username = forms.RegexField(regex=r'^[\w.@+-]+$',max_length=30,widget=forms.TextInput(),label="Nom d'utilisateur",error_messages={'Invalide': "L'identifiant ne peut contenir que des caractères alphanumériques, \"@\",\".\",\"+\",\"-\" et\"_\"."})
 	nom = forms.CharField(widget=forms.TextInput(), label="Nom")
 	prenom = forms.CharField(widget=forms.TextInput(), label="Prénom")
 	email = forms.EmailField(widget=forms.TextInput(),label="E-mail")
@@ -46,3 +48,15 @@ class FormulaireInscription(forms.Form):
 			raise forms.ValidationError("Ce username est déjà associée à un compte.")
 		return self.cleaned_data['username']
 
+
+class FormulaireUtilisateur(UserChangeForm):
+	"""
+	Formulaire permettant de modifier les données d'un utilisateur
+	"""
+	class Meta:
+		model = User
+		fields = ('username', 'email', 'first_name', 'last_name', 'password')
+
+	def __init__(self, *args, **kwargs):
+		super(UserChangeForm, self).__init__(*args, **kwargs)
+		self.fields['password'].widget = HiddenInput()

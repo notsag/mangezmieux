@@ -9,10 +9,12 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('home.urls')),
     url(r'^produit/', include('produit.urls')),
-	url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^planning/', include('planning.urls')),
     url(r'^recette/', include('recette.urls')),
-    url(r'^inscription/', include('auth.urls'))
+    url(r'', include('auth.urls')),
+    #API
+    url(r'^api/', include('api.urls')),
 )
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns

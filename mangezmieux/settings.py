@@ -1,89 +1,57 @@
+#-*- coding: utf-8 -*-
 # Django settings for mangezmieux project.
 
+# DEBUG
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+
+# ADMIN
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
-
 MANAGERS = ADMINS
+SECRET_KEY = 'nm0lvt2y=)b836db1y=u+cvi77a0vic&p3c75ols(9&bcjp7g+'
 
+
+
+# DB
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'mangez_mieux',                      # Or path to database file if using sqlite3.
-        'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': 'root',                  # Not used with sqlite3.
-        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mangez_mieux',    
+        'USER': 'root',            
+        'PASSWORD': 'root',        
+        'HOST': 'localhost',       
+        'PORT': '',                
     }
 }
 
-# Local time zone for this installation. Choices can be found here:
-# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-# although not all choices may be available on all operating systems.
-# On Unix systems, a value of None will cause Django to use the same
-# timezone as the operating system.
-# If running in a Windows environment this must be set to the same as your
-# system time zone.
+# Internationalisation
 TIME_ZONE = 'Europe/Paris'
-
-# Language code for this installation. All choices can be found here:
-# http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'fr-fr'
-
-SITE_ID = 1
-
-# If you set this to False, Django will make some optimizations so as not
-# to load the internationalization machinery.
-USE_I18N = True
-
-# If you set this to False, Django will not format dates, numbers and
-# calendars according to the current locale
-USE_L10N = True
-
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/var/www/mangezmieux/mangezmieux/upload/'
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = '/upload/'
-
-# Absolute path to the directory static files should be collected to.
-# Don't put anything in this directory yourself; store your static files
-# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
-
-# URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
-
-# URL prefix for admin static files -- CSS, JavaScript and images.
-# Make sure to use a trailing slash.
-# Examples: "http://foo.com/static/admin/", "/static/admin/".
-ADMIN_MEDIA_PREFIX = '/static/admin/'
-
-AUTH_PROFILE_MODULE = 'auth.ProfilUtilisateur'
-
-# Additional locations of static files
+USE_I18N = True # Internationalisation
+USE_L10N = True # Formatage des dates et nombres en fonction de la locale
 STATICFILES_DIRS = (
     "static/",
 )
-
-# List of finder classes that know how to find static files in
-# various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'nm0lvt2y=)b836db1y=u+cvi77a0vic&p3c75ols(9&bcjp7g+'
+SITE_ID = 1
+
+# Chemins HTML, CSS, JS et Upload
+MEDIA_ROOT = '/var/www/mangezmieux/mangezmieux/upload/'
+MEDIA_URL = '/upload/'
+STATIC_ROOT = ''
+STATIC_URL = '/static/'
+ADMIN_MEDIA_PREFIX = '/static/admin/'
+TEMPLATE_DIRS = (
+    "templates/"
+)
+
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -100,34 +68,43 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'mangezmieux.urls'
+# URLs primaires
+ROOT_URLCONF = 'urls'
 
-TEMPLATE_DIRS = (
-    "templates/"
-)
-
+# Modules installés
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'mangezmieux.core',
-    'mangezmieux.home',
-    'mangezmieux.produit',
-	'rest_framework',
-    'mangezmieux.planning',
-	'mangezmieux.auth',
+    'rest_framework',
+	'rest_framework.authtoken',
+    'core',
+    'home',
+    'produit',
+    'planning',
+    'auth',
+    'api',
 )
 
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
+
+# AUTH module
+AUTH_PROFILE_MODULE = 'auth.ProfilUtilisateur'
+LOGIN_REDIRECT_URL = '/mon_compte'
+
+# API module
+REST_FRAMEWORK = {
+		'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+		'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.SessionAuthentication','rest_framework.authentication.TokenAuthentication'),
+		'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRenderer',),
+		'PAGINATE_BY': 10
+}
+
+
+# LOG
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

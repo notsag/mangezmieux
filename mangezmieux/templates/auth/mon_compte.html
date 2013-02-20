@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Vos informations</h2>
+<form action="." method="post" accept-charset="utf-8">
+	{% csrf_token %}
+    {% if form.non_field_errors %}
+	<div class="form_errors">
+		{% for err in form.non_field_errors %}
+		<div class="form_error_message">{{ err }}</div>
+		{% endfor %}
+	</div>	
+	{% endif %}
+	{% for hidden in form.hidden_fields %}
+	{{ hidden }}
+	{% endfor %}
+	{% for field in form.visible_fields %}
+	<div {% if field.errors %}class="field_error"{% endif %}>
+		{{ field.label_tag }}
+		{{ field }}
+		{% for err in field.errors %}
+			<span class="error_message">{{ err }}</span>
+		{% endfor %}
+	</div>
+	{% endfor %}
+	<div>
+	<p>Changer mon mot de passe : <a href="/changer_mot_de_passe">Changer</a></p>
+	</div>
+	<input type="submit" value="Mettre à jour">
+</form>
+{% endblock %}

@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-
+        
     <div id="planning">
         <div id="entetePlanning">
             <p>{{debutSemaine}} - {{finSemaine}}<br><br></p>
@@ -56,12 +56,22 @@
                             <div class="accordion-group">
                                 <div class="accordion-heading">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion{{forloop.parentloop.counter}}{{forloop.counter}}" href="#collapse{{forloop.parentloop.counter}}{{forloop.counter}}">
-                                        {{col.recette.nom}}   
+                                        {% if col.recette != None %}
+                                            {{col.recette.nom|truncatechars:13}}
+                                        {% elif col.produit.count > 0 %}
+                                            {{ col.produit.0.nom|truncatechars:13 }}
+                                        {% endif%}
                                     </a>
                                 </div>
                                 <div id="collapse{{forloop.parentloop.counter}}{{forloop.counter}}" class="accordion-body collapse">
                                     <div class="accordion-inner">
-                                        {{col.recette.nom}}
+                                         {% if col.recette != None %}
+                                            {{col.recette.nom|truncatechars:13}}
+                                        {% elif col.produit.count > 0 %}
+                                            {{ col.produit.0.nom|truncatechars:13 }}
+                                        {% else %}
+                                            <a href="#myModal" data-toggle="modal">Ajouter</a>
+                                        {% endif%}
                                     </div>
                                 </div>
                             </div>
@@ -76,5 +86,7 @@
         </div>
     </div>
     
-
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Mes recettes</button>
+        
 {% endblock %}
+

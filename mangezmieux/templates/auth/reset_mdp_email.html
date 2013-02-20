@@ -1,0 +1,13 @@
+{% autoescape off %}
+Vous recevez cet email car vous avez demandé <a réinitialiser votre mot de passe Mangez Mieux!
+
+Cliquez donc sur le lien suivant et changer votre mot de passe:
+{% block reset_link %}
+{{ protocol }}://{{ domain }}{% url django.contrib.auth.views.password_reset_confirm uidb36=uid, token=token %}
+{% endblock %}
+
+Votre Nom d'utilisateur au cas où vous l'auriez également oublié: {{ user.username }}
+
+
+À bientôt sur Mangez-Mieux!
+{% endautoescape %}

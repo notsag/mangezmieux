@@ -11,3 +11,4 @@ def show(request, id):
     if produits.count() > 0 :
         produit = produits[0]
     return render(request, 'produit/show.html', locals())
+

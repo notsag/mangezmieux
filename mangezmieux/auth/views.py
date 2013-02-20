@@ -1,12 +1,13 @@
 #-*- coding: utf-8 -*-
-from django.shortcuts import redirect
-from django.shortcuts import render_to_response
+from django.shortcuts import redirect, render_to_response
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
-from django.contrib.auth import login
-from forms import FormulaireInscription
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm
+from forms import FormulaireInscription, FormulaireUtilisateur
+
 
 def inscription(request):
 	"""
@@ -31,9 +32,21 @@ def inscription(request):
 			user.save()
 			new_user = authenticate(username=username, password=password)
 			login(request, new_user)
-			return HttpResponseRedirect('post_inscr') #On redirige vers la selection des goûts
+			return HttpResponseRedirect('/') #On redirige vers la selection des goûts
 	else:
 		form = FormulaireInscription()
 	return render_to_response('auth/inscription.html',{'form': form,},context_instance=RequestContext(request))
 
+@login_required(login_url='/connexion')
+def compte(request):
+	"""
+	Cette fonction permet d'afficher le formulaire d'édition du compte utilisateur
+	"""
+	if request.method == 'POST':
+		form = FormulaireUtilisateur(request.POST, instance=request.user)
+		if form.is_valid():
+			form.save()
+	else:
+		form = FormulaireUtilisateur(instance=request.user)
+	return render_to_response('auth/mon_compte.html',locals(),context_instance=RequestContext(request))
 
