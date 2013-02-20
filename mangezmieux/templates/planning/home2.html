@@ -78,17 +78,18 @@
                       </div>
                       <div id="{{forloop.parentloop.counter}}{{forloop.counter}}" class="accordion-body collapse">
                         <div class="accordion-inner">
-                        {% if col == 0%}
-                            <div class="ligneRepas vide">Aucun repas</div>
-                        {% endif%}
-                        
-                        {% for re in col.recette.all %}
-                            <div class="ligneRepas"><a href="/recette/show/{{re.id}}">{{re.nom}}</a><div class="infoRecette">Difficulte : {{re.difficulte}}/5, Temps de preparation : {{re.duree}} min.<button class="btn btn-primary" value="Supprimer">Supprimer</button></div></div>
-                        {% endfor %}
+                            {% if col == 0%}
+                                <div class="ligneRepas vide">Aucun repas</div>
+                            {% else %}
+                                {% for re in col.recette.all %}
+                                    <div class="ligneRepas"><a href="/recette/show/{{re.id}}">{{re.nom}}</a><div class="infoRecette">Difficulte : {{re.difficulte}}/5, Temps de preparation : {{re.duree}} min.<button class="btn btn-primary" value="Supprimer">Supprimer</button></div></div>
+                                {% endfor %}
+        
+                                {% for pr in col.produit.all %}
+                                    <div class="ligneRepas"><a href="/produit/show/{{pr.produit.id}}">{{pr.produit.nom}}</a> ({{pr.quantite}} {{pr.unite.abreviation}}.)</div>
+                                {% endfor %}
+                            {% endif%}
 
-                        {% for pr in col.produit.all %}
-                            <div class="ligneRepas"><a href="/produit/show/{{pr.produit.id}}">{{pr.produit.nom}}</a> ({{pr.quantite}} {{pr.unite.abreviation}}.)</div>
-                        {% endfor %}
                             <div class="ligneRepas"><button class="btn btn-primary" value="Ajouter">Ajouter</button></div>
                         </div>
                       </div>
