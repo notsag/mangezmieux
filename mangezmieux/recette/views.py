@@ -12,7 +12,7 @@ def show(request, id):
 		form.fields["recette"].initial = recette.nom
 	return render(request, 'recette/show.html',locals())
 
-def search(request):
+def recherche(request):
 	"""fonction de recherche multicritères de recettes"""
 	#une fois le formulaire soumis
 	if len(request.GET) > 0:
@@ -40,8 +40,8 @@ def search(request):
 			if form.cleaned_data['categorie'] != '-1':
 				recettes = recettes.filter(categorie=form.cleaned_data['categorie'])
 
-			return render(request, 'recette/search.html', locals())
+			return render(request, 'recette/recherche.html', locals())
 	else:
 		form = SearchForm()
 
-	return render(request, 'recette/search.html', locals())
+	return render(request, 'recette/recherche.html', locals())
