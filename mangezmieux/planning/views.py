@@ -62,26 +62,26 @@ def home(request):
         On cree un tableau 3*7 qui represente la semaine courante
     """
     planning = []
-    for i in xrange(3):
+    for i in xrange(7):
         planning.append([])
-        for j in xrange(7):
+        for j in xrange(3):
              planning[i].append(0)
     
     for repas in repass :
         if repas.date.strftime('%A') == 'Monday':
-            planning[repas.ordre][0] = repas
+            planning[0][repas.ordre] = repas
         elif repas.date.strftime('%A') == 'Tuesday':
-            planning[repas.ordre][1] = repas
+            planning[1][repas.ordre] = repas
         elif repas.date.strftime('%A') == 'Wednesday':
-            planning[repas.ordre][2] = repas
+            planning[2][repas.ordre] = repas
         elif repas.date.strftime('%A') == 'Thursday':
-            planning[repas.ordre][3] = repas
+            planning[3][repas.ordre] = repas
         elif repas.date.strftime('%A') == 'Friday':
-            planning[repas.ordre][4] = repas
+            planning[4][repas.ordre] = repas
         elif repas.date.strftime('%A') == 'Saturday':
-            planning[repas.ordre][5] = repas
+            planning[5][repas.ordre] = repas
         elif repas.date.strftime('%A') == 'Sunday':
-            planning[repas.ordre][6] = repas
+            planning[6][repas.ordre] = repas
     
     """
         On recupere une date de la semaine precedente et une date de la semaine suivante
@@ -94,7 +94,7 @@ def home(request):
     #for repas in repass :
     #    planning[repas.date.strftime('%A')][repas.ordre] = repas
         
-    return render(request, 'planning/home.html', locals())
+    return render(request, 'planning/home2.html', locals())
 
 def add_repas(request):
     """
@@ -113,10 +113,10 @@ def add_repas(request):
             repas = Repas()
             repas.date = d
             repas.nb_personne = n
-            repas.recette = recette
             repas.ordre = o
             repas.utilisateur = request.user
             repas.save()
+            repas.recette.add(recette)
             
             return redirect('/planning')
         

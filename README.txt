@@ -23,7 +23,11 @@ mangezmieux/
   |  |- urls.py    
   |  |- models.py  
   |  |- tests.py  
-  |  |- views.py  
+  |  |- views.py 
+  |- recette/		 #pages liées aux recettes
+  |  |- urls.py
+  |  |- forms.py	 #formulaire de recherche de recette
+  |  |- views.py
   |- static/         #fichiers statiques (css/js)
   |  |- bootstrap/   #fichiers de bootstrap
   |  |- style.css    #fichier css
