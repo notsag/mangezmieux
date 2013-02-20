@@ -3,57 +3,62 @@ from django.contrib.auth.models import User
 from core.models import *
 from rest_framework import serializers
 
-class RecetteSerializer(serializers.HyperlinkedModelSerializer):
-	class Meta:
-		model = Recette
-		fields = ('url', 'nom', 'lignes', 'instructions', 'duree', 'difficulte', 'createur', 'est_valide', 'categorie')
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = User
-		fields = ('url', 'username', 'email', 'first_name', 'last_name')
+		fields = ('username', 'email', 'first_name', 'last_name')
                 
-class RepasSerializer(serializers.HyperlinkedModelSerializer):
+class RepasSerializer(serializers.ModelSerializer):
     class Meta:
         model = Repas
-        fields = ('url', 'date', 'ordre', 'nb_personne','utilisateur', 'produit', 'recette')
+        fields = ('date', 'ordre', 'nb_personne','utilisateur', 'produit', 'recette')
         
-class ProduitSerializer(serializers.HyperlinkedModelSerializer):
+class ProduitSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Produit
-		fields = ('url', 'nom', 'quantite', 'valeur_energetique', 'type_produit', 'stype_produit', 'unite')
+		fields = ('nom', 'quantite', 'valeur_energetique', 'type_produit', 'stype_produit', 'unite')
 		
-class UniteSerializer(serializers.HyperlinkedModelSerializer):
+class UniteSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Unite
-		fields = ('url', 'nom', 'abreviation')
+		fields = ('nom', 'abreviation')
 		
-class TypeProduitSerializer(serializers.HyperlinkedModelSerializer):
+class TypeProduitSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = TypeProduit
-		fields = ('url', 'nom', 'parent')
+		fields = ('nom', 'parent')
 		
-class LigneRecetteSerializer(serializers.HyperlinkedModelSerializer):
+class LigneRecetteSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = LigneRecette
-		fields = ('url', 'produit', 'quantite', 'unite')
+		fields = ('produit', 'quantite', 'unite')
 		
-class LigneProduitSerializer(serializers.HyperlinkedModelSerializer):
+class LigneProduitSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = LigneProduit
-		fields = ('url', 'produit', 'quantite', 'unite')
+		fields = ('produit', 'quantite', 'unite')
 		
-class CategorieSerializer(serializers.HyperlinkedModelSerializer):
+class CategorieSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Categorie
-		fields = ('url', 'nom')
+		fields = ('nom',)
 		
-class CommandeSerializer(serializers.HyperlinkedModelSerializer):
+class CommandeSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Commande
-		fields = ('url', 'date', 'client')
+		fields = ('date', 'client')
 		
-class LigneCommandeSerializer(serializers.HyperlinkedModelSerializer):
+class LigneCommandeSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = LigneCommande
-		fields = ('url', 'produit', 'commande')
+		fields = ('produit', 'commande')
+
+class RecetteSerializer(serializers.ModelSerializer):
+	lignes = LigneRecetteSerializer()
+	createur = UserSerializer()
+	categorie = CategorieSerializer()
+	class Meta:
+		model = Recette
+		fields = ('nom', 'lignes', 'instructions', 'duree', 'difficulte', 'createur', 'est_valide', 'categorie')
+
