@@ -65,7 +65,7 @@ def home(request):
     for i in xrange(7):
         planning.append([])
         for j in xrange(3):
-             planning[i].append(0)
+            planning[i].append(0)
     
     for repas in repass :
         if repas.date.strftime('%A') == 'Monday':
@@ -110,7 +110,13 @@ def add_repas(request):
             
             recette = Recette.objects.filter(nom = r)[0]
             
-            repas = Repas()
+            #On vérifie si on a un repas à ce moment
+            repas = Repas.objects.filter(date = d, utilisateur = request.user, ordre = o)
+            if repas == None:
+                repas = Repas()
+            else:
+                repas = repas[0]
+            
             repas.date = d
             repas.nb_personne = n
             repas.ordre = o
