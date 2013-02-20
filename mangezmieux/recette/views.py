@@ -8,15 +8,15 @@ def liste(request):
 	recettes = Recette.objects.filter(est_valide=True)
 	return render(request, 'recette/liste.html', locals())
 
-def show(request, id):
+def detail(request, id):
 	recettes = Recette.objects.filter(pk=id, est_valide=True)
 	form = RepasForm()
 	if recettes.count() > 0 :
 		recette = recettes[0]
 		form.fields["recette"].initial = recette.nom
-	return render(request, 'recette/show.html',locals())
+	return render(request, 'recette/detail.html',locals())
 
-def search(request):
+def rechercher(request):
 	"""fonction de recherche multicritères de recettes"""
 	#une fois le formulaire soumis
 	if len(request.GET) > 0:
@@ -44,8 +44,8 @@ def search(request):
 			if form.cleaned_data['categorie'] != '-1':
 				recettes = recettes.filter(categorie=form.cleaned_data['categorie'])
 
-			return render(request, 'recette/search.html', locals())
+			return render(request, 'recette/recherche.html', locals())
 	else:
 		form = SearchForm()
 
-	return render(request, 'recette/search.html', locals())
+	return render(request, 'recette/recherche.html', locals())

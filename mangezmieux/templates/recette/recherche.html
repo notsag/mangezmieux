@@ -12,7 +12,7 @@
 	<h1>Liste des recettes</h1>
 	<ul>
 		{% for recette in recettes %}
-			<li><a href="show/{{recette.pk}}">{{recette.nom}}</a></li>
+			<li><a href="/recette/detail/{{recette.pk}}">{{recette.nom}}</a></li>
 		{% endfor %}
 	</ul>
 {% endblock %}	
