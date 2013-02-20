@@ -96,7 +96,7 @@ def home(request):
         
     return render(request, 'planning/home2.html', locals())
 
-def add_repas(request):
+def ajouter_repas(request):
     """
         Ajout d'un repas dans la base
     """

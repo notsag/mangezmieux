@@ -6,9 +6,9 @@ def liste(request):
     produits = Produit.objects.all()
     return render(request, 'produit/liste.html', locals())
 
-def show(request, id):
+def detail(request, id):
     produits = Produit.objects.filter(pk=id)
     if produits.count() > 0 :
         produit = produits[0]
-    return render(request, 'produit/show.html', locals())
+    return render(request, 'produit/detail.html', locals())
 

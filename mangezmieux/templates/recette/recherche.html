@@ -19,9 +19,9 @@
 		</tr>
 		{% for recette in recettes %}
 			<tr>
-				<td><a href="show/{{recette.pk}}">{{recette.nom}}</a></td>
+				<td><a href="/recette/detail/{{recette.pk}}">{{recette.nom}}</a></td>
 				<td>
-					{% for categorie in recette.categorie.all %}
+					{% for categorie in recette.categorie.all  %}
 						{{categorie.nom}}
 						{% if not forloop.last %} / {% endif %}
 					{% endfor %}
