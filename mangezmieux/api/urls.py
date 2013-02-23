@@ -35,9 +35,6 @@ urlpatterns = patterns('',
     url(r'^ligneCommandes/$', LigneCommandeList.as_view(), name='lignecommande-list'),
     url(r'^ligneCommandes/(?P<pk>\d+)/$', LigneCommandeDetail.as_view(), name='lignecommande-detail'),
     
-    url(r'^repas/$', RepasList.as_view(), name='repas-list'),
-    url(r'^repas/(?P<pk>\d+)/$', RepasDetail.as_view(), name='repas-detail'),
-    
     url(r'^utilisateurs/$', UserList.as_view(), name='user-list'),
     url(r'^utilisateurs/(?P<pk>\d+)/$', UserDetail.as_view(), name='user-detail'),
     
