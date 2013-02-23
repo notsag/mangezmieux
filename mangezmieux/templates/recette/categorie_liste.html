@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	<h1>{{categorie}}s</h1>
+	
+	<ul>
+	{% for recette in recettes %}
+		<li><a href="/recette/detail/{{recette.id}}">{{recette.nom}}</a></li>
+	{% endfor %}
+	</ul>
+	
+{% endblock %}

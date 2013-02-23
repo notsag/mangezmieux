@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	<h1>Catégories</h1>
+	
+	<ul>
+	{% for cat in categories %}
+		<li><a href="/recette/categorie/{{cat.id}}">{{cat}}s</a></li>
+	{% endfor %}
+	</ul>
+{% endblock %}

@@ -1,5 +1,6 @@
 #-*- coding: utf-8 -*-
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import Http404
 from core.models import *
 from forms import SearchForm
 from planning.forms import *
@@ -55,3 +56,15 @@ def recherche(request):
 		form = SearchForm()
 
 	return render(request, 'recette/recherche.html', locals())
+	
+def categorie(request, id=-1):
+	if id == -1 :
+		categories = Categorie.objects.all()
+		return render(request, 'recette/categories.html',locals())
+	else :
+		try:
+			categorie = Categorie.objects.get(pk=id)
+			recettes = Recette.objects.filter(categorie=id, est_valide=True)
+			return render(request, 'recette/categorie_liste.html', locals())
+		except Categorie.DoesNotExist:
+			raise Http404
