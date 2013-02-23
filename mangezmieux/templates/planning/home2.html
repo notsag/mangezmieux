@@ -78,7 +78,7 @@
                       </div>
                       <div id="{{forloop.parentloop.counter}}{{forloop.counter}}" class="accordion-body collapse">
                         <div class="accordion-inner">
-                            {% if col == 0%}
+                            {% if col.recette.count == 0 or col.produit.count == 0%}
                                 <div class="ligneRepas vide">Aucun repas</div>
                             {% else %}
                                 {% for re in col.recette.all %}

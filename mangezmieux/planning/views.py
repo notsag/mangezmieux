@@ -65,7 +65,9 @@ def home(request):
     for i in xrange(7):
         planning.append([])
         for j in xrange(3):
-            planning[i].append(0)
+            repasVide = Repas()
+            repasVide.date = debutSemaine + timedelta(days= i)
+            planning[i].append(repasVide)
     
     for repas in repass :
         if repas.date.strftime('%A') == 'Monday':
