@@ -65,8 +65,10 @@ def home(request):
     for i in xrange(7):
         planning.append([])
         for j in xrange(3):
-            repasVide = Repas()
+            repasVide = RepasNonPersiste()
             repasVide.date = debutSemaine + timedelta(days= i)
+            repasVide.ordre = j
+            repasVide.nb_personne = 0
             planning[i].append(repasVide)
     
     for repas in repass :
@@ -100,10 +102,23 @@ def home(request):
 
 def ajouter_repas(request):
     """
-        Ajout d'un repas dans la base
+        Ajout d'un repas
+    """
+
+    o = request.GET.get('o', None)
+    d = request.GET.get('d', None)
+
+    request.session['ordre'] = o
+    request.session['date'] = d
+    
+    return redirect('/recette/recherche/')
+          
+def ajouter_recette_repas(request):
+    """
+        Ajout d'une recette dans un repas dans la base
     """
     if request.method == 'POST':
-        form = RepasForm(data=request.POST, files=request.FILES) #On reprend les données
+        form = RepasRecetteForm(data=request.POST, files=request.FILES) #On reprend les données
         if form.is_valid():
             r = form.cleaned_data['recette']
             o = form.cleaned_data['ordre']
@@ -114,7 +129,7 @@ def ajouter_repas(request):
             
             #On vérifie si on a un repas à ce moment
             repas = Repas.objects.filter(date = d, utilisateur = request.user, ordre = o)
-            if repas == None:
+            if repas.count() == 0:
                 repas = Repas()
             else:
                 repas = repas[0]
@@ -125,9 +140,54 @@ def ajouter_repas(request):
             repas.utilisateur = request.user
             repas.save()
             repas.recette.add(recette)
+            repas.save()
             
             return redirect('/planning')
         
         else:
             return redirect('/')
+        
+def ajouter_produit_repas(request):
+    """
+       Ajout d'un produit dans un repas dans la base
+    """
+    if request.method == 'POST':
+        form = RepasProduitForm(data=request.POST, files=request.FILES) #On reprend les données
+        if form.is_valid():
+            p = form.cleaned_data['produit']
+            q = form.cleaned_data['quantite']
+            u = form.cleaned_data['unite']
+            o = form.cleaned_data['ordre']
+            d = form.cleaned_data['date']
+            n = form.cleaned_data['nbPersonne']
+            
+            produit = Produit.objects.filter(nom = p)[0]
+            unite = Unite.objects.filter(pk = u)[0]
+            
+            #On vérifie si on a un repas à ce moment
+            repas = Repas.objects.filter(date = d, utilisateur = request.user, ordre = o)
+            if repas.count() == 0:
+                repas = Repas()
+            else:
+                repas = repas[0]
+            
+            repas.date = d
+            repas.nb_personne = n
+            repas.ordre = o
+            repas.utilisateur = request.user
+            repas.save()
+            
+            ligneProduit = LigneProduit()
+            ligneProduit.produit = produit
+            ligneProduit.quantite = q
+            ligneProduit.unite = unite
+            ligneProduit.save()
+            
+            repas.produit.add(ligneProduit)
+            repas.save()
+            
+            return redirect('/planning')
+        
+        else:
+            return redirect('/')        
     

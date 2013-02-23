@@ -3,5 +3,67 @@
 
 {% block content %}
     <h1>{{produit.nom}}</h1>
+        <a href="#myModal" data-toggle="modal">Ajouter</a>
+        <!-- Modal -->
+        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            <h3 id="myModalLabel">Ajout d'un repas</h3>
+          </div>
+          <div class="modal-body">
+                <form action="{% url planning.views.ajouter_produit_repas %}" method="post">{%csrf_token %}
+                    {{ form.non_field_errors }}
+
+                    <div class="fieldWrapper">
+                        {{ form.produit.errors }}
+                        <label for="id_recette">Produit :</label>
+                        {{ form.produit }}
+                    </div>
+                    
+                    <div class="fieldWrapper">
+                        {{ form.quantite.errors }}
+                        <label for="id_recette">Quantite :</label>
+                        {{ form.quantite }}
+                    </div>
+                    
+                    <div class="fieldWrapper">
+                        {{ form.unite.errors }}
+                        <label for="id_recette">Unite :</label>
+                        {{ form.unite }}
+                    </div>
+                    
+                    <div class="fieldWrapper">
+                        {{ form.date.errors }}
+                        <label for="id_date">Date :</label>
+                        <div id="datetimepicker" class="input-append date">
+                            {{ form.date }}
+                            <span class="add-on">
+                              <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                              </i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.ordre.errors }}
+                        <label for="id_ordre">Type :</label>
+                        {{ form.ordre }}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.nbPersonne.errors }}
+                        <label for="id_nbPersonne">Nombre de personnes :</label>
+                        {{ form.nbPersonne }}
+                    </div>
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
+                    <input type="submit" class="btn btn-primary" value="Enregistrer" />
+                </form>
+          </div>
+        </div>
+            
+        <script type="text/javascript">
+          $('#datetimepicker').datetimepicker({
+            pickTime: false,
+            format: 'yyyy-MM-dd',
+          });
+        </script>
 
 {% endblock %}

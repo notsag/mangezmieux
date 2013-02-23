@@ -95,5 +95,10 @@ class LigneCommande(models.Model):
     commande = models.ForeignKey(Commande, null = False, blank = False, related_name='lignes')
     
     def __unicode__(self):
-        return self.produit    
+        return self.produit
+    
+#Repas non persiste
+class RepasNonPersiste():
+    date = models.DateField()
+    ordre = models.IntegerField()
 

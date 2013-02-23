@@ -6,10 +6,21 @@ from planning.forms import *
 
 def detail(request, id):
 	recettes = Recette.objects.filter(pk=id, est_valide=True)
-	form = RepasForm()
+	form = RepasRecetteForm()
 	if recettes.count() > 0 :
 		recette = recettes[0]
 		form.fields["recette"].initial = recette.nom
+		ordre = request.session.get('ordre')
+		date = request.session.get('date')
+		
+		form.fields["ordre"].initial = ordre
+		form.fields["date"].initial = date
+		try:
+			del request.session['ordre']
+			del request.session['date']
+		except KeyError:
+			pass
+		
 	return render(request, 'recette/detail.html',locals())
 
 def recherche(request):
