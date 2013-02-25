@@ -91,13 +91,13 @@
     height: 13px;
 }
 
-#footer-right {
-    float: right;
+#footer-text {
+    float: center;
     height: 105px;
     width: 608px;
 }
 
-#footer-right p {
+#footer-text p {
     margin-left: 15px;
     font-weight: bold;
     color: #ffd95e;
@@ -107,6 +107,13 @@
 #ooshop {
     float: left;
     background-image: url("../img/ooshop.gif");
+    width: 331px;
+    height: 93px;
+}
+
+#mangerbouger{
+    float: right;
+    background-image: url("../img/mangerbouger.gif");
     width: 331px;
     height: 93px;
 }
