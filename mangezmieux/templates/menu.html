@@ -12,12 +12,27 @@
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="/recette/categorie"><i class="icon-list"></i> Parcourir</a></li>
-							<li><a href="/recette/recherche"><i class="icon-search"></i> Rechercher</a></li>
+							<li>
+								<a href="/recette/categorie"><i class="icon-list"></i> Parcourir</a>
+							</li>
+							<li>
+								<a href="/recette/recherche"><i class="icon-search"></i> Rechercher</a>
+							</li>
 						</ul>
 					</li>
-                    <li> 
-						<a href="/produit/liste"><i class="icon-barcode"></i> Produits</a> 
+                    <li class="dropdown"> 
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-barcode"></i> Produits 
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="/produit/liste"><i class="icon-list"></i> Parcourir</a>
+							</li>
+							<li>
+								<a href="/produit/recherche"><i class="icon-search"></i> Rechercher</a>
+							</li>
+						</ul>
 					</li>
 					{% if user.is_authenticated %}
                     <li> 
