@@ -107,11 +107,14 @@ def ajouter_repas(request):
 
     o = request.GET.get('o', None)
     d = request.GET.get('d', None)
+    t = request.GET.get('t', None)
 
     request.session['ordre'] = o
     request.session['date'] = d
-    
-    return redirect('/recette/recherche/')
+    if t == "r":
+        return redirect('/recette/recherche/')
+    else:
+        return redirect('/produit/recherche/')
           
 def ajouter_recette_repas(request):
     """

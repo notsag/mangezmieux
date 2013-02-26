@@ -6,10 +6,11 @@ from forms import SearchForm
 from planning.forms import *
 
 def detail(request, id):
-	recettes = Recette.objects.filter(pk=id, est_valide=True)
-	form = RepasRecetteForm()
-	if recettes.count() > 0 :
-		recette = recettes[0]
+	try:
+		recette = Recette.objects.get(pk=id, est_valide=True)
+		form = RepasRecetteForm()
+
+		# recette = recettes[0]
 		form.fields["recette"].initial = recette.nom
 		ordre = request.session.get('ordre')
 		date = request.session.get('date')
@@ -21,7 +22,9 @@ def detail(request, id):
 			del request.session['date']
 		except KeyError:
 			pass
-		
+	except Recette.DoesNotExist:
+		raise Http404
+
 	return render(request, 'recette/detail.html',locals())
 
 def recherche(request):

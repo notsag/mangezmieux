@@ -80,7 +80,7 @@
                         <div class="accordion-inner">
                             {% if col.recette == None or col.produit == None%}
                                 <div class="ligneRepas vide">Aucun repas</div>
-                                <div class="ligneRepas"><a href="ajouter-repas?d={{col.date}}&o={{col.ordre}}" class="btn">Ajouter</a></div>
+                                <div class="ligneRepas"><a href="ajouter-repas?d={{col.date}}&o={{col.ordre}}&t=r" class="btn">Ajouter une recette</a><a href="ajouter-repas?d={{col.date}}&o={{col.ordre}}&t=p" class="btn">Ajouter un produit</a></div>
                             {% else %}
                                 {% for re in col.recette.all %}
                                     <div class="ligneRepas"><a href="/recette/show/{{re.id}}">{{re.nom}}</a><div class="infoRecette">Difficulte : {{re.difficulte}}/5, Temps de preparation : {{re.duree}} min.<button class="btn btn-primary" value="Supprimer">Supprimer</button></div></div>
@@ -89,7 +89,7 @@
                                 {% for pr in col.produit.all %}
                                     <div class="ligneRepas"><a href="/produit/show/{{pr.produit.id}}">{{pr.produit.nom}}</a> ({{pr.quantite}} {{pr.unite.abreviation}}.)</div>
                                 {% endfor %}
-                                <div class="ligneRepas"><a href="ajouter-repas?d={{col.date}}&o={{col.ordre}}" class="btn">Ajouter</a></div>
+                                <div class="ligneRepas"><a href="ajouter-repas?d={{col.date}}&o={{col.ordre}}&t=r" class="btn">Ajouter une recette</a><a href="ajouter-repas?d={{col.date}}&o={{col.ordre}}&t=p" class="btn">Ajouter un produit</a></div>
                             {% endif%}
 
                             
