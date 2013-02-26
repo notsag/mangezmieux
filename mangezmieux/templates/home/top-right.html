@@ -1,6 +1,10 @@
 <div id="home-top-right" class="span4">
 	<p>Commencez votre planning immédiatement</p>
 	<p>
+	{% if user.is_authenticated %}
+		<button class="btn btn-large btn-primary" type="button" onclick="self.location.href='/planning'">Planning</button>
+	{% else %}
 		<button class="btn btn-large btn-primary" type="button" onclick="self.location.href='/inscription'">S'inscrire</button>
+		{% endif %}
 	</p>
 </div>
