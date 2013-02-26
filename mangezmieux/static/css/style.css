@@ -27,7 +27,13 @@
 }
 
 #menu{
-	margin-top: -20px;
+	margin-top: 0px;
+}
+
+#menu .container {
+	margin-right: auto;
+	margin-left: auto;
+	width: 940px;
 }
 
 #menu .navbar {
