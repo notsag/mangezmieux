@@ -10,7 +10,6 @@ def detail(request, id):
 		recette = Recette.objects.get(pk=id, est_valide=True)
 		form = RepasRecetteForm()
 
-		# recette = recettes[0]
 		form.fields["recette"].initial = recette.nom
 		ordre = request.session.get('ordre')
 		date = request.session.get('date')

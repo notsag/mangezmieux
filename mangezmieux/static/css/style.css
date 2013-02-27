@@ -691,3 +691,16 @@
     max-height: 250px;
 	display: block;
 }
+
+#produitPanelGauche {
+	float: left;
+	margin-right: 1.5em;
+	margin-top: 1em;
+	/* background-color: gray; */
+}
+
+#produitPanelGauche img {
+	max-width: 250px;
+    max-height: 250px;
+	display: block;
+}
