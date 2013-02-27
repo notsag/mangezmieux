@@ -3,6 +3,7 @@ from django.shortcuts import render
 from core.models import *
 from planning.forms import *
 from forms import *
+from django.db.models import Q
 
 def liste(request):
     produits = Produit.objects.all()
@@ -59,3 +60,25 @@ def recherche(request):
 	else:
 		form = FormulaireRechercheProduits()
 	return render(request, 'produit/recherche.html', locals())
+
+def type(request, id=-1):
+	if id == -1:
+		types = TypeProduit.objects.filter(parent__isnull=True)
+		return render(request, 'produit/types.html', locals())
+	else:
+		try:
+			type = TypeProduit.objects.get(pk=id)
+			stypes = TypeProduit.objects.filter(parent=type.id)
+			produits = Produit.objects.filter(Q(type_produit=type.id) | Q(stype_produit=type.id))
+			return render(request, 'produit/type_liste.html', locals())
+		except TypeProduit.DoesNotExist:
+			raise Http404
+
+def stype(request, id, sid):
+	try:
+		type = TypeProduit.objects.get(pk=id)
+		stype = TypeProduit.objects.get(pk=sid)
+		produits = Produit.objects.filter(type_produit=type.id,stype_produit=stype.id)
+		return render(request, 'produit/stype_liste.html', locals())
+	except TypeProduit.DoesNotExist:
+		raise Http404

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	<h1>{{type}}s</h1>
+	
+	<p>
+		{% if stypes %}
+		Seulement : 
+		{% endif %}
+		{% for s in stypes %}
+			<a href="{{s.id}}" class="btn">{{s.nom}}</a>
+		{% endfor %}
+	</p>
+	<ul>
+	{% for p in produits %}
+		<li><a href="/produit/detail/{{p.id}}">{{p.nom}}</a></li>
+	{% endfor %}
+	</ul>
+	
+{% endblock %}
