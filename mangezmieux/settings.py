@@ -1,10 +1,14 @@
 #-*- coding: utf-8 -*-
 # Django settings for mangezmieux project.
+import os
+import django
 
 # DEBUG
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 # ADMIN
 ADMINS = (
@@ -43,7 +47,7 @@ STATICFILES_FINDERS = (
 SITE_ID = 1
 
 # Chemins HTML, CSS, JS et Upload
-MEDIA_ROOT = '/var/www/mangezmieux/mangezmieux/upload/'
+MEDIA_ROOT = os.path.join(SITE_ROOT, 'upload/')
 MEDIA_URL = '/upload/'
 STATIC_ROOT = ''
 STATIC_URL = '/static/'

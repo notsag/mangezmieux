@@ -65,7 +65,7 @@ class Recette(models.Model):
     createur = models.ForeignKey(User)
     est_valide = models.BooleanField()
     categorie = models.ManyToManyField(Categorie)
-    image = models.ImageField(upload_to='/recette')
+    image = models.ImageField(upload_to='recette/')
 
     def __unicode__(self):
         return self.nom
