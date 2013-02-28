@@ -1,7 +1,9 @@
 from django.conf.urls.defaults import patterns, include, url
 
 urlpatterns = patterns('',
-    url(r'^liste/?$', 'produit.views.liste'),
-    url(r'^detail/(?P<id>\d*)/$', 'produit.views.detail'),
+    url(r'type/$', 'produit.views.type'),
+	url(r'type/(?P<id>\d*)/$', 'produit.views.type'),
+	url(r'type/(?P<id>\d*)/(?P<sid>\d*)/$', 'produit.views.stype'),
 	url(r'recherche/$', 'produit.views.recherche'),
+	url(r'^detail/(?P<id>\d*)/$', 'produit.views.detail'),
 )

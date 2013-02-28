@@ -3,7 +3,19 @@
 
 {% block content %}
     <h1>{{produit.nom}}</h1>
-        <a href="#myModal" data-toggle="modal">Ajouter</a>
+		<div id="produitDetails">
+			<div id="produitPanelGauche">
+					<p><img src="{{produit.image.url}}" class="img-rounded" alt="Illustration pour : {{produit.nom}}"/></p>
+					<p><a class="btn" href="#myModal" data-toggle="modal">Ajouter à mon planning</a></p>
+			</div>
+			<div id="produitInstructions">
+				<h3>Détails</h3>
+				<ul>
+					<li>Quantité : {{produit.quantite}} {{produit.unite.abreviation}}</li>
+					<li>{{produit.valeur_energetique}} kCal</li>				
+				</ul>
+			</div>
+		</div>	
         <!-- Modal -->
         <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-header">

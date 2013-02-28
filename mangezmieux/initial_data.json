@@ -283,6 +283,7 @@
     }, 
     {
         "fields": {
+            "image": "produit/steak-hache.jpg", 
             "nom": "Steak Hach\u00e9", 
             "quantite": 2, 
             "stype_produit": null, 
@@ -295,6 +296,7 @@
     }, 
     {
         "fields": {
+            "image": "produit/spaghettis.jpg", 
             "nom": "Spaghettis", 
             "quantite": 1000, 
             "stype_produit": null, 
@@ -307,6 +309,7 @@
     }, 
     {
         "fields": {
+            "image": "produit/gruyererape.jpg", 
             "nom": "Gruy\u00e8re rap\u00e9", 
             "quantite": 250, 
             "stype_produit": null, 
@@ -319,6 +322,7 @@
     }, 
     {
         "fields": {
+            "image": "produit/pomme_de_terre1.jpg", 
             "nom": "Pommes de terre", 
             "quantite": 2000, 
             "stype_produit": null, 
@@ -331,6 +335,7 @@
     }, 
     {
         "fields": {
+            "image": "produit/patebrisee.jpg", 
             "nom": "Pate bris\u00e9e", 
             "quantite": 1, 
             "stype_produit": null, 
@@ -343,6 +348,7 @@
     }, 
     {
         "fields": {
+            "image": "produit/patefeuilletee.JPG", 
             "nom": "Pate feuillet\u00e9e", 
             "quantite": 1, 
             "stype_produit": null, 
@@ -355,6 +361,7 @@
     }, 
     {
         "fields": {
+            "image": "produit/oeufs.png", 
             "nom": "Oeufs", 
             "quantite": 6, 
             "stype_produit": null, 
@@ -367,6 +374,7 @@
     }, 
     {
         "fields": {
+            "image": "produit/tomate.jpg", 
             "nom": "Tomates", 
             "quantite": 1000, 
             "stype_produit": null, 
@@ -379,6 +387,7 @@
     }, 
     {
         "fields": {
+            "image": "produit/pomme.jpg", 
             "nom": "Pommes", 
             "quantite": 1000, 
             "stype_produit": null, 
@@ -391,6 +400,7 @@
     }, 
     {
         "fields": {
+            "image": "produit/carottes.jpg", 
             "nom": "Carottes", 
             "quantite": 500, 
             "stype_produit": null, 
@@ -403,6 +413,7 @@
     }, 
     {
         "fields": {
+            "image": "produit/vinaigrette.jpg", 
             "nom": "Vinaigrette", 
             "quantite": 250, 
             "stype_produit": null, 
@@ -1279,6 +1290,149 @@
         }, 
         "model": "authtoken.token", 
         "pk": "eb4a6106cf74d24044bc8f785ecd6c16898526c7"
+    }, 
+    {
+        "fields": {
+            "action_flag": 2, 
+            "action_time": "2013-02-27T23:14:55", 
+            "change_message": "Modifi\u00e9 image.", 
+            "content_type": 11, 
+            "object_id": "1", 
+            "object_repr": "Steak Hach\u00e9", 
+            "user": 5
+        }, 
+        "model": "admin.logentry", 
+        "pk": 73
+    }, 
+    {
+        "fields": {
+            "action_flag": 2, 
+            "action_time": "2013-02-27T23:13:39", 
+            "change_message": "Modifi\u00e9 image.", 
+            "content_type": 11, 
+            "object_id": "2", 
+            "object_repr": "Spaghettis", 
+            "user": 5
+        }, 
+        "model": "admin.logentry", 
+        "pk": 72
+    }, 
+    {
+        "fields": {
+            "action_flag": 2, 
+            "action_time": "2013-02-27T23:12:35", 
+            "change_message": "Modifi\u00e9 image.", 
+            "content_type": 11, 
+            "object_id": "3", 
+            "object_repr": "Gruy\u00e8re rap\u00e9", 
+            "user": 5
+        }, 
+        "model": "admin.logentry", 
+        "pk": 71
+    }, 
+    {
+        "fields": {
+            "action_flag": 2, 
+            "action_time": "2013-02-27T23:11:40", 
+            "change_message": "Modifi\u00e9 image.", 
+            "content_type": 11, 
+            "object_id": "4", 
+            "object_repr": "Pommes de terre", 
+            "user": 5
+        }, 
+        "model": "admin.logentry", 
+        "pk": 70
+    }, 
+    {
+        "fields": {
+            "action_flag": 2, 
+            "action_time": "2013-02-27T23:10:52", 
+            "change_message": "Modifi\u00e9 image.", 
+            "content_type": 11, 
+            "object_id": "5", 
+            "object_repr": "Pate bris\u00e9e", 
+            "user": 5
+        }, 
+        "model": "admin.logentry", 
+        "pk": 69
+    }, 
+    {
+        "fields": {
+            "action_flag": 2, 
+            "action_time": "2013-02-27T23:09:54", 
+            "change_message": "Modifi\u00e9 image.", 
+            "content_type": 11, 
+            "object_id": "6", 
+            "object_repr": "Pate feuillet\u00e9e", 
+            "user": 5
+        }, 
+        "model": "admin.logentry", 
+        "pk": 68
+    }, 
+    {
+        "fields": {
+            "action_flag": 2, 
+            "action_time": "2013-02-27T23:09:13", 
+            "change_message": "Modifi\u00e9 image.", 
+            "content_type": 11, 
+            "object_id": "7", 
+            "object_repr": "Oeufs", 
+            "user": 5
+        }, 
+        "model": "admin.logentry", 
+        "pk": 67
+    }, 
+    {
+        "fields": {
+            "action_flag": 2, 
+            "action_time": "2013-02-27T23:08:32", 
+            "change_message": "Modifi\u00e9 image.", 
+            "content_type": 11, 
+            "object_id": "8", 
+            "object_repr": "Tomates", 
+            "user": 5
+        }, 
+        "model": "admin.logentry", 
+        "pk": 66
+    }, 
+    {
+        "fields": {
+            "action_flag": 2, 
+            "action_time": "2013-02-27T23:08:04", 
+            "change_message": "Modifi\u00e9 image.", 
+            "content_type": 11, 
+            "object_id": "9", 
+            "object_repr": "Pommes", 
+            "user": 5
+        }, 
+        "model": "admin.logentry", 
+        "pk": 65
+    }, 
+    {
+        "fields": {
+            "action_flag": 2, 
+            "action_time": "2013-02-27T23:05:08", 
+            "change_message": "Modifi\u00e9 image.", 
+            "content_type": 11, 
+            "object_id": "10", 
+            "object_repr": "Carottes", 
+            "user": 5
+        }, 
+        "model": "admin.logentry", 
+        "pk": 64
+    }, 
+    {
+        "fields": {
+            "action_flag": 2, 
+            "action_time": "2013-02-27T23:04:55", 
+            "change_message": "Modifi\u00e9 image.", 
+            "content_type": 11, 
+            "object_id": "11", 
+            "object_repr": "Vinaigrette", 
+            "user": 5
+        }, 
+        "model": "admin.logentry", 
+        "pk": 63
     }, 
     {
         "fields": {
