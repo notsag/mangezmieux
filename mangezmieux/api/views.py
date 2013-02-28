@@ -63,7 +63,37 @@ class RecetteList(generics.ListCreateAPIView):
     """
     model = Recette
     serializer_class = RecetteSerializer
-        
+
+    def get_queryset(self):
+        #récupération des paramètres
+        nom = self.request.QUERY_PARAMS.get('nom', None)
+        duree = self.request.QUERY_PARAMS.get('duree', None)
+        difficulteRecup = self.request.QUERY_PARAMS.get('difficulte', None)
+        categorieRecup = self.request.QUERY_PARAMS.get('categorie', None)
+
+        # application des critères
+        recettes = Recette.objects.filter(est_valide=True)
+
+        # si le nom est renseigné
+        if nom != '':
+            recettes = recettes.filter(nom__icontains=nom)
+
+        # si la durée est renseignée
+        if duree > '0':
+            if duree <= '90':
+                recettes = recettes.filter(duree__lte=duree)
+            else:
+                recettes = recettes.filter(duree__gte=duree)
+
+        # si la difficulté est renseignée
+        if difficulteRecup != '-1':
+            recettes = recettes.filter(difficulte=difficulteRecup)
+
+        if categorieRecup != '-1':
+            recettes = recettes.filter(categorie=categorieRecup)
+
+        return recettes
+
 class RecetteDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     API endpoint that represents recette
