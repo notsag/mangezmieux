@@ -9,6 +9,12 @@ Dépendances : django (>= 1.4), djangorestframework, markdown, pyyaml django-fil
 Architecture : Django-app
 =======================================================================================
 mangezmieux/
+  |- api/            # module API
+  |  |- models.py
+  |  |- serializers.py #définition de la sérialisation des objets du core
+  |  |- tests.py
+  |  |- urls.py
+  |  |- views.py  
   |- auth/           #module d'authentification
   |  |- forms.py     #formulaire de création de compte
   |  |- models.py    #classe Utilisateur dérivée du module django.contrib.auth
