@@ -49,7 +49,33 @@ class ProduitList(generics.ListCreateAPIView):
     """
     model = Produit
     serializer_class = ProduitSerializer
+
+    def get_queryset(self):
+        # récupération des paramètres
+        nom = self.request.QUERY_PARAMS.get('nom', None)
+        typeP = self.request.QUERY_PARAMS.get('typeP', None)
+        valeur = self.request.QUERY_PARAMS.get('valeur', None)
         
+        # application des critères
+        produits = Produit.objects.all()
+
+        # si le nom est renseigné
+        if nom != '':
+            produits = produits.filter(nom__icontains=nom)
+
+        # si le type est renseigné
+        if typeP != '-1':
+            produits = produits.filter(type_produit=typeP)
+
+        # si la valeur énergétique est renseignée
+        if valeur != '-1':
+            if valeur <= '500':
+                produits = produits.filter(valeur_energetique__lte=valeur)
+            else:
+                produits = produits.filter(valeur_energetique__gte=valeur)
+
+        return produits
+
 class ProduitDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     API endpoint that represents product
