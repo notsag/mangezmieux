@@ -83,11 +83,11 @@
                                 <div class="ligneRepas"><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r" class="btn">Ajouter une recette</a><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p" class="btn">Ajouter un produit</a></div>
                             {% else %}
                                 {% for re in col.recette.all %}
-                                    <div class="ligneRepas"><a href="/recette/show/{{re.id}}">{{re.nom}}</a><div class="infoRecette">Difficulte : {{re.difficulte}}/5, Temps de preparation : {{re.duree}} min.<button class="btn btn-primary" value="Supprimer">Supprimer</button></div></div>
+                                    <div class="ligneRepas"><a href="/recette/detail/{{re.id}}">{{re.nom}}</a><div class="infoRecette">Difficulte : {{re.difficulte}}/5, Temps de preparation : {{re.duree}} min.<button class="btn btn-primary" value="Supprimer">Supprimer</button></div></div>
                                 {% endfor %}
         
                                 {% for pr in col.produit.all %}
-                                    <div class="ligneRepas"><a href="/produit/show/{{pr.produit.id}}">{{pr.produit.nom}}</a> ({{pr.quantite}} {{pr.unite.abreviation}}.)</div>
+                                    <div class="ligneRepas"><a href="/produit/detail/{{pr.produit.id}}">{{pr.produit.nom}}</a> ({{pr.quantite}} {{pr.unite.abreviation}}.)</div>
                                 {% endfor %}
                                 <div class="ligneRepas"><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r" class="btn">Ajouter une recette</a><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p" class="btn">Ajouter un produit</a></div>
                             {% endif%}

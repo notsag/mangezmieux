@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*-
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from core.models import *
 from planning.forms import *
 from forms import *
@@ -10,25 +10,67 @@ def liste(request):
     return render(request, 'produit/liste.html', locals())
 
 def detail(request, id):
+	
+    """
+       Ajout d'un produit dans un repas dans la base
+    """
+    try:
+	produit = Produit.objects.get(pk=id)
+    except Recette.DoesNotExist:
+	raise Http404
+    
+    if request.method == 'POST':
+        form = RepasProduitForm(data=request.POST, files=request.FILES) #On reprend les données
+        if form.is_valid():
+            p = form.cleaned_data['produit']
+            q = form.cleaned_data['quantite']
+            u = form.cleaned_data['unite']
+            o = form.cleaned_data['ordre']
+            d = form.cleaned_data['date']
+            n = form.cleaned_data['nbPersonne']
+            
+            produit = Produit.objects.filter(nom = p)[0]
+            unite = Unite.objects.filter(pk = u)[0]
+            
+            #On vérifie si on a un repas à ce moment
+            repas = Repas.objects.filter(date = d, utilisateur = request.user, ordre = o)
+            if repas.count() == 0:
+                repas = Repas()
+            else:
+                repas = repas[0]
+            
+            repas.date = d
+            repas.nb_personne = n
+            repas.ordre = o
+            repas.utilisateur = request.user
+            repas.save()
+            
+            ligneProduit = LigneProduit()
+            ligneProduit.produit = produit
+            ligneProduit.quantite = q
+            ligneProduit.unite = unite
+            ligneProduit.save()
+            
+            repas.produit.add(ligneProduit)
+            repas.save()
+            
+            return redirect('/planning')
+    else:
+	form = RepasProduitForm()
+	
+	form.fields["produit"].initial = produit.nom
+	ordre = request.session.get('ordre')
+	date = request.session.get('date')
+	
+	form.fields["ordre"].initial = ordre
+	form.fields["date"].initial = date
 	try:
-		produit = Produit.objects.get(pk=id)
-		form = RepasProduitForm()
-		
-		form.fields["produit"].initial = produit.nom
-		ordre = request.session.get('ordre')
-		date = request.session.get('date')
-		
-		form.fields["ordre"].initial = ordre
-		form.fields["date"].initial = date
-		try:
-			del request.session['ordre']
-			del request.session['date']
-		except KeyError:
-			pass
-	except Produit.DoesNotExist:
-		raise Http404
-		
-	return render(request, 'produit/detail.html', locals())
+		del request.session['ordre']
+		del request.session['date']
+	except KeyError:
+		pass
+    
+    return render(request, 'produit/detail.html', locals())
 
 def recherche(request):
 	"""

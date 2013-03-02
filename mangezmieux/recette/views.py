@@ -6,10 +6,43 @@ from forms import SearchForm
 from planning.forms import *
 
 def detail(request, id):
+	"""
+		Ajout d'une recette dans un repas dans la base
+	"""
 	try:
 		recette = Recette.objects.get(pk=id, est_valide=True)
+	except Recette.DoesNotExist:
+		raise Http404
+	
+	if request.method == 'POST':
+	    form = RepasRecetteForm(data=request.POST, files=request.FILES) #On reprend les données
+	    if form.is_valid():
+		r = form.cleaned_data['recette']
+		o = form.cleaned_data['ordre']
+		d = form.cleaned_data['date']
+		n = form.cleaned_data['nbPersonne']
+		
+		recette = Recette.objects.filter(nom = r)[0]
+		
+		#On vérifie si on a un repas à ce moment
+		repas = Repas.objects.filter(date = d, utilisateur = request.user, ordre = o)
+		if repas.count() == 0:
+		    repas = Repas()
+		else:
+		    repas = repas[0]
+		
+		repas.date = d
+		repas.nb_personne = n
+		repas.ordre = o
+		repas.utilisateur = request.user
+		repas.save()
+		repas.recette.add(recette)
+		repas.save()
+		
+		return redirect('/planning')
+	else:
 		form = RepasRecetteForm()
-
+		
 		form.fields["recette"].initial = recette.nom
 		ordre = request.session.get('ordre')
 		date = request.session.get('date')
@@ -21,9 +54,11 @@ def detail(request, id):
 			del request.session['date']
 		except KeyError:
 			pass
+	
+	try:
+		recette = Recette.objects.get(pk=id, est_valide=True)
 	except Recette.DoesNotExist:
 		raise Http404
-
 	return render(request, 'recette/detail.html',locals())
 
 def recherche(request):
