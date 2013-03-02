@@ -33,7 +33,7 @@ class ProfilUtilisateur(models.Model):
 			Token.objects.create(user=instance)
 
 
-	post_save.connect(create_profil_utilisateur, sender=User)
-	post_save.connect(create_auth_token, sender=User)
+	#post_save.connect(create_profil_utilisateur, sender=User)
+	#post_save.connect(create_auth_token, sender=User)
 
 	

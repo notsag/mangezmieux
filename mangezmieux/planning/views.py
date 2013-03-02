@@ -147,8 +147,7 @@ def ajouter_recette_repas(request):
             
             return redirect('/planning')
         
-        else:
-            return redirect('/')
+    return render(request, 'recette/detail.html', locals())
         
 def ajouter_produit_repas(request):
     """
@@ -190,7 +189,6 @@ def ajouter_produit_repas(request):
             repas.save()
             
             return redirect('/planning')
-        
-        else:
-            return redirect('/')        
+            
+    return render(request, 'produit/detail.html', locals())
     
