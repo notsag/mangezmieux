@@ -23,3 +23,13 @@ def api_root(request, format=None):
                 'ligneCommandes': reverse('lignecommande-list', request=request),
 	})
 
+@api_view(['POST'])
+def ajouter_repas(request):
+	data = JSONParser().parse(request)
+	repas = RepasSerializer(data=data)
+	if repas.is_valid():
+	    repas.save()
+	    return JSONResponse(repas.data, status=201)
+	else:
+	    return JSONResponse(repas.errors, status=400)
+

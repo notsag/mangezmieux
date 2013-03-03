@@ -13,7 +13,9 @@ urlpatterns = patterns('',
 	url(r'^$', 'core.api.api_root'),
 
 	url(r'^obtenirToken/$', 'rest_framework.authtoken.views.obtain_auth_token'),
-
+    
+    url(r'^repas/ajouter-repas/$', 'core.api.ajouter_repas'),
+    
     url(r'^unites/$', UniteList.as_view(), name='unite-list'),
     url(r'^unites/(?P<pk>\d+)/$', UniteDetail.as_view(), name='unite-detail'),
     
