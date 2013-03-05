@@ -5,4 +5,5 @@ urlpatterns = patterns('',
 	url(r'^categorie/$', 'recette.views.categorie'),
 	url(r'^categorie/(?P<id>\d*)/$', 'recette.views.categorie'),
 	url(r'^detail/(?P<id>\d*)/$', 'recette.views.detail'),
+        url(r'^suggestion/$', 'recette.views.suggestion'),
 )

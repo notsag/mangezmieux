@@ -100,6 +100,7 @@ def home(request):
         
     return render(request, 'planning/home2.html', locals())
 
+@login_required(login_url='/connexion')
 def ajouter_repas(request):
     """
         Ajout d'un repas

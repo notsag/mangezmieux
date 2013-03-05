@@ -4,6 +4,7 @@ from django.http import Http404
 from core.models import *
 from forms import SearchForm
 from planning.forms import *
+from django.contrib.auth.decorators import login_required
 
 def detail(request, id):
 	"""
@@ -105,3 +106,8 @@ def categorie(request, id=-1):
 			return render(request, 'recette/categorie_liste.html', locals())
 		except Categorie.DoesNotExist:
 			raise Http404
+		
+@login_required(login_url='/connexion')
+def suggestion(request):
+	
+	return render(request, 'recette/suggestion.html', locals())
