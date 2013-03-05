@@ -2,6 +2,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+#Tag des recettes,goûts
+class Tag(models.Model):
+    texte = models.CharField(max_length=50, unique=True)
+
+    def __unicode__(self):
+        return self.texte
+    
 #Unité de mesure pour les quantités
 class Unite(models.Model):
     nom = models.CharField(max_length=25, unique=True)
@@ -66,6 +73,7 @@ class Recette(models.Model):
     est_valide = models.BooleanField()
     categorie = models.ManyToManyField(Categorie)
     image = models.ImageField(upload_to='recette/')
+    tags = models.ManyToManyField(Tag, null = True, blank = True)
 
     def __unicode__(self):
         return self.nom
@@ -101,4 +109,6 @@ class LigneCommande(models.Model):
 class RepasNonPersiste():
     date = models.DateField()
     ordre = models.IntegerField()
+    
+
 
