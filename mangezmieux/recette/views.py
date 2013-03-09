@@ -5,6 +5,7 @@ from core.models import *
 from forms import SearchForm
 from planning.forms import *
 from django.contrib.auth.decorators import login_required
+from auth.models import *
 
 def detail(request, id):
 	"""
@@ -109,5 +110,40 @@ def categorie(request, id=-1):
 		
 @login_required(login_url='/connexion')
 def suggestion(request):
+	'''
+		Suggestion de recettes par rapport aux gouts
+	'''
+	#Recuperation du user, de ses gouts, de ses repas
+	u = request.user
+	profil = ProfilUtilisateur.objects.get(user = u)
+	
+	gouts = profil.gouts
+	repass = Repas.objects.filter(utilisateur = profil)
+	
+	#On fait un tableau d'occurence contenant l'occurence des recettes utilisées
+	pref ={}
+	for repas in repass :
+		for recette in repas.recette.all():
+			if recette.id in pref:
+				pref[recette.id] = pref[recette.id] + 1
+			else:
+				pref[recette.id] = 0
+	
+	#On parcourt notre liste de gout et on récupere les recettes ayant ce goût
+	for gout in gouts.all():
+		recettes = Recette.objects.filter(tags__in=[gout])
+		for recette in recettes:
+			if recette.id in pref:
+				pref[recette.id] = pref[recette.id] + 1
+			else:
+				pref[recette.id] = 0
+	
+	#On fait une liste avec les recettes à proposer
+	recettesProp = []
+	
+	for key in pref.keys():
+		if pref[key] == 0:
+			recette = Recette.objects.get(id = key)
+			recettesProp.append(recette)
 	
 	return render(request, 'recette/suggestion.html', locals())

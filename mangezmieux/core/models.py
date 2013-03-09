@@ -33,7 +33,7 @@ class Produit(models.Model):
     quantite = models.IntegerField()
     unite = models.ForeignKey(Unite)
     valeur_energetique = models.IntegerField()
-    image = models.ImageField(upload_to='produit/')
+    image = models.ImageField(upload_to='produit/', null = True, blank = True)
 
     def __unicode__(self):
         return self.nom
@@ -72,7 +72,7 @@ class Recette(models.Model):
     createur = models.ForeignKey(User)
     est_valide = models.BooleanField()
     categorie = models.ManyToManyField(Categorie)
-    image = models.ImageField(upload_to='recette/')
+    image = models.ImageField(upload_to='recette/', null = True, blank = True)
     tags = models.ManyToManyField(Tag, null = True, blank = True)
 
     def __unicode__(self):
