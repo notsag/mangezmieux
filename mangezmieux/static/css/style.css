@@ -215,7 +215,8 @@ html, body {
 #home-bottom {
     border-radius: 30px 30px 30px 30px;
     padding-left: 10px;
-    height: 600px;
+	padding-bottom: 30px;
+    height: 100%;
     margin-left: 0px;
     -moz-box-shadow: 4px 4px 30px 0px #656565;
     -webkit-box-shadow: 4px 4px 30px 0px #656565;
@@ -274,13 +275,15 @@ html, body {
 .titleCol p {
     color: white;
     width: 228px;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
     padding-top: 9px;
     font-family: Calibri, Verdana, Arial, 'sans serif';
-    font-weight: bold;
-    font-size: 22px;
+    text-shadow: 0px 2px 3px #666;
+	font-weight: bold;
+    font-size: 20px;
     line-height: 25px;
+
 }
 
 .conCol {
@@ -342,6 +345,7 @@ html, body {
     float: left;
     margin-left: 10px;
     width: 598px;
+	height: 40px;
     /*
      * THEME 1*/
     background-color: #ffde8d; 
@@ -350,7 +354,6 @@ html, body {
      * THEME 2 
     background-color: #cc7841;*/
     
-    height: 30px;
     margin-top: 15px;
 }
 
@@ -359,13 +362,15 @@ html, body {
     font-weight: bold;
     font-family: Calibri, Verdana, Arial, 'sans serif';
     margin-left: 10px;
-    font-size: 18px;
-    padding-top: 5px;
+    font-size: 20px;
+    padding-top: 9px;
+	text-shadow: 0px 2px 3px #666;
+	line-height: 25px;
 }
 
 .conLig {
     width: 598px;
-    height: 88px;
+    height: 78px;
     /*
      * THEME 1*/
     background-color: #fff8ad; 
