@@ -1,6 +1,12 @@
-#content {
-    padding-top: 20px;
-    min-height: 500px;
+html, body {
+	height: 100%;
+}
+
+#wrap {
+	height: 100%;
+	min-height: 100%;
+	height: auto !important;
+	padding-bottom: -120px;
     /*
      *THEME 1
      */
@@ -24,6 +30,12 @@
     background: linear-gradient(to bottom,  rgba(255,246,139,1) 0%,rgba(255,217,94,1) 100%); 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff68b', endColorstr='#ffd95e',GradientType=0 );*/
 
+}
+
+#content {
+    padding-top: 20px;
+	padding-bottom: 120px;
+	margin-bottom: -120px;
 }
 
 #menu{
@@ -63,7 +75,7 @@
 #footer {
     
     bottom: 0;
-    width: 100%;
+	width: 100%;
     height: 120px;
     /*
      * THEME1 */

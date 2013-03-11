@@ -2,14 +2,16 @@
 <html lang="fr">
 	{% include "head.html" %}
     <body>
-	{% include "header.html" %}
-	{% include "menu.html" %}
-        <div id="content">
-            <div class="container">
-                {% block content %}
-				{% endblock %}
-            </div>
-        </div>
+		<div id="wrap">
+			{% include "header.html" %}
+			{% include "menu.html" %}
+			<div id="content">
+				<div class="container">
+					{% block content %}
+					{% endblock %}
+				</div>
+			</div>
+		</div>
         {% include "footer.html" %}
     </body>
 </html>
