@@ -191,4 +191,18 @@ def ajouter_produit_repas(request):
             return redirect('/planning')
             
     return render(request, 'produit/detail.html', locals())
-    
+
+def retirer_recette_repas(request):
+    """Fonction permettant de retirer une recette d'un repas du planning"""
+    d = request.GET.get('d', None)
+    o = request.GET.get('o', None)
+    t = request.GET.get('t', None)
+    r = request.GET.get('r', None)
+
+    repas = Repas.objects.filter(date = d, utilisateur = request.user, ordre = o)[0]
+    recette = Recette.objects.filter(pk = r)[0]
+
+    repas.recette.remove(recette)
+    repas.save()
+
+    return redirect('/planning')

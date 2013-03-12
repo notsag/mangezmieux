@@ -83,7 +83,7 @@
                                 <div class="ligneRepas"><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r" class="btn">Ajouter une recette</a><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p" class="btn">Ajouter un produit</a></div>
                             {% else %}
                                 {% for re in col.recette.all %}
-                                    <div class="ligneRepas"><a href="/recette/detail/{{re.id}}">{{re.nom}}</a><div class="infoRecette">Difficulte : {{re.difficulte}}/5, Temps de preparation : {{re.duree}} min.<button class="btn btn-primary" value="Supprimer">Supprimer</button></div></div>
+                                    <div class="ligneRepas"><a href="/recette/detail/{{re.id}}">{{re.nom}}</a><div class="infoRecette">Difficulte : {{re.difficulte}}/5, Temps de preparation : {{re.duree}} min.<a href="retirer-recette/?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&r={{re.id}}"><button class="btn btn-primary" value="Supprimer">Supprimer</button></a></div></div>
                                 {% endfor %}
         
                                 {% for pr in col.produit.all %}
