@@ -18,6 +18,11 @@
 							<li>
 								<a href="/recette/recherche"><i class="icon-search"></i> Rechercher</a>
 							</li>
+							{% if user.is_authenticated %}
+							<li>
+								<a href="/recette/suggestion"><i class="icon-star"></i> Suggestion</a>
+							</li>
+							{% endif %}
 						</ul>
 					</li>
                     <li class="dropdown"> 

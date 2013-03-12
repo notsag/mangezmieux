@@ -1,6 +1,7 @@
 #-*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
+from core.models import *
 from django.db.models.signals import post_save
 from rest_framework.authtoken.models import Token
 
@@ -13,7 +14,8 @@ class ProfilUtilisateur(models.Model):
 	AUTH_PROFILE_MODULE = 'auth.ProfilUtilisateur'
 	"""
 	user = models.OneToOneField(User)
-
+	gouts = models.ManyToManyField(Tag, null = True, blank = True)
+	
 	def __unicode__(self):
 			return unicode(self.user)
 

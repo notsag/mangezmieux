@@ -2,6 +2,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+#Tag des recettes,goûts
+class Tag(models.Model):
+    texte = models.CharField(max_length=50, unique=True)
+
+    def __unicode__(self):
+        return self.texte
+    
 #Unité de mesure pour les quantités
 class Unite(models.Model):
     nom = models.CharField(max_length=25, unique=True)
@@ -26,7 +33,7 @@ class Produit(models.Model):
     quantite = models.IntegerField()
     unite = models.ForeignKey(Unite)
     valeur_energetique = models.IntegerField()
-    image = models.ImageField(upload_to='produit/')
+    image = models.ImageField(upload_to='produit/', null = True, blank = True)
 
     def __unicode__(self):
         return self.nom
@@ -65,7 +72,8 @@ class Recette(models.Model):
     createur = models.ForeignKey(User)
     est_valide = models.BooleanField()
     categorie = models.ManyToManyField(Categorie)
-    image = models.ImageField(upload_to='recette/')
+    image = models.ImageField(upload_to='recette/', null = True, blank = True)
+    tags = models.ManyToManyField(Tag, null = True, blank = True)
 
     def __unicode__(self):
         return self.nom
@@ -101,4 +109,6 @@ class LigneCommande(models.Model):
 class RepasNonPersiste():
     date = models.DateField()
     ordre = models.IntegerField()
+    
+
 
