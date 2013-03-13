@@ -60,15 +60,15 @@ class ProduitList(generics.ListCreateAPIView):
         produits = Produit.objects.all()
 
         # si le nom est renseigné
-        if nom != '':
+        if nom != '' and nom != None:
             produits = produits.filter(nom__icontains=nom)
 
         # si le type est renseigné
-        if typeP != '-1':
+        if typeP != '' and typeP != None:
             produits = produits.filter(type_produit=typeP)
 
         # si la valeur énergétique est renseignée
-        if valeur != '-1':
+        if valeur != '' and typeP != None:
             if valeur <= '500':
                 produits = produits.filter(valeur_energetique__lte=valeur)
             else:

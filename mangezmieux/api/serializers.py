@@ -17,7 +17,7 @@ class UniteSerializer(serializers.ModelSerializer):
 class TypeProduitSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = TypeProduit
-		fields = ('nom',)
+		fields = ('id', 'nom',)
 		
 class ProduitSerializer(serializers.ModelSerializer):
 	type_produit = TypeProduitSerializer()
@@ -25,7 +25,7 @@ class ProduitSerializer(serializers.ModelSerializer):
 	unite = UniteSerializer()
 	class Meta:
 		model = Produit
-		fields = ('nom', 'quantite', 'valeur_energetique', 'type_produit', 'stype_produit', 'unite')
+		fields = ('id','nom', 'quantite', 'valeur_energetique', 'type_produit', 'stype_produit', 'unite','image')
 		
 class LigneRecetteSerializer(serializers.ModelSerializer):
 	produit = ProduitSerializer()
