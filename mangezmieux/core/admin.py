@@ -21,6 +21,7 @@ admin.site.register(Categorie)
 admin.site.register(Repas)
 admin.site.register(LigneProduit)
 admin.site.register(Tag)
+admin.site.register(RecetteFavorite)
 
 try:
     admin.site.unregister(User)

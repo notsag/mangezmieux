@@ -110,5 +110,10 @@ class RepasNonPersiste():
     date = models.DateField()
     ordre = models.IntegerField()
     
+#Recette favorite
+class RecetteFavorite(models.Model):
+    recette = models.ForeignKey(Recette, null = False, blank = False)
+    utilisateur = models.ForeignKey(User, null = False, blank = False)
 
-
+    def __unicode__(self):
+        return u'%s %s' % (self.recette.nom, unicode(self.utilisateur))

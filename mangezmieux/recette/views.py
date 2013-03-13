@@ -107,6 +107,21 @@ def categorie(request, id=-1):
 			return render(request, 'recette/categorie_liste.html', locals())
 		except Categorie.DoesNotExist:
 			raise Http404
+
+def ajout_favoris(request, id):
+    user = request.user
+    recette = Recette.objects.filter(pk = id)[0]
+
+    favoris = RecetteFavorite.objects.filter(utilisateur = user, recette = recette)
+
+    if favoris.count() == 0:
+         recetteFavorite = RecetteFavorite()
+         
+         recetteFavorite.recette = recette
+         recetteFavorite.utilisateur = user
+         recetteFavorite.save()
+
+    return render(request, 'recette/detail.html', locals())
 		
 @login_required(login_url='/connexion')
 def suggestion(request):
