@@ -44,7 +44,7 @@ class LigneProduitSerializer(serializers.ModelSerializer):
 class CategorieSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Categorie
-		fields = ('nom',)
+		fields = ('id','nom',)
 		
 class CommandeSerializer(serializers.ModelSerializer):
 	client = UserSerializer()
@@ -64,7 +64,7 @@ class RecetteSerializer(serializers.ModelSerializer):
 	categorie = CategorieSerializer()
 	class Meta:
 		model = Recette
-		fields = ('nom', 'lignes', 'instructions', 'duree', 'difficulte', 'createur', 'est_valide', 'categorie')
+		fields = ('id','nom', 'lignes', 'instructions', 'duree', 'difficulte', 'createur', 'est_valide', 'categorie','image')
 
 class RepasSerializer(serializers.ModelSerializer):
 	utilisateur = UserSerializer()

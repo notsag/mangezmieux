@@ -7,6 +7,7 @@ import time
 from dateutil import parser
 from planning.forms import *
 from django.contrib.auth.decorators import login_required
+from auth.models import *
 
 @login_required(login_url='/connexion')
 def home(request):
@@ -97,7 +98,11 @@ def home(request):
     
     #for repas in repass :
     #    planning[repas.date.strftime('%A')][repas.ordre] = repas
-        
+    
+    
+    #On recupere les suggestion de recettes
+    recettesProp = suggestion(request.user)
+    
     return render(request, 'planning/home2.html', locals())
 
 @login_required(login_url='/connexion')
@@ -207,3 +212,59 @@ def retirer_recette_repas(request):
     repas.save()
 
     return redirect('/planning')
+    
+def suggestion(user):
+	'''
+		Suggestion de recettes par rapport aux gouts
+	'''
+        
+        dateC = date.today()
+        debut = dateC + timedelta(days=-15)
+        fin = dateC + timedelta(days=15)
+        
+	#Recuperation du user, de ses gouts, de ses repas
+	u = user
+	profil = ProfilUtilisateur.objects.get(user = u)
+	
+	gouts = profil.gouts
+	repass = Repas.objects.filter(date__gte = debut, date__lte = fin, utilisateur = profil)
+	
+	#On fait un tableau d'occurence contenant l'occurence des recettes utilisées
+	pref ={}
+	for repas in repass :
+		for recette in repas.recette.all():
+			if recette.id in pref:
+				pref[recette.id] = pref[recette.id] + 1
+			else:
+				pref[recette.id] = 0
+	
+	#On parcourt notre liste de gout et on récupere les recettes ayant ce goût
+	chaines = ''
+	for gout in gouts.all():
+		chaines += gout.texte + " "
+		
+	recettes = Recette.objects.search(chaines).order_by("-relevance") 
+	for recette in recettes:
+		if recette.id in pref:
+			pref[recette.id] = pref[recette.id] + 1
+		else:
+			pref[recette.id] = 0
+	
+        #On recupere ses recettes favorites
+        recettesFav = RecetteFavorite.objects.filter(utilisateur = profil)
+        for recetteFav in recettesFav:
+		if recetteFav.id in pref:
+			pref[recetteFav.id] = pref[recetteFav.id] + 1
+		else:
+			pref[recetteFav.id] = 0
+        
+	#On fait une liste avec les recettes à proposer
+	recettesProp = []
+	
+	for key in pref.keys():
+		if pref[key] == 0:
+			if len(recettesProp) <= 5:
+				recette = Recette.objects.get(id = key)
+				recettesProp.append(recette)
+	
+	return recettesProp

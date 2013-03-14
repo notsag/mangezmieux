@@ -1,7 +1,25 @@
 #-*- coding: utf-8 -*-
 from serializers import *
 from core.api import *
+import time
+from dateutil import parser
+from datetime import *
+from auth.models import *
+from core.api import *
+from planning.views import *
 
+class RecetteSuggestion(generics.ListCreateAPIView):
+    """
+    API endpoint that represents a list of recettes.
+    """
+    model = Recette
+    serializer_class = RecetteSerializer
+    
+    def get_queryset(self):
+	userId = self.request.QUERY_PARAMS.get('u', None)
+	user = User.objects.get(id = userId)
+        return suggestion(user)
+	    
 class UserList(generics.ListCreateAPIView):
 	"""
 	Point de l'API pour lister les utilisateurs
@@ -101,21 +119,21 @@ class RecetteList(generics.ListCreateAPIView):
         recettes = Recette.objects.filter(est_valide=True)
 
         # si le nom est renseigné
-        if nom != '':
+        if nom != '' and nom != None:
             recettes = recettes.filter(nom__icontains=nom)
 
         # si la durée est renseignée
-        if duree > '0':
+        if duree != '' and duree != None and duree > '0':
             if duree <= '90':
                 recettes = recettes.filter(duree__lte=duree)
             else:
                 recettes = recettes.filter(duree__gte=duree)
 
         # si la difficulté est renseignée
-        if difficulteRecup != '-1':
+        if difficulteRecup != '' and difficulteRecup != None:
             recettes = recettes.filter(difficulte=difficulteRecup)
 
-        if categorieRecup != '-1':
+        if categorieRecup != '' and categorieRecup != None:
             recettes = recettes.filter(categorie=categorieRecup)
 
         return recettes
