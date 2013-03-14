@@ -60,11 +60,12 @@ def detail(request, id):
 	try:
 		recette = Recette.objects.get(pk=id, est_valide=True)
 		
-		user = request.user
-		recetteFavorite = RecetteFavorite.objects.filter(utilisateur = user, recette = recette)
-		estFavorite = False
-		if recetteFavorite.count() != 0:
-			estFavorite = True
+		if request.user.is_authenticated():
+			user = request.user
+			recetteFavorite = RecetteFavorite.objects.filter(utilisateur = user, recette = recette)
+			estFavorite = False
+			if recetteFavorite.count() != 0:
+				estFavorite = True
 
 	except Recette.DoesNotExist:
 		raise Http404
