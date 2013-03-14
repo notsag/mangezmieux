@@ -9,9 +9,9 @@
 					<p><a class="btn" href="#myModal" data-toggle="modal">Ajouter à mon planning</a></p>
 							{% if user.is_authenticated %}
 								{% if estFavorite %}
-										<p><a href="/recette/defavoriser/{{recette.pk}}/" class="btn">Retirer des favoris<i class="icon-star"></i></a></p>
+										<p><a href="/recette/defavoriser/{{recette.pk}}/" class="btn btn-info"><img src="{% static 'img/etoile-pleine.png' %}" alt="étoile pleine" title="Retirer des favoris" width="25px" height="25px" class="img-rounded"/></a></p>
 								{% else %}
-										<p><a href="/recette/favoriser/{{recette.pk}}/" class="btn">Ajouter aux favoris<i class="icon-star"></i></a></p>
+										<p><a href="/recette/favoriser/{{recette.pk}}/" class="btn btn-info"><img src="{% static 'img/etoile-vide.png' %}" alt="étoile vide" title="Ajouter aux favoris" width="25px" height="25px" class="img-rounded"/></a></p>
 								{% endif %}
 							{% endif %}
 			</div>
