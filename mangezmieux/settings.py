@@ -27,9 +27,13 @@ DATABASES = {
         'USER': 'root',            
         'PASSWORD': 'root',        
         'HOST': 'localhost',       
-        'PORT': '',                
+        'PORT': '',
+	'OPTIONS' : {
+	    "init_command" : "SET storage_engine=MyISAM",
+	}
     }
 }
+
 
 # Internationalisation
 TIME_ZONE = 'Europe/Paris'
@@ -92,6 +96,7 @@ INSTALLED_APPS = (
     'planning',
     'auth',
     'api',
+    'mysqlfulltextsearch'
 )
 
 

@@ -1,7 +1,25 @@
 #-*- coding: utf-8 -*-
 from serializers import *
 from core.api import *
+import time
+from dateutil import parser
+from datetime import *
+from auth.models import *
+from core.api import *
+from planning.views import *
 
+class RecetteSuggestion(generics.ListCreateAPIView):
+    """
+    API endpoint that represents a list of recettes.
+    """
+    model = Recette
+    serializer_class = RecetteSerializer
+    
+    def get_queryset(self):
+	userId = self.request.QUERY_PARAMS.get('u', None)
+	user = User.objects.get(id = userId)
+        return suggestion(user)
+	    
 class UserList(generics.ListCreateAPIView):
 	"""
 	Point de l'API pour lister les utilisateurs

@@ -1,6 +1,7 @@
 #-*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
+from mysqlfulltextsearch.search_manager import SearchManager
 
 #Tag des recettes,goûts
 class Tag(models.Model):
@@ -73,8 +74,10 @@ class Recette(models.Model):
     est_valide = models.BooleanField()
     categorie = models.ManyToManyField(Categorie)
     image = models.ImageField(upload_to='recette/', null = True, blank = True)
-    tags = models.ManyToManyField(Tag, null = True, blank = True)
-
+    #tags = models.ManyToManyField(Tag, null = True, blank = True)
+    tags = models.CharField(max_length=500, null = True, blank = True)
+    objects = SearchManager()
+    
     def __unicode__(self):
         return self.nom
 

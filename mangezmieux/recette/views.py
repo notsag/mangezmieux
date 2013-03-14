@@ -145,20 +145,32 @@ def suggestion(request):
 				pref[recette.id] = 0
 	
 	#On parcourt notre liste de gout et on récupere les recettes ayant ce goût
+	chaines = ''
 	for gout in gouts.all():
-		recettes = Recette.objects.filter(tags__in=[gout])
-		for recette in recettes:
-			if recette.id in pref:
-				pref[recette.id] = pref[recette.id] + 1
-			else:
-				pref[recette.id] = 0
+		chaines += gout.texte + " "
+		
+	recettes = Recette.objects.search(chaines).order_by("-relevance") 
+	for recette in recettes:
+		if recette.id in pref:
+			pref[recette.id] = pref[recette.id] + 1
+		else:
+			pref[recette.id] = 0
 	
+	#On recupere ses recettes favorites
+        recettesFav = RecetteFavorite.objects.filter(utilisateur = profil)
+        for recetteFav in recettesFav:
+		if recetteFav.id in pref:
+			pref[recetteFav.id] = pref[recetteFav.id] + 1
+		else:
+			pref[recetteFav.id] = 0
+
 	#On fait une liste avec les recettes à proposer
 	recettesProp = []
 	
 	for key in pref.keys():
 		if pref[key] == 0:
-			recette = Recette.objects.get(id = key)
-			recettesProp.append(recette)
+			if len(recettesProp) <= 5:
+				recette = Recette.objects.get(id = key)
+				recettesProp.append(recette)
 	
 	return render(request, 'recette/suggestion.html', locals())

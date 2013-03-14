@@ -2,8 +2,19 @@
 {% load static %}
 
 {% block content %}
+    <div id="planning-gauche" class="span3">
+        <div id="suggestion" >
+            <h5>Vous aimerez peut-etre</h5>
+            {% for recetteProp in recettesProp %}
+                <div class="recetteProp"><a href="/recette/detail/{{recetteProp.id}}">{{recetteProp.nom}}</a></div><br/>
+            {% endfor %}
+        </div>
+        <br/>
+        <div><a href="#" class="btn">Commander les produits</a></div><br/>
+        <div><a href="#" class="btn">Generer le planning</a></div>
+    </div>
     
-    <div id="planning2">
+    <div id="planning2" class="span8">
         <div id="entetePlanning">
             <p>{{debutSemaine}} - {{finSemaine}}<br><br></p>
             <a id="prevPlanning" class="carousel-control left" href="/planning?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
@@ -91,7 +102,6 @@
                                 {% endfor %}
                                 <div class="ligneRepas"><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r" class="btn">Ajouter une recette</a><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p" class="btn">Ajouter un produit</a></div>
                             {% endif%}
-
                             
                         </div>
                       </div>
