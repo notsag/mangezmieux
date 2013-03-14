@@ -101,21 +101,21 @@ class RecetteList(generics.ListCreateAPIView):
         recettes = Recette.objects.filter(est_valide=True)
 
         # si le nom est renseigné
-        if nom != '':
+        if nom != '' and nom != None:
             recettes = recettes.filter(nom__icontains=nom)
 
         # si la durée est renseignée
-        if duree > '0':
+        if duree != '' and duree != None and duree > '0':
             if duree <= '90':
                 recettes = recettes.filter(duree__lte=duree)
             else:
                 recettes = recettes.filter(duree__gte=duree)
 
         # si la difficulté est renseignée
-        if difficulteRecup != '-1':
+        if difficulteRecup != '' and difficulteRecup != None:
             recettes = recettes.filter(difficulte=difficulteRecup)
 
-        if categorieRecup != '-1':
+        if categorieRecup != '' and categorieRecup != None:
             recettes = recettes.filter(categorie=categorieRecup)
 
         return recettes
