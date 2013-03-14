@@ -59,6 +59,13 @@ def detail(request, id):
 	
 	try:
 		recette = Recette.objects.get(pk=id, est_valide=True)
+		
+		user = request.user
+		recetteFavorite = RecetteFavorite.objects.filter(utilisateur = user, recette = recette)
+		estFavorite = False
+		if recetteFavorite.count() != 0:
+			estFavorite = True
+
 	except Recette.DoesNotExist:
 		raise Http404
 	return render(request, 'recette/detail.html',locals())
@@ -109,6 +116,9 @@ def categorie(request, id=-1):
 			raise Http404
 
 def ajout_favoris(request, id):
+    """
+        Fonction permettant d'ajouter une recette comme favorite pour un utilisateur connecté
+    """
     user = request.user
     recette = Recette.objects.filter(pk = id)[0]
 
@@ -121,8 +131,23 @@ def ajout_favoris(request, id):
          recetteFavorite.utilisateur = user
          recetteFavorite.save()
 
-    return render(request, 'recette/detail.html', locals())
-		
+    return redirect('/recette/detail/'+ str(recette.pk) + '/')
+
+def retrait_favoris(request, id):
+    """
+        Fonction permettat de retirer une recette favorivte pour l'utilisateur connecté
+    """
+    user = request.user
+    recette = Recette.objects.filter(pk = id)[0]
+
+    favoris = RecetteFavorite.objects.filter(utilisateur = user, recette = recette)
+
+    if favoris.count() != 0:
+        recetteFavorite = favoris[0]
+        recetteFavorite.delete()
+
+    return redirect('/recette/detail/' + str(recette.pk) + '/')
+
 @login_required(login_url='/connexion')
 def suggestion(request):
 	'''

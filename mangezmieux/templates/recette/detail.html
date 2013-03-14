@@ -7,7 +7,13 @@
 			<div id="recettePanelGauche">
 					<p><img src="{{recette.image.url}}" class="img-rounded" alt="Illustration pour : {{recette.nom}}"/></p>
 					<p><a class="btn" href="#myModal" data-toggle="modal">Ajouter à mon planning</a></p>
-					<p><a href="/recette/favoriser/{{recette.pk}}/" class="btn">Recette favorite <i class="icon-star"></i></a></p>
+							{% if user.is_authenticated %}
+								{% if estFavorite %}
+										<p><a href="/recette/defavoriser/{{recette.pk}}/" class="btn">Retirer des favoris<i class="icon-star"></i></a></p>
+								{% else %}
+										<p><a href="/recette/favoriser/{{recette.pk}}/" class="btn">Ajouter aux favoris<i class="icon-star"></i></a></p>
+								{% endif %}
+							{% endif %}
 			</div>
 			<div id="recetteInstructions">
 				<h3>Ingrédients</h3>

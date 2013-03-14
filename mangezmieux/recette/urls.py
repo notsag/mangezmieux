@@ -6,5 +6,6 @@ urlpatterns = patterns('',
 	url(r'^categorie/(?P<id>\d*)/$', 'recette.views.categorie'),
 	url(r'^detail/(?P<id>\d*)/$', 'recette.views.detail'),
         url(r'^suggestion/$', 'recette.views.suggestion'),
-    url(r'^favoriser/(?P<id>\d*)/$', 'recette.views.ajout_favoris'),
+    url(r'^favoriser/(?P<id>\d*)/?$', 'recette.views.ajout_favoris'),
+    url(r'^defavoriser/(?P<id>\d*)/?$', 'recette.views.retrait_favoris'),
 )
