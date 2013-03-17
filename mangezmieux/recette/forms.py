@@ -20,3 +20,24 @@ class SearchForm(forms.Form):
 		self.fields['duree'].choices = (('-1', '-'), ('30', '< 30 min'), ('60', '< 1 h'), ('90', '< 1 h 30'), ('91', '> 1 h 30'))
 		self.fields['difficulte'].choices = (('-1', '-'), ('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'))
 		self.fields['categorie'].choices = [('-1', '-')] + [(cat.pk, cat.nom) for cat in Categorie.objects.all()]		
+
+
+class AddForm(forms.Form):
+	"""Formulaire d'ajout de recettes"""
+
+	#champs du formulaire
+	nom = forms.CharField(label='Nom de la recette', required=True)
+	instructions = forms.CharField(label='Instructions', required=True, widget=forms.Textarea)
+	duree = forms.IntegerField(label='Durée', required=True)
+	difficulte = forms.ChoiceField(label='Difficulté', choices=(), required=True)
+	categorie = forms.ChoiceField(label='Catégorie', choices=(), required=True)
+	tags = forms.CharField(label='Tags (séparés par un espace)', required=True)
+	
+	def __init__(self, *args, **kwargs):
+		"""Constructeur du formulaire, c'est là que l'on rempli les listes déroulantes"""
+		#constucteur de l'objet parent
+		super(AddForm, self).__init__(*args, **kwargs)
+
+		#remplissage des listes
+		self.fields['difficulte'].choices = (('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'))
+		self.fields['categorie'].choices = [(cat.pk, cat.nom) for cat in Categorie.objects.all()]		

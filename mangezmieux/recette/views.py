@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect
 from django.http import Http404
 from core.models import *
-from forms import SearchForm
+from forms import *
 from planning.forms import *
 from django.contrib.auth.decorators import login_required
 from auth.models import *
@@ -200,3 +200,43 @@ def suggestion(request):
 				recettesProp.append(recette)
 	
 	return render(request, 'recette/suggestion.html', locals())
+
+@login_required(login_url='/connexion')
+def ajouter_recette(request):
+	'''
+		Ajout d'une nouvelle recette
+	'''
+	
+	if request.method == "POST":
+		form = AddForm(data=request.POST, files=request.FILES) #On reprend les données
+		if form.is_valid():
+			nom = form.cleaned_data['nom']
+			instructions = form.cleaned_data['instructions']
+			duree = form.cleaned_data['duree']
+			difficulte = form.cleaned_data['difficulte']
+			categorie = form.cleaned_data['categorie']
+			tags = form.cleaned_data['tags']
+			
+			categorie = Categorie.objects.get(id = categorie)
+			
+			recette = Recette()
+			recette.nom = nom
+			recette.createur = request.user
+			recette.difficulte = difficulte
+			recette.duree = duree
+			recette.instructions = instructions
+			recette.tags = tags
+			
+			recette.save()
+			
+			if categorie != None:
+				recette.categorie.add(categorie)
+			
+			recette.save()
+		else:
+			return render(request, 'recette/ajouter.html', locals())
+	else:
+		form = AddForm()
+	
+	return render(request, 'recette/ajouter.html', locals())
+
