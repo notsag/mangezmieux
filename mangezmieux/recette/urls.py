@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     url(r'^favoriser/(?P<id>\d*)/?$', 'recette.views.ajout_favoris'),
     url(r'^defavoriser/(?P<id>\d*)/?$', 'recette.views.retrait_favoris'),
     url(r'^ajouter/?$', 'recette.views.ajouter_recette'),
+    url(r'^get-produit/?$', 'recette.views.get_produit'),
 )

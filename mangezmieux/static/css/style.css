@@ -761,3 +761,24 @@ html, body {
 	box-shadow: 1px 0px 3px 0px #656565;
 	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
 }
+
+#reponse-get {
+    width: 220px;
+}
+
+#reponse-get .nav-list{
+    padding-left: 0;
+    padding-right: 0;
+    background-color: white;
+}
+
+#reponse-get a {
+    margin-left: 0;
+    padding-left: 0;
+
+    margin-right: 0;
+}
+
+#id_produit {
+    margin-bottom: 0px;
+}

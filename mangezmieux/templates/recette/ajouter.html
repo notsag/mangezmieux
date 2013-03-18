@@ -23,6 +23,15 @@
 			{% endfor %}
 		</div>
 	{% endfor %}
-	<input class="btn" type="submit" value="Ajouter" />
+	<p id="reponse-get"></p>
+	<input class="btn" id="submit-ajouter-recette" type="submit" value="Ajouter" />
 	</form>
+
+	<script>
+		$("#id_produit").keyup(function() {
+			var val = $(this).attr('value');
+			
+			$('#reponse-get').load("/recette/get-produit/?v=" + val);
+		});
+	</script>
 {% endblock %}

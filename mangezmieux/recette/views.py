@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 from django.shortcuts import render, redirect
-from django.http import Http404
+from django.http import Http404,HttpResponse
 from core.models import *
 from forms import *
 from planning.forms import *
@@ -240,3 +240,15 @@ def ajouter_recette(request):
 	
 	return render(request, 'recette/ajouter.html', locals())
 
+def get_produit(request):
+	val = request.GET.get('v', '')
+	if val != None and val != '':
+		produits = Produit.objects.filter(nom__icontains = val)
+		html = "<ul class=\"nav nav-list\">"
+		for produit in produits:
+			html += "<li><a href=\"#\">" + produit.nom + "</a></li>"
+			
+		html+="</ul>"
+	else:
+		html=""
+	return HttpResponse(html)
