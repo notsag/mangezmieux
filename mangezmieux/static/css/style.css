@@ -762,7 +762,7 @@ html, body {
 	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
 }
 
-#reponse-get {
+/*#reponse-get {
     width: 220px;
 }
 
@@ -777,6 +777,39 @@ html, body {
     padding-left: 0;
 
     margin-right: 0;
+}*/
+
+#reponse-get {
+  position: absolute;
+  width: 220px;
+  background-color: white;
+  border: 1px solid #888;
+  margin: 0px;
+  padding: 0px;
+}
+ 
+#reponse-get ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  max-height: 20em;
+  overflow: auto;
+}
+ 
+#reponse-get ul li:hover {
+    background-color: #d0e274;
+}
+ 
+#reponse-get ul li {
+  list-style-type:none;
+  display: block;
+  margin: 0;
+  padding: 2px;
+  cursor: pointer;
+}
+ 
+#reponse-get ul li span.informal {
+    /*color: grey;*/
 }
 
 #id_produit {

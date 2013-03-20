@@ -6,6 +6,11 @@ from forms import *
 from planning.forms import *
 from django.contrib.auth.decorators import login_required
 from auth.models import *
+from django.forms import *
+from django.core.context_processors import csrf
+from django.template import RequestContext
+from django.forms.formsets import formset_factory, BaseFormSet
+from recette.forms import *
 
 def detail(request, id):
 	"""
@@ -206,10 +211,16 @@ def ajouter_recette(request):
 	'''
 		Ajout d'une nouvelle recette
 	'''
-	
+	class RequiredFormSet(BaseFormSet):
+		def __init__(self, *args, **kwargs):
+			super(RequiredFormSet, self).__init__(*args, **kwargs)
+			for form in self.forms:
+				form.empty_permitted = False
+	LigneRecetteFormSet = formset_factory(LigneRecetteForm2, formset=RequiredFormSet)
 	if request.method == "POST":
+		formset = LigneRecetteFormSet(request.POST)
 		form = AddForm(data=request.POST, files=request.FILES) #On reprend les données
-		if form.is_valid():
+		if form.is_valid() and formset.is_valid():
 			nom = form.cleaned_data['nom']
 			instructions = form.cleaned_data['instructions']
 			duree = form.cleaned_data['duree']
@@ -232,11 +243,37 @@ def ajouter_recette(request):
 			if categorie != None:
 				recette.categorie.add(categorie)
 			
+			for forml in formset.forms:
+				'''produit = forml.cleaned_data['produit']
+				unite = forml.cleaned_data['unite']
+				quantite = forml.cleaned_data['quantite']
+				
+				produit = Produit.objects.get(nom = produit)
+				unite = Unite.objects.get(id = unite)
+				
+				ligne = LigneRecette()
+				ligne.produit = produit
+				ligne.unite = unite
+				ligne.quantite = quantite
+				'''
+				
+				ligne = forml.save(commit = False)
+				
+				ligne.save()
+				recette.lignes.add(ligne)
+			
 			recette.save()
 		else:
 			return render(request, 'recette/ajouter.html', locals())
 	else:
 		form = AddForm()
+		formset = LigneRecetteFormSet()
+		
+	c = {'form' : form,
+	     'formset' : formset
+	     }
+	
+	c.update(csrf(request))
 	
 	return render(request, 'recette/ajouter.html', locals())
 
@@ -244,9 +281,10 @@ def get_produit(request):
 	val = request.GET.get('v', '')
 	if val != None and val != '':
 		produits = Produit.objects.filter(nom__icontains = val)
-		html = "<ul class=\"nav nav-list\">"
+		html = "<ul>"
 		for produit in produits:
-			html += "<li><a href=\"#\">" + produit.nom + "</a></li>"
+			#html += "<li onClick=addForm(this,\"form\",\""+produit.nom+"\")>" + produit.nom + "</li>"
+			html += "<li value=\""+produit.nom+"\" onClick=clickProduit(this)>" + produit.nom + "</li>"
 			
 		html+="</ul>"
 	else:
