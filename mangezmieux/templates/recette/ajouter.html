@@ -24,19 +24,20 @@
 		</div>
 	{% endfor %}
 	<a id="add" href="#">Ajouter une ligne</a>
-	<div id="reponse-get"></div>
-	<hr/>
-	
+	<br/><br/>
+	<!--<div id="reponse-get"></div>-->
+
 	{{ formset.management_form }}
 	{% for forml in formset.forms %}
 	<div class="item">
 	{{ forml.as_p }}
 	<p style=""><a class="delete" href="#">Supprimer</a></p>
 	</div>
+	<br/>
 	{% endfor %}
 	
-		
-	<input class="btn" id="submit-ajouter-recette" type="submit" value="Ajouter" />
+	<br/><br/><br/><br/>	
+	<div><input class="btn" id="submit-ajouter-recette" type="submit" value="Ajouter" /></div>
 	</form>
 
 	<script>
@@ -51,8 +52,8 @@
 		$(document).ready(function () {
 		
 		$("#add").click(function () {
-			val = $("#id_produit").attr("value");
-			return addForm(this, "form", val);
+			//val = $("#id_produit").attr("value");
+			return addForm(this, "form", null);
 		});
 	    
 		$(".delete").click(function () {

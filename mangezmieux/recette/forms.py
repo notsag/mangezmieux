@@ -32,7 +32,7 @@ class AddForm(forms.Form):
 	difficulte = forms.ChoiceField(label='Difficulté', choices=(), required=True)
 	categorie = forms.ChoiceField(label='Catégorie', choices=(), required=True)
 	tags = forms.CharField(label='Tags (séparés par un espace)', required=True)
-	produit = forms.CharField(label='Produit', required=False)
+	#produit = forms.CharField(label='Produit', required=False)
 	
 	def __init__(self, *args, **kwargs):
 		"""Constructeur du formulaire, c'est là que l'on rempli les listes déroulantes"""

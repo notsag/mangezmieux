@@ -40,7 +40,7 @@ function addForm(btn, prefix, name) {
       
    var formCount = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
 
-   if(formCount != 1) {
+   //if(formCount != 1) {
 
       // Clone a form (without event handlers) from the first form
       var row = $(".item:first").clone(false).get(0);
@@ -65,10 +65,10 @@ function addForm(btn, prefix, name) {
       
       $("#id_form-"+formCount+"-produit").attr('value',name);
    
-   }
-   else {
-      $("#id_form-0-produit").attr('value',name);
-   }
+   //}
+   //else {
+   //   $("#id_form-0-produit").attr('value',name);
+   //}
    // Update the total form count
    $("#id_" + prefix + "-TOTAL_FORMS").val(formCount + 1);
    

@@ -815,3 +815,14 @@ html, body {
 #id_produit {
     margin-bottom: 0px;
 }
+
+/*.item {
+    position: relative;
+    width: 940px;
+}
+
+.item p {
+    position: relative;
+    float: left;
+    width: 235px;
+}*/
