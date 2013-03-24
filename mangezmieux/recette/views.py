@@ -116,6 +116,24 @@ def categorie(request, id=-1):
 		except Categorie.DoesNotExist:
 			raise Http404
 
+def ajouter_recette_favorite(_user, _recette):
+    """
+        Fonction métier permettant d'ajouter une recette (dont l'identifiant est passé comme paramètre) comme favorite pour l'utilisateur passé en paramètre
+    """
+    favoris = RecetteFavorite.objects.filter(utilisateur = _user, recette = _recette)
+
+    if favoris.count() == 0:
+        recetteFavorite = RecetteFavorite()
+        recetteFavorite.recette = _recette
+        recetteFavorite.utilisateur = _user
+        recetteFavorite.save()
+
+def rechercher_recette_favorite(_user):
+    """
+        Fonction permettant de trouver la liste des recettes favorites d'un utilisateur passé en paramètre
+    """
+    return RecetteFavorite.objects.filter(utilisateur = _user)
+
 def ajout_favoris(request, id):
     """
         Fonction permettant d'ajouter une recette comme favorite pour un utilisateur connecté
@@ -123,29 +141,28 @@ def ajout_favoris(request, id):
     user = request.user
     recette = Recette.objects.filter(pk = id)[0]
 
-    favoris = RecetteFavorite.objects.filter(utilisateur = user, recette = recette)
-
-    if favoris.count() == 0:
-         recetteFavorite = RecetteFavorite()
-         
-         recetteFavorite.recette = recette
-         recetteFavorite.utilisateur = user
-         recetteFavorite.save()
+    ajouter_recette_favorite(user, recette)
 
     return redirect('/recette/detail/'+ str(recette.pk) + '/')
 
-def retrait_favoris(request, id):
+def retirer_recette_favorite(_user, _recette):
     """
-        Fonction permettat de retirer une recette favorivte pour l'utilisateur connecté
+        Fonction permettant de retirer une recette (passée en paramètre) des favoris de l'utilisateur passé en paramètre
     """
-    user = request.user
-    recette = Recette.objects.filter(pk = id)[0]
-
-    favoris = RecetteFavorite.objects.filter(utilisateur = user, recette = recette)
+    favoris = RecetteFavorite.objects.filter(utilisateur = _user, recette = _recette)
 
     if favoris.count() != 0:
         recetteFavorite = favoris[0]
         recetteFavorite.delete()
+
+def retrait_favoris(request, id):
+    """
+        Fonction permettant de retirer une recette favorite pour l'utilisateur connecté
+    """
+    user = request.user
+    recette = Recette.objects.filter(pk = id)[0]
+
+    retirer_recette_favorite(user, recette)
 
     return redirect('/recette/detail/' + str(recette.pk) + '/')
 

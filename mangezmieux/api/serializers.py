@@ -74,3 +74,10 @@ class RepasSerializer(serializers.ModelSerializer):
 		model = Repas
 		fields = ('date', 'ordre', 'nb_personne','utilisateur', 'produit', 'recette')
 
+class RecetteFavoriteSerializer(serializers.ModelSerializer):
+	utilisateur = UserSerializer()
+	recette = RecetteSerializer()
+
+	class Meta:
+		model = RecetteFavorite
+		fields = ('utilisateur', 'recette')

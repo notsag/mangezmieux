@@ -46,6 +46,9 @@ urlpatterns = patterns('',
     url(r'^recettes/$', RecetteList.as_view(), name='recette-list'),
     url(r'^recettes/suggestion/$', RecetteSuggestion.as_view(), name='recette-suggestion'),
     url(r'^recettes/(?P<pk>\d+)/$', RecetteDetail.as_view(), name='recette-detail'),
+   
+    url(r'^recettesFavorites/$', RecetteFavoriteList.as_view(), name='recettefavorite-list'),
+    url(r'^recettesFavorites/detail/$', RecetteFavoriteDetail.as_view(), name='recettefavorite-detail'),
     
     url(r'^produits/$', ProduitList.as_view(), name='produit-list'),
     url(r'^produits/(?P<pk>\d+)/$', ProduitDetail.as_view(), name='produit-detail'),

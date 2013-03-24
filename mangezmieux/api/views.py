@@ -7,6 +7,7 @@ from datetime import *
 from auth.models import *
 from core.api import *
 from planning.views import *
+from recette.views import *
 
 class RecetteSuggestion(generics.ListCreateAPIView):
     """
@@ -19,7 +20,45 @@ class RecetteSuggestion(generics.ListCreateAPIView):
 	userId = self.request.QUERY_PARAMS.get('u', None)
 	user = User.objects.get(id = userId)
         return suggestion(user)
-	    
+
+class RecetteFavoriteList(generics.ListCreateAPIView):
+    """
+        Fonction API permettant de lister les recettes favorites de l'utilisateur connecté
+    """
+    model = RecetteFavorite
+    serializer_class = RecetteFavoriteSerializer
+
+    def get_queryset(self):
+        userId = self.request.QUERY_PARAMS.get('userId', None)
+
+        recettes = RecetteFavorite.objects.all()
+
+        if userId != None:
+            user = User.objects.get(id = userId)
+            recettes = rechercher_recette_favorite(user)
+
+        return recettes
+
+class RecetteFavoriteDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+        Fonction API permettant de supprimer une recette favorite
+    """
+    model = RecetteFavorite
+    serializer_class = RecetteFavoriteSerializer
+
+    def get_queryset(self):
+        if self.request.method == 'DELETE':
+            userId = self.request.QUERY_PARAMS.get('userId', None)
+            recetteId = self.request.QUERY_PARAMS.get('recetteId', None)
+
+            if userId != None and recetteId != None:
+                user = User.objects.get(id = userId)
+                recette = Recette.objects.get(id = recetteId)
+
+                retirer_recette_favorite(user, recette)
+
+        return RecetteFavorite()
+ 
 class UserList(generics.ListCreateAPIView):
 	"""
 	Point de l'API pour lister les utilisateurs
