@@ -23,6 +23,47 @@
 			{% endfor %}
 		</div>
 	{% endfor %}
-	<input class="btn" type="submit" value="Ajouter" />
+	<a id="add" href="#">Ajouter une ligne</a>
+	<br/><br/>
+	<!--<div id="reponse-get"></div>-->
+
+	{{ formset.management_form }}
+	{% for forml in formset.forms %}
+	<div class="item">
+	{{ forml.as_p }}
+	<p style=""><a class="delete" href="#">Supprimer</a></p>
+	</div>
+	<br/>
+	{% endfor %}
+	
+	<br/><br/><br/><br/>	
+	<div><input class="btn" id="submit-ajouter-recette" type="submit" value="Ajouter" /></div>
 	</form>
+
+	<script>
+		$("#id_produit").keyup(function() {
+			var val = $(this).attr('value');
+			$('#reponse-get').show();
+			$('#reponse-get').load("/recette/get-produit/?v=" + val);
+		});
+		
+		$("#id_produit").attr("autocomplete", "off");
+		
+		$(document).ready(function () {
+		
+		$("#add").click(function () {
+			//val = $("#id_produit").attr("value");
+			return addForm(this, "form", null);
+		});
+	    
+		$(".delete").click(function () {
+		    return deleteForm(this, "form");
+		});
+		
+		$("body").click(function () {
+		    $('#reponse-get').hide();
+		});
+
+	    });
+	</script>
 {% endblock %}

@@ -32,6 +32,7 @@ class AddForm(forms.Form):
 	difficulte = forms.ChoiceField(label='Difficulté', choices=(), required=True)
 	categorie = forms.ChoiceField(label='Catégorie', choices=(), required=True)
 	tags = forms.CharField(label='Tags (séparés par un espace)', required=True)
+	#produit = forms.CharField(label='Produit', required=False)
 	
 	def __init__(self, *args, **kwargs):
 		"""Constructeur du formulaire, c'est là que l'on rempli les listes déroulantes"""
@@ -41,3 +42,21 @@ class AddForm(forms.Form):
 		#remplissage des listes
 		self.fields['difficulte'].choices = (('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'))
 		self.fields['categorie'].choices = [(cat.pk, cat.nom) for cat in Categorie.objects.all()]		
+
+class LigneRecetteForm(forms.Form):
+	#champs du formulaire
+	produit = forms.CharField(label='Produit', required=True, widget=forms.TextInput(attrs={'readonly':'readonly'}))
+	quantite = forms.IntegerField(label='Quantité', required=True)
+	unite = forms.ChoiceField(label='Unité', choices=(), required=True)
+	
+	def __init__(self, *args, **kwargs):
+		"""Constructeur du formulaire, c'est là que l'on rempli les listes déroulantes"""
+		#constucteur de l'objet parent
+		super(LigneRecetteForm, self).__init__(*args, **kwargs)
+
+		#remplissage des listes
+		self.fields['unite'].choices = [(un.pk, un.nom) for un in Unite.objects.all()]
+		
+class LigneRecetteForm2(forms.ModelForm):
+	class Meta:
+		model = LigneRecette
