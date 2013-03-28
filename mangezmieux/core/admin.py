@@ -1,7 +1,8 @@
 from models import *
+from home.models import News
+from auth.models import *
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as OriginalUserAdmin
-from auth.models import *
 
 class ProfilUtilisateurInline(admin.StackedInline):
     """ As you are noticed your profile will be edited as inline form """
@@ -22,6 +23,7 @@ admin.site.register(Repas)
 admin.site.register(LigneProduit)
 admin.site.register(Tag)
 admin.site.register(RecetteFavorite)
+admin.site.register(News)
 
 try:
     admin.site.unregister(User)

@@ -212,7 +212,8 @@ html, body {
     margin-bottom: 20px;
 }
 
-#home-bottom {
+
+#home-bottom, #home-news {
     border-radius: 30px 30px 30px 30px;
     padding-left: 10px;
 	padding-bottom: 30px;
