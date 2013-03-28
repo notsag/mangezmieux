@@ -5,6 +5,7 @@ import time
 from dateutil import parser
 from datetime import *
 from auth.models import *
+from home.models import News
 from core.api import *
 from planning.views import *
 
@@ -19,7 +20,22 @@ class RecetteSuggestion(generics.ListCreateAPIView):
 	userId = self.request.QUERY_PARAMS.get('u', None)
 	user = User.objects.get(id = userId)
         return suggestion(user)
+
+class NewsList(generics.ListCreateAPIView):
+	"""
+	Point de l'API pour lister les news
+	"""
+	model = News
+	serializer_class = NewsSerializer
 	    
+class NewsDetail(generics.RetrieveUpdateDestroyAPIView):
+	"""
+	Point de l'API pour réupérer une news
+	"""
+	model = News
+	serializer_class = NewsSerializer
+
+
 class UserList(generics.ListCreateAPIView):
 	"""
 	Point de l'API pour lister les utilisateurs

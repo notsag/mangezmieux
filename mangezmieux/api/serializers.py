@@ -1,8 +1,14 @@
 #-*- coding: utf-8 -*-
 from django.contrib.auth.models import User
 from core.models import *
+from home.models import News
 from rest_framework import serializers
 
+
+class NewsSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = News
+		fields = ('nom', 'info', 'date_pub')
 
 class UserSerializer(serializers.ModelSerializer):
 	class Meta:
