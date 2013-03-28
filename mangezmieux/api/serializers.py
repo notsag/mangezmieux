@@ -8,17 +8,17 @@ from rest_framework import serializers
 class NewsSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = News
-		fields = ('nom', 'info', 'date_pub')
+		fields = ('id', 'nom', 'info', 'date_pub')
 
 class UserSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = User
-		fields = ('username', 'email', 'first_name', 'last_name')
+		fields = ('id', 'username', 'email', 'first_name', 'last_name')
                 
 class UniteSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Unite
-		fields = ('nom', 'abreviation')
+		fields = ('id', 'nom', 'abreviation')
 		
 class TypeProduitSerializer(serializers.ModelSerializer):
 	class Meta:
@@ -38,14 +38,14 @@ class LigneRecetteSerializer(serializers.ModelSerializer):
 	unite = UniteSerializer()
 	class Meta:
 		model = LigneRecette
-		fields = ('produit', 'quantite', 'unite')
+		fields = ('id', 'produit', 'quantite', 'unite')
 		
 class LigneProduitSerializer(serializers.ModelSerializer):
 	produit = ProduitSerializer()
 	unite = UniteSerializer()
 	class Meta:
 		model = LigneProduit
-		fields = ('produit', 'quantite', 'unite')
+		fields = ('id', 'produit', 'quantite', 'unite')
 		
 class CategorieSerializer(serializers.ModelSerializer):
 	class Meta:
@@ -56,13 +56,13 @@ class CommandeSerializer(serializers.ModelSerializer):
 	client = UserSerializer()
 	class Meta:
 		model = Commande
-		fields = ('date', 'client')
+		fields = ('id', 'date', 'client')
 		
 class LigneCommandeSerializer(serializers.ModelSerializer):
 	commande = CommandeSerializer()
 	class Meta:
 		model = LigneCommande
-		fields = ('produit', 'commande')
+		fields = ('id', 'produit', 'commande')
 
 class RecetteSerializer(serializers.ModelSerializer):
 	lignes = LigneRecetteSerializer()
@@ -78,5 +78,5 @@ class RepasSerializer(serializers.ModelSerializer):
 	recette = RecetteSerializer()
 	class Meta:
 		model = Repas
-		fields = ('date', 'ordre', 'nb_personne','utilisateur', 'produit', 'recette')
+		fields = ('id', 'date', 'ordre', 'nb_personne','utilisateur', 'produit', 'recette')
 
