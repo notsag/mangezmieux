@@ -23,7 +23,7 @@ class RecetteSuggestion(generics.ListCreateAPIView):
 
 class RecetteFavoriteList(generics.ListCreateAPIView):
     """
-        Fonction API permettant de lister les recettes favorites de l'utilisateur connecté
+        Fonction API permettant de lister les recettes favorites de l'utilisateur connecte
     """
     model = RecetteFavorite
     serializer_class = RecetteFavoriteSerializer
@@ -39,7 +39,21 @@ class RecetteFavoriteList(generics.ListCreateAPIView):
 
         return recettes
 
-class RecetteFavoriteDetail(generics.RetrieveUpdateDestroyAPIView):
+class RecetteFavoriteAjout(generics.CreateAPIView):
+    """
+        Fonction API permettant d'ajouter une recette favorite
+    """
+    model = RecetteFavorite
+    serializer_class = RecetteFavoriteSerializer
+
+    def get_queryset(self):
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class RecetteFavoriteSuppression(generics.DestroyAPIView):
     """
         Fonction API permettant de supprimer une recette favorite
     """
@@ -47,6 +61,7 @@ class RecetteFavoriteDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = RecetteFavoriteSerializer
 
     def get_queryset(self):
+        content = {'': ''}
         if self.request.method == 'DELETE':
             userId = self.request.QUERY_PARAMS.get('userId', None)
             recetteId = self.request.QUERY_PARAMS.get('recetteId', None)
@@ -57,7 +72,9 @@ class RecetteFavoriteDetail(generics.RetrieveUpdateDestroyAPIView):
 
                 retirer_recette_favorite(user, recette)
 
-        return RecetteFavorite()
+                content = {'remove': 'ok'}
+
+        return Response(content, status=status.HTTP_204_NO_CONTENT)
  
 class UserList(generics.ListCreateAPIView):
 	"""
