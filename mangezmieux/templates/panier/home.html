@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>Panier</h1>
+    {% for ligne in panier.lignes.all %}
+        Produit : {{ligne.produit.nom}} <br/>
+        Quantite : {{ligne.quantite}} <br/>
+        <a class="btn" href="supprimer/{{ligne.id}}">Supprimer</a>
+    {% endfor %} 
+{% endblock %}
+

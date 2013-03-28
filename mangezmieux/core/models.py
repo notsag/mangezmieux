@@ -113,6 +113,14 @@ class RepasNonPersiste():
     date = models.DateField()
     ordre = models.IntegerField()
     
+class LignePanier(models.Model):
+    produit = models.ForeignKey(Produit)
+    quantite = models.IntegerField()
+    
+class Panier(models.Model):
+    utilisateur = models.ForeignKey(User)
+    lignes = models.ManyToManyField(LignePanier, null = True, blank = True)
+    
 #Recette favorite
 class RecetteFavorite(models.Model):
     recette = models.ForeignKey(Recette, null = False, blank = False)
