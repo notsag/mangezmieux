@@ -67,7 +67,7 @@ class Categorie(models.Model):
 class Recette(models.Model):
     nom = models.CharField(max_length=100)    
     lignes = models.ManyToManyField(LigneRecette)
-    instructions = models.CharField(max_length=500)
+    instructions = models.TextField()
     duree = models.IntegerField()
     difficulte = models.IntegerField()
     createur = models.ForeignKey(User)
