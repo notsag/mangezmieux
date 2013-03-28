@@ -80,4 +80,4 @@ class RecetteFavoriteSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = RecetteFavorite
-		fields = ('utilisateur', 'recette')
+		fields = ('id', 'utilisateur', 'recette')

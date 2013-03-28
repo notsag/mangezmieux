@@ -5,9 +5,12 @@ import time
 from dateutil import parser
 from datetime import *
 from auth.models import *
-from core.api import *
 from planning.views import *
 from recette.views import *
+
+from django.http import Http404
+from rest_framework.response import Response
+from rest_framework import status
 
 class RecetteSuggestion(generics.ListCreateAPIView):
     """
@@ -39,42 +42,21 @@ class RecetteFavoriteList(generics.ListCreateAPIView):
 
         return recettes
 
-class RecetteFavoriteAjout(generics.CreateAPIView):
-    """
-        Fonction API permettant d'ajouter une recette favorite
-    """
-    model = RecetteFavorite
-    serializer_class = RecetteFavoriteSerializer
-
-    def get_queryset(self):
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 class RecetteFavoriteSuppression(generics.DestroyAPIView):
     """
         Fonction API permettant de supprimer une recette favorite
     """
-    model = RecetteFavorite
-    serializer_class = RecetteFavoriteSerializer
 
-    def get_queryset(self):
-        content = {'': ''}
-        if self.request.method == 'DELETE':
-            userId = self.request.QUERY_PARAMS.get('userId', None)
-            recetteId = self.request.QUERY_PARAMS.get('recetteId', None)
+    def get_object(self, pk):
+        try:
+            return RecetteFavorite.objects.get(pk = pk)
+        except RecetteFavorite.DoesNotExist:
+            raise Http404
 
-            if userId != None and recetteId != None:
-                user = User.objects.get(id = userId)
-                recette = Recette.objects.get(id = recetteId)
-
-                retirer_recette_favorite(user, recette)
-
-                content = {'remove': 'ok'}
-
-        return Response(content, status=status.HTTP_204_NO_CONTENT)
+    def delete(self, request, pk, format=None):
+        recetteFavorite = self.get_object(pk)
+        recetteFavorite.delete()
+        return Response(status = status.HTTP_204_NO_CONTENT)
  
 class UserList(generics.ListCreateAPIView):
 	"""
