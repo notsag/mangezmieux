@@ -7,7 +7,7 @@ class News(models.Model):
 	"""
 	nom = models.CharField(max_length=50)
 	info = models.TextField()
-	date_pub = models.DateField(auto_now=True)
+	date_pub = models.DateTimeField(auto_now=True)
 	
 	def __unicode__(self):
 		return self.nom

@@ -2,9 +2,8 @@
 	 <div id="home-news" class="row">
 		{% for news in latest_news %}
 		<div class="news">
-			<h3>{{ news.nom }}</h3>
+			<h3>{{ news.nom }}<span class="news-date">{{ news.date_pub }}</span></h3>
 			<p>{{ news.info }}</p>
-			<span class="date-news">{{ news.date_pub }}</span>
 		</div>	
 		{% endfor %}
 	 </div>
