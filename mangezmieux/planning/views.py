@@ -202,16 +202,24 @@ def retirer_recette_repas(request):
     """Fonction permettant de retirer une recette d'un repas du planning"""
     d = request.GET.get('d', None)
     o = request.GET.get('o', None)
-    t = request.GET.get('t', None)
     r = request.GET.get('r', None)
 
-    repas = Repas.objects.filter(date = d, utilisateur = request.user, ordre = o)[0]
-    recette = Recette.objects.filter(pk = r)[0]
-
-    repas.recette.remove(recette)
-    repas.save()
+    repas = Repas.objects.filter(date = _date, utilisateur = _user, ordre = _ordre)[0]
+    retirerRecetteRepasMetier(repas, r)
 
     return redirect('/planning')
+
+def retirerRecetteRepasMetier(_repas, _recetteId):
+    """
+        Fonction métier permettant de retirer une recette d'un repas
+    """
+    recette = Recette.objects.get(pk = _recetteId)
+
+    try:
+        _repas.recette.remove(recette)
+        _repas.save()
+    except:
+        print("Erreur : recette non présente pour le repas")
     
 def suggestion(user):
 	'''

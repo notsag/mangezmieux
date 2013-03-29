@@ -9,6 +9,7 @@ from planning.views import *
 from recette.views import *
 
 from django.http import Http404
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
@@ -57,6 +58,24 @@ class RecetteFavoriteSuppression(generics.DestroyAPIView):
         recetteFavorite = self.get_object(pk)
         recetteFavorite.delete()
         return Response(status = status.HTTP_204_NO_CONTENT)
+
+class RepasRetirer(generics.DestroyAPIView):
+    """
+        Fonction API permettant de retirer une recette d'un repas
+    """
+
+    def delete(self, request, pk, format=None):
+        recetteId = self.request.QUERY_PARAMS.get('recetteId', None)
+        
+        if pk != None and recetteId != None:
+            repas = Repas.objects.get(pk = pk)
+            
+            retirerRecetteRepasMetier(repas, recetteId)
+
+            return Response(status = status.HTTP_204_NO_CONTENT)
+
+        return Response(status = status.HTTP_404_NOT_FOUND)
+
  
 class UserList(generics.ListCreateAPIView):
 	"""
