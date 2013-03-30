@@ -236,7 +236,7 @@ def suggestion(user):
 			if recette.id in pref:
 				pref[recette.id] = pref[recette.id] + 1
 			else:
-				pref[recette.id] = 0
+				pref[recette.id] = 1
 	
 	#On parcourt notre liste de gout et on récupere les recettes ayant ce goût
 	chaines = ''
