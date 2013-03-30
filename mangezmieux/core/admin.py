@@ -24,6 +24,8 @@ admin.site.register(LigneProduit)
 admin.site.register(Tag)
 admin.site.register(RecetteFavorite)
 admin.site.register(News)
+admin.site.register(Panier)
+admin.site.register(LignePanier)
 
 try:
     admin.site.unregister(User)

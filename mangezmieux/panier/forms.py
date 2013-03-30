@@ -12,3 +12,13 @@ class PanierProduitForm(forms.Form):
     """
     produit = forms.CharField(widget=forms.TextInput(attrs={'readonly':'readonly'}))
     quantite = forms.IntegerField(min_value = 1, required=True)
+    
+class LignePanierForm(forms.Form):
+    """
+	Formulaire de modification de ligne panier: 
+		produit,
+                quantite,
+    """
+    produit = forms.CharField(widget=forms.TextInput(attrs={'readonly':'readonly'}))
+    quantite = forms.IntegerField(min_value = 1, required=True)
+    id = forms.IntegerField(widget=forms.HiddenInput())

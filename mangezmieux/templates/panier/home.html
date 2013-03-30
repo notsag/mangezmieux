@@ -3,10 +3,23 @@
 
 {% block content %}
     <h1>Panier</h1>
-    {% for ligne in panier.lignes.all %}
+    <!--{% for ligne in panier.lignes.all %}
         Produit : {{ligne.produit.nom}} <br/>
         Quantite : {{ligne.quantite}} <br/>
         <a class="btn" href="supprimer/{{ligne.id}}">Supprimer</a>
-    {% endfor %} 
+    {% endfor %}-->
+    
+    <form action="{% url panier.views.home %}" method="post">{%csrf_token %}
+    	{{ formset.management_form }}
+	{% for forml in formset.forms %}
+	<div class="item">
+	{{ forml.as_p }}
+	<a class="btn" href="supprimer/{{ligne.id}}">Supprimer</a>
+	</div>
+	<br/>
+        {% endfor %}
+        <input class="btn" type="submit" value="Valider" />
+    </form>
+    
 {% endblock %}
 
