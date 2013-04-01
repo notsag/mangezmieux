@@ -294,6 +294,22 @@ def ajouter_recette(request):
 	
 	return render(request, 'recette/ajouter.html', locals())
 
+@login_required(login_url='/connexion')
+def mes_recettes(request):
+    """
+        fonction permettant d'obtenir la page "mes recettes"
+    """
+    recettes = recettesParCreateur(request.user)
+
+    return render(request, 'recette/mesRecettes.html', locals())
+    
+def recettesParCreateur(_user):
+    """
+        fonction métier permettant d'obtenir la liste des recettes créées par l'utilisateur passé en paramètre
+    """
+    if _user != None:
+        return Recette.objects.filter(createur = _user)
+
 def get_produit(request):
 	val = request.GET.get('v', '')
 	if val != None and val != '':

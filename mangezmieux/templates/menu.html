@@ -28,6 +28,11 @@
 								<a href="/recette/ajouter"><i class="icon-plus"></i> Ajouter</a>
 							</li>
 							{% endif %}
+                            {% if user.is_authenticated %}
+                            <li>
+                                <a href="/recette/mesrecettes"><i class="icon-tasks"></i> Mes recettes</a>
+                            </li>
+                            {% endif %}
 						</ul>
 					</li>
                     <li class="dropdown"> 

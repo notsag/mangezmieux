@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h2>Liste de mes recettes</h2>
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Catégorie</th>
+            <th>Durée</th>
+            <th>Difficulté</th>
+        </tr>
+        {% for recette in recettes %}
+            <tr>
+                <td><a href="/recette/detail/{{recette.pk}}">{{recette.nom}}</a></td>
+                <td>
+                    {% for categorie in recette.categorie.all %}
+                        {{categorie.nom}}
+                        {% if not forloop.last %} / {% endif %}
+                    {% endfor %}
+                </td>
+                <td>{{recette.duree}}</td>
+                <td>{{recette.difficulte}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

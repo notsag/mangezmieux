@@ -27,6 +27,19 @@ class RecetteSuggestion(generics.ListCreateAPIView):
 	user = User.objects.get(id = userId)
         return suggestion(user)
 
+class RecettePersonnelles(generics.ListAPIView):
+    """
+        fonction API permettant de lister les recettes creees par l'utilisateur connecte
+    """
+    model = Recette
+    serializer_class = RecetteSerializer
+
+    def get_queryset(self):
+        userId = self.request.QUERY_PARAMS.get('userId', None)
+        user = User.objects.get(pk = userId)
+
+        return recettesParCreateur(user)
+
 class RecetteFavoriteList(generics.ListCreateAPIView):
     """
         Fonction API permettant de lister les recettes favorites de l'utilisateur connecte
