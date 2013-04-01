@@ -67,7 +67,7 @@ class Categorie(models.Model):
 class Recette(models.Model):
     nom = models.CharField(max_length=100)    
     lignes = models.ManyToManyField(LigneRecette)
-    instructions = models.CharField(max_length=500)
+    instructions = models.TextField()
     duree = models.IntegerField()
     difficulte = models.IntegerField()
     createur = models.ForeignKey(User)
@@ -112,6 +112,14 @@ class LigneCommande(models.Model):
 class RepasNonPersiste():
     date = models.DateField()
     ordre = models.IntegerField()
+    
+class LignePanier(models.Model):
+    produit = models.ForeignKey(Produit)
+    quantite = models.IntegerField()
+    
+class Panier(models.Model):
+    utilisateur = models.ForeignKey(User)
+    lignes = models.ManyToManyField(LignePanier, null = True, blank = True)
     
 #Recette favorite
 class RecetteFavorite(models.Model):

@@ -3,6 +3,9 @@
 import os
 import django
 
+#SESSIONS
+SESSION_SAVE_EVERY_REQUEST = True
+
 # DEBUG
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -96,7 +99,8 @@ INSTALLED_APPS = (
     'planning',
     'auth',
     'api',
-    'mysqlfulltextsearch'
+    'mysqlfulltextsearch',
+    'panier'
 )
 
 
@@ -108,7 +112,7 @@ LOGIN_REDIRECT_URL = '/mon_compte'
 REST_FRAMEWORK = {
 		'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
 		'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.SessionAuthentication','rest_framework.authentication.TokenAuthentication'),
-		'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRenderer',),
+		'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.BrowsableAPIRenderer',),
 }
 
 

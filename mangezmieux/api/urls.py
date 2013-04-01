@@ -53,6 +53,9 @@ urlpatterns = patterns('',
     
     url(r'^produits/$', ProduitList.as_view(), name='produit-list'),
     url(r'^produits/(?P<pk>\d+)/$', ProduitDetail.as_view(), name='produit-detail'),
+
+	url(r'^news/$', NewsList.as_view(), name='news-list'),
+	url(r'^news/(?P<pk>\d+)/$', NewsDetail.as_view(), name='news-detail'),
 )
 
 # Format suffixes

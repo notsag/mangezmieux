@@ -5,6 +5,8 @@ import time
 from dateutil import parser
 from datetime import *
 from auth.models import *
+from home.models import News
+from core.api import *
 from planning.views import *
 from recette.views import *
 
@@ -76,7 +78,20 @@ class RepasRetirer(generics.DestroyAPIView):
 
         return Response(status = status.HTTP_404_NOT_FOUND)
 
- 
+class NewsList(generics.ListCreateAPIView):
+	"""
+	Point de l'API pour lister les news
+	"""
+	model = News
+	serializer_class = NewsSerializer
+	    
+class NewsDetail(generics.RetrieveUpdateDestroyAPIView):
+	"""
+	Point de l'API pour réupérer une news
+	"""
+	model = News
+	serializer_class = NewsSerializer
+
 class UserList(generics.ListCreateAPIView):
 	"""
 	Point de l'API pour lister les utilisateurs
