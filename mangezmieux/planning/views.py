@@ -204,7 +204,9 @@ def retirer_recette_repas(request):
     o = request.GET.get('o', None)
     r = request.GET.get('r', None)
 
-    repas = Repas.objects.filter(date = _date, utilisateur = _user, ordre = _ordre)[0]
+    _user = request.user
+
+    repas = Repas.objects.filter(date = d, utilisateur = _user, ordre = o)[0]
     retirerRecetteRepasMetier(repas, r)
 
     return redirect('/planning')
@@ -218,6 +220,9 @@ def retirerRecetteRepasMetier(_repas, _recetteId):
     try:
         _repas.recette.remove(recette)
         _repas.save()
+
+        if _repas.recette.all().count() == 0 and _repas.produit.all().count() == 0:
+            _repas.delete()
     except:
         print("Erreur : recette non présente pour le repas")
     
