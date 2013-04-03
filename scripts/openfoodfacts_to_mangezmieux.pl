@@ -1,32 +1,34 @@
 #!/usr/bin/env perl
 
-use strict;
-use warnings;
-use Getopt::Long;
-
 ########################################################
 # Version : 1.0
 # Date : Apr 03 2013
 # Author : maxibgoode
 ########################################################
 
+use strict;
+use warnings;
+use Getopt::Long;
+use LWP::Simple;
 
 # Openfoodfacts.org API URL : complete with <productid>.json
 use constant URL => "http://fr.openfoodfacts.org/api/v0/product/";
 
+# Opts
 my $o_help = undef;
 my $o_source = undef;
 my $o_host = "localhost";
 my $o_db = undef;
 my $o_user = undef;
 my $o_passwd = undef;
+my %products = ();
 
-
-
+# Routine to print script usage
 sub print_usage {
 	print "Usage: $0 [-h|--help] -s|--source <data.csv> [-H|--host <db_hostname>] -d|--db <db_name> -u|--user <db_user> -p|--password <db_password>\n";
 }
 
+# Routine to show help
 sub help {
 	print "\nScript d'export des produits d'openfoodfacts.org vers la base de données MangezMieux à partir d'un fichier CSV généré par le site : http://fr.openfoodfacts.org/cgi/search.pl\n\n";
 	print_usage();
@@ -46,6 +48,7 @@ sub help {
 EOT
 }
 
+# Routine to check script parameters
 sub check_options {
 	Getopt::Long::Configure('bundling');
 	GetOptions(
@@ -58,16 +61,26 @@ sub check_options {
 	);
 }
 
+# Routine to get the json of a product by it's id
 sub get_product_by_id {
-
+	my ($id) = @_;
+	$products{ $id } = get(URL.$id.".json");
 }
 
+# Routine to read the CSV
+sub get_products {
+	my $file = $o_source;
+	if( -f $file && -r $file ) {
+		
+	}
+}
+
+# Routine to import the json into the MangezMieux DB
 sub import {
 
 }
 
 ##################### MAIN #####################
-
 check_options();
 if ( defined($o_help) ) { 
 	help(); 
