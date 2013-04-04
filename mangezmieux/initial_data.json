@@ -1,4 +1,16 @@
 [
+	{
+		"fields": {
+			"sodium": 1, 
+			"proteines": 1, 
+			"glucides": 1, 
+			"energie": 250, 
+			"fibres": 1, 
+			"lipides": 1
+		},
+		"model": "core.valeurnutritionnelle",
+		"pk": 1
+	},
     {
         "fields": {
             "abreviation": "g", 
@@ -111,7 +123,7 @@
             "stype_produit": null, 
             "type_produit": 1, 
             "unite": 4, 
-            "valeur_energetique": 200
+			"valeur_nutritionnelle": 1
         }, 
         "model": "core.produit", 
         "pk": 1
@@ -124,7 +136,7 @@
             "stype_produit": null, 
             "type_produit": 5, 
             "unite": 1, 
-            "valeur_energetique": 25
+			"valeur_nutritionnelle": 1
         }, 
         "model": "core.produit", 
         "pk": 2
@@ -137,7 +149,7 @@
             "stype_produit": null, 
             "type_produit": 6, 
             "unite": 1, 
-            "valeur_energetique": 50
+			"valeur_nutritionnelle": 1
         }, 
         "model": "core.produit", 
         "pk": 3
@@ -150,7 +162,7 @@
             "stype_produit": null, 
             "type_produit": 5, 
             "unite": 1, 
-            "valeur_energetique": 200
+			"valeur_nutritionnelle": 1
         }, 
         "model": "core.produit", 
         "pk": 4
@@ -163,7 +175,7 @@
             "stype_produit": null, 
             "type_produit": 5, 
             "unite": 4, 
-            "valeur_energetique": 10
+			"valeur_nutritionnelle": 1
         }, 
         "model": "core.produit", 
         "pk": 5
@@ -176,7 +188,7 @@
             "stype_produit": null, 
             "type_produit": 5, 
             "unite": 4, 
-            "valeur_energetique": 12
+			"valeur_nutritionnelle": 1
         }, 
         "model": "core.produit", 
         "pk": 6
@@ -189,7 +201,7 @@
             "stype_produit": null, 
             "type_produit": 7, 
             "unite": 4, 
-            "valeur_energetique": 50
+			"valeur_nutritionnelle": 1
         }, 
         "model": "core.produit", 
         "pk": 7
@@ -202,7 +214,7 @@
             "stype_produit": null, 
             "type_produit": 3, 
             "unite": 1, 
-            "valeur_energetique": 25
+			"valeur_nutritionnelle": 1
         }, 
         "model": "core.produit", 
         "pk": 8
@@ -215,7 +227,7 @@
             "stype_produit": null, 
             "type_produit": 2, 
             "unite": 1, 
-            "valeur_energetique": 55
+			"valeur_nutritionnelle": 1
         }, 
         "model": "core.produit", 
         "pk": 9
@@ -228,7 +240,7 @@
             "stype_produit": null, 
             "type_produit": 3, 
             "unite": 1, 
-            "valeur_energetique": 12
+			"valeur_nutritionnelle": 1
         }, 
         "model": "core.produit", 
         "pk": 10
@@ -241,7 +253,7 @@
             "stype_produit": null, 
             "type_produit": 8, 
             "unite": 5, 
-            "valeur_energetique": 2
+			"valeur_nutritionnelle": 1
         }, 
         "model": "core.produit", 
         "pk": 11

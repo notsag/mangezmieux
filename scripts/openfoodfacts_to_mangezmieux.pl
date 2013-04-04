@@ -95,11 +95,10 @@ sub import {
 	my $product;
 	# DB connection
 	my $db_co = DBI->connect(
-								"DBI:mysql:database=$o_db;host=$o_host",
-								$o_user, 
-								$o_passwd,
-								{'RaiseError' => 1}
-							)
+		"DBI:mysql:database=$o_db;host=$o_host",
+		$o_user, 
+		$o_passwd
+	)
 	or die "Cannot connect to MySQL\n";	
 	# Insert data for each product
 	foreach $product (@products) {

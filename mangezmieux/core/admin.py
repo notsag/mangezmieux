@@ -15,6 +15,7 @@ class UserAdmin(OriginalUserAdmin):
     
 admin.site.register(Recette)
 admin.site.register(Produit)
+admin.site.register(ValeurNutritionnelle)
 admin.site.register(LigneRecette)
 admin.site.register(TypeProduit)
 admin.site.register(Unite)

@@ -26,6 +26,18 @@ class TypeProduit(models.Model):
     def __unicode__(self):
         return self.nom
 
+#Valeurs nutritionnelles pour 100g
+class ValeurNutritionnelle(models.Model):
+	energie = models.IntegerField() #en kJ
+	proteines = models.IntegerField(null=True)
+	glucides = models.IntegerField(null=True)
+	lipides = models.IntegerField(null=True)
+	fibres = models.IntegerField(null=True)
+	sodium = models.IntegerField(null=True)
+
+	def __unicode__(self):
+		return unicode(self.energie)
+
 #Produit
 class Produit(models.Model):
     nom = models.CharField(max_length=25, unique=True)
@@ -33,7 +45,7 @@ class Produit(models.Model):
     stype_produit = models.ForeignKey(TypeProduit, related_name='soustypes', null=True, blank = True)
     quantite = models.IntegerField()
     unite = models.ForeignKey(Unite)
-    valeur_energetique = models.IntegerField()
+    valeur_nutritionnelle = models.ForeignKey(ValeurNutritionnelle)
     image = models.ImageField(upload_to='produit/', null = True, blank = True)
 
     def __unicode__(self):
