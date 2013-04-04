@@ -42,7 +42,6 @@ class ValeurNutritionnelle(models.Model):
 class Produit(models.Model):
     nom = models.CharField(max_length=25, unique=True)
     type_produit = models.ForeignKey(TypeProduit, related_name='types')
-    stype_produit = models.ForeignKey(TypeProduit, related_name='soustypes', null=True, blank = True)
     quantite = models.IntegerField()
     unite = models.ForeignKey(Unite)
     valeur_nutritionnelle = models.ForeignKey(ValeurNutritionnelle)

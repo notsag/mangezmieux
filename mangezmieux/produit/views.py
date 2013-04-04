@@ -110,17 +110,8 @@ def type(request, id=-1):
 	else:
 		try:
 			type = TypeProduit.objects.get(pk=id)
-			stypes = TypeProduit.objects.filter(parent=type.id)
-			produits = Produit.objects.filter(Q(type_produit=type.id) | Q(stype_produit=type.id))
+			produits = Produit.objects.filter(Q(type_produit=type.id))
 			return render(request, 'produit/type_liste.html', locals())
 		except TypeProduit.DoesNotExist:
 			raise Http404
 
-def stype(request, id, sid):
-	try:
-		type = TypeProduit.objects.get(pk=id)
-		stype = TypeProduit.objects.get(pk=sid)
-		produits = Produit.objects.filter(type_produit=type.id,stype_produit=stype.id)
-		return render(request, 'produit/stype_liste.html', locals())
-	except TypeProduit.DoesNotExist:
-		raise Http404

@@ -32,12 +32,11 @@ class ValeurNutritionnelleSerializer(serializers.ModelSerializer):
 
 class ProduitSerializer(serializers.ModelSerializer):
 	type_produit = TypeProduitSerializer()
-	stypeProduit = TypeProduitSerializer()
 	valeur_nutritionnelle = ValeurNutritionnelleSerializer()
 	unite = UniteSerializer()
 	class Meta:
 		model = Produit
-		fields = ('id','nom', 'quantite', 'valeur_nutritionnelle', 'type_produit', 'stype_produit', 'unite','image')
+		fields = ('id','nom', 'quantite', 'valeur_nutritionnelle', 'type_produit', 'unite','image')
 		
 class LigneRecetteSerializer(serializers.ModelSerializer):
 	produit = ProduitSerializer()

@@ -120,7 +120,6 @@
             "image": "produit/steak-hache.jpg", 
             "nom": "Steak Hach\u00e9", 
             "quantite": 2, 
-            "stype_produit": null, 
             "type_produit": 1, 
             "unite": 4, 
 			"valeur_nutritionnelle": 1
@@ -133,7 +132,6 @@
             "image": "produit/spaghettis.jpg", 
             "nom": "Spaghettis", 
             "quantite": 1000, 
-            "stype_produit": null, 
             "type_produit": 5, 
             "unite": 1, 
 			"valeur_nutritionnelle": 1
@@ -146,7 +144,6 @@
             "image": "produit/gruyererape.jpg", 
             "nom": "Gruy\u00e8re rap\u00e9", 
             "quantite": 250, 
-            "stype_produit": null, 
             "type_produit": 6, 
             "unite": 1, 
 			"valeur_nutritionnelle": 1
@@ -159,7 +156,6 @@
             "image": "produit/pomme_de_terre1.jpg", 
             "nom": "Pommes de terre", 
             "quantite": 2000, 
-            "stype_produit": null, 
             "type_produit": 5, 
             "unite": 1, 
 			"valeur_nutritionnelle": 1
@@ -172,7 +168,6 @@
             "image": "produit/patebrisee.jpg", 
             "nom": "Pate bris\u00e9e", 
             "quantite": 1, 
-            "stype_produit": null, 
             "type_produit": 5, 
             "unite": 4, 
 			"valeur_nutritionnelle": 1
@@ -185,7 +180,6 @@
             "image": "produit/patefeuilletee.JPG", 
             "nom": "Pate feuillet\u00e9e", 
             "quantite": 1, 
-            "stype_produit": null, 
             "type_produit": 5, 
             "unite": 4, 
 			"valeur_nutritionnelle": 1
@@ -198,7 +192,6 @@
             "image": "produit/oeufs.png", 
             "nom": "Oeufs", 
             "quantite": 6, 
-            "stype_produit": null, 
             "type_produit": 7, 
             "unite": 4, 
 			"valeur_nutritionnelle": 1
@@ -211,7 +204,6 @@
             "image": "produit/tomate.jpg", 
             "nom": "Tomates", 
             "quantite": 1000, 
-            "stype_produit": null, 
             "type_produit": 3, 
             "unite": 1, 
 			"valeur_nutritionnelle": 1
@@ -224,7 +216,6 @@
             "image": "produit/pomme.jpg", 
             "nom": "Pommes", 
             "quantite": 1000, 
-            "stype_produit": null, 
             "type_produit": 2, 
             "unite": 1, 
 			"valeur_nutritionnelle": 1
@@ -237,7 +228,6 @@
             "image": "produit/carottes.jpg", 
             "nom": "Carottes", 
             "quantite": 500, 
-            "stype_produit": null, 
             "type_produit": 3, 
             "unite": 1, 
 			"valeur_nutritionnelle": 1
@@ -250,7 +240,6 @@
             "image": "produit/vinaigrette.jpg", 
             "nom": "Vinaigrette", 
             "quantite": 250, 
-            "stype_produit": null, 
             "type_produit": 8, 
             "unite": 5, 
 			"valeur_nutritionnelle": 1
