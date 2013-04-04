@@ -87,6 +87,7 @@ class Recette(models.Model):
     image = models.ImageField(upload_to='recette/', null = True, blank = True)
     #tags = models.ManyToManyField(Tag, null = True, blank = True)
     tags = models.CharField(max_length=500, null = True, blank = True)
+    nb_personne = models.IntegerField()
     objects = SearchManager()
     
     def __unicode__(self):
@@ -139,3 +140,8 @@ class RecetteFavorite(models.Model):
 
     def __unicode__(self):
         return u'%s %s' % (self.recette.nom, unicode(self.utilisateur))
+
+class Conversion(models.Model):
+    uniteSpecifique = models.ForeignKey(Unite,related_name='specifique')
+    uniteBase = models.ForeignKey(Unite,related_name='base')
+    multiplicateur = models.FloatField()

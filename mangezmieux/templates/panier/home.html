@@ -14,7 +14,7 @@
 	{% for forml in formset.forms %}
 	<div class="item">
 	{{ forml.as_p }}
-	<a class="btn" href="supprimer/{{ligne.id}}">Supprimer</a>
+	<a class="btn" href="supprimer/{{forml.id.value}}">Supprimer</a>
 	</div>
 	<br/>
         {% endfor %}
