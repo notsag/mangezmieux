@@ -10,6 +10,7 @@ use strict;
 use warnings;
 use Getopt::Long;
 use LWP::Simple;
+use JSON qw( decode_json );
 
 # Openfoodfacts.org API URL : complete with <productid>.json
 use constant URL => "http://fr.openfoodfacts.org/api/v0/product/";
@@ -21,7 +22,7 @@ my $o_host = "localhost";
 my $o_db = undef;
 my $o_user = undef;
 my $o_passwd = undef;
-my %products = ();
+my @products = ();
 
 # Routine to print script usage
 sub print_usage {
@@ -64,20 +65,39 @@ sub check_options {
 # Routine to get the json of a product by it's id
 sub get_product_by_id {
 	my ($id) = @_;
-	$products{ $id } = get(URL.$id.".json");
+	my $product = get(URL.$id.".json");
+	push(@products, $product);
 }
 
-# Routine to read the CSV
+# Routine to read the CSV, get the 1st field (product_id)
+# and get 
 sub get_products {
 	my $file = $o_source;
 	if( -f $file && -r $file ) {
-		
+		open (my $data, '<', $file) or die "Could not open $file\n";
+		my $i = 0;
+###
+###	TODO: Supprimer limitation aux 10 premiers produits
+###
+		while (my $line = <$data> and $i < 10) {
+			$i++;
+			chomp $line;
+			my @fields = split "\t" , $line;
+			my $id = $fields[0];
+			get_product_by_id($id);
+		}
 	}
 }
 
 # Routine to import the json into the MangezMieux DB
 sub import {
-
+	my $product;
+	foreach $product (@products) {
+		my $decoded_product = decode_json($product);
+		# Check if product is found
+		if ( $decoded_product->{'status'} == 1 ) {
+		}
+	}
 }
 
 ##################### MAIN #####################
@@ -93,10 +113,9 @@ elsif ( !defined($o_source)
 	print_usage();
 	exit 1;
 }
+else {
+	get_products();
+	import();
+}
 ###
-
-
-# GET example
-#use LWP::Simple;
-#my $json_produit = get($url);
 
