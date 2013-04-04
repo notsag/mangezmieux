@@ -102,8 +102,12 @@ sub import {
 	# Insert data for each product
 	foreach $product (@products) {
 		my $json = decode_json($product);
-		if ( $json->{'status'} == 1 
-			and defined($json->{'product'}{'nutriments'}) ) {
+		if ( 
+			$json->{'status'} == 1 
+			and defined($json->{'product'}{'nutriments'})
+			and defined($json->{'product'}{'categories_hierarchy'})
+		) {
+
 			# Insert nutriments
 			my $energie = $json->{'product'}{'nutriments'}{'energy'};
 			my $proteines = $json->{'product'}{'nutriments'}{'proteins'};
@@ -123,9 +127,37 @@ sub import {
 			$query .= ")"; $values .= ")"; $query .= $values;
 			$db_co->do($query);
 			my $nutriments_id = $db_co->{ q{mysql_insertid}};
+
 			# Insert product type
+			my @types = @{$json->{'product'}{'categories_hierarchy'}};
+			my $parent_id = undef;
+			my $type;
+			foreach $type (@types) {
+				$query = "INSERT IGNORE INTO core_typeproduit(nom, parent_id) VALUES('$type', ";
+				if (defined($parent_id)) { $query .= "'$parent_id');"; }
+				else { $query .= "NULL);"; }
+				$db_co->do($query);
+				$parent_id =  $db_co->{ q{mysql_insertid}};
+			}
 
 			# Insert Product
+			my $nom = $json->{'product'}{generic_name};
+			my $typep = $parent_id;
+###
+### TODO: Test unit is g, L (mg, mL) or u + select id from core_unite
+###
+			my $quantite = $json->{'product'}{'quantity'};
+			my $unite_id;
+###
+			my $valeur_nutritionnelle = $nutriments_id;
+			my $image = $json->{'product'}{'image_url'};
+			$query = "INSERT IGNORE INTO core_produit(nom, type_produit_id, quantite, unite_id, valeur_nutritionnelle_id";
+			if (defined($image)){
+				$query .= ", image) VALUES('$nom', $typep, $quantite, $unite_id, $valeur_nutritionnelle, '$image');";
+			} else {
+				$values = ") VALUES('$nom', $typep, $quantite, $unite_id, $valeur_nutritionnelle);";
+			}
+			$db_co->do($query);
 		}
 	}
 
