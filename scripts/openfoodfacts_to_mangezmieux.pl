@@ -11,6 +11,7 @@ use warnings;
 use Getopt::Long;
 use LWP::Simple;
 use JSON qw( decode_json );
+use DBI;
 
 # Openfoodfacts.org API URL : complete with <productid>.json
 use constant URL => "http://fr.openfoodfacts.org/api/v0/product/";
@@ -92,16 +93,40 @@ sub get_products {
 # Routine to import the json into the MangezMieux DB
 sub import {
 	my $product;
+	# DB connection
+	my $db_co = DBI->connect(
+								"DBI:mysql:database=$o_db;host=$o_host",
+								$o_user, 
+								$o_passwd,
+								{'RaiseError' => 1}
+							)
+	or die "Cannot connect to MySQL\n";	
+	# Insert data for each product
 	foreach $product (@products) {
 		my $decoded_product = decode_json($product);
-		# Check if product is found
 		if ( $decoded_product->{'status'} == 1 ) {
+###
+###	TODO: Insert data
+###
 		}
 	}
+
+	# DB disconnection
+	$db_co->disconnect();
 }
 
 ##################### MAIN #####################
 check_options();
+
+###
+### REMOVE ME
+###
+get_products();
+import();
+###
+### END
+###
+
 if ( defined($o_help) ) { 
 	help(); 
 	exit 1; 
