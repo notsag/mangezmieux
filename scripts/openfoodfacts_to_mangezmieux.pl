@@ -76,12 +76,11 @@ sub get_products {
 	my $file = $o_source;
 	if( -f $file && -r $file ) {
 		open (my $data, '<', $file) or die "Could not open $file\n";
-		my $i = 0;
 ###
 ###	TODO: Supprimer limitation aux 10 premiers produits
 ###
-		while (my $line = <$data> and $i < 10) {
-			$i++;
+		my $i = 0;
+		while (my $line = <$data> and $i++ < 10) {
 			chomp $line;
 			my @fields = split "\t" , $line;
 			my $id = $fields[0];
@@ -102,11 +101,31 @@ sub import {
 	or die "Cannot connect to MySQL\n";	
 	# Insert data for each product
 	foreach $product (@products) {
-		my $decoded_product = decode_json($product);
-		if ( $decoded_product->{'status'} == 1 ) {
-###
-###	TODO: Insert data
-###
+		my $json = decode_json($product);
+		if ( $json->{'status'} == 1 
+			and defined($json->{'product'}{'nutriments'}) ) {
+			# Insert nutriments
+			my $energie = $json->{'product'}{'nutriments'}{'energy'};
+			my $proteines = $json->{'product'}{'nutriments'}{'proteins'};
+			my $glucides = $json->{'product'}{'nutriments'}{'sugars'};
+			my $lipides = $json->{'product'}{'nutriments'}{'fat'};
+			my $fibres = $json->{'product'}{'nutriments'}{'fiber'};
+			my $sodium = $json->{'product'}{'nutriments'}{'sodium'};
+			my $query = "INSERT INTO core_valeurnutritionnelle(";
+			my $values;
+			if (defined($energie)){$query .= "energie"; $values="VALUES($energie"}
+			else {next;}
+			if (defined($proteines)){$query .= ",proteines"; $values .= ",$proteines"}
+			if (defined($glucides)){$query .= ",glucides"; $values .= ",$glucides"}
+			if (defined($lipides)){$query .= ",lipides"; $values .= ",$lipides"}
+			if (defined($fibres)){$query .= ",fibres"; $values .= ",$fibres"}
+			if (defined($sodium)){$query .= ",sodium"; $values .= ",$sodium"}
+			$query .= ")"; $values .= ")"; $query .= $values;
+			$db_co->do($query);
+			my $nutriments_id = $db_co->{ q{mysql_insertid}};
+			# Insert product type
+
+			# Insert Product
 		}
 	}
 
@@ -116,16 +135,6 @@ sub import {
 
 ##################### MAIN #####################
 check_options();
-
-###
-### REMOVE ME
-###
-get_products();
-import();
-###
-### END
-###
-
 if ( defined($o_help) ) { 
 	help(); 
 	exit 1; 
