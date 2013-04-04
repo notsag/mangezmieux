@@ -43,6 +43,8 @@ mangezmieux/
   |- manage.py       #script admin django
   |- settings.py     #parametres de l application
   |- urls.py         #fichiers de redirection des urls
-TEMPLATES/
+scripts/
+  |- data.csv		 #données de openfoodfacts (liste de produits)
+  |- openfoodfacts_to_mangezmieux.pl #script d'import des données openfoodfacts dans MangezMieux
 
 
