@@ -6,7 +6,7 @@
         <div id="suggestion" >
             <h5>Vous aimerez peut-etre</h5>
             {% for recetteProp in recettesProp %}
-                <div class="recetteProp"><a href="/recette/detail/{{recetteProp.id}}">{{recetteProp.nom}}</a></div><br/>
+                <div class="recetteProp"><a href="/recette/detail/{{recetteProp.id}}"><img src="{{recetteProp.image.url}}" class="" alt="Illustration pour : {{recetteProp.nom}}"/></a></div><br/>
             {% endfor %}
         </div>
         <br/>
