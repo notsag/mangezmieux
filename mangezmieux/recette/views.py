@@ -20,6 +20,8 @@ def detail(request, id):
 		recette = Recette.objects.get(pk=id, est_valide=True)
 	except Recette.DoesNotExist:
 		raise Http404
+	cateId = request.GET.get('id', None)
+	cateName = request.GET.get('name', None)
 	
 	if request.method == 'POST':
 	    form = RepasRecetteForm(data=request.POST, files=request.FILES) #On reprend les données

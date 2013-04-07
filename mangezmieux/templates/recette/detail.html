@@ -2,6 +2,13 @@
 {% load static %}
 
 {% block content %}
+  <ul class="breadcrumb">
+    <li><a href="/recette/categorie/">Catégories</a> <span class="divider">/</span></li>
+    {% if cateName != None and cateId != None %}
+      <li><a href="/recette/categorie/{{cateId}}">{{cateName}}</a> <span class="divider">/</span></li>
+    {% endif %}
+    <li class="active">{{recette.nom}}</li>
+  </ul>
   <div id="recetteDetail">
     <div id="titre">
 	<h3>{{recette.nom}}</h3>
