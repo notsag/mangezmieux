@@ -2,18 +2,15 @@
 {% load static %}
 
 {% block content %}
-	<div class="content-page">
-		<h3>Catégories</h3>
-		<h6>Trouver la recette de toutes vos envies</h6>
-		
-		{% for cat in categories %}
-			<div class="categorieRecette span4">
-				<div class="title">{{cat}}s</div>
-				<img src="{{cat.image.url}}"/>
-				<div class="footer"><a href="/recette/categorie/{{cat.id}}">Voir les recettes : {{cat|lower}}s</a></div>
-				<!--<a href="/recette/categorie/{{cat.id}}">{{cat}}s</a>-->
-			</div>
-		{% endfor %}
-		
-	</div>
+	<h3>Catégories</h3>
+	<h6>Trouver la recette de toutes vos envies</h6>
+	
+	{% for cat in categories %}
+		<div class="categorieRecette span4">
+			<div class="title">{{cat}}s</div>
+			<img src="{{cat.image.url}}"/>
+			<div class="footer"><a href="/recette/categorie/{{cat.id}}">Voir les recettes : {{cat|lower}}s</a></div>
+			<!--<a href="/recette/categorie/{{cat.id}}">{{cat}}s</a>-->
+		</div>
+	{% endfor %}
 {% endblock %}

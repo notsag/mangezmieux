@@ -899,3 +899,62 @@ html, body {
     font-size: 12px;
     padding: 6px 5px 6px 10px;
 }
+
+#content-page {
+    background-color: white;
+    padding: 10px;
+}
+
+.createur {
+    color: grey;
+    margin: 0;
+}
+
+#recetteDetail h3{
+    margin-bottom: 0;
+}
+
+#recetteDetail img {
+    max-width: 250px;
+    max-height: 250px;
+    position: relative;
+    float: left;
+}
+
+#recetteDetail #contenu {
+    margin-top: 20px;
+}
+
+#info {
+    position: relative;
+    float: left;
+    padding-left: 15px;
+    width: 675px;
+
+}
+
+#recetteDetail h5 {
+    margin: 0px;
+}
+
+#recetteDetail dl {
+    margin-top:0;
+}
+
+#recetteDetail dt {
+    width: 95px;
+}
+
+#recetteDetail dd {
+    margin-left: 100px;
+}
+
+#gauche {
+    width: 250px;
+    position: relative;
+    float: left;
+}
+
+#recetteButtons {
+
+}
