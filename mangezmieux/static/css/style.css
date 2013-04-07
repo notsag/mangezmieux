@@ -756,7 +756,7 @@ html, body {
 
 #produitPanelGauche img {
 	max-width: 250px;
-    max-height: 250px;
+        max-height: 250px;
 	display: block;
 }
 
@@ -862,7 +862,7 @@ html, body {
     width: 235px;
 }*/
 
-.categorieRecette:first-of-type {
+.categorieRecette:first-of-type, .ligneRecette:first-of-type {
     margin-left: 0;
 }
 .categorieRecette .title{
@@ -881,10 +881,21 @@ html, body {
     padding: 6px 5px 6px 10px;
 }
 
-.categorieRecette .footer a, .categorieRecette .footer a:hover{
+.categorieRecette .footer a, .categorieRecette .footer a:hover, .ligneRecette a, .ligneRecette a:hover{
     color : grey;
 }
 
-.content-page {
+.ligneRecette {
+    background-color: #D0E274;
+}
+.ligneRecette img {
+    max-width: 80px;
+    max-height: 80px;
+    margin-right: 5px;
+}
 
+.ligneRecette .footer {
+    background-color: #f1f1f1;
+    font-size: 12px;
+    padding: 6px 5px 6px 10px;
 }
