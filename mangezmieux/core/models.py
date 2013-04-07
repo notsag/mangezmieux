@@ -71,6 +71,7 @@ class LigneProduit(models.Model):
 #Categorie : Categorie de la recette (Dessert, Entree...)
 class Categorie(models.Model):
     nom = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='categorie/', null = True, blank = True)
     def __unicode__(self):
         return self.nom
         

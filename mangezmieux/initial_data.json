@@ -513,24 +513,27 @@
     }, 
     {
         "fields": {
-            "nom": "Entr\u00e9e"
+            "nom": "Entr\u00e9e",
+            "image": "categorie/entree.png"
         }, 
         "model": "core.categorie", 
         "pk": 1
     }, 
     {
         "fields": {
-            "nom": "Plat"
+            "nom": "Plat",
+            "image": "categorie/plat.png"
         }, 
         "model": "core.categorie", 
         "pk": 2
     }, 
     {
         "fields": {
-            "nom": "Dessert"
+            "nom": "Dessert",
+            "image": "categorie/dessert.png"
         }, 
         "model": "core.categorie", 
-        "pk": 3
+        "pk": 3 
     }, 
     {
         "fields": {

@@ -272,8 +272,8 @@ html, body {
     height: 118px;
     
     /*
-     * THEME 1*/
-    box-shadow: 0 0 0 8px #ffde8d inset;
+     * THEME 1
+    box-shadow: 0 0 0 8px #ffde8d inset;*/
     
     /*
      * THEME 2 
@@ -361,8 +361,8 @@ html, body {
     width: 259px;
     height: 118px;
     /*
-     * THEME 1 */
-    box-shadow: 0 0 0 8px #ffde8d inset;
+     * THEME 1 
+    box-shadow: 0 0 0 8px #ffde8d inset;*/
     
     /*
      * THEME 2 
@@ -861,3 +861,30 @@ html, body {
     float: left;
     width: 235px;
 }*/
+
+.categorieRecette:first-of-type {
+    margin-left: 0;
+}
+.categorieRecette .title{
+    background-color: #FFDE8D;
+    color: white;
+    font-family: Calibri, Verdana, Arial, 'sans serif';
+    text-shadow: 0px 2px 3px #666;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 11px 10px 11px 15px;
+    height: 25px;
+}
+
+.categorieRecette .footer{
+    background-color: #D0E274;
+    padding: 6px 5px 6px 10px;
+}
+
+.categorieRecette .footer a, .categorieRecette .footer a:hover{
+    color : grey;
+}
+
+.content-page {
+
+}
