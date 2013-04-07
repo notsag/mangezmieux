@@ -137,7 +137,7 @@ def generer(request):
             uniteRecette = produit.unite    
             conv = Conversion.objects.filter(uniteSpecifique = uniteRecette, uniteBase = uniteProduit)[0]
             quantiteRecette = produit.quantite * conv.multiplicateur
-            quantiteRecette = quantiteRecette * repas.nb_personne
+            #quantiteRecette = quantiteRecette * repas.nb_personne
             
             if produit.produit in prod:
                 prod[produit.produit] = prod[produit.produit] + quantiteRecette
