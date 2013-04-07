@@ -75,7 +75,7 @@ class RecetteSerializer(serializers.ModelSerializer):
 	categorie = CategorieSerializer()
 	class Meta:
 		model = Recette
-		fields = ('id','nom', 'nb_personne', 'lignes', 'instructions', 'duree', 'difficulte', 'createur', 'est_valide', 'categorie','image')
+		fields = ('id','nom', 'nb_personne', 'lignes', 'instructions', 'duree', 'difficulte', 'createur', 'est_valide', 'categorie','image','tags')
 
 class RepasSerializer(serializers.ModelSerializer):
 	utilisateur = UserSerializer()

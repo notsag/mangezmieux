@@ -13,6 +13,55 @@
 	},
     {
         "fields": {
+            "texte": "oeuf"
+        }, 
+        "model": "core.tag", 
+        "pk": 1
+    },
+    {
+        "fields": {
+            "texte": "fromage"
+        }, 
+        "model": "core.tag", 
+        "pk": 2
+    },
+    {
+        "fields": {
+            "texte": "tarte"
+        }, 
+        "model": "core.tag", 
+        "pk": 3
+    },
+    {
+        "fields": {
+            "texte": "l\u00e9gume"
+        }, 
+        "model": "core.tag", 
+        "pk": 4
+    },
+    {
+        "fields": {
+            "texte": "tomate"
+        }, 
+        "model": "core.tag", 
+        "pk": 5
+    },
+    {
+        "fields": {
+            "texte": "carotte"
+        }, 
+        "model": "core.tag", 
+        "pk": 6
+    },
+    {
+        "fields": {
+            "texte": "pomme"
+        }, 
+        "model": "core.tag", 
+        "pk": 7
+    },
+    {
+        "fields": {
             "abreviation": "g", 
             "nom": "Grammes"
         }, 
@@ -1135,7 +1184,8 @@
                 2
             ], 
             "nom": "Omelette du fromage",
-            "nb_personne": 2
+            "nb_personne": 2,
+            "tags":"oeuf fromage"
         }, 
         "model": "core.recette", 
         "pk": 1
@@ -1157,7 +1207,8 @@
                 5
             ], 
             "nom": "Tarte \u00e0 la tomate",
-            "nb_personne": 1
+            "nb_personne": 1,
+            "tags":"tarte l\u00e9gume tomate"
         }, 
         "model": "core.recette", 
         "pk": 2
@@ -1178,7 +1229,8 @@
                 7
             ], 
             "nom": "Carottes rap\u00e9es",
-            "nb_personne": 1
+            "nb_personne": 1,
+            "tags":"carotte l\u00e9gume"
         }, 
         "model": "core.recette", 
         "pk": 3
@@ -1199,7 +1251,8 @@
                 9
             ], 
             "nom": "Tarte aux pommes",
-            "nb_personne": 4
+            "nb_personne": 4,
+            "tags":"tarte pomme"
         }, 
         "model": "core.recette", 
         "pk": 4
