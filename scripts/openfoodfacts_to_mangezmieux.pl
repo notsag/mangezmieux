@@ -6,10 +6,12 @@
 # Author : maxibgoode
 ########################################################
 
+use utf8;
 use strict;
 use warnings;
 use Getopt::Long;
 use LWP::Simple;
+use Encode qw( encode_utf8 );
 use JSON qw( decode_json );
 use DBI;
 
@@ -59,7 +61,7 @@ sub check_options {
 	'H|host:s' => \$o_host,
 	'd|db=s' => \$o_db,
 	'u|user=s' => \$o_user,
-	'p|password=s' => \$o_passwd
+	'p|password=s' => \$o_passwd,
 	);
 }
 
@@ -92,7 +94,10 @@ sub import {
 	my $db_co = DBI->connect(
 		"DBI:mysql:database=$o_db;host=$o_host",
 		$o_user, 
-		$o_passwd
+		$o_passwd,
+		{
+			mysql_enable_utf8 => 1,	
+		}
 	) or die "Cannot connect to MySQL\n";	
 
 	# Retrieving IDs for the quantity unit 
@@ -142,8 +147,10 @@ sub import {
 			}
 
 			# Insert Product
-			my $nom = $json->{'product'}{generic_name};
+			my $nom = encode_utf8($json->{'product'}{generic_name});
+			if (not defined($nom)){ next; }
 			my $typep = $parent_id;
+			if (not defined($typep)){ next; }
 			my $quantity = $json->{'product'}{'quantity'};
 			my $qty = $quantity;
 			my ($quantite) = $qty =~ s/^(\d)+//g;
@@ -170,9 +177,9 @@ sub import {
 			my $image = $json->{'product'}{'image_url'};
 			$query = "INSERT IGNORE INTO core_produit(nom, type_produit_id, quantite, unite_id, valeur_nutritionnelle_id";
 			if (defined($image)){
-				$query .= ", image) VALUES('$nom', $typep, $quantite, $unite_id, $valeur_nutritionnelle, '$image');";
+				$query .= ", image) VALUES(\"$nom\", $typep, $quantite, $unite_id, $valeur_nutritionnelle, \"$image\");";
 			} else {
-				$values = ") VALUES('$nom', $typep, $quantite, $unite_id, $valeur_nutritionnelle);";
+				$values = ") VALUES(\"$nom\", $typep, $quantite, $unite_id, $valeur_nutritionnelle);";
 			}
 			$db_co->do($query);
 		}
