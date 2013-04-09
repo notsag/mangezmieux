@@ -272,8 +272,8 @@ html, body {
     height: 118px;
     
     /*
-     * THEME 1*/
-    box-shadow: 0 0 0 8px #ffde8d inset;
+     * THEME 1
+    box-shadow: 0 0 0 8px #ffde8d inset;*/
     
     /*
      * THEME 2 
@@ -361,8 +361,8 @@ html, body {
     width: 259px;
     height: 118px;
     /*
-     * THEME 1 */
-    box-shadow: 0 0 0 8px #ffde8d inset;
+     * THEME 1 
+    box-shadow: 0 0 0 8px #ffde8d inset;*/
     
     /*
      * THEME 2 
@@ -756,7 +756,7 @@ html, body {
 
 #produitPanelGauche img {
 	max-width: 250px;
-    max-height: 250px;
+        max-height: 250px;
 	display: block;
 }
 
@@ -784,17 +784,17 @@ html, body {
 }
 
 .recetteProp {
-	height: 100px;
+	height: 132px;
 	width: 198px;
 	
 	background-image: -webkit-linear-gradient(top,white,#F2F2F2);
 	background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
 
-	-moz-box-shadow: 1px 0px 3px 0px #656565;
+	/*-moz-box-shadow: 1px 0px 3px 0px #656565;
 	-webkit-box-shadow: 1px 0px 3px 0px #656565;
 	-o-box-shadow: 1px 0px 3px 0px #656565;
 	box-shadow: 1px 0px 3px 0px #656565;
-	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);*/
 }
 
 /*#reponse-get {
@@ -861,3 +861,100 @@ html, body {
     float: left;
     width: 235px;
 }*/
+
+.categorieRecette:first-of-type, .ligneRecette:first-of-type {
+    margin-left: 0;
+}
+.categorieRecette .title{
+    background-color: #FFDE8D;
+    color: white;
+    font-family: Calibri, Verdana, Arial, 'sans serif';
+    text-shadow: 0px 2px 3px #666;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 11px 10px 11px 15px;
+    height: 25px;
+}
+
+.categorieRecette .footer{
+    background-color: #D0E274;
+    padding: 6px 5px 6px 10px;
+}
+
+.categorieRecette .footer a, .categorieRecette .footer a:hover, .ligneRecette a, .ligneRecette a:hover{
+    color : grey;
+}
+
+.ligneRecette {
+    background-color: #D0E274;
+}
+.ligneRecette img {
+    max-width: 80px;
+    max-height: 80px;
+    margin-right: 5px;
+}
+
+.ligneRecette .footer {
+    background-color: #f1f1f1;
+    font-size: 12px;
+    padding: 6px 5px 6px 10px;
+}
+
+#content-page {
+    background-color: white;
+    padding: 10px;
+}
+
+.createur {
+    color: grey;
+    margin: 0;
+}
+
+#recetteDetail h3{
+    margin-bottom: 0;
+}
+
+#recetteDetail img {
+    max-width: 250px;
+    max-height: 250px;
+    position: relative;
+    float: left;
+}
+
+#recetteDetail #contenu {
+    margin-top: 20px;
+}
+
+#info {
+    position: relative;
+    float: left;
+    padding-left: 15px;
+    width: 675px;
+
+}
+
+#recetteDetail h5 {
+    margin: 0px;
+}
+
+#recetteDetail dl {
+    margin-top:0;
+}
+
+#recetteDetail dt {
+    width: 95px;
+}
+
+#recetteDetail dd {
+    margin-left: 100px;
+}
+
+#gauche {
+    width: 250px;
+    position: relative;
+    float: left;
+}
+
+#recetteButtons {
+
+}

@@ -21,6 +21,8 @@ def api_root(request, format=None):
                 'categories': reverse('categorie-list', request=request),
                 'commandes': reverse('commande-list', request=request),
                 'ligneCommandes': reverse('lignecommande-list', request=request),
+		'lignePaniers': reverse('lignepanier-list', request=request),
+		'paniers': reverse('panier-list', request=request),
 	})
 
 @api_view(['POST'])

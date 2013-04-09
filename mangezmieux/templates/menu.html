@@ -18,11 +18,7 @@
 							<li>
 								<a href="/recette/recherche"><i class="icon-search"></i> Rechercher</a>
 							</li>
-							{% if user.is_authenticated %}
-							<li>
-								<a href="/recette/suggestion"><i class="icon-star"></i> Suggestion</a>
-							</li>
-							{% endif %}
+							
 							{% if user.is_authenticated %}
 							<li>
 								<a href="/recette/ajouter"><i class="icon-plus"></i> Ajouter</a>
@@ -53,15 +49,19 @@
                     <li> 
 						<a href="/planning"><i class="icon-calendar"></i> Planning</a> 
 					</li>
-					<li> 
-						<a href="/panier"><i class="icon-shopping-cart"></i> Panier</a> 
-					</li>
+	
                     {% endif %}
 				</ul>
                 <form class="navbar-search pull-right" action="">
                 	<input class="search-query" type="text" placeholder="Rechercher une recette, un produit...">
                 </form>
 				<ul class="nav pull-right">
+					{% if user.is_authenticated %}
+					<li> 
+						<a href="/panier"><i class="icon-shopping-cart"></i> Panier</a> 
+					</li>
+					{% endif %}
+				
 					{% if user.is_authenticated %}
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">

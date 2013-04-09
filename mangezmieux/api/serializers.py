@@ -75,7 +75,7 @@ class RecetteSerializer(serializers.ModelSerializer):
 	categorie = CategorieSerializer()
 	class Meta:
 		model = Recette
-		fields = ('id','nom', 'lignes', 'instructions', 'duree', 'difficulte', 'createur', 'est_valide', 'categorie','image')
+		fields = ('id','nom', 'nb_personne', 'lignes', 'instructions', 'duree', 'difficulte', 'createur', 'est_valide', 'categorie','image','tags')
 
 class RepasSerializer(serializers.ModelSerializer):
 	utilisateur = UserSerializer()
@@ -92,3 +92,18 @@ class RecetteFavoriteSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = RecetteFavorite
 		fields = ('id', 'utilisateur', 'recette')
+
+class LignePanierSerializer(serializers.ModelSerializer):
+	produit = ProduitSerializer()
+	class Meta:
+		model = LignePanier
+		fields = ('id', 'produit', 'quantite')
+
+
+class PanierSerializer(serializers.ModelSerializer):
+	lignes = LignePanierSerializer()
+	utilisateur = UserSerializer()
+	class Meta:
+		model = Panier
+		fields = ('id', 'utilisateur', 'lignes')
+

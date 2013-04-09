@@ -2,12 +2,17 @@
 {% load static %}
 
 {% block content %}
-	<h1>{{categorie}}s</h1>
-	
-	<ul>
+	<ul class="breadcrumb">
+		<li><a href="/recette/categorie/">Categories</a> <span class="divider">/</span></li>
+		<li class="active">{{categorie.nom}}s</li>
+        </ul>
+	<h3>Les {{categorie.nom|lower}}s</h3>
 	{% for recette in recettes %}
-		<li><a href="/recette/detail/{{recette.id}}">{{recette.nom}}</a></li>
+		<div class="ligneRecette span3">
+			<img src="{{recette.image.url}}" alt="Illustration pour : {{recette.nom}}"/>
+			<a href="/recette/detail/{{recette.id}}?id={{categorie.id}}&name={{categorie.nom}}s">{{recette.nom|truncatechars:18}}</a>
+			<div class="footer">{{recette.instructions|truncatechars:50}}</div>
+		</div>
 	{% endfor %}
-	</ul>
 	
 {% endblock %}

@@ -13,6 +13,55 @@
 	},
     {
         "fields": {
+            "texte": "oeuf"
+        }, 
+        "model": "core.tag", 
+        "pk": 1
+    },
+    {
+        "fields": {
+            "texte": "fromage"
+        }, 
+        "model": "core.tag", 
+        "pk": 2
+    },
+    {
+        "fields": {
+            "texte": "tarte"
+        }, 
+        "model": "core.tag", 
+        "pk": 3
+    },
+    {
+        "fields": {
+            "texte": "l\u00e9gume"
+        }, 
+        "model": "core.tag", 
+        "pk": 4
+    },
+    {
+        "fields": {
+            "texte": "tomate"
+        }, 
+        "model": "core.tag", 
+        "pk": 5
+    },
+    {
+        "fields": {
+            "texte": "carotte"
+        }, 
+        "model": "core.tag", 
+        "pk": 6
+    },
+    {
+        "fields": {
+            "texte": "pomme"
+        }, 
+        "model": "core.tag", 
+        "pk": 7
+    },
+    {
+        "fields": {
             "abreviation": "g", 
             "nom": "Grammes"
         }, 
@@ -50,7 +99,129 @@
         }, 
         "model": "core.unite", 
         "pk": 5
-    }, 
+    },
+    {
+        "fields": {
+            "abreviation": "mg", 
+            "nom": "Milligrammes"
+        }, 
+        "model": "core.unite", 
+        "pk": 6
+    },
+    {
+        "fields": {
+            "abreviation": "cc", 
+            "nom": "Cuill\u00e8re \u00e0 caf\u00e9"
+        }, 
+        "model": "core.unite", 
+        "pk": 7
+    },
+    {
+        "fields": {
+            "abreviation": "p", 
+            "nom": "Pinc\u00e9e"
+        }, 
+        "model": "core.unite", 
+        "pk": 8
+    },
+    {
+        "fields": {
+            "abreviation": "cs", 
+            "nom": "Cuill\u00e8re \u00e0 soupe"
+        }, 
+        "model": "core.unite", 
+        "pk": 9
+    },
+    {
+        "fields": {
+            "uniteSpecifique": 1, 
+            "uniteBase": 1,
+            "multiplicateur": 1
+        }, 
+        "model": "core.conversion", 
+        "pk": 1
+    },
+    {
+        "fields": {
+            "uniteSpecifique": 2, 
+            "uniteBase": 2,
+            "multiplicateur": 1
+        }, 
+        "model": "core.conversion", 
+        "pk": 2
+    },
+    {
+        "fields": {
+            "uniteSpecifique": 4, 
+            "uniteBase": 4,
+            "multiplicateur": 1
+        }, 
+        "model": "core.conversion", 
+        "pk": 3
+    },
+    {
+        "fields": {
+            "uniteSpecifique": 5, 
+            "uniteBase": 2,
+            "multiplicateur": 0.001
+        }, 
+        "model": "core.conversion", 
+        "pk": 4
+    },
+    {
+        "fields": {
+            "uniteSpecifique": 6, 
+            "uniteBase": 1,
+            "multiplicateur": 0.001
+        }, 
+        "model": "core.conversion", 
+        "pk": 5
+    },
+    {
+        "fields": {
+            "uniteSpecifique": 7, 
+            "uniteBase": 1,
+            "multiplicateur": 5
+        }, 
+        "model": "core.conversion", 
+        "pk": 6
+    },
+    {
+        "fields": {
+            "uniteSpecifique": 8, 
+            "uniteBase": 1,
+            "multiplicateur": 5
+        }, 
+        "model": "core.conversion", 
+        "pk": 7
+    },
+    {
+        "fields": {
+            "uniteSpecifique": 7, 
+            "uniteBase": 2,
+            "multiplicateur": 0.005
+        }, 
+        "model": "core.conversion", 
+        "pk": 8
+    },
+    {
+        "fields": {
+            "uniteSpecifique": 9, 
+            "uniteBase": 1,
+            "multiplicateur": 15
+        }, 
+        "model": "core.conversion", 
+        "pk": 9
+    },
+    {
+        "fields": {
+            "uniteSpecifique": 9, 
+            "uniteBase": 2,
+            "multiplicateur": 0.020
+        }, 
+        "model": "core.conversion", 
+        "pk": 10
+    },
     {
         "fields": {
             "nom": "Viande", 
@@ -239,13 +410,25 @@
         "fields": {
             "image": "produit/vinaigrette.jpg", 
             "nom": "Vinaigrette", 
-            "quantite": 250, 
+            "quantite": 2, 
             "type_produit": 8, 
-            "unite": 5, 
+            "unite": 2, 
 			"valeur_nutritionnelle": 1
         }, 
         "model": "core.produit", 
         "pk": 11
+    },
+    {
+        "fields": {
+            "image": "produit/sucre.jpg", 
+            "nom": "Sucre", 
+            "quantite": 1000, 
+            "type_produit": 8, 
+            "unite": 1, 
+			"valeur_nutritionnelle": 1
+        }, 
+        "model": "core.produit", 
+        "pk": 12
     }, 
     {
         "fields": {
@@ -330,24 +513,27 @@
     }, 
     {
         "fields": {
-            "nom": "Entr\u00e9e"
+            "nom": "Entr\u00e9e",
+            "image": "categorie/entree.png"
         }, 
         "model": "core.categorie", 
         "pk": 1
     }, 
     {
         "fields": {
-            "nom": "Plat"
+            "nom": "Plat",
+            "image": "categorie/plat.png"
         }, 
         "model": "core.categorie", 
         "pk": 2
     }, 
     {
         "fields": {
-            "nom": "Dessert"
+            "nom": "Dessert",
+            "image": "categorie/dessert.png"
         }, 
         "model": "core.categorie", 
-        "pk": 3
+        "pk": 3 
     }, 
     {
         "fields": {
@@ -1000,7 +1186,9 @@
                 1, 
                 2
             ], 
-            "nom": "Omelette du fromage"
+            "nom": "Omelette du fromage",
+            "nb_personne": 2,
+            "tags":"oeuf fromage"
         }, 
         "model": "core.recette", 
         "pk": 1
@@ -1021,7 +1209,9 @@
                 4, 
                 5
             ], 
-            "nom": "Tarte \u00e0 la tomate"
+            "nom": "Tarte \u00e0 la tomate",
+            "nb_personne": 1,
+            "tags":"tarte l\u00e9gume tomate"
         }, 
         "model": "core.recette", 
         "pk": 2
@@ -1041,7 +1231,9 @@
                 6, 
                 7
             ], 
-            "nom": "Carottes rap\u00e9es"
+            "nom": "Carottes rap\u00e9es",
+            "nb_personne": 1,
+            "tags":"carotte l\u00e9gume"
         }, 
         "model": "core.recette", 
         "pk": 3
@@ -1061,7 +1253,9 @@
                 8, 
                 9
             ], 
-            "nom": "Tarte aux pommes"
+            "nom": "Tarte aux pommes",
+            "nb_personne": 4,
+            "tags":"tarte pomme"
         }, 
         "model": "core.recette", 
         "pk": 4
