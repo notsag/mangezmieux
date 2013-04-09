@@ -76,11 +76,7 @@ sub get_products {
 	my $file = $o_source;
 	if( -f $file && -r $file ) {
 		open (my $data, '<', $file) or die "Could not open $file\n";
-###
-###	TODO: Supprimer limitation aux 10 premiers produits
-###
-		my $i = 0;
-		while (my $line = <$data> and $i++ < 10) {
+		while (my $line = <$data>) {
 			chomp $line;
 			my @fields = split "\t" , $line;
 			my $id = $fields[0];
@@ -97,8 +93,13 @@ sub import {
 		"DBI:mysql:database=$o_db;host=$o_host",
 		$o_user, 
 		$o_passwd
-	)
-	or die "Cannot connect to MySQL\n";	
+	) or die "Cannot connect to MySQL\n";	
+
+	# Retrieving IDs for the quantity unit 
+	my ($unite_g) = $db_co->selectrow_array('SELECT id from core_unite where abreviation = "g";');
+	my ($unite_l) = $db_co->selectrow_array('SELECT id from core_unite where abreviation = "L";');
+	my ($unite_u) = $db_co->selectrow_array('SELECT id from core_unite where abreviation = "u";');
+	
 	# Insert data for each product
 	foreach $product (@products) {
 		my $json = decode_json($product);
@@ -143,12 +144,28 @@ sub import {
 			# Insert Product
 			my $nom = $json->{'product'}{generic_name};
 			my $typep = $parent_id;
-###
-### TODO: Test unit is g, L (mg, mL) or u + select id from core_unite
-###
-			my $quantite = $json->{'product'}{'quantity'};
+			my $quantity = $json->{'product'}{'quantity'};
+			my $qty = $quantity;
+			my ($quantite) = $qty =~ s/^(\d)+//g;
 			my $unite_id;
-###
+			if ($quantity =~ s/^\d+\s*g\s*$//g) {
+				$unite_id = $unite_g;
+			} elsif ($quantity =~ s/^\d+\s*mg\s*$//g) {
+				$unite_id = $unite_g;
+				$quantite /= 1000;
+			} elsif ($quantity =~ s/^\d+\s*L\s*$//g) {
+				$unite_id = $unite_l;
+			} elsif ($quantity =~ s/^\d+\s*mL\s*$//g) {
+				$unite_id = $unite_l;
+				$quantite /= 1000;
+			} elsif ($quantity =~ s/^\d+\s*cL\s*$//g) {
+				$unite_id = $unite_l;
+				$quantite /= 100;
+			} elsif ($quantity =~ s/^\d+\s*([a-zA-Z0-9]|\s){3}//g){
+				$unite_id = $unite_u;
+			} else{
+				next;
+			}
 			my $valeur_nutritionnelle = $nutriments_id;
 			my $image = $json->{'product'}{'image_url'};
 			$query = "INSERT IGNORE INTO core_produit(nom, type_produit_id, quantite, unite_id, valeur_nutritionnelle_id";

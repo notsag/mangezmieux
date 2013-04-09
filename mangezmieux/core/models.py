@@ -40,7 +40,7 @@ class ValeurNutritionnelle(models.Model):
 
 #Produit
 class Produit(models.Model):
-    nom = models.CharField(max_length=25, unique=True)
+    nom = models.CharField(max_length=50, unique=True)
     type_produit = models.ForeignKey(TypeProduit, related_name='types')
     quantite = models.IntegerField()
     unite = models.ForeignKey(Unite)
