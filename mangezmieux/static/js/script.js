@@ -3,9 +3,6 @@ $(document).ready(function() {
    $('.carousel').carousel({  
       interval: 2000 // in milliseconds
    })
-   
-   
-
 });
 
 function updateElementIndex(el, prefix, ndx) {
