@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h2>Commandes</h2>
+    {% for commande in commandes %}
+        <p>
+            Numéro : {{commande.numero}}<br/>
+            Date : {{commande.date}}<br/>
+            <a class="btn" href="detail/{{commande.id}}/">Détail</a>
+        </p>
+    {% endfor %}
+{% endblock %}
+
