@@ -6,11 +6,11 @@
         <div id="suggestion" >
             <h5>Vous aimerez peut-etre</h5>
             {% for recetteProp in recettesProp %}
-                <div class="recetteProp"><a href="/recette/detail/{{recetteProp.id}}">{{recetteProp.nom}}</a></div><br/>
+                <div class="recetteProp"><a href="/recette/detail/{{recetteProp.id}}"><img src="{{recetteProp.image.url}}" class="" alt="Illustration pour : {{recetteProp.nom}}"/></a></div><br/>
             {% endfor %}
         </div>
         <br/>
-        <div><a href="#" class="btn">Commander les produits</a></div><br/>
+        <div><a href="/panier/generer?dd={{debutSemaine|date:"Y-m-d"}}&df={{finSemaine|date:"Y-m-d"}}" class="btn">Remplir le panier</a></div><br/>
         <div><a href="#" class="btn">Generer le planning</a></div>
     </div>
     
@@ -98,7 +98,7 @@
                                 {% endfor %}
         
                                 {% for pr in col.produit.all %}
-                                    <div class="ligneRepas"><a href="/produit/detail/{{pr.produit.id}}">{{pr.produit.nom}}</a> ({{pr.quantite}} {{pr.unite.abreviation}}.)</div>
+                                    <div class="ligneRepas"><a href="/produit/detail/{{pr.produit.id}}">{{pr.produit.nom}}</a> ({{pr.quantite}} {{pr.unite.abreviation}}.)<div class="infoRecette"><a href="retirer-produit/?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&p={{pr.id}}"><button class="btn btn-primary" value="Supprimer">Supprimer</button></a></div></div>
                                 {% endfor %}
                                 <div class="ligneRepas"><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r" class="btn">Ajouter une recette</a><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p" class="btn">Ajouter un produit</a></div>
                             {% endif%}

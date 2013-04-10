@@ -55,8 +55,16 @@ urlpatterns = patterns('',
     url(r'^produits/$', ProduitList.as_view(), name='produit-list'),
     url(r'^produits/(?P<pk>\d+)/$', ProduitDetail.as_view(), name='produit-detail'),
 
-	url(r'^news/$', NewsList.as_view(), name='news-list'),
-	url(r'^news/(?P<pk>\d+)/$', NewsDetail.as_view(), name='news-detail'),
+    url(r'^news/$', NewsList.as_view(), name='news-list'),
+    url(r'^news/(?P<pk>\d+)/$', NewsDetail.as_view(), name='news-detail'),
+    
+    url(r'^lignePaniers/$', LignePanierList.as_view(), name='lignepanier-list'),
+    url(r'^lignePaniers/(?P<pk>\d+)/$', LignePanierDetail.as_view(), name='lignepanier-detail'),
+    url(r'^lignePaniers/supprimer/(?P<pk>[0-9]+)/$', LignePanierSuppression.as_view(), name='lignepanier-suppression'),
+    
+    url(r'^paniers/$', PanierList.as_view(), name='panier-list'),
+    url(r'^paniers/(?P<pk>\d+)/$', PanierDetail.as_view(), name='panier-detail'),
+    url(r'^paniers/supprimer/(?P<pk>[0-9]+)/$', PanierSuppression.as_view(), name='panier-suppression'),
 )
 
 # Format suffixes

@@ -10,13 +10,13 @@
     {% endfor %}-->
     
     <form action="{% url panier.views.home %}" method="post">{%csrf_token %}
-        {{ formset.management_form }}
-        {% for forml in formset.forms %}
-            <div class="item">
-            {{ forml.as_p }}
-                <a class="btn" href="supprimer/{{ligne.id}}">Supprimer</a>
-            </div>
-            <br/>
+    	{{ formset.management_form }}
+	    {% for forml in formset.forms %}
+	        <div class="item">
+	        {{ forml.as_p }}
+	        <a class="btn" href="supprimer/{{forml.id.value}}">Supprimer</a>
+	        </div>
+	        <br/>
         {% endfor %}
         <input class="btn" type="submit" value="Valider" />
     </form>

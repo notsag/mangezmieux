@@ -24,14 +24,19 @@ class TypeProduitSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = TypeProduit
 		fields = ('id', 'nom',)
-		
+
+class ValeurNutritionnelleSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = ValeurNutritionnelle
+		fields = ('id', 'energie', 'proteines', 'glucides', 'lipides', 'fibres', 'sodium')	
+
 class ProduitSerializer(serializers.ModelSerializer):
 	type_produit = TypeProduitSerializer()
-	stypeProduit = TypeProduitSerializer()
+	valeur_nutritionnelle = ValeurNutritionnelleSerializer()
 	unite = UniteSerializer()
 	class Meta:
 		model = Produit
-		fields = ('id','nom', 'quantite', 'valeur_energetique', 'type_produit', 'stype_produit', 'unite','image')
+		fields = ('id','nom', 'quantite', 'valeur_nutritionnelle', 'type_produit', 'unite','image')
 		
 class LigneRecetteSerializer(serializers.ModelSerializer):
 	produit = ProduitSerializer()
@@ -70,7 +75,7 @@ class RecetteSerializer(serializers.ModelSerializer):
 	categorie = CategorieSerializer()
 	class Meta:
 		model = Recette
-		fields = ('id','nom', 'lignes', 'instructions', 'duree', 'difficulte', 'createur', 'est_valide', 'categorie','image')
+		fields = ('id','nom', 'nb_personne', 'lignes', 'instructions', 'duree', 'difficulte', 'createur', 'est_valide', 'categorie','image','tags')
 
 class RepasSerializer(serializers.ModelSerializer):
 	utilisateur = UserSerializer()
@@ -87,3 +92,18 @@ class RecetteFavoriteSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = RecetteFavorite
 		fields = ('id', 'utilisateur', 'recette')
+
+class LignePanierSerializer(serializers.ModelSerializer):
+	produit = ProduitSerializer()
+	class Meta:
+		model = LignePanier
+		fields = ('id', 'produit', 'quantite')
+
+
+class PanierSerializer(serializers.ModelSerializer):
+	lignes = LignePanierSerializer()
+	utilisateur = UserSerializer()
+	class Meta:
+		model = Panier
+		fields = ('id', 'utilisateur', 'lignes')
+

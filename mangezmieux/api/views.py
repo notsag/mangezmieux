@@ -74,6 +74,38 @@ class RecetteFavoriteSuppression(generics.DestroyAPIView):
         recetteFavorite.delete()
         return Response(status = status.HTTP_204_NO_CONTENT)
 
+class LignePanierSuppression(generics.DestroyAPIView):
+    """
+        Fonction API permettant de supprimer une ligne panier
+    """
+
+    def get_object(self, pk):
+        try:
+            return LignePanier.objects.get(pk = pk)
+        except LignePanier.DoesNotExist:
+            raise Http404
+
+    def delete(self, request, pk, format=None):
+        lignePanier = self.get_object(pk)
+        lignePanier.delete()
+        return Response(status = status.HTTP_204_NO_CONTENT)
+
+class PanierSuppression(generics.DestroyAPIView):
+    """
+        Fonction API permettant de supprimer un panier
+    """
+
+    def get_object(self, pk):
+        try:
+            return Panier.objects.get(pk = pk)
+        except Panier.DoesNotExist:
+            raise Http404
+
+    def delete(self, request, pk, format=None):
+        panier = self.get_object(pk)
+        panier.delete()
+        return Response(status = status.HTTP_204_NO_CONTENT)
+
 class RepasRetirer(generics.DestroyAPIView):
     """
         Fonction API permettant de retirer une recette d'un repas
@@ -105,6 +137,34 @@ class NewsDetail(generics.RetrieveUpdateDestroyAPIView):
 	model = News
 	serializer_class = NewsSerializer
 
+class LignePanierList(generics.ListCreateAPIView):
+	"""
+	Point de l'API pour lister les lignes panier
+	"""
+	model = LignePanier
+	serializer_class = LignePanierSerializer
+	    
+class LignePanierDetail(generics.RetrieveUpdateDestroyAPIView):
+	"""
+	Point de l'API pour réupérer une ligne panier
+	"""
+	model = LignePanier
+	serializer_class = LignePanierSerializer
+
+class PanierList(generics.ListCreateAPIView):
+	"""
+	Point de l'API pour lister les paniers
+	"""
+	model = Panier
+	serializer_class = PanierSerializer
+	    
+class PanierDetail(generics.RetrieveUpdateDestroyAPIView):
+	"""
+	Point de l'API pour réupérer un panier
+	"""
+	model = Panier
+	serializer_class = PanierSerializer
+	
 class UserList(generics.ListCreateAPIView):
 	"""
 	Point de l'API pour lister les utilisateurs

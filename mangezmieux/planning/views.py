@@ -211,6 +211,19 @@ def retirer_recette_repas(request):
 
     return redirect('/planning')
 
+def retirer_produit_repas(request):
+    """Fonction permettant de retirer un produit d'un repas du planning"""
+    d = request.GET.get('d', None)
+    o = request.GET.get('o', None)
+    p = request.GET.get('p', None)
+
+    _user = request.user
+
+    repas = Repas.objects.filter(date = d, utilisateur = _user, ordre = o)[0]
+    retirerProduitRepasMetier(repas, p)
+
+    return redirect('/planning')
+
 def retirerRecetteRepasMetier(_repas, _recetteId):
     """
         Fonction métier permettant de retirer une recette d'un repas
@@ -225,7 +238,23 @@ def retirerRecetteRepasMetier(_repas, _recetteId):
             _repas.delete()
     except:
         print("Erreur : recette non présente pour le repas")
-    
+
+def retirerProduitRepasMetier(_repas, _produitId):
+    """
+        Fonction métier permettant de retirer une ligne produit d'un repas
+    """
+    produit = LigneProduit.objects.get(pk = _produitId)
+
+    try:
+        _repas.produit.remove(produit)
+        produit.delete()
+        _repas.save()
+
+        if _repas.recette.all().count() == 0 and _repas.produit.all().count() == 0:
+            _repas.delete()
+    except:
+        print("Erreur : produit non présente pour le repas")
+
 def suggestion(user):
 	'''
 		Suggestion de recettes par rapport aux gouts

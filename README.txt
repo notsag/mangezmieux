@@ -20,6 +20,10 @@ mangezmieux/
   |  |- models.py    #classe Utilisateur dérivée du module django.contrib.auth
   |  |- tests.py
   |  |- views.py
+  |- commande/       # modeul de commande
+  |  |- models.py
+  |  |- urls.py
+  |  |- views.py
   |- core/           #fichiers du coeur de l'application
   |  |- admin.py     
   |  |- models.py    
@@ -43,6 +47,8 @@ mangezmieux/
   |- manage.py       #script admin django
   |- settings.py     #parametres de l application
   |- urls.py         #fichiers de redirection des urls
-TEMPLATES/
+scripts/
+  |- data.csv		 #données de openfoodfacts (liste de produits)
+  |- openfoodfacts_to_mangezmieux.pl #script d'import des données openfoodfacts dans MangezMieux
 
 

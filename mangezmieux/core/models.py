@@ -26,14 +26,25 @@ class TypeProduit(models.Model):
     def __unicode__(self):
         return self.nom
 
+#Valeurs nutritionnelles pour 100g
+class ValeurNutritionnelle(models.Model):
+	energie = models.IntegerField() #en kJ
+	proteines = models.IntegerField(null=True)
+	glucides = models.IntegerField(null=True)
+	lipides = models.IntegerField(null=True)
+	fibres = models.IntegerField(null=True)
+	sodium = models.IntegerField(null=True)
+
+	def __unicode__(self):
+		return unicode(self.energie)
+
 #Produit
 class Produit(models.Model):
-    nom = models.CharField(max_length=25, unique=True)
+    nom = models.CharField(max_length=50, unique=True)
     type_produit = models.ForeignKey(TypeProduit, related_name='types')
-    stype_produit = models.ForeignKey(TypeProduit, related_name='soustypes', null=True, blank = True)
     quantite = models.IntegerField()
     unite = models.ForeignKey(Unite)
-    valeur_energetique = models.IntegerField()
+    valeur_nutritionnelle = models.ForeignKey(ValeurNutritionnelle)
     image = models.ImageField(upload_to='produit/', null = True, blank = True)
 
     def __unicode__(self):
@@ -60,6 +71,7 @@ class LigneProduit(models.Model):
 #Categorie : Categorie de la recette (Dessert, Entree...)
 class Categorie(models.Model):
     nom = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='categorie/', null = True, blank = True)
     def __unicode__(self):
         return self.nom
         
@@ -76,6 +88,7 @@ class Recette(models.Model):
     image = models.ImageField(upload_to='recette/', null = True, blank = True)
     #tags = models.ManyToManyField(Tag, null = True, blank = True)
     tags = models.CharField(max_length=500, null = True, blank = True)
+    nb_personne = models.IntegerField()
     objects = SearchManager()
     
     def __unicode__(self):
@@ -130,3 +143,8 @@ class RecetteFavorite(models.Model):
 
     def __unicode__(self):
         return u'%s %s' % (self.recette.nom, unicode(self.utilisateur))
+
+class Conversion(models.Model):
+    uniteSpecifique = models.ForeignKey(Unite,related_name='specifique')
+    uniteBase = models.ForeignKey(Unite,related_name='base')
+    multiplicateur = models.FloatField()

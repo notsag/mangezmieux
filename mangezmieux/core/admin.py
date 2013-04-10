@@ -15,6 +15,7 @@ class UserAdmin(OriginalUserAdmin):
     
 admin.site.register(Recette)
 admin.site.register(Produit)
+admin.site.register(ValeurNutritionnelle)
 admin.site.register(LigneRecette)
 admin.site.register(TypeProduit)
 admin.site.register(Unite)
@@ -28,6 +29,7 @@ admin.site.register(Panier)
 admin.site.register(LignePanier)
 admin.site.register(Commande)
 admin.site.register(LigneCommande)
+admin.site.register(Conversion)
 
 try:
     admin.site.unregister(User)
