@@ -11,14 +11,19 @@
     
     <form action="{% url panier.views.home %}" method="post">{%csrf_token %}
     	{{ formset.management_form }}
-	{% for forml in formset.forms %}
-	<div class="item">
-	{{ forml.as_p }}
-	<a class="btn" href="supprimer/{{forml.id.value}}">Supprimer</a>
-	</div>
-	<br/>
+	    {% for forml in formset.forms %}
+	        <div class="item">
+	        {{ forml.as_p }}
+	        <a class="btn" href="supprimer/{{forml.id.value}}">Supprimer</a>
+	        </div>
+	        <br/>
         {% endfor %}
         <input class="btn" type="submit" value="Valider" />
+    </form>
+
+    <form action="/commande/commander/" method="post" >{% csrf_token %}
+        <input type="hidden" name="idPanier" value="{{panier.id}}" />
+        <input class="btn btn-success" type="submit" value="Commander" />
     </form>
     
 {% endblock %}

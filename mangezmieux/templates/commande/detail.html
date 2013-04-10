@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h2>Détail d'une commande</h2>
+    <p>
+        Date : {{commande.date}}<br/>
+        Numéro : {{commande.numero}}<br/>
+        {% for ligne in commande.lignes.all %}
+            Produit : {{ligne.produit.nom}} <br/>
+            Quantite : {{ligne.quantite}} <br/>
+        {% endfor %}
+        <a class="btn" href="/commande/">Retour</a>
+    </p>
+{% endblock %}
+

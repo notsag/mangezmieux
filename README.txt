@@ -20,6 +20,10 @@ mangezmieux/
   |  |- models.py    #classe Utilisateur dérivée du module django.contrib.auth
   |  |- tests.py
   |  |- views.py
+  |- commande/       # modeul de commande
+  |  |- models.py
+  |  |- urls.py
+  |  |- views.py
   |- core/           #fichiers du coeur de l'application
   |  |- admin.py     
   |  |- models.py    

@@ -103,7 +103,7 @@ def supprimer(request, id):
     ligne.delete()
     
     return redirect('/panier')
-    
+ 
 def generer(request):
     #On recupere les dates de debut et de fin
     dateDebutString = request.GET.get('dd', None)
@@ -196,4 +196,3 @@ def generer(request):
         
     
     return redirect('/planning')
-    

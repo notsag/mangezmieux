@@ -27,6 +27,8 @@ admin.site.register(RecetteFavorite)
 admin.site.register(News)
 admin.site.register(Panier)
 admin.site.register(LignePanier)
+admin.site.register(Commande)
+admin.site.register(LigneCommande)
 admin.site.register(Conversion)
 
 try:
