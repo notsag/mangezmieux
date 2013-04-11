@@ -10,13 +10,17 @@ class NewsSerializer(serializers.ModelSerializer):
 		model = News
 		fields = ('id', 'nom', 'info', 'date_pub')
 
+class TagSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Tag
+
 class UserSerializer(serializers.Serializer):
 	id = fields.Field()
 	username = fields.Field()
 	first_name = fields.Field()
 	last_name= fields.Field()
 	email = fields.Field()
-	gouts = fields.Field(source="get_profile.gouts")
+	gouts = TagSerializer(source="get_profile.gouts")
                 
 class UniteSerializer(serializers.ModelSerializer):
 	class Meta:
