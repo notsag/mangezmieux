@@ -226,83 +226,59 @@
     }, 
     {
         "fields": {
-            "expire_date": "2013-04-25T14:19:01", 
-            "session_data": "YjRkYjU5ZTQ2YWNjYzYzM2YzYjlmMzVjZTkyYjc5NGZlMDMyMDVmODqAAn1xAS4=\n"
+            "expire_date": "2013-04-25T15:28:28", 
+            "session_data": "N2I1YTNmMmRhYzZhNjRmNzA1OTY1YTIxNjU0MjQyNjIxMzE2NWE0YjqAAn1xAVUKdGVzdGNvb2tp\nZVUGd29ya2Vkcy4=\n"
         }, 
         "model": "sessions.session", 
-        "pk": "621140ce5e2adefc6398265c5af674de"
+        "pk": "5596e07a6a387e7d52346a4f7ac1dd0e"
     }, 
     {
         "fields": {
-            "expire_date": "2013-04-25T14:18:57", 
+            "expire_date": "2013-04-25T15:23:18", 
             "session_data": "YjRkYjU5ZTQ2YWNjYzYzM2YzYjlmMzVjZTkyYjc5NGZlMDMyMDVmODqAAn1xAS4=\n"
         }, 
         "model": "sessions.session", 
-        "pk": "fb8923fe1e73d9d8c5c32676a646c792"
+        "pk": "7adf492c37fce4045fec84fea578db63"
     }, 
     {
         "fields": {
-            "expire_date": "2013-04-25T14:22:38", 
-            "session_data": "Mjk2NmRlYmM5ZDRkNDU0MTQ4MmYzODhlMzE0ODc2YzgwYTExMDcyNjqAAn1xAShVDV9hdXRoX3Vz\nZXJfaWSKAQJVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmR1Lg==\n"
-        }, 
-        "model": "sessions.session", 
-        "pk": "4d6409347d5104b551381c7a84fb5540"
-    }, 
-    {
-        "fields": {
-            "expire_date": "2013-04-25T14:19:11", 
+            "expire_date": "2013-04-25T15:25:42", 
             "session_data": "YjRkYjU5ZTQ2YWNjYzYzM2YzYjlmMzVjZTkyYjc5NGZlMDMyMDVmODqAAn1xAS4=\n"
         }, 
         "model": "sessions.session", 
-        "pk": "4c61aa0750f5d6e685cbcd5fb6828414"
+        "pk": "3ec29f47c80aa37796b796a6769d01f9"
     }, 
     {
         "fields": {
-            "expire_date": "2013-04-25T14:22:01", 
+            "expire_date": "2013-04-25T15:28:10", 
             "session_data": "YjRkYjU5ZTQ2YWNjYzYzM2YzYjlmMzVjZTkyYjc5NGZlMDMyMDVmODqAAn1xAS4=\n"
         }, 
         "model": "sessions.session", 
-        "pk": "a26f967cab169371bba4022e5e8b0aca"
+        "pk": "d7dba54588ff1a0df28567644851a498"
     }, 
     {
         "fields": {
-            "expire_date": "2013-04-25T14:22:02", 
+            "expire_date": "2013-04-25T15:28:22", 
             "session_data": "YjRkYjU5ZTQ2YWNjYzYzM2YzYjlmMzVjZTkyYjc5NGZlMDMyMDVmODqAAn1xAS4=\n"
         }, 
         "model": "sessions.session", 
-        "pk": "37f5d2f548a1ae932cba7abdbe61d816"
+        "pk": "f8b026313eb820be2b247bf6ea52358a"
     }, 
     {
         "fields": {
-            "expire_date": "2013-04-25T14:22:07", 
+            "expire_date": "2013-04-25T15:28:25", 
             "session_data": "YjRkYjU5ZTQ2YWNjYzYzM2YzYjlmMzVjZTkyYjc5NGZlMDMyMDVmODqAAn1xAS4=\n"
         }, 
         "model": "sessions.session", 
-        "pk": "3973e929fa5fb8f8a39850fffd0dd896"
+        "pk": "e40b0b2e3af26fa1225a7f621656cd7a"
     }, 
     {
         "fields": {
-            "expire_date": "2013-04-25T14:22:09", 
+            "expire_date": "2013-04-25T15:28:29", 
             "session_data": "YjRkYjU5ZTQ2YWNjYzYzM2YzYjlmMzVjZTkyYjc5NGZlMDMyMDVmODqAAn1xAS4=\n"
         }, 
         "model": "sessions.session", 
-        "pk": "1b9641a087fbf8f1983f41a1c747e5ee"
-    }, 
-    {
-        "fields": {
-            "expire_date": "2013-04-25T14:22:35", 
-            "session_data": "YjRkYjU5ZTQ2YWNjYzYzM2YzYjlmMzVjZTkyYjc5NGZlMDMyMDVmODqAAn1xAS4=\n"
-        }, 
-        "model": "sessions.session", 
-        "pk": "6b56ca411662d30bf4ba69af6282c869"
-    }, 
-    {
-        "fields": {
-            "expire_date": "2013-04-25T14:22:38", 
-            "session_data": "YjRkYjU5ZTQ2YWNjYzYzM2YzYjlmMzVjZTkyYjc5NGZlMDMyMDVmODqAAn1xAS4=\n"
-        }, 
-        "model": "sessions.session", 
-        "pk": "c6d08a4c63f4010b571289c10ec6c865"
+        "pk": "be2b95168ca9d8fe9312ba6c0eb68dde"
     }, 
     {
         "fields": {
@@ -10904,7 +10880,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/327/016/083/3245/front.6.400.jpg", 
-            "nom": "Crevettes d\u00e9cortiqu\u00e9es cuites enrob\u00e9es et suregel\u00e9", 
+            "nom": "Crevettes d\u00e9cortiqu\u00e9es cuites enrob\u00e9es et suregel\u00e9es", 
             "quantite": 180, 
             "type_produit": 21, 
             "unite": 1, 
@@ -10928,7 +10904,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/20001797/front.5.400.jpg", 
-            "nom": "Filet tendre de colin d'Alaska (Theragra chalcogra", 
+            "nom": "Filet tendre de colin d'Alaska (Theragra chalcogramma) pratiquement sans ar\u00eates, pann\u00e9, pr\u00e9cuit, por", 
             "quantite": 450, 
             "type_produit": 26, 
             "unite": 1, 
@@ -10952,7 +10928,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/761/303/353/6878/front.8.400.jpg", 
-            "nom": "Filets de dos de Cabillaud dans une sauce au beurr", 
+            "nom": "Filets de dos de Cabillaud dans une sauce au beurre", 
             "quantite": 300, 
             "type_produit": 0, 
             "unite": 1, 
@@ -11024,7 +11000,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/327/016/039/3107/front.6.400.jpg", 
-            "nom": "beignets de crevette avec sauce aigre-douce, pr\u00e9fr", 
+            "nom": "beignets de crevette avec sauce aigre-douce, pr\u00e9frits, surgel\u00e9s", 
             "quantite": 110, 
             "type_produit": 0, 
             "unite": 1, 
@@ -11084,7 +11060,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/359/671/036/0826/front.12.400.jpg", 
-            "nom": "Biscuits aux c\u00e9r\u00e9ales, aux p\u00e9pites de chocolat et ", 
+            "nom": "Biscuits aux c\u00e9r\u00e9ales, aux p\u00e9pites de chocolat et au lait", 
             "quantite": 400, 
             "type_produit": 52, 
             "unite": 1, 
@@ -11144,7 +11120,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/500/015/941/9376/front.9.400.jpg", 
-            "nom": "Biscuits aux c\u00e9r\u00e9ales compl\u00e8tes, cr\u00e8me au miel et ", 
+            "nom": "Biscuits aux c\u00e9r\u00e9ales compl\u00e8tes, cr\u00e8me au miel et amandes et enrobage avec du chocolat au lait 100% ", 
             "quantite": 37, 
             "type_produit": 58, 
             "unite": 1, 
@@ -11228,7 +11204,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/301/776/047/2791/front.3.400.jpg", 
-            "nom": "Biscuits aux c\u00e9r\u00e9ales et p\u00e9pites de chocolat, all\u00e9", 
+            "nom": "Biscuits aux c\u00e9r\u00e9ales et p\u00e9pites de chocolat, all\u00e9g\u00e9 en sucres", 
             "quantite": 300, 
             "type_produit": 0, 
             "unite": 1, 
@@ -11240,7 +11216,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/848/001/702/3650/front.3.400.jpg", 
-            "nom": "Lait ferment\u00e9 au bifidus, sucr\u00e9, aux fruits (figue", 
+            "nom": "Lait ferment\u00e9 au bifidus, sucr\u00e9, aux fruits (figue, abricot, mangue, fraise)", 
             "quantite": 1, 
             "type_produit": 77, 
             "unite": 4, 
@@ -11276,7 +11252,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/325/149/032/0001/front.8.400.jpg", 
-            "nom": "Biscuits complet au germe de bl\u00e9, riches en fibres", 
+            "nom": "Biscuits complet au germe de bl\u00e9, riches en fibres, calcium, magn\u00e9sium, vitamines E, B1 et B9, vitam", 
             "quantite": 210, 
             "type_produit": 0, 
             "unite": 4, 
@@ -11288,7 +11264,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/359/671/033/5435/front.20.400.jpg", 
-            "nom": "Biscuits  fins aux amandes et chocolat noir fourr\u00e9", 
+            "nom": "Biscuits  fins aux amandes et chocolat noir fourr\u00e9s cr\u00e8me cappucino", 
             "quantite": 100, 
             "type_produit": 0, 
             "unite": 4, 
@@ -11300,7 +11276,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/327/019/012/8519/front.5.400.jpg", 
-            "nom": "Biscuits avec tablette de chocolat issus de l'agri", 
+            "nom": "Biscuits avec tablette de chocolat issus de l'agriculture bio", 
             "quantite": 150, 
             "type_produit": 78, 
             "unite": 1, 
@@ -11348,7 +11324,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/356/007/010/0248/front.6.400.jpg", 
-            "nom": "Boisson aux jus de fruits et au jus de carotte \u00e0 b", 
+            "nom": "Boisson aux jus de fruits et au jus de carotte \u00e0 base de concentr\u00e9s avec ajout de provitamine A et d", 
             "quantite": 1, 
             "type_produit": 83, 
             "unite": 2, 
@@ -11384,7 +11360,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/540/011/304/4987/front.5.400.jpg", 
-            "nom": "bonbons sans sucres avec \u00e9dulcorants aux jus de fr", 
+            "nom": "bonbons sans sucres avec \u00e9dulcorants aux jus de fruits et aux ar\u00f4mes", 
             "quantite": 150, 
             "type_produit": 0, 
             "unite": 1, 
@@ -11456,7 +11432,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/40111216/front.9.400.jpg", 
-            "nom": "Chocolat au lait fourr\u00e9 de noix de coco blanche et", 
+            "nom": "Chocolat au lait fourr\u00e9 de noix de coco blanche et tendre - barre au chocolat", 
             "quantite": 57, 
             "type_produit": 0, 
             "unite": 1, 
@@ -11828,7 +11804,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/356/470/036/8947/front.18.400.jpg", 
-            "nom": "Filet de colin d'Alaska et riz au l\u00e9gumes, \u00e0 la sa", 
+            "nom": "Filet de colin d'Alaska et riz au l\u00e9gumes, \u00e0 la sauce citron beurre - surgel\u00e9s", 
             "quantite": 300, 
             "type_produit": 0, 
             "unite": 1, 
@@ -11852,7 +11828,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/338/739/032/6574/front.4.400.jpg", 
-            "nom": "C\u00e9r\u00e9ales au go\u00fbt de biscuit avec des p\u00e9pites saveu", 
+            "nom": "C\u00e9r\u00e9ales au go\u00fbt de biscuit avec des p\u00e9pites saveur chocolat", 
             "quantite": 375, 
             "type_produit": 0, 
             "unite": 1, 
@@ -11960,7 +11936,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/501/047/734/3291/front.8.400.jpg", 
-            "nom": "C\u00e9r\u00e9ales compl\u00e8tes avec des copeaux de chocolat no", 
+            "nom": "C\u00e9r\u00e9ales compl\u00e8tes avec des copeaux de chocolat noir", 
             "quantite": 550, 
             "type_produit": 0, 
             "unite": 1, 
@@ -12032,7 +12008,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/304/109/006/1639/front.3.400.jpg", 
-            "nom": "b\u00e2tonnets de c\u00e9r\u00e9ales fourr\u00e9s \u00e0 la framboise enric", 
+            "nom": "b\u00e2tonnets de c\u00e9r\u00e9ales fourr\u00e9s \u00e0 la framboise enrichis en fer", 
             "quantite": 200, 
             "type_produit": 142, 
             "unite": 1, 
@@ -12068,7 +12044,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/619/154/410/1903/front.5.400.jpg", 
-            "nom": "Gaufrettes et Noisettes enrob\u00e9es de succ\u00e9dan\u00e9 de c", 
+            "nom": "Gaufrettes et Noisettes enrob\u00e9es de succ\u00e9dan\u00e9 de chocolat", 
             "quantite": 31, 
             "type_produit": 145, 
             "unite": 1, 
@@ -12224,7 +12200,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/359/671/024/7783/front.13.400.jpg", 
-            "nom": "Cr\u00eame fraiche sucr\u00e9e et vanill\u00e9e sous pression st\u00e9", 
+            "nom": "Cr\u00eame fraiche sucr\u00e9e et vanill\u00e9e sous pression st\u00e9rilis\u00e9e UHT", 
             "quantite": 250, 
             "type_produit": 155, 
             "unite": 4, 
@@ -12272,7 +12248,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/316/544/000/8935/front.6.400.jpg", 
-            "nom": "Pr\u00e9paration pr\u00e9cuite \u00e0 base de bl\u00e9 dur, d'autres c", 
+            "nom": "Pr\u00e9paration pr\u00e9cuite \u00e0 base de bl\u00e9 dur, d'autres c\u00e9r\u00e9ales et d'huile d'olive vierge extra", 
             "quantite": 400, 
             "type_produit": 156, 
             "unite": 1, 
@@ -12404,7 +12380,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/540/011/301/1200/front.7.400.jpg", 
-            "nom": "Biscuits ap\u00e9ritifs - Biscuits feuillet\u00e9s au fromag", 
+            "nom": "Biscuits ap\u00e9ritifs - Biscuits feuillet\u00e9s au fromage", 
             "quantite": 100, 
             "type_produit": 0, 
             "unite": 1, 
@@ -12416,7 +12392,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/316/595/795/3018/front.6.400.jpg", 
-            "nom": "Filets de maquereaux sauce \u00e0 la moutarde \u00e0 l'ancie", 
+            "nom": "Filets de maquereaux sauce \u00e0 la moutarde \u00e0 l'ancienne et au citron", 
             "quantite": 169, 
             "type_produit": 174, 
             "unite": 1, 
@@ -12524,7 +12500,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/761/303/293/6563/front.6.400.jpg", 
-            "nom": "Chocolat au Caramel - Chocolat au lait fourr\u00e9 au c", 
+            "nom": "Chocolat au Caramel - Chocolat au lait fourr\u00e9 au caramel (21%)", 
             "quantite": 150, 
             "type_produit": 181, 
             "unite": 1, 
@@ -12608,7 +12584,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/20146092/front.4.400.jpg", 
-            "nom": "Gaufrettes fourr\u00e9es \u00e0 la cr\u00e8me aux noisettes 37%, ", 
+            "nom": "Gaufrettes fourr\u00e9es \u00e0 la cr\u00e8me aux noisettes 37%, partiellement recouvertes de gla\u00e7age au cacao 10%", 
             "quantite": 250, 
             "type_produit": 0, 
             "unite": 1, 
@@ -12740,7 +12716,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/327/019/015/0374/front.4.400.jpg", 
-            "nom": "8 Biscuits moelleux aux oeufs frais avec un fourra", 
+            "nom": "8 Biscuits moelleux aux oeufs frais avec un fourrage au chocolat", 
             "quantite": 230, 
             "type_produit": 0, 
             "unite": 1, 
@@ -12764,7 +12740,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/345/934/300/1057/front.7.400.jpg", 
-            "nom": "Plat cuisin\u00e9 \u00e0 base de pur\u00e9e de pommes de terres, ", 
+            "nom": "Plat cuisin\u00e9 \u00e0 base de pur\u00e9e de pommes de terres, d\u00e9s de poissons, surgel\u00e9", 
             "quantite": 300, 
             "type_produit": 0, 
             "unite": 1, 
@@ -12788,7 +12764,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/871/039/801/5334/front.5.400.jpg", 
-            "nom": "biscuit ap\u00e9ritif \u00e0 base de ma\u00efs et de pomme de ter", 
+            "nom": "biscuit ap\u00e9ritif \u00e0 base de ma\u00efs et de pomme de terre, go\u00fbt bacon", 
             "quantite": 125, 
             "type_produit": 204, 
             "unite": 1, 
@@ -12872,7 +12848,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/570/104/355/0273/front.7.400.jpg", 
-            "nom": "Huile obtenue de la pulpe des fruits du palmier \u00e0 ", 
+            "nom": "Huile obtenue de la pulpe des fruits du palmier \u00e0 huile elaeis guineensis", 
             "quantite": 500, 
             "type_produit": 209, 
             "unite": 1, 
@@ -12932,7 +12908,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/800/500/037/560/front.23.400.jpg", 
-            "nom": "fines gaufrettes enrob\u00e9es de chocolat au lait, fou", 
+            "nom": "fines gaufrettes enrob\u00e9es de chocolat au lait, fourr\u00e9es lait et noisettes broy\u00e9es", 
             "quantite": 2, 
             "type_produit": 220, 
             "unite": 4, 
@@ -12944,7 +12920,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/541/354/801/3169/front.8.400.jpg", 
-            "nom": "Confiserie recouverte de chocolat sup\u00e9rieur au lai", 
+            "nom": "Confiserie recouverte de chocolat sup\u00e9rieur au lait contenant une surprise dans une capsule plastiqu", 
             "quantite": 60, 
             "type_produit": 0, 
             "unite": 1, 
@@ -13064,7 +13040,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/342/827/294/0027/front.3.400.jpg", 
-            "nom": "lait de croissance - Lait de suite pour nourrisson", 
+            "nom": "lait de croissance - Lait de suite pour nourrissons \u00e0 partir de 10 mois et enfants en bas \u00e2ge", 
             "quantite": 500, 
             "type_produit": 0, 
             "unite": 4, 
@@ -13100,7 +13076,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/20131579/front.3.400.jpg", 
-            "nom": "barre chocolat\u00e9e - Chocolat au lait entier (cacao ", 
+            "nom": "barre chocolat\u00e9e - Chocolat au lait entier (cacao 32%) fourr\u00e9 au lait (50%) ", 
             "quantite": 200, 
             "type_produit": 0, 
             "unite": 1, 
@@ -13172,7 +13148,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/326/385/266/7310/front.5.400.jpg", 
-            "nom": "Biscuit avec tablettes de chocolat au lait fourr\u00e9e", 
+            "nom": "Biscuit avec tablettes de chocolat au lait fourr\u00e9e au lait", 
             "quantite": 125, 
             "type_produit": 0, 
             "unite": 1, 
@@ -13292,7 +13268,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/500/015/938/6821/front.6.400.jpg", 
-            "nom": "Cacahu\u00e8tes (23%) enrob\u00e9es de chocolat au lait (48%", 
+            "nom": "Cacahu\u00e8tes (23%) enrob\u00e9es de chocolat au lait (48%) et drag\u00e9ifi\u00e9es", 
             "quantite": 200, 
             "type_produit": 245, 
             "unite": 1, 
@@ -13328,7 +13304,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/872/270/023/5811/front.6.400.jpg", 
-            "nom": "Glace parfum pistache enrob\u00e9e de chocolat au lait ", 
+            "nom": "Glace parfum pistache enrob\u00e9e de chocolat au lait et de morceaux de pistaches", 
             "quantite": 344, 
             "type_produit": 0, 
             "unite": 1, 
@@ -13340,7 +13316,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/872/270/011/8497/front.6.400.jpg", 
-            "nom": "Glace menthe enrob\u00e9 de chocolat au lait et de morc", 
+            "nom": "Glace menthe enrob\u00e9 de chocolat au lait et de morceaux de sucre caram\u00e9lis\u00e9", 
             "quantite": 352, 
             "type_produit": 0, 
             "unite": 4, 
@@ -13388,7 +13364,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/2020187/front.3.400.jpg", 
-            "nom": "C\u00e9r\u00e9ales croustillantes aux \u00e9clats de chocolat et ", 
+            "nom": "C\u00e9r\u00e9ales croustillantes aux \u00e9clats de chocolat et de noisettes", 
             "quantite": 600, 
             "type_produit": 0, 
             "unite": 1, 
@@ -13496,7 +13472,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/762/230/074/3017/front.6.400.jpg", 
-            "nom": "Biscuits napp\u00e9s d'un enrobage chocolat et saveur n", 
+            "nom": "Biscuits napp\u00e9s d'un enrobage chocolat et saveur noisette et spirale de chocolat au lait", 
             "quantite": 51, 
             "type_produit": 259, 
             "unite": 1, 
@@ -13520,7 +13496,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/762/230/078/4751/front.3.400.jpg", 
-            "nom": "g\u00e2teau moelleux aux morceaux de chocolat et au lai", 
+            "nom": "g\u00e2teau moelleux aux morceaux de chocolat et au lait du pays alpin fourr\u00e9 au chocolat", 
             "quantite": 175, 
             "type_produit": 0, 
             "unite": 1, 
@@ -13532,7 +13508,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/762/230/065/0339/front.18.400.jpg", 
-            "nom": "Chocolat au lait du pays alpin aux morceaux (12%) ", 
+            "nom": "Chocolat au lait du pays alpin aux morceaux (12%) de biscuit cacaot\u00e9 et fourr\u00e9 cr\u00e8me confiseur (38%)", 
             "quantite": 100, 
             "type_produit": 0, 
             "unite": 1, 
@@ -13736,7 +13712,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/544/900/006/7456/front.9.400.jpg", 
-            "nom": "Boisson vitalisante avec jus de fruits, avec sucre", 
+            "nom": "Boisson vitalisante avec jus de fruits, avec sucre et \u00e9dulcorants, et enrichie en vitamines E, B3, B", 
             "quantite": 250, 
             "type_produit": 0, 
             "unite": 4, 
@@ -13772,7 +13748,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/324/227/807/0416/front.7.400.jpg", 
-            "nom": "galette de riz roul\u00e9e garni d'une farce \u00e0 base de ", 
+            "nom": "galette de riz roul\u00e9e garni d'une farce \u00e0 base de viande de porc, de crabe et de surimi", 
             "quantite": 330, 
             "type_produit": 276, 
             "unite": 4, 
@@ -13844,7 +13820,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/304/367/562/4871/front.7.400.jpg", 
-            "nom": "Soupe de nouilles japonaises, saveur poulet teriya", 
+            "nom": "Soupe de nouilles japonaises, saveur poulet teriyaki", 
             "quantite": 67, 
             "type_produit": 281, 
             "unite": 1, 
@@ -13856,7 +13832,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/871/242/917/6403/front.6.400.jpg", 
-            "nom": "Soupe de nouilles japonaises, saveur boeuf Sukiyak", 
+            "nom": "Soupe de nouilles japonaises, saveur boeuf Sukiyaki", 
             "quantite": 67, 
             "type_produit": 0, 
             "unite": 1, 
@@ -13928,7 +13904,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/761/210/000/1769/front.7.400.jpg", 
-            "nom": "Poudre \u00e0 base de malte d'orge, lait \u00e9cr\u00e9m\u00e9 et caca", 
+            "nom": "Poudre \u00e0 base de malte d'orge, lait \u00e9cr\u00e9m\u00e9 et cacao", 
             "quantite": 500, 
             "type_produit": 286, 
             "unite": 1, 
@@ -14072,7 +14048,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/541/004/104/0807/front.4.400.jpg", 
-            "nom": "Tendre g\u00e9noise recouverte d'un nappage \u00e0 la frambo", 
+            "nom": "Tendre g\u00e9noise recouverte d'un nappage \u00e0 la framboise et d'une coque de chocolat fin", 
             "quantite": 150, 
             "type_produit": 0, 
             "unite": 1, 
@@ -14084,7 +14060,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/359/671/036/6743/front.5.400.jpg", 
-            "nom": "Boisson aux fruits \u00e0 base de lait de coco et de ju", 
+            "nom": "Boisson aux fruits \u00e0 base de lait de coco et de jus d'ananas \u00e0 base de concentr\u00e9", 
             "quantite": 50, 
             "type_produit": 299, 
             "unite": 4, 
@@ -14120,7 +14096,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/325/622/111/5963/front.12.400.jpg", 
-            "nom": "Pizza \u00e0 base de mozzarella et de fromage de ch\u00e8vre", 
+            "nom": "Pizza \u00e0 base de mozzarella et de fromage de ch\u00e8vre, surgel\u00e9e", 
             "quantite": 320, 
             "type_produit": 302, 
             "unite": 1, 
@@ -14132,7 +14108,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/359/671/024/7493/front.6.400.jpg", 
-            "nom": "pizza cuite sur pierre avec jambon, champignons, e", 
+            "nom": "pizza cuite sur pierre avec jambon, champignons, edam, olives et emmental", 
             "quantite": 400, 
             "type_produit": 0, 
             "unite": 1, 
@@ -14144,7 +14120,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/325/622/111/5970/front.11.400.jpg", 
-            "nom": "Pizza \u00e0 base de viande bovine, emmental et fromage", 
+            "nom": "Pizza \u00e0 base de viande bovine, emmental et fromage, surgel\u00e9e", 
             "quantite": 330, 
             "type_produit": 0, 
             "unite": 1, 
@@ -14240,7 +14216,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/360/090/000/6934/front.6.400.jpg", 
-            "nom": "Pr\u00e9paration \u00e0 base de bl\u00e9 dur, soja, lentilles, ra", 
+            "nom": "Pr\u00e9paration \u00e0 base de bl\u00e9 dur, soja, lentilles, raisins secs, carottes d\u00e9shydrat\u00e9es et aromatis\u00e9s au", 
             "quantite": 330, 
             "type_produit": 305, 
             "unite": 1, 
@@ -14252,7 +14228,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/762/240/001/3928/front.3.400.jpg", 
-            "nom": "Chocolat au lait extra-fin, fourr\u00e9 aux pralin\u00e9s no", 
+            "nom": "Chocolat au lait extra-fin, fourr\u00e9 aux pralin\u00e9s noisettes et amandes et noix de cajou", 
             "quantite": 200, 
             "type_produit": 0, 
             "unite": 1, 
@@ -14288,7 +14264,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/762/220/000/5482/front.3.400.jpg", 
-            "nom": "Chocolat noir fourr\u00e9 au pralin\u00e9 et aux \u00e9clats de n", 
+            "nom": "Chocolat noir fourr\u00e9 au pralin\u00e9 et aux \u00e9clats de noisettes", 
             "quantite": 150, 
             "type_produit": 0, 
             "unite": 1, 
@@ -14312,7 +14288,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/541/004/142/3709/front.5.400.jpg", 
-            "nom": "Biscuits aux c\u00e9r\u00e9ales et au lait fourr\u00e9s go\u00fbt vani", 
+            "nom": "Biscuits aux c\u00e9r\u00e9ales et au lait fourr\u00e9s go\u00fbt vanille", 
             "quantite": 20, 
             "type_produit": 0, 
             "unite": 4, 
@@ -14324,7 +14300,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/541/004/142/4805/front.4.400.jpg", 
-            "nom": "BISCUITS AUX CEREALES ET AU LAIT FOURRES PARFUM CH", 
+            "nom": "BISCUITS AUX CEREALES ET AU LAIT FOURRES PARFUM CHOCOLAT", 
             "quantite": 300, 
             "type_produit": 0, 
             "unite": 1, 
@@ -14336,7 +14312,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/541/004/142/5000/front.16.400.jpg", 
-            "nom": "G\u00e2teau chocolat\u00e9 - Biscuits aux c\u00e9r\u00e9ales et au lai", 
+            "nom": "G\u00e2teau chocolat\u00e9 - Biscuits aux c\u00e9r\u00e9ales et au lait fourr\u00e9s au lait et go\u00fbt chocolat (35%)", 
             "quantite": 300, 
             "type_produit": 309, 
             "unite": 1, 
@@ -14396,7 +14372,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/327/019/020/4008/front.6.400.jpg", 
-            "nom": "p\u00e2te \u00e0 tarte feuillet\u00e9e pur beurre pr\u00eate \u00e0 d\u00e9roule", 
+            "nom": "p\u00e2te \u00e0 tarte feuillet\u00e9e pur beurre pr\u00eate \u00e0 d\u00e9rouler", 
             "quantite": 230, 
             "type_produit": 310, 
             "unite": 1, 
@@ -14420,7 +14396,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/356/470/004/4643/front.4.400.jpg", 
-            "nom": "p\u00e2te feuillet\u00e9e sans mati\u00e8re grasse hydrog\u00e9n\u00e9e pr\u00ea", 
+            "nom": "p\u00e2te feuillet\u00e9e sans mati\u00e8re grasse hydrog\u00e9n\u00e9e pr\u00eate \u00e0 d\u00e9rouler de 32cm de diam\u00e8tre avec papier cuis", 
             "quantite": 210, 
             "type_produit": 312, 
             "unite": 1, 
@@ -14540,7 +14516,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/800/166/511/3069/front.6.400.jpg", 
-            "nom": "P\u00e2tes fra\u00eeches aux oeufs farcies aux c\u00e8pes et \u00e0 la", 
+            "nom": "P\u00e2tes fra\u00eeches aux oeufs farcies aux c\u00e8pes et \u00e0 la cr\u00e8me de fromage", 
             "quantite": 250, 
             "type_produit": 0, 
             "unite": 1, 
@@ -14744,7 +14720,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/327/665/010/2204/front.9.400.jpg", 
-            "nom": "sauce \u00e9pic\u00e9e au vinaigre, \u00e0 la moutarde et aux cor", 
+            "nom": "sauce \u00e9pic\u00e9e au vinaigre, \u00e0 la moutarde et aux cornichons", 
             "quantite": 350, 
             "type_produit": 0, 
             "unite": 4, 
@@ -14960,7 +14936,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/325/039/011/1030/front.6.400.jpg", 
-            "nom": "Biscuits fourr\u00e9s \u00e0 la framboise et napp\u00e9 de chocol", 
+            "nom": "Biscuits fourr\u00e9s \u00e0 la framboise et napp\u00e9 de chocolat noir", 
             "quantite": 150, 
             "type_produit": 0, 
             "unite": 1, 
@@ -14984,7 +14960,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/324/883/308/5802/front.3.400.jpg", 
-            "nom": "Tarte au saumon et poireaux au fromage blanc acidu", 
+            "nom": "Tarte au saumon et poireaux au fromage blanc acidul\u00e9e d'une note d'agrume", 
             "quantite": 400, 
             "type_produit": 0, 
             "unite": 1, 
@@ -14996,7 +14972,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/325/039/002/0998/front.3.400.jpg", 
-            "nom": "Tarte aux trois fromages : emmental, comt\u00e9, beaufo", 
+            "nom": "Tarte aux trois fromages : emmental, comt\u00e9, beaufort", 
             "quantite": 400, 
             "type_produit": 0, 
             "unite": 1, 
@@ -15080,7 +15056,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/315/423/003/3271/front.6.400.jpg", 
-            "nom": "Croque-Monsieur \u00e0 base de raclette et de jambon fu", 
+            "nom": "Croque-Monsieur \u00e0 base de raclette et de jambon fum\u00e9", 
             "quantite": 200, 
             "type_produit": 0, 
             "unite": 1, 
@@ -15272,7 +15248,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/325/622/021/0478/front.4.400.jpg", 
-            "nom": "Cookies aux p\u00e9pites de chocolat et \u00e0 la noix de co", 
+            "nom": "Cookies aux p\u00e9pites de chocolat et \u00e0 la noix de coco", 
             "quantite": 200, 
             "type_produit": 0, 
             "unite": 1, 
@@ -15332,7 +15308,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/325/622/051/4606/front.7.400.jpg", 
-            "nom": "Velout\u00e9 de potiron \u00e0 la cr\u00e8me fra\u00eeche, enrichi en ", 
+            "nom": "Velout\u00e9 de potiron \u00e0 la cr\u00e8me fra\u00eeche, enrichi en vitamine A", 
             "quantite": 60, 
             "type_produit": 0, 
             "unite": 4, 
@@ -15392,7 +15368,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/619/154/410/0760/front.5.400.jpg", 
-            "nom": "Chocolat au lait avec caramel, riz souffl\u00e9 et gauf", 
+            "nom": "Chocolat au lait avec caramel, riz souffl\u00e9 et gauffrette", 
             "quantite": 36, 
             "type_produit": 358, 
             "unite": 1, 
@@ -15404,7 +15380,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/333/952/004/6067/front.13.400.jpg", 
-            "nom": "yaourts au lait entier brass\u00e9 aromatis\u00e9s \u00e0 la p\u00each", 
+            "nom": "yaourts au lait entier brass\u00e9 aromatis\u00e9s \u00e0 la p\u00eache du Roussillon", 
             "quantite": 4, 
             "type_produit": 360, 
             "unite": 4, 
@@ -15428,7 +15404,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/301/776/031/4091/front.13.400.jpg", 
-            "nom": "Biscuits aux c\u00e9r\u00e9ales, au miel  de fleurs et aux p", 
+            "nom": "Biscuits aux c\u00e9r\u00e9ales, au miel  de fleurs et aux p\u00e9pites de chocolat, enrichis en vitamines E, B1, P", 
             "quantite": 435, 
             "type_produit": 0, 
             "unite": 1, 
@@ -15500,7 +15476,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/17116844/front.6.400.jpg", 
-            "nom": "biscuit au c\u00e9r\u00e9ales et au lait, gout chocolat blan", 
+            "nom": "biscuit au c\u00e9r\u00e9ales et au lait, gout chocolat blanc", 
             "quantite": 300, 
             "type_produit": 0, 
             "unite": 1, 
@@ -15512,7 +15488,7 @@
     {
         "fields": {
             "image": "http://fr.openfoodfacts.org/images/products/800/050/011/1093/front.4.400.jpg", 
-            "nom": "Pastilles aromatis\u00e9es \u00e0 la cerise et au fruit de l", 
+            "nom": "Pastilles aromatis\u00e9es \u00e0 la cerise et au fruit de la passion", 
             "quantite": 4, 
             "type_produit": 0, 
             "unite": 4, 
@@ -16430,7 +16406,7 @@
             "is_active": true, 
             "is_staff": true, 
             "is_superuser": true, 
-            "last_login": "2013-04-11T14:19:01", 
+            "last_login": "2013-02-20T18:12:28", 
             "last_name": "Gaston", 
             "password": "pbkdf2_sha256$10000$oTWrTghMQiMC$e9wtzxGzHCrYxvlMI/EWa/py/foG512ZODGxfH9N+Uw=", 
             "user_permissions": [], 
@@ -17720,7 +17696,7 @@
             "is_active": true, 
             "is_staff": true, 
             "is_superuser": true, 
-            "last_login": "2013-04-11T14:19:01", 
+            "last_login": "2013-02-20T18:12:28", 
             "last_name": "Gaston", 
             "password": "pbkdf2_sha256$10000$oTWrTghMQiMC$e9wtzxGzHCrYxvlMI/EWa/py/foG512ZODGxfH9N+Uw=", 
             "user_permissions": [], 
