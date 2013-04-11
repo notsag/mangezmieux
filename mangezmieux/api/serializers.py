@@ -2,7 +2,7 @@
 from django.contrib.auth.models import User
 from core.models import *
 from home.models import News
-from rest_framework import serializers
+from rest_framework import serializers, fields
 
 
 class NewsSerializer(serializers.ModelSerializer):
@@ -10,10 +10,13 @@ class NewsSerializer(serializers.ModelSerializer):
 		model = News
 		fields = ('id', 'nom', 'info', 'date_pub')
 
-class UserSerializer(serializers.ModelSerializer):
-	class Meta:
-		model = User
-		fields = ('id', 'username', 'email', 'first_name', 'last_name')
+class UserSerializer(serializers.Serializer):
+	id = fields.Field()
+	username = fields.Field()
+	first_name = fields.Field()
+	last_name= fields.Field()
+	email = fields.Field()
+	gouts = fields.Field(source="get_profile.gouts")
                 
 class UniteSerializer(serializers.ModelSerializer):
 	class Meta:
