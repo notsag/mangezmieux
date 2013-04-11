@@ -9,6 +9,7 @@ from home.models import News
 from core.api import *
 from planning.views import *
 from recette.views import *
+from commande.views import creationCommande
 
 from django.http import Http404
 from rest_framework.views import APIView
@@ -366,6 +367,18 @@ class CommandeList(generics.ListCreateAPIView):
     """
     model = Commande
     serializer_class = CommandeSerializer
+
+    def get_queryset(self):
+        # récupération de l'utilisateur connecté
+        userId = self.request.QUERY_PARAMS.get('userId', None)
+
+        user = User.objects.get(pk = userId)
+        
+        # récupération de l'historique des commandes triées sur la date
+        commandes = Commande.objects.filter(client = user).order_by('-date')
+
+        return commandes
+
         
 class CommandeDetail(generics.RetrieveUpdateDestroyAPIView):
     """
@@ -373,7 +386,24 @@ class CommandeDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     model = Commande
     serializer_class = CommandeSerializer
-    
+
+class CommandeCommander(generics.CreateAPIView):
+    """
+        Fonction API permettant de passer commande a partir d'un panier
+    """
+    model = Commande
+    serializer_class = CommandeSerializer
+
+    def post(self, request, format=None):
+        userId = request.QUERY_PARAMS.get('userId', None)
+        panierId = request.QUERY_PARAMS.get('panierId', None)
+        
+        if userId != None and panier != None:
+            user = User.objects.get(pk = userId)
+            panier = Panier.objects.get(pk = panierId)
+
+            creationCommande(panier, user)
+
 class LigneCommandeList(generics.ListCreateAPIView):
     """
     API endpoint that represents a list of type LigneCommande.
