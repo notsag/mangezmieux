@@ -20,7 +20,7 @@ class Unite(models.Model):
 
 #Type de produit (proteines, féculents...)
 class TypeProduit(models.Model):
-    nom = models.CharField(max_length=15, unique=True)
+    nom = models.CharField(max_length=30, unique=True)
     parent = models.ForeignKey('self', null = True, blank = True)
 
     def __unicode__(self):
