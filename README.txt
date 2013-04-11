@@ -49,6 +49,7 @@ mangezmieux/
   |- urls.py         #fichiers de redirection des urls
 scripts/
   |- data.csv		 #données de openfoodfacts (liste de produits)
+  |- install.sh		 #script d'installation de la base de données 
   |- openfoodfacts_to_mangezmieux.pl #script d'import des données openfoodfacts dans MangezMieux
 
 
