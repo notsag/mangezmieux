@@ -2,23 +2,23 @@
 {% load static %}
 
 {% block content %}
-	<h2>Recherche</h2>
+	<h3>Rechercher une recette</h3>
 	<form action="/recette/recherche" method="get">
 		{{form.as_p}}
 		<p>
-			<input type="submit" value="Rechercher" />
+			<input class="btn" type="submit" value="Rechercher" />
 		</p>
 	</form>
-	<h2>Liste des recettes</h2>
-	<table>
-		<tr>
+	<h3>Liste des recettes</h2>
+	<table class="table table-hover">
+		<tr class="titleTab">
 			<th>Nom</th>
 			<th>Catégorie</th>
 			<th>Durée</th>
 			<th>Difficulté</th>
 		</tr>
 		{% for recette in recettes %}
-			<tr>
+			<tr class="ligneTab">
 				<td><a href="/recette/detail/{{recette.pk}}">{{recette.nom}}</a></td>
 				<td>
 					{% for categorie in recette.categorie.all  %}

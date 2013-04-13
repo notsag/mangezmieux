@@ -2,16 +2,16 @@
 {% load static %}
 
 {% block content %}
-    <h2>Liste de mes recettes</h2>
-    <table>
-        <tr>
+    <h3>Mes recettes</h3>
+    <table class="table table-hover">
+        <tr class="titleTab">
             <th>Nom</th>
             <th>Catégorie</th>
             <th>Durée</th>
             <th>Difficulté</th>
         </tr>
         {% for recette in recettes %}
-            <tr>
+            <tr class="ligneTab">
                 <td><a href="/recette/detail/{{recette.pk}}">{{recette.nom}}</a></td>
                 <td>
                     {% for categorie in recette.categorie.all %}

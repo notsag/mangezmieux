@@ -4,7 +4,9 @@
 {% block content %}
             <script>
    $(document).ready(function() {
-      $('.round').roundabout();
+      $('.round').roundabout({
+         enableDrag: true
+      });
    });
 </script>
     <div id="planning-gauche" class="span3">
@@ -39,16 +41,27 @@
                         <div class="tab-pane {% if forloop.counter == 1 %} active {% endif%}" id="{{forloop.parentloop.counter}}{{forloop.counter}}">
                             {% if col.recette == None or col.produit == None%}
                                 <div class="ligneRepas vide">Aucun repas</div>
-                                <div class="ligneRepas"><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r" class="btn">Ajouter une recette</a><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p" class="btn">Ajouter un produit</a></div>
+                                <div class="ligneRepas"><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r" class="btn btn-info">Ajouter une recette</a><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p" class="btn btn-info">Ajouter un produit</a></div>
                             {% else %}
                                 {% for re in col.recette.all %}
-                                    <div class="ligneRepas"><a href="/recette/detail/{{re.id}}">{{re.nom}}</a><div class="infoRecette">Difficulte : {{re.difficulte}}/5, Temps de preparation : {{re.duree}} min.<a href="retirer-recette/?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&r={{re.id}}"><button class="btn btn-primary" value="Supprimer">Supprimer</button></a></div></div>
+                                    <div class="ligneRepas">
+                                       <a href="/recette/detail/{{re.id}}"><img src="{{re.image.url}}"/>{{re.nom}}</a><a class="supprimer" href="retirer-recette/?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&r={{re.id}}"><button class="btn btn-info" value="Supprimer">Suppr</button></a>
+                                       <div class="infoRecette">
+                                          Nombre de personnes : {{col.nb_personne}} pers, 
+                                          Difficulte : {{re.difficulte}}/5, Temps de preparation : {{re.duree}} min.
+                                       </div>
+                                    </div>
                                 {% endfor %}
         
                                 {% for pr in col.produit.all %}
-                                    <div class="ligneRepas"><a href="/produit/detail/{{pr.produit.id}}">{{pr.produit.nom}}</a> ({{pr.quantite}} {{pr.unite.abreviation}}.)<div class="infoRecette"><a href="retirer-produit/?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&p={{pr.id}}"><button class="btn btn-primary" value="Supprimer">Supprimer</button></a></div></div>
+                                    <div class="ligneRepas">
+                                       <a href="/produit/detail/{{pr.produit.id}}"><img src="{{pr.produit.image.url}}"/>{{pr.produit.nom}}</a> ({{pr.quantite}} {{pr.unite.abreviation}}.)<a class="supprimer" href="retirer-produit/?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&p={{pr.id}}"><button class="btn btn-info" value="Supprimer">Suppr</button></a>
+                                       <div class="infoRecette">
+                                          Nombre de personnes : {{col.nb_personne}} pers.
+                                       </div>
+                                    </div>
                                 {% endfor %}
-                                <div class="ligneRepas"><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r" class="btn">Ajouter une recette</a><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p" class="btn">Ajouter un produit</a></div>
+                                <div class="ligneRepas"><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r" class="btn btn-info">Ajouter une recette</a><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p" class="btn btn-info">Ajouter un produit</a></div>
                             {% endif%}
                         </div>
                         {% endfor %}
