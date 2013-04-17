@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <script>
+    $(document).ready(function() {
+	$('#test').dataTable( {
+		"sScrollY": "200px",
+		"bPaginate": false
+	} );
+    } );
+    
+    function fnShowHide( iCol )
+    {
+	/* Get the DataTables object again - this is not a recreation, just a get of the object */
+	var oTable = $('#test').dataTable();
+	
+	var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;
+	oTable.fnSetColumnVis( iCol, bVis ? false : true );
+    }
+    </script>
+    
+    <a href="javascript:void(0);" onclick="fnShowHide(0);">col A1</a><br/>
+    <a href="javascript:void(0);" onclick="fnShowHide(1);">col A2</a><br/>
+    <a href="javascript:void(0);" onclick="fnShowHide(2);">col A3</a><br/>
+    <a href="javascript:void(0);" onclick="fnShowHide(3);">col A4</a><br/>
+    
+    <table id="test" BORDER="1"> 
+        <CAPTION> Voici le titre du tableau </CAPTION> 
+        <TR> 
+            <TH> Titre A1 </TH> 
+            <TH> Titre A2 </TH> 
+            <TH> Titre A3 </TH> 
+            <TH> Titre A4 </TH> 
+        </TR> 
+        <TR> 
+            <TD> Titre B1 </TD> 
+            <TD> Valeur B2 </TD> 
+            <TD> Valeur B3 </TD> 
+            <TD> Valeur B4 </TD> 
+        </TR> 
+    </table> 
+{% endblock %}

@@ -103,7 +103,7 @@ def home(request):
     #On recupere les suggestion de recettes
     recettesProp = suggestion(request.user)
     
-    return render(request, 'planning/home3.html', locals())
+    return render(request, 'planning/home4.html', locals())
 
 @login_required(login_url='/connexion')
 def ajouter_repas(request):
