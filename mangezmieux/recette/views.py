@@ -303,7 +303,7 @@ def mes_recettes(request):
     """
     recettes = recettesParCreateur(request.user)
 
-    return render(request, 'recette/mesRecettes.html', locals())
+    return render(request, 'recette/mesrecettes.html', locals())
     
 def recettesParCreateur(_user):
     """
