@@ -42,7 +42,7 @@ EOF
 install_db() {
 	${sed} -i "s/${pattern_a_commenter}/\#${pattern_a_commenter}/g" ${auth_models}
 	echo "Recréation de la base de données\n"
-	${mysql} -h ${db_host} -u ${db_user} -p${db_password} -e "DROP DATABASE ${db_name}; CREATE DATABASE ${db_name};"
+	${mysql} -h ${db_host} -u ${db_user} -p${db_password} -e "DROP DATABASE IF EXISTS ${db_name}; CREATE DATABASE ${db_name};"
 	echo "Insertion des données\n"
 	${python} ${admin_script}
 	echo "Création des index fulltext\n"
