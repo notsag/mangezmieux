@@ -784,12 +784,12 @@ html, body {
 }
 
 .recetteProp {
-	height: 132px;
-	width: 198px;
-	
+
 	background-image: -webkit-linear-gradient(top,white,#F2F2F2);
 	background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
-
+		
+	float: left;
+	margin-right: 20px;
 	/*-moz-box-shadow: 1px 0px 3px 0px #656565;
 	-webkit-box-shadow: 1px 0px 3px 0px #656565;
 	-o-box-shadow: 1px 0px 3px 0px #656565;
@@ -1136,4 +1136,42 @@ html, body {
 
 .ligneTab {
 	background-color: white;
+}
+
+#planning4{
+	
+}
+
+#planning4 td{
+	background-color: white;
+	text-align: center;
+	
+	width: 265px;
+	height: 210px;
+}
+
+#planning4 th{
+	text-align: center;
+}
+
+#planning4 .contenu-ligne {
+	height: 190px;
+}
+
+#planning4 #precedent {
+	float: left;
+}
+
+#planning4 #suivant {
+	float: right;
+}
+
+#suggestion {
+	margin-bottom: 20px;
+	position: relative;
+	height: 150px;
+}
+
+.recetteProp img {
+	max-height: 100px;
 }

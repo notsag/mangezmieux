@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*-
-from django.shortcuts import redirect, render_to_response
+from django.shortcuts import redirect, render_to_response, render
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth.models import User
@@ -8,6 +8,10 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm
 from forms import *
 
+@login_required(login_url='/connexion')
+def stats(request):
+	
+	return render(request, 'auth/stats.html', locals())	
 
 def inscription(request):
 	"""

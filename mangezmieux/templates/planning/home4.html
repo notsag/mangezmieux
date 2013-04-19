@@ -2,42 +2,87 @@
 {% load static %}
 
 {% block content %}
-    <script>
-    $(document).ready(function() {
-	$('#test').dataTable( {
-		"sScrollY": "200px",
-		"bPaginate": false
-	} );
-    } );
+    <div id="suggestion">
+	<h5>Vous aimerez peut-etre</h5>
+            {% for recetteProp in recettesProp %}
+                <div class="recetteProp"><a href="/recette/detail/{{recetteProp.id}}"><img src="{{recetteProp.image.url}}" class="" alt="Illustration pour : {{recetteProp.nom}}"/></a></div>
+            {% endfor %}
+    </div>
+    <div id="planning4">
+	<div id="entetePlanning">
+            <p>{{debutSemaine}} - {{finSemaine}}<br><br></p>
+            <a id="prevPlanning" class="carousel-control left" href="/planning?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
+            <a id="nextPlanning" class="carousel-control right" href="/planning?d={{semaineSuivante|date:"Y-m-d"}}" data-slide="next">&rsaquo;</a> 
+        </div>
+	<table class="table table-hover table-bordered" id="test" style="width: 940px"> 
+	    <tr class="titleTab">
+		<th class="1">Lundi</th>
+		<th class="2">Mardi</th>
+		<th class="3">Mercredi</th>
+		<th class="4"><a href="javascript:void(0);" id="precedent" class="icon-arrow-left"></a>Jeudi <a href="javascript:void(0);" id="suivant" class="icon-arrow-right"></a></th>
+		<th class="5">Vendredi</th>
+		<th class="6">Samedi</th>
+		<th class="7">Dimanche</th>
+	    </tr>
+	    {% for ligne in planning %}
+		<tr> 
+		{% for col in ligne %}
+		    <td class="{{forloop.counter}}">
+			
+			{% if col.recette == None or col.produit == None%}
+			    <div class="contenu-ligne">
+				<div class="ligneRepas vide">Aucun repas</div>
+			    </div>
+			    <div class="ligneAjouter"><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r" class="icon-plus"></a>Recette<a class="icon-plus" href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p"></a>Produit</div>
+			{% else %}
+			    <div class="contenu-ligne">
+				{% for re in col.recette.all %}
+				    <div class="ligneRepas"><a href="/recette/detail/{{re.id}}">{{re.nom}}</a><a class="icon-minus" href="retirer-recette/?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&r={{re.id}}"></a></div>
+				{% endfor %}
+	    
+				{% for pr in col.produit.all %}
+				    <div class="ligneRepas"><a href="/produit/detail/{{pr.produit.id}}">{{pr.produit.nom}}</a> ({{pr.quantite}} {{pr.unite.abreviation}}.)<a class="icon-minus" href="retirer-produit/?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&p={{pr.id}}"><a></div>
+				{% endfor %}
+			    </div>
+			    <div class="ligneAjouter"><a class="icon-plus" href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r"></a>Recette<a class="icon-plus" href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p"></a>Produit</div>
+			{% endif%}
+		    </td> 
+		{% endfor%}
+		</tr>
+	    {% endfor%}
+	     
+	</table>
+    </div>
     
-    function fnShowHide( iCol )
-    {
-	/* Get the DataTables object again - this is not a recreation, just a get of the object */
-	var oTable = $('#test').dataTable();
+    <script>
+	$(document).ready(function() {
+	    $('.5').hide();
+	    $('.6').hide();
+	    $('.7').hide();
+	    $('#precedent').hide();
+	});
+	$('#suivant').click(function(){
+	    $('.1').hide();
+	    $('.2').hide();
+	    $('.3').hide();
+	    $('.5').show();
+	    $('.6').show();
+	    $('.7').show();
+	    $('#precedent').show();
+	    $('#suivant').hide();
+	});
 	
-	var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;
-	oTable.fnSetColumnVis( iCol, bVis ? false : true );
-    }
+	$('#precedent').click(function(){
+	    $('.5').hide();
+	    $('.6').hide();
+	    $('.7').hide();
+	    $('.1').show();
+	    $('.2').show();
+	    $('.3').show();
+	    
+	    $('#precedent').hide();
+	    $('#suivant').show();
+	});
     </script>
     
-    <a href="javascript:void(0);" onclick="fnShowHide(0);">col A1</a><br/>
-    <a href="javascript:void(0);" onclick="fnShowHide(1);">col A2</a><br/>
-    <a href="javascript:void(0);" onclick="fnShowHide(2);">col A3</a><br/>
-    <a href="javascript:void(0);" onclick="fnShowHide(3);">col A4</a><br/>
-    
-    <table id="test" BORDER="1"> 
-        <CAPTION> Voici le titre du tableau </CAPTION> 
-        <TR> 
-            <TH> Titre A1 </TH> 
-            <TH> Titre A2 </TH> 
-            <TH> Titre A3 </TH> 
-            <TH> Titre A4 </TH> 
-        </TR> 
-        <TR> 
-            <TD> Titre B1 </TD> 
-            <TD> Valeur B2 </TD> 
-            <TD> Valeur B3 </TD> 
-            <TD> Valeur B4 </TD> 
-        </TR> 
-    </table> 
 {% endblock %}
