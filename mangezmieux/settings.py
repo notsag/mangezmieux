@@ -96,11 +96,13 @@ INSTALLED_APPS = (
     'core',
     'home',
     'produit',
+    'recette',
     'planning',
     'auth',
     'api',
     'mysqlfulltextsearch',
-    'panier'
+    'panier',
+    'commande',
 )
 
 

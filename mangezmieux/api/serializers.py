@@ -1,7 +1,6 @@
 #-*- coding: utf-8 -*-
 from django.contrib.auth.models import User
 from core.models import *
-from home.models import News
 from rest_framework import serializers, fields
 
 

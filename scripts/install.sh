@@ -46,7 +46,7 @@ install_db() {
 	echo "Insertion des données\n"
 	${python} ${admin_script}
 	echo "Création des index fulltext\n"
-	${mysql} -h ${db_host} -u ${db_user} -p${db_password} ${db_name} -e "CREATE FULLTEXT INDEX recette_tags on core_recette (tags);"
+	${mysql} -h ${db_host} -u ${db_user} -p${db_password} ${db_name} -e "CREATE FULLTEXT INDEX recette_tags on recette_recette (tags);"
 	${sed} -i "s/\#${pattern_a_commenter}/${pattern_a_commenter}/g" ${auth_models}
 }
 
