@@ -50,4 +50,22 @@ Site Web en Python/Django répondant au besoin : mangez varié et équilibré sa
 Le projet contient également les sources du paquet Debian.
 
 
+### Compilation
+
+Pour compiler les paquet, vous aurez besoin des outils de packaging Debian [voir ici][http://www.debian.org/doc/manuals/maint-guide/start.en.html].
+
+Vous pourrez ensuite le compiler en executant la commande :
+
+    dpkg-buildpackage
+
+On passera ensuite une étape de vérification du paquet avec lintian : 
+
+    lintian -b ../mangezmieux_X.X-X_all.deb
+
+### Installation
+
+Il ne vous reste plus qu'à installer le paquet sur le serveur en exécutant la commande : 
+
+    dpkg -i mangezmieux_X.X-X_all.deb
+
 

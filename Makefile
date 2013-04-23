@@ -4,6 +4,7 @@ CODEDIR=$(PKGDIR)/usr/share
 GITFILES=".git*"
 
 install:
+	find $(PROJECT) -name "*.pyc" -delete
 	mkdir -p $(CODEDIR)
 	cp -r $(PROJECT) $(CODEDIR)/
 clean:
