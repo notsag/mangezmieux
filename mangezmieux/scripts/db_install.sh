@@ -3,9 +3,10 @@
 python=`which python`
 mysql=`which mysql`
 sed=`which sed`
-project_dir="../mangezmieux"
-admin_script="${project_dir}/manage.py syncdb --noinput"
-auth_models="${project_dir}/auth/models.py"
+project_dir="`dirname $0`/.."
+cd "${project_dir}"
+admin_script="manage.py syncdb --noinput"
+auth_models="auth/models.py"
 pattern_a_commenter="\tpost_save\."
 
 #valeurs par défaut pour la connexion a la db
