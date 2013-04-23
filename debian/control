@@ -1,0 +1,12 @@
+Source: mangezmieux
+Section: python
+Priority: extra
+Maintainer: Maxime GASTON <maxime.gaston@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+
+Package: mangezmieux
+Architecture: all
+Depends: debconf, mysql-server (>= 5.1) ,python2.6-dev, python-pip, python-mysqldb, python-django (>= 1.4), python-markdown, python-yaml, python-simplejson, python-dateutil, apache2, libapache2-mod-wsgi
+Description: Site/API MangezMieux
+ Site web et API du projet MangezMieux
