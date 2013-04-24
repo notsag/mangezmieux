@@ -54,6 +54,7 @@ voir la procédure de la [doc Django](https://docs.djangoproject.com/en/1.2/howt
     * **static/** _CSS + JS_
     * **templates/** _HTML_
     * **urls.py** _Fichiers de redirection des urls_
+    * **wsgi.py** Fichier de déploiement sous Apache
 * **README.md** _Ce fichier_
 * **scripts/**
 
