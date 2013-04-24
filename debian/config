@@ -1,0 +1,17 @@
+#! /bin/sh -e
+
+# Use debconf.
+. /usr/share/debconf/confmodule
+
+db_fset mangezmieux/mangezmieux_db_host seen false
+db_fset mangezmieux/mangezmieux_db_name seen false
+db_fset mangezmieux/mangezmieux_db_login seen false
+db_fset mangezmieux/mangezmieux_db_passwd seen false
+db_fset mangezmieux/mangezmieux_install_db seen false
+db_input critical mangezmieux/mangezmieux_db_host  || true
+db_input critical mangezmieux/mangezmieux_db_name  || true
+db_input critical mangezmieux/mangezmieux_db_login  || true
+db_input critical mangezmieux/mangezmieux_db_passwd  || true
+db_input critical mangezmieux/mangezmieux_install_db  || true
+db_go
+

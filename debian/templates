@@ -1,0 +1,34 @@
+Template: mangezmieux/mangezmieux_db_host
+Type: string
+Description:
+ Veuillez saisir le nom ou l'adresse IP du serveur MySQL utilisé pour MangezMieux.
+Default: localhost
+
+Template: mangezmieux/mangezmieux_db_name
+Type: string
+Description:
+ Veuillez saisir le nom de la base MySQL utilisée pour MangezMieux.
+Default: mangez_mieux
+
+Template: mangezmieux/mangezmieux_db_login
+Type: string
+Description:
+ Veuillez saisir le nom d'utilisateur MySQL à utiliser.                            
+Default: mangezmieux
+
+Template: mangezmieux/mangezmieux_db_passwd
+Type: password
+Description: 
+ Veuillez saisir le mot de passe associé à cet utilisateur.
+Default: mangezmieux
+
+Template: mangezmieux/mangezmieux_install_db
+Type: boolean
+Description: Installer la base?
+ Choisissez ou non d'installer la base de données initiale 
+ de MangezMieux.
+ .
+ Vous pourrez toujours installer la base initiale en
+ utilisant la commande : 
+ /usr/share/mangezmieux/scripts/db_install.sh
+

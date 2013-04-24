@@ -44,7 +44,7 @@ LANGUAGE_CODE = 'fr-fr'
 USE_I18N = True # Internationalisation
 USE_L10N = True # Formatage des dates et nombres en fonction de la locale
 STATICFILES_DIRS = (
-    "static/",
+    os.path.join(SITE_ROOT, 'static/'),
 )
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -60,7 +60,7 @@ STATIC_ROOT = ''
 STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 TEMPLATE_DIRS = (
-    "templates/"
+    os.path.join(SITE_ROOT, 'templates/'),
 )
 
 
@@ -96,11 +96,13 @@ INSTALLED_APPS = (
     'core',
     'home',
     'produit',
+    'recette',
     'planning',
     'auth',
     'api',
     'mysqlfulltextsearch',
-    'panier'
+    'panier',
+    'commande',
 )
 
 

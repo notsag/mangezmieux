@@ -2,13 +2,10 @@
 {% load static %}
 
 {% block content %}
-	<h1>{{type}}s</h1>
+	<h1>{{type}}</h1>
 	
 	<p>
-		{% if stypes %}
-		Seulement : 
-		{% endif %}
-		{% for s in stypes %}
+		{% for s in type.parent %}
 			<a href="{{s.id}}" class="btn">{{s.nom}}</a>
 		{% endfor %}
 	</p>

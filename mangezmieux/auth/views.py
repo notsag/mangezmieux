@@ -1,13 +1,17 @@
 #-*- coding: utf-8 -*-
-from django.shortcuts import redirect, render_to_response
+from django.shortcuts import redirect, render_to_response, render
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm
-from forms import FormulaireInscription, FormulaireUtilisateur
+from forms import *
 
+@login_required(login_url='/connexion')
+def stats(request):
+	
+	return render(request, 'auth/stats.html', locals())	
 
 def inscription(request):
 	"""
@@ -44,9 +48,12 @@ def compte(request):
 	"""
 	if request.method == 'POST':
 		form = FormulaireUtilisateur(request.POST, instance=request.user)
-		if form.is_valid():
+		formp = FormulaireProfil(request.POST, instance=ProfilUtilisateur.objects.get(user=request.user))
+		if form.is_valid() and formp.is_valid():
 			form.save()
+			formp.save()
 	else:
 		form = FormulaireUtilisateur(instance=request.user)
+		formp = FormulaireProfil(instance=ProfilUtilisateur.objects.get(user=request.user))
 	return render_to_response('auth/mon_compte.html',locals(),context_instance=RequestContext(request))
 

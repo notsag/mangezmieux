@@ -2,22 +2,22 @@
 {% load static %}
 
 {% block content %}
-	<h2>Recherche</h2>
+	<h3>Recherche</h3>
 	<form action="/produit/recherche" method="get">
 		{{form.as_p}}
 		<p>
-			<input type="submit" value="Rechercher" />
+			<input class="btn" type="submit" value="Rechercher" />
 		</p>
 	</form>
-	<h2>Liste des produits</h2>
-	<table>
-		<tr>
+	<h3>Liste des produits</h3>
+	<table class="table table-hover">
+		<tr class="titleTab">
 			<th>Nom</th>
 			<th>Type</th>
 			<th>Valeur énergétique</th>
 		</tr>
 		{% for produit in produits %}
-			<tr>
+			<tr class="titleTab">
 				<td><a href="/produit/detail/{{produit.pk}}">{{produit.nom}}</a></td>
 				<td>
 						{{produit.type_produit}}

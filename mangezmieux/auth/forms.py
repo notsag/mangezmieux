@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserChangeForm
 from django.forms.widgets import HiddenInput
 from django import forms
+from models import ProfilUtilisateur
 
 class FormulaireInscription(forms.Form):
 	"""
@@ -60,3 +61,9 @@ class FormulaireUtilisateur(UserChangeForm):
 	def __init__(self, *args, **kwargs):
 		super(UserChangeForm, self).__init__(*args, **kwargs)
 		self.fields['password'].widget = HiddenInput()
+
+class FormulaireProfil(forms.ModelForm):
+	class Meta:
+		model = ProfilUtilisateur
+		fields = ('gouts',)
+

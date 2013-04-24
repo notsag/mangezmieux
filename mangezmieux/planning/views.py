@@ -62,31 +62,7 @@ def home(request):
     """
         On cree un tableau 3*7 qui represente la semaine courante
     """
-    planning = []
-    for i in xrange(7):
-        planning.append([])
-        for j in xrange(3):
-            repasVide = RepasNonPersiste()
-            repasVide.date = debutSemaine + timedelta(days= i)
-            repasVide.ordre = j
-            repasVide.nb_personne = 0
-            planning[i].append(repasVide)
-    
-    for repas in repass :
-        if repas.date.strftime('%A') == 'Monday':
-            planning[0][repas.ordre] = repas
-        elif repas.date.strftime('%A') == 'Tuesday':
-            planning[1][repas.ordre] = repas
-        elif repas.date.strftime('%A') == 'Wednesday':
-            planning[2][repas.ordre] = repas
-        elif repas.date.strftime('%A') == 'Thursday':
-            planning[3][repas.ordre] = repas
-        elif repas.date.strftime('%A') == 'Friday':
-            planning[4][repas.ordre] = repas
-        elif repas.date.strftime('%A') == 'Saturday':
-            planning[5][repas.ordre] = repas
-        elif repas.date.strftime('%A') == 'Sunday':
-            planning[6][repas.ordre] = repas
+    planning = remplirPlanning(repass, debutSemaine)
     
     """
         On recupere une date de la semaine precedente et une date de la semaine suivante
@@ -103,7 +79,36 @@ def home(request):
     #On recupere les suggestion de recettes
     recettesProp = suggestion(request.user)
     
-    return render(request, 'planning/home2.html', locals())
+    return render(request, 'planning/home4.html', locals())
+
+def remplirPlanning(repass, debutSemaine):
+    planning = []
+    for i in xrange(3):
+        planning.append([])
+        for j in xrange(7):
+            repasVide = RepasNonPersiste()
+            repasVide.date = debutSemaine + timedelta(days= i)
+            repasVide.ordre = j
+            repasVide.nb_personne = 0
+            planning[i].append(repasVide)
+    
+    for repas in repass :
+        if repas.date.strftime('%A') == 'Monday':
+            planning[repas.ordre][0] = repas
+        elif repas.date.strftime('%A') == 'Tuesday':
+            planning[repas.ordre][1] = repas
+        elif repas.date.strftime('%A') == 'Wednesday':
+            planning[repas.ordre][2] = repas
+        elif repas.date.strftime('%A') == 'Thursday':
+            planning[repas.ordre][3] = repas
+        elif repas.date.strftime('%A') == 'Friday':
+            planning[repas.ordre][4] = repas
+        elif repas.date.strftime('%A') == 'Saturday':
+            planning[repas.ordre][5] = repas
+        elif repas.date.strftime('%A') == 'Sunday':
+            planning[repas.ordre][6] = repas
+    
+    return planning
 
 @login_required(login_url='/connexion')
 def ajouter_repas(request):

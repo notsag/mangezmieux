@@ -172,7 +172,16 @@ class UserList(generics.ListCreateAPIView):
 	"""
 	model = User
 	serializer_class = UserSerializer
-					
+	
+	def get_queryset(self):
+		userLogin = self.request.QUERY_PARAMS.get('u', None)
+		if userLogin != None:
+			user = User.objects.filter(username = userLogin)
+		else:
+			user = User.objects.all()
+			
+		return user
+						
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):
 	"""
 	Point de l'API pour afficher les infos d'un utilisateur

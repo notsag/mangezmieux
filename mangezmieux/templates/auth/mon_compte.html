@@ -18,12 +18,18 @@
 	<div {% if field.errors %}class="field_error"{% endif %}>
 		{{ field.label_tag }}
 		{{ field }}
-		{% for err in field.errors %}
+		{% for err in ufield.errors %}
 			<span class="error_message">{{ err }}</span>
 		{% endfor %}
 	</div>
 	{% endfor %}
+	{% for field in formp %}
+		{{ field.label_tag }}
+		{{ field }}
+	{% endfor %}
+	<p>Maintenez appuyé « Ctrl », ou « Commande (touche pomme) » sur un Mac, pour en sélectionner plusieurs.</p>
 	<div>
+	<br/>
 	<p>Changer mon mot de passe : <a class="btn btn-small" href="/changer_mot_de_passe">Changer</a></p>
 	</div>
 	<input class="btn" type="submit" value="Mettre à jour">

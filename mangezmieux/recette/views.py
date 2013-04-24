@@ -303,7 +303,7 @@ def mes_recettes(request):
     """
     recettes = recettesParCreateur(request.user)
 
-    return render(request, 'recette/mesRecettes.html', locals())
+    return render(request, 'recette/mesrecettes.html', locals())
     
 def recettesParCreateur(_user):
     """
@@ -316,10 +316,15 @@ def get_produit(request):
 	val = request.GET.get('v', '')
 	if val != None and val != '':
 		produits = Produit.objects.filter(nom__icontains = val)
+		recettes = Recette.objects.filter(nom__icontains = val)
 		html = "<ul>"
 		for produit in produits:
 			#html += "<li onClick=addForm(this,\"form\",\""+produit.nom+"\")>" + produit.nom + "</li>"
-			html += "<li value=\""+produit.nom+"\" onClick=clickProduit(this)>" + produit.nom + "</li>"
+			html += "<li><a href=\"/produit/detail/" + str(produit.id) + "\">" + produit.nom + "</a></li>"
+		
+		for recette in recettes:
+			#html += "<li onClick=addForm(this,\"form\",\""+produit.nom+"\")>" + produit.nom + "</li>"
+			html += "<li><a href=\"/recette/detail/" + str(recette.id) +"\">" + recette.nom + "</a></li>"
 			
 		html+="</ul>"
 	else:

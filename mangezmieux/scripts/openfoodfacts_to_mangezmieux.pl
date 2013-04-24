@@ -153,7 +153,10 @@ sub import {
 			if (not defined($typep)){ next; }
 			my $quantity = $json->{'product'}{'quantity'};
 			my $qty = $quantity;
-			my ($quantite) = $qty =~ s/^(\d)+//g;
+			my $quantite;
+			if ($qty =~ s/^(\d+)//g){
+				$quantite = $1;
+			}
 			my $unite_id;
 			if ($quantity =~ s/^\d+\s*g\s*$//g) {
 				$unite_id = $unite_g;

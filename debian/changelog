@@ -1,0 +1,5 @@
+mangezmieux (0.8-1) stable; urgency=low
+
+  * Initial Release (Closes: #100) # there was no previous ITP
+
+ -- Maxime GASTON <maxime.gaston@gmail.com>  Tue, 23 Apr 2013 10:50:06 +0200
