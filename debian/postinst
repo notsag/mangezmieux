@@ -44,7 +44,7 @@ case "$1" in
 
         # Install DB
         if [ "${install_req}" = "true" ]; then
-            ${dbinstall} -H ${db_host} -d ${db_name} -u ${db_user} -p ${db_passwd}
+            ${dbinstall} -H ${db_host} -d ${db_name} -u ${db_login} -p ${db_passwd}
         fi
 
         # Configure Apache with WSGI

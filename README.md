@@ -20,6 +20,7 @@ Site Web en Python/Django répondant au besoin : mangez varié et équilibré sa
 * pyyaml 
 * django-filter
 * python-dateutil
+* python-imaging
 
 ### Mise en prod
 
@@ -79,5 +80,15 @@ On passera ensuite une étape de vérification du paquet avec lintian :
 Il ne vous reste plus qu'à installer le paquet sur le serveur en exécutant la commande : 
 
     dpkg -i mangezmieux_X.X-X_all.deb || apt-get install -f
+
+**/!\ Sur une Debian squeeze il faut installer django via les backports pour avoir la version 1.4 :**
+
+Ajouter le dépot au fichier `/etc/apt/sources.list`
+
+    deb http://backports.debian.org/debian-backports squeeze-backports main contrib non-free
+
+Installer django 1.4
+
+    apt-get -t squeeze-backports install python-django
 
 
