@@ -24,8 +24,9 @@ Default: mangezmieux
 
 Template: mangezmieux/mangezmieux_install_db
 Type: boolean
-Description: 
- Voulez-vous installer la base initiale MangezMieux?
+Description: Installer la base?
+ Choisissez ou non d'installer la base de données initiale 
+ de MangezMieux.
  .
  Vous pourrez toujours installer la base initiale en
  utilisant la commande : 
