@@ -22,3 +22,12 @@ Description:
  Veuillez saisir le mot de passe associé à cet utilisateur.
 Default: mangezmieux
 
+Template: mangezmieux/mangezmieux_install_db
+Type: boolean
+Description: 
+ Voulez-vous installer la base initiale MangezMieux?
+ .
+ Vous pourrez toujours installer la base initiale en
+ utilisant la commande : 
+ /usr/share/mangezmieux/scripts/db_install.sh
+

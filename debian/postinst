@@ -17,19 +17,37 @@ set -e
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
+# Use debconf.
+. /usr/share/debconf/confmodule
+
+install_dir="/usr/share/mangezmieux"
+dbinstall="${install_dir}/scripts/db_install.sh"
+settings="${install_dir}/settings.py"
 
 case "$1" in
     configure)
         # Install python deps not in debian repos
         pip install django-filter djangorestframework
 
-        ###
-        ### USE DEBCONF TO SET DB PARAMETERS
-        ###
+        # Use debconf to ask DB credentials
+        db_get mangezmieux/mangezmieux_db_host && db_host="$RET"
+        db_get mangezmieux/mangezmieux_db_name && db_name="$RET"
+        db_get mangezmieux/mangezmieux_db_login && db_login="$RET"
+        db_get mangezmieux/mangezmieux_db_passwd && db_passwd="$RET"
+        db_get mangezmieux/mangezmieux_install_db && install_req="$RET"
+
+        # Changing parameters in settings.py with debconf results
+        sed -i "s/'HOST':\ '.*'/'HOST':\ '${db_host}'/" ${settings}
+        sed -i "s/'NAME':\ '.*'/'NAME':\ '${db_name}'/" ${settings}
+        sed -i "s/'USER':\ '.*'/'USER':\ '${db_login}'/" ${settings}
+        sed -i "s/'PASSWORD':\ '.*'/'PASSWORD':\ '${db_passwd}'/" ${settings}
 
         # Install DB
+        if [ "${install_req}" = "true" ]; then
+            ${dbinstall} -H ${db_host} -d ${db_name} -u ${db_user} -p ${db_passwd}
+        fi
 
-        # Configure Apache with SWGI
+        # Configure Apache with WSGI
 
     ;;
 
