@@ -21,6 +21,13 @@ Site Web en Python/Django répondant au besoin : mangez varié et équilibré sa
 * django-filter
 * python-dateutil
 
+### Mise en prod
+
+* apache2
+* libapache2-mod-wsgi
+
+voir la procédure de la [doc Django](https://docs.djangoproject.com/en/1.2/howto/deployment/modwsgi/).
+
 ## Architecture : Django-app
 
 * **debian/** _Fichiers pour le packaging_
@@ -52,7 +59,7 @@ Le projet contient également les sources du paquet Debian.
 
 ### Compilation
 
-Pour compiler les paquet, vous aurez besoin des outils de packaging Debian [voir ici][http://www.debian.org/doc/manuals/maint-guide/start.en.html].
+Pour compiler les paquet, vous aurez besoin des outils de packaging Debian [voir ici](http://www.debian.org/doc/manuals/maint-guide/start.en.html).
 
 Vous pourrez ensuite le compiler en executant la commande :
 
