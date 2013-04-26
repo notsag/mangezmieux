@@ -1,7 +1,7 @@
 PROJECT=mangezmieux
 PKGDIR=debian/$(PROJECT)
 CODEDIR=$(PKGDIR)/usr/share
-APACHECONF=debian/etc/apache2/sites-available
+APACHECONF=$(PKGDIR)/etc/apache2/sites-available
 
 install:
 	find $(PROJECT) -name "*.pyc" -delete
