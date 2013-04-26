@@ -1,0 +1,1 @@
+WSGIScriptAlias / /usr/share/mangezmieux/wsgi.py
