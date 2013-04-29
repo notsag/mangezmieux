@@ -2,43 +2,50 @@
 {% load static %}
 
 {% block content %}
-<h3>Stats</h3>
+<h3>Statistiques nutritives</h3>
 <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
 
-<table id="datatable">
+<table style="visibility: hidden" id="datatable">
 	<thead>
 		<tr>
 			<th></th>
-			<th>Jane</th>
-			<th>John</th>
+			<th>Proteines</th>
+			<th>Glucides</th>
+			<th>Lipides</th>
+			<th>Fibres</th>
+			<th>Sodium</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<th>Apples</th>
-			<td>3</td>
-			<td>4</td>
-		</tr>
-		<tr>
-			<th>Pears</th>
-			<td>2</td>
-			<td>0</td>
-		</tr>
-		<tr>
-			<th>Plums</th>
-			<td>5</td>
-			<td>11</td>
-		</tr>
-		<tr>
-			<th>Bananas</th>
-			<td>1</td>
-			<td>1</td>
-		</tr>
-		<tr>
-			<th>Oranges</th>
-			<td>2</td>
-			<td>4</td>
-		</tr>
+		{% for ligne in stats %}
+			<tr>
+				{% if forloop.counter == 1 %}
+					<th>Lundi</th>
+				{% endif %}
+				{% if forloop.counter == 2 %}
+					<th>Mardi</th>
+				{% endif %}
+				{% if forloop.counter == 3 %}
+					<th>Mercredi</th>
+				{% endif %}
+				{% if forloop.counter == 4 %}
+					<th>Jeudi</th>
+				{% endif %}
+				{% if forloop.counter == 5 %}
+					<th>Vendredi</th>
+				{% endif %}
+				{% if forloop.counter == 6 %}
+					<th>Samedi</th>
+				{% endif %}
+				{% if forloop.counter == 7 %}
+					<th>Dimanche</th>
+				{% endif %}
+				
+			{% for col in ligne %}
+				<td>{{col}}</td>
+			{% endfor %}
+			</tr>
+		{% endfor %}
 	</tbody>
 </table>
 
@@ -52,12 +59,12 @@
                 type: 'column'
             },
             title: {
-                text: 'Data extracted from a HTML table in the page'
+                text: 'Valeurs nutritives'
             },
             yAxis: {
                 allowDecimals: false,
                 title: {
-                    text: 'Units'
+                    text: 'Grammes'
                 }
             },
             tooltip: {
