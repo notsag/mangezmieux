@@ -32,6 +32,7 @@ class AddForm(forms.Form):
 	difficulte = forms.ChoiceField(label='Difficulté', choices=(), required=True)
 	categorie = forms.ChoiceField(label='Catégorie', choices=(), required=True)
 	tags = forms.CharField(label='Tags (séparés par un espace)', required=True)
+	nb_personne = forms.IntegerField(label='Nombre de personnes', required=True)
 	#produit = forms.CharField(label='Produit', required=False)
 	
 	def __init__(self, *args, **kwargs):

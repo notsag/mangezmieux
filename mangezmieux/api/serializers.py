@@ -67,13 +67,13 @@ class CommandeSerializer(serializers.ModelSerializer):
 	client = UserSerializer()
 	class Meta:
 		model = Commande
-		fields = ('id', 'date', 'client')
+		fields = ('id', 'date', 'client', 'numero')
 		
 class LigneCommandeSerializer(serializers.ModelSerializer):
 	commande = CommandeSerializer()
 	class Meta:
 		model = LigneCommande
-		fields = ('id', 'produit', 'commande')
+		fields = ('id', 'produit', 'commande', 'quantite')
 
 class RecetteSerializer(serializers.ModelSerializer):
 	lignes = LigneRecetteSerializer()

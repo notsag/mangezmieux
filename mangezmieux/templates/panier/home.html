@@ -23,7 +23,11 @@
 
     <form action="/commande/commander/" method="post" >{% csrf_token %}
         <input type="hidden" name="idPanier" value="{{panier.id}}" />
-        <input class="btn btn-success" type="submit" value="Commander" />
+        {% if panier.lignes.count > 0 %}
+            <input class="btn btn-success" type="submit" value="Commander" />
+        {% else %}
+            <input class="btn btn-success" type="submit" value="Commander" disabled="true" />
+        {% endif %}
     </form>
     
 {% endblock %}

@@ -17,6 +17,7 @@ def home(request):
     
     return render(request, 'commande/home.html', locals())
 
+@login_required(login_url='/connexion')
 def detail(request, id):
     """
         fonction d'affichage du détail d'une commande
@@ -36,28 +37,34 @@ def commander(request):
     if idPanier != None:
         panier = Panier.objects.get(pk = idPanier)
 
-        # on créé la commande associée
-        commande = Commande()
-        commande.date = date.today()
-        commande.client = request.user
-        commande.numero = creationNumeroCommande()
-
-        commande.save()
-
-        # on remplit les lignes de commandes à partir des lignes de panier
-        for lignePanier in panier.lignes.all():
-            ligne = LigneCommande()
-            ligne.commande = commande
-            ligne.produit = lignePanier.produit
-            ligne.quantite = lignePanier.quantite
-            ligne.save()
-
-        # destruction du panier concerné
-        panier.delete()
+        creationCommande(panier, request.user)
         
         return redirect('/commande/')
     else:
         return redirect('/panier/')
+
+def creationCommande(_panier, _user):
+    """
+        Fonction métier permetant de créer une commande à partir d'un panier et d'un utilisateur
+    """
+    # création de la nouvelle commande
+    commande = Commande()
+    commande.date = date.today()
+    commande.client = _user
+    commande.numero = creationNumeroCommande()
+
+    commande.save()
+
+    # on remplit les lignes de commandes à partir des lignes de panier
+    for lignePanier in _panier.lignes.all():
+        ligne = LigneCommande()
+        ligne.commande = commande
+        ligne.produit = lignePanier.produit
+        ligne.quantite = lignePanier.quantite
+        ligne.save()
+
+    # desctruction du panier concerné
+    _panier.delete()
 
 def creationNumeroCommande():
     """

@@ -34,6 +34,7 @@ urlpatterns = patterns('',
     
     url(r'^commandes/$', CommandeList.as_view(), name='commande-list'),
     url(r'^commandes/(?P<pk>\d+)/$', CommandeDetail.as_view(), name='commande-detail'),
+    url(r'^commandes/commander/$', CommandeCommander.as_view(), name='commande-commander'),
     
     url(r'^ligneCommandes/$', LigneCommandeList.as_view(), name='lignecommande-list'),
     url(r'^ligneCommandes/(?P<pk>\d+)/$', LigneCommandeDetail.as_view(), name='lignecommande-detail'),

@@ -11,7 +11,9 @@ from panier.models import *
 class RepasNonPersiste():
     date = models.DateField()
     ordre = models.IntegerField()
-
+    recette = models.BooleanField()
+    produit = models.BooleanField()
+    
 class Conversion(models.Model):
     uniteSpecifique = models.ForeignKey(Unite,related_name='specifique')
     uniteBase = models.ForeignKey(Unite,related_name='base')

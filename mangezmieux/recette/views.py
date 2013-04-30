@@ -246,6 +246,7 @@ def ajouter_recette(request):
 			difficulte = form.cleaned_data['difficulte']
 			categorie = form.cleaned_data['categorie']
 			tags = form.cleaned_data['tags']
+			nb_personne = form.cleaned_data['nb_personne']
 			
 			categorie = Categorie.objects.get(id = categorie)
 			
@@ -256,7 +257,7 @@ def ajouter_recette(request):
 			recette.duree = duree
 			recette.instructions = instructions
 			recette.tags = tags
-			
+			recette.nb_personne = nb_personne
 			recette.save()
 			
 			if categorie != None:
