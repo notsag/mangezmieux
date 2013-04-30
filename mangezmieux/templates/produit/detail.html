@@ -10,8 +10,10 @@
 			{% else %}
 					<p><img src="{{produit.image.url}}" alt="Illustration pour : {{produit.nom}}"/></p>
 			{% endif %}
+            {% if user.is_authenticated %}
 					<p><a class="btn" href="#myModal" data-toggle="modal">Ajouter à mon planning</a></p>
 					<p><a class="btn" href="/panier/ajouter/{{produit.id}}" data-toggle="modal">Ajouter à mon panier</a></p>
+            {% endif %}
 			</div>
 			<div id="produitInstructions">
 				<h3>Détails</h3>
