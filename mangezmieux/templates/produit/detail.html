@@ -2,7 +2,12 @@
 {% load static %}
 
 {% block content %}
-    <h1>{{produit.nom}}</h1>
+	<ul class="breadcrumb">
+    	<li><a href="/produit/type/">Types</a> <span class="divider">/</span></li>
+    	<li><a href="/produit/type/{{produit.type_produit.id}}">{{produit.type_produit.nom}}</a> <span class="divider">/</span></li>
+    	<li class="active">{{produit.nom}}</li>
+	</ul>
+    <h3>{{produit.nom}}</h3>
 		<div id="produitDetails">
 			<div id="produitPanelGauche">
 			{% if "openfoodfacts" in produit.image.path %}

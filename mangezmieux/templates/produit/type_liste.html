@@ -2,8 +2,11 @@
 {% load static %}
 
 {% block content %}
-	<h1>{{type}}</h1>
-	
+	<ul class="breadcrumb">
+		<li><a href="/produit/type/">Types</a> <span class="divider">/</span></li>
+		<li class="active">{{type}}</li>
+    </ul>
+	<h3>{{type}}</h1>
 	<p>
 		{% for s in type.parent %}
 			<a href="{{s.id}}" class="btn">{{s.nom}}</a>
