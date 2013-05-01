@@ -1,3 +1,9 @@
+mangezmieux (0.8-2) stable; urgency=low
+
+  * Améliorations mineures
+
+ -- Maxime GASTON <maxime.gaston@gmail.com>  Wed, 01 May 2013 09:37:46 +0200
+
 mangezmieux (0.8-1) stable; urgency=low
 
   * Initial Release (Closes: #100) # there was no previous ITP
