@@ -7,6 +7,9 @@
             {% for recetteProp in recettesProp %}
                 <div class="recetteProp"><a href="/recette/detail/{{recetteProp.id}}"><img src="{{recetteProp.image.url}}" class="" alt="Illustration pour : {{recetteProp.nom}}"/></a></div>
             {% endfor %}
+		<br/>
+        <div><a href="/panier/generer?dd={{debutSemaine|date:"Y-m-d"}}&df={{finSemaine|date:"Y-m-d"}}" class="btn btn-info">Remplir le panier</a></div><br/>
+        <div><a href="#" class="btn btn-info">Generer le planning</a></div>
     </div>
     <div id="planning4">
 	<div id="entetePlanning">
