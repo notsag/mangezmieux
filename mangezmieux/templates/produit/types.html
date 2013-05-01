@@ -2,11 +2,13 @@
 {% load static %}
 
 {% block content %}
-	<h1>Types de produits</h1>
+	<h3>Types de produits</h3>
 	
 	<ul>
 	{% for t in types %}
-		<li><a href="/produit/type/{{t.id}}">{{t}}</a></li>
+		{% if t.types.all %}
+			<li><a href="/produit/type/{{t.id}}">{{t}}</a></li>
+		{% endif %}
 	{% endfor %}
 	</ul>
 {% endblock %}
