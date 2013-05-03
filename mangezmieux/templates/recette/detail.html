@@ -19,6 +19,8 @@
       <div id="gauche">
     {% if recette.image %}
 	    <img src="{{recette.image.url}}" alt="Illustration pour : {{recette.nom}}"/>
+        {% else %}
+	    <img src="/upload/default.jpg" alt="Illustration pour : {{recette.nom}}"/>
     {% endif %}
 	<p>Etiquettes : {{recette.tags}}</p>
 	<div id="recetteButtons">
