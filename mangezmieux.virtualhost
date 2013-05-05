@@ -1,1 +1,2 @@
 WSGIScriptAlias / /usr/share/mangezmieux/wsgi.py
+WSGIPassAuthorization On
