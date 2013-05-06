@@ -8,4 +8,5 @@ urlpatterns = patterns('',
     url(r'^ajouter-repas/?$', 'planning.views.ajouter_repas'),
     url(r'^retirer-recette/?$', 'planning.views.retirer_recette_repas'),
     url(r'^retirer-produit/?$', 'planning.views.retirer_produit_repas'),
+    url(r'^generer-planning/?$', 'planning.views.genererPlanning'),
 )

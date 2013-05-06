@@ -87,9 +87,11 @@ def remplirPlanning(repass, debutSemaine):
         planning.append([])
         for j in xrange(7):
             repasVide = RepasNonPersiste()
-            repasVide.date = debutSemaine + timedelta(days= i)
-            repasVide.ordre = j
+            repasVide.date = debutSemaine + timedelta(days= j)
+            repasVide.ordre = i
             repasVide.nb_personne = 0
+            repasVide.recette = False
+	    repasVide.produit = False
             planning[i].append(repasVide)
     
     for repas in repass :
@@ -315,3 +317,94 @@ def suggestion(user):
 				recettesProp.append(recette)
 	
 	return recettesProp
+
+@login_required(login_url='/connexion')
+def genererPlanning(request):
+    
+    user = request.user
+    
+    """
+        On recupere la date passee en parametre get
+    """
+    dateS = request.GET.get('d', None)
+    if dateS != None:
+        try:
+            dateC = parser.parse(dateS).date()
+        except:
+            dateC = date.today()
+    else:
+        dateC = date.today()
+    
+    """
+        On calcule la date de debut de semaine
+    """
+    debutSemaine = dateC
+    debutSemaineJour = debutSemaine.strftime('%A')
+    while debutSemaineJour != "Monday":
+        debutSemaine = debutSemaine + timedelta(days=-1)
+        debutSemaineJour = debutSemaine.strftime('%A')
+    
+    """
+        On calcule la date de fin de semaine
+    """
+    finSemaine = dateC
+    finSemaineJour = debutSemaine.strftime('%A')
+    while finSemaineJour != "Sunday":
+        finSemaine = finSemaine + timedelta(days=1)
+        finSemaineJour = finSemaine.strftime('%A')
+    
+    """
+        On verifie si on est dans la semaine courange pour mettre en valeur le jour courant
+    """
+    if date.today() < finSemaine and date.today() > debutSemaine:
+        ok = True
+        day = date.today().strftime('%A')
+    
+    """
+        On recupere les repas de la semaine courante
+    """
+    if user.is_authenticated():
+        repass = Repas.objects.filter(date__gte = debutSemaine, date__lte = finSemaine, utilisateur = user).order_by('date','ordre')
+    else :
+        repass = Repas.objects.filter(date__gte = debutSemaine, date__lte = finSemaine).order_by('date','ordre')
+    
+    """
+        On cree un tableau 3*7 qui represente la semaine courante
+    """
+    planning = remplirPlanning(repass, debutSemaine)
+    
+    for jour in planning:
+	for ordre in jour:
+            if ordre.nb_personne == 0:
+                #Si petit dej
+                if ordre.ordre == 0:
+                    recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Dessert')).order_by('?')[:1].get()
+                    repas = Repas()
+                    repas.date = ordre.date
+                    repas.nb_personne = 1
+                    repas.ordre = ordre.ordre
+                    repas.utilisateur = user
+                    repas.save()
+                    repas.recette.add(recette)
+                    repas.save()
+                #Si dej ou diner
+                if ordre.ordre == 1 or ordre.ordre == 2:
+                    recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Entrée')).order_by('?')[:1].get()
+                    repas = Repas()
+                    repas.date = ordre.date
+                    repas.nb_personne = 1
+                    repas.ordre = ordre.ordre
+                    repas.utilisateur = user
+                    repas.save()
+                    repas.recette.add(recette)
+                    repas.save()
+                    
+                    recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Plat')).order_by('?')[:1].get()
+                    repas.recette.add(recette)
+                    repas.save()
+                    
+                    recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Dessert')).order_by('?')[:1].get()
+                    repas.recette.add(recette)
+                    repas.save()
+
+    return redirect('/planning?d='+str(dateC))
