@@ -9,6 +9,7 @@ from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm
 from forms import *
 from recette.models import *
 from datetime import *
+from dateutil import parser
 from core.models import *
 
 @login_required(login_url='/connexion')
@@ -44,14 +45,7 @@ def stats(request):
 	while finSemaineJour != "Sunday":
 	    finSemaine = finSemaine + timedelta(days=1)
 	    finSemaineJour = finSemaine.strftime('%A')
-	
-	"""
-	    On verifie si on est dans la semaine courange pour mettre en valeur le jour courant
-	"""
-	if date.today() < finSemaine and date.today() > debutSemaine:
-	    ok = True
-	    day = date.today().strftime('%A')
-	
+
 	"""
 	    On recupere les repas de la semaine courante
 	"""
@@ -61,6 +55,9 @@ def stats(request):
 	    repass = Repas.objects.filter(date__gte = debutSemaine, date__lte = finSemaine).order_by('date','ordre')
 	
 	planning = remplirPlanning(repass, debutSemaine)
+	
+	semainePrecedente = dateC + timedelta(days=-7)
+	semaineSuivante = dateC + timedelta(days=7)
 	
 	stats = []
 	for i in xrange(7):
@@ -98,6 +95,8 @@ def stats(request):
 		stats[i][3] = fibre
 		stats[i][4] = sodium
 		i = i + 1
+		
+
 	
 	return render(request, 'auth/stats.html', locals())	
 

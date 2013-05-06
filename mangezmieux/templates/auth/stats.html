@@ -4,7 +4,11 @@
 {% block content %}
 <h3>Statistiques nutritives</h3>
 <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
-
+<div id="entetePlanning">
+	<p>{{debutSemaine}} - {{finSemaine}}<br><br></p>
+	<a id="prevPlanning" class="carousel-control left" href="/stats?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
+	<a id="nextPlanning" class="carousel-control right" href="/stats?d={{semaineSuivante|date:"Y-m-d"}}" data-slide="next">&rsaquo;</a> 
+</div>
 <table style="visibility: hidden" id="datatable">
 	<thead>
 		<tr>
