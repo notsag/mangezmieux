@@ -85,7 +85,7 @@ class RecetteSerializer(serializers.ModelSerializer):
 
 class RepasSerializer(serializers.ModelSerializer):
 	utilisateur = UserSerializer()
-	produit = ProduitSerializer()
+	produit = LigneProduitSerializer()
 	recette = RecetteSerializer()
 	class Meta:
 		model = Repas
