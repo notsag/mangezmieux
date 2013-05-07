@@ -18,7 +18,7 @@ def detail(request, id):
 		Ajout d'une recette dans un repas dans la base
 	"""
 	try:
-		recette = Recette.objects.get(pk=id, est_valide=True)
+		recette = Recette.objects.get(pk=id)
 	except Recette.DoesNotExist:
 		raise Http404
 	cateId = request.GET.get('id', None)
@@ -66,7 +66,7 @@ def detail(request, id):
 			pass
 	
 	try:
-		recette = Recette.objects.get(pk=id, est_valide=True)
+		recette = Recette.objects.get(pk=id)
 		
 		if request.user.is_authenticated():
 			user = request.user
@@ -287,6 +287,7 @@ def ajouter_recette(request):
 				recette.lignes.add(ligne)
 			
 			recette.save()
+			return redirect('/recette/mesrecettes/')
 		else:
 			return render(request, 'recette/ajouter.html', locals())
 	else:
