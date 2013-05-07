@@ -1,5 +1,6 @@
 #-*- coding: utf-8 -*-
 from django.shortcuts import render, redirect
+from django.conf import settings
 from django.http import Http404,HttpResponse
 from core.models import *
 from forms import *
@@ -247,6 +248,8 @@ def ajouter_recette(request):
 			categorie = form.cleaned_data['categorie']
 			tags = form.cleaned_data['tags']
 			nb_personne = form.cleaned_data['nb_personne']
+			filename = 'recette/' + request.FILES['image']._get_name()
+			save_file(request.FILES['image'])
 			
 			categorie = Categorie.objects.get(id = categorie)
 			
@@ -258,6 +261,7 @@ def ajouter_recette(request):
 			recette.instructions = instructions
 			recette.tags = tags
 			recette.nb_personne = nb_personne
+			recette.image = filename
 			recette.save()
 			
 			if categorie != None:
@@ -297,6 +301,15 @@ def ajouter_recette(request):
 	
 	return render(request, 'recette/ajouter.html', locals())
 
+def save_file(file, path='recette/'):
+    ''' Little helper to save a file
+    '''
+    filename = file._get_name()
+    fd = open('%s/%s' % (settings.MEDIA_ROOT, str(path) + str(filename)), 'wb')
+    for chunk in file.chunks():
+        fd.write(chunk)
+    fd.close()
+    
 @login_required(login_url='/connexion')
 def mes_recettes(request):
     """
