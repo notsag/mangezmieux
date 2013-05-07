@@ -79,7 +79,7 @@ html, body {
     height: 120px;
     /*
      * THEME1 */
-    background-color: #d0e274;
+    background-color: white;
     
     
     /*
@@ -122,15 +122,16 @@ html, body {
 #footer-text p {
     margin-left: 15px;
     font-weight: bold;
-    color: #ffd95e;
+    color: black;
     margin-bottom: 0px;
 }
 
 #ooshop {
-    float: left;
+    float: right;
     background-image: url("../img/ooshop.gif");
     width: 331px;
     height: 93px;
+    margin-left: 10px;
 }
 
 #mangerbouger{
