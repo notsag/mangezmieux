@@ -315,7 +315,9 @@ def suggestion(user):
 			if len(recettesProp) <= 5:
 				recette = Recette.objects.get(id = key)
 				recettesProp.append(recette)
-	
+		
+	while len(recettesProp) < 5:
+		recettesProp.append(Recette.objects.order_by('?')[0])
 	return recettesProp
 
 @login_required(login_url='/connexion')
