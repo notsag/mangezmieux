@@ -126,14 +126,6 @@ html, body {
     margin-bottom: 0px;
 }
 
-#ooshop {
-    float: right;
-    background-image: url("../img/ooshop.gif");
-    width: 331px;
-    height: 93px;
-    margin-left: 10px;
-}
-
 #mangerbouger{
     float: right;
     background-image: url("../img/mangerbouger.gif");
@@ -309,13 +301,13 @@ html, body {
 }
 
 .titleCol p {
-    color: white;
+    /* color: white; */
     width: 228px;
     margin-left: 10px;
     margin-right: 10px;
     padding-top: 9px;
     font-family: Calibri, Verdana, Arial, 'sans serif';
-    text-shadow: 0px 2px 3px #666;
+    /* text-shadow: 0px 2px 3px #666; */
 	font-weight: bold;
     font-size: 20px;
     line-height: 25px;
@@ -394,13 +386,13 @@ html, body {
 }
 
 .titleLig p {
-    color: white;
+    /* color: white; */
     font-weight: bold;
     font-family: Calibri, Verdana, Arial, 'sans serif';
     margin-left: 10px;
     font-size: 20px;
     padding-top: 9px;
-	text-shadow: 0px 2px 3px #666;
+	/* text-shadow: 0px 2px 3px #666; */
 	line-height: 25px;
 }
 
