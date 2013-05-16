@@ -171,7 +171,7 @@ class PanierDetail(generics.ListCreateAPIView):
 		user = User.objects.get(id = userId)
 		
 		if user != None:
-			return Panier.objects.filter(utilisateur = user)
+			return Panier.objects.get(utilisateur = user)
 	
 class UserList(generics.ListCreateAPIView):
 	"""
