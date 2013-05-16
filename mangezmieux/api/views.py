@@ -159,12 +159,19 @@ class PanierList(generics.ListCreateAPIView):
 	model = Panier
 	serializer_class = PanierSerializer
 	    
-class PanierDetail(generics.RetrieveUpdateDestroyAPIView):
+class PanierDetail(generics.ListCreateAPIView):
 	"""
 	Point de l'API pour réupérer un panier
 	"""
 	model = Panier
 	serializer_class = PanierSerializer
+	
+	def get_queryset(self):
+		userId = self.request.QUERY_PARAMS.get('u', None)
+		user = User.objects.get(id = userId)
+		
+		if user != None:
+			return Panier.objects.filter(utilisateur = user)
 	
 class UserList(generics.ListCreateAPIView):
 	"""
