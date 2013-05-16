@@ -158,7 +158,7 @@ def ajouter_recette_repas(request):
             repas.recette.add(recette)
             repas.save()
             
-            return redirect('/planning')
+            return redirect('/planning/?d=' + d)
         
     return render(request, 'recette/detail.html', locals())
         
@@ -201,7 +201,7 @@ def ajouter_produit_repas(request):
             repas.produit.add(ligneProduit)
             repas.save()
             
-            return redirect('/planning')
+            return redirect('/planning/?d=' + d)
             
     return render(request, 'produit/detail.html', locals())
 
@@ -216,7 +216,7 @@ def retirer_recette_repas(request):
     repas = Repas.objects.filter(date = d, utilisateur = _user, ordre = o)[0]
     retirerRecetteRepasMetier(repas, r)
 
-    return redirect('/planning')
+    return redirect('/planning/?d=' + d)
 
 def retirer_produit_repas(request):
     """Fonction permettant de retirer un produit d'un repas du planning"""
@@ -229,7 +229,7 @@ def retirer_produit_repas(request):
     repas = Repas.objects.filter(date = d, utilisateur = _user, ordre = o)[0]
     retirerProduitRepasMetier(repas, p)
 
-    return redirect('/planning')
+    return redirect('/planning/?d=' + d)
 
 def retirerRecetteRepasMetier(_repas, _recetteId):
     """

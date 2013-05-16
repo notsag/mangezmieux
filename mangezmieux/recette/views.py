@@ -49,7 +49,7 @@ def detail(request, id):
 		repas.recette.add(recette)
 		repas.save()
 		
-		return redirect('/planning')
+		return redirect('/planning/?d=' + str(d))
 	else:
 		form = RepasRecetteForm()
 		

@@ -54,7 +54,7 @@ def detail(request, id):
             repas.produit.add(ligneProduit)
             repas.save()
             
-            return redirect('/planning')
+            return redirect('/planning/?d=' + str(d))
     else:
 	form = RepasProduitForm()
 	
