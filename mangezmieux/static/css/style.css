@@ -877,6 +877,10 @@ html, body {
     color : grey;
 }
 
+.categorieRecette a:hover {
+	text-decoration: none;
+}
+
 .ligneRecette {
     background-color: #D0E274;
 }

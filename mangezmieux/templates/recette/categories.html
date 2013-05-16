@@ -6,11 +6,15 @@
 	<h6>Trouver la recette de toutes vos envies</h6>
 	
 	{% for cat in categories %}
+		
 		<div class="categorieRecette span4">
+			<a href="/recette/categorie/{{cat.id}}">
 			<div class="title">{{cat}}s</div>
 			<img src="{{cat.image.url}}"/>
-			<div class="footer"><a href="/recette/categorie/{{cat.id}}">Voir les recettes : {{cat|lower}}s</a></div>
+			<div class="footer">Voir les recettes : {{cat|lower}}s</div>
 			<!--<a href="/recette/categorie/{{cat.id}}">{{cat}}s</a>-->
+			</a>
 		</div>
+		
 	{% endfor %}
 {% endblock %}
