@@ -23,6 +23,7 @@ def detail(request, id):
 		raise Http404
 	cateId = request.GET.get('id', None)
 	cateName = request.GET.get('name', None)
+	recette_tags = recette.tags.split()
 	
 	if request.method == 'POST':
 	    form = RepasRecetteForm(data=request.POST, files=request.FILES) #On reprend les données
@@ -74,9 +75,11 @@ def detail(request, id):
 			estFavorite = False
 			if recetteFavorite.count() != 0:
 				estFavorite = True
-
+       
 	except Recette.DoesNotExist:
 		raise Http404
+
+
 	return render(request, 'recette/detail.html',locals())
 
 def recherche(request):

@@ -22,7 +22,7 @@
         {% else %}
 	    <img src="/upload/default.jpg" alt="Illustration pour : {{recette.nom}}"/>
     {% endif %}
-	<p>Etiquettes : {{recette.tags}}</p>
+    <p>Etiquettes : {% for tag in recette_tags %}<span class="label">{{ tag }}</span> {% endfor %}</p>
 	<div id="recetteButtons">
 	  {% if user.is_authenticated %}
 	    <p><a class="btn btn-info" href="#myModal" data-toggle="modal">Ajouter à mon planning</a></p>
