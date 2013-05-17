@@ -195,4 +195,4 @@ def generer(request):
         panier.save()
         
     
-    return redirect('/planning')
+    return redirect('/panier')

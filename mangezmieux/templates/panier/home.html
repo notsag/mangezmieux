@@ -8,6 +8,23 @@
         Quantite : {{ligne.quantite}} <br/>
         <a class="btn" href="supprimer/{{ligne.id}}">Supprimer</a>
     {% endfor %}-->
+	<form action="/panier/generer" method="get">
+		<input class="btn" type="submit" value="Générer la période" />
+		<div id="dd" class="input-append date" data-date-format="yyyy-MM-dd">
+			<label for="id_dd">De </label>
+			<input class="span2" type="text" size="16">
+			<span class="add-on">
+				<i class="icon-calendar"></i>
+			</span>
+		</div>
+		<div id="df" class="input-append date" data-date-format="yyyy-MM-dd">
+			<label for="id_df">à </label>
+			<input class="span2" type="text" size="16">
+			<span class="add-on">
+				<i class="icon-calendar"></i>
+			</span>
+		</div>
+	</form>
     
     <form action="{% url panier.views.home %}" method="post">{%csrf_token %}
     	{{ formset.management_form }}
@@ -32,3 +49,10 @@
     
 {% endblock %}
 
+<script type="text/javascript">
+	$('#datetimepicker').datetimepicker({
+            pickTime: false,
+            format: 'yyyy-MM-dd',
+			language: 'fr',
+          });
+</script>

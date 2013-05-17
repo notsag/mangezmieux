@@ -6,7 +6,7 @@ from forms import *
 from django.db.models import Q
 
 def liste(request):
-    produits = Produit.objects.all()
+    produits = Produit.objects.all().order_by('nom')
     return render(request, 'produit/liste.html', locals())
 
 def detail(request, id):
@@ -54,7 +54,7 @@ def detail(request, id):
             repas.produit.add(ligneProduit)
             repas.save()
             
-            return redirect('/planning')
+            return redirect('/planning/?d=' + str(d))
     else:
 	form = RepasProduitForm()
 	
@@ -97,6 +97,7 @@ def recherche(request):
 					else:
 						produits = produits.filter(valeur_energetique__gte=form.cleaned_data['valeur'])
 						
+				produits = produits.order_by('nom')
 				return render(request, 'produit/recherche.html', locals())
 
 	else:
@@ -105,12 +106,12 @@ def recherche(request):
 
 def type(request, id=-1):
 	if id == -1:
-		types = TypeProduit.objects.filter(parent__isnull=True)
+		types = TypeProduit.objects.filter(parent__isnull=True).order_by('nom')
 		return render(request, 'produit/types.html', locals())
 	else:
 		try:
 			type = TypeProduit.objects.get(pk=id)
-			produits = Produit.objects.filter(Q(type_produit=type.id))
+			produits = Produit.objects.filter(Q(type_produit=type.id)).order_by('nom')
 			return render(request, 'produit/type_liste.html', locals())
 		except TypeProduit.DoesNotExist:
 			raise Http404

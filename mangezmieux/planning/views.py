@@ -158,7 +158,7 @@ def ajouter_recette_repas(request):
             repas.recette.add(recette)
             repas.save()
             
-            return redirect('/planning')
+            return redirect('/planning/?d=' + d)
         
     return render(request, 'recette/detail.html', locals())
         
@@ -201,7 +201,7 @@ def ajouter_produit_repas(request):
             repas.produit.add(ligneProduit)
             repas.save()
             
-            return redirect('/planning')
+            return redirect('/planning/?d=' + d)
             
     return render(request, 'produit/detail.html', locals())
 
@@ -216,7 +216,7 @@ def retirer_recette_repas(request):
     repas = Repas.objects.filter(date = d, utilisateur = _user, ordre = o)[0]
     retirerRecetteRepasMetier(repas, r)
 
-    return redirect('/planning')
+    return redirect('/planning/?d=' + d)
 
 def retirer_produit_repas(request):
     """Fonction permettant de retirer un produit d'un repas du planning"""
@@ -229,7 +229,7 @@ def retirer_produit_repas(request):
     repas = Repas.objects.filter(date = d, utilisateur = _user, ordre = o)[0]
     retirerProduitRepasMetier(repas, p)
 
-    return redirect('/planning')
+    return redirect('/planning/?d=' + d)
 
 def retirerRecetteRepasMetier(_repas, _recetteId):
     """
@@ -315,7 +315,9 @@ def suggestion(user):
 			if len(recettesProp) <= 5:
 				recette = Recette.objects.get(id = key)
 				recettesProp.append(recette)
-	
+		
+	while len(recettesProp) < 5:
+		recettesProp.append(Recette.objects.order_by('?')[0])
 	return recettesProp
 
 @login_required(login_url='/connexion')

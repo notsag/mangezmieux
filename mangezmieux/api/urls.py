@@ -63,8 +63,7 @@ urlpatterns = patterns('',
     url(r'^lignePaniers/(?P<pk>\d+)/$', LignePanierDetail.as_view(), name='lignepanier-detail'),
     url(r'^lignePaniers/supprimer/(?P<pk>[0-9]+)/$', LignePanierSuppression.as_view(), name='lignepanier-suppression'),
     
-    url(r'^paniers/$', PanierList.as_view(), name='panier-list'),
-    url(r'^paniers/(?P<pk>\d+)/$', PanierDetail.as_view(), name='panier-detail'),
+    url(r'^paniers/$', PanierDetail.as_view(), name='panier-detail'),
     url(r'^paniers/supprimer/(?P<pk>[0-9]+)/$', PanierSuppression.as_view(), name='panier-suppression'),
 )
 
