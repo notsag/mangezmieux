@@ -1171,3 +1171,11 @@ html, body {
 .recetteProp img {
 	max-height: 100px;
 }
+
+.recetteProp .well {
+    padding: 0px 40px;
+    margin: 0;
+    height: 100px;
+    line-height: 100px;
+}
+

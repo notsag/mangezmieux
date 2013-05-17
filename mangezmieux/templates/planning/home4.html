@@ -5,7 +5,14 @@
     <div id="suggestion">
 	<h5>Vous aimerez peut-etre</h5>
             {% for recetteProp in recettesProp %}
-                <div class="recetteProp"><a href="/recette/detail/{{recetteProp.id}}"><img src="{{recetteProp.image.url}}" class="" alt="Illustration pour : {{recetteProp.nom}}"/></a></div>
+            <div class="recetteProp">
+            {% if recetteProp.image %}
+                <a href="/recette/detail/{{recetteProp.id}}">
+                    <img src="{{recetteProp.image.url}}" class="" alt="Illustration pour : {{recetteProp.nom}}"/></a>
+            {% else %}
+            <div class="well"><a href="/recette/detail/{{recetteProp.id}}">{{recetteProp.nom}}</a></div>
+            {% endif %}
+            </div>
             {% endfor %}
 		<br/>
         <div><a href="/panier/generer?dd={{debutSemaine|date:"Y-m-d"}}&df={{finSemaine|date:"Y-m-d"}}" class="btn btn-info">Remplir le panier<br />de la semaine</a></div><br/>
