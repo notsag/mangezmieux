@@ -782,7 +782,7 @@ html, body {
 	background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
 		
 	float: left;
-	margin-right: 20px;
+	margin-right: 25px;
 	/*-moz-box-shadow: 1px 0px 3px 0px #656565;
 	-webkit-box-shadow: 1px 0px 3px 0px #656565;
 	-o-box-shadow: 1px 0px 3px 0px #656565;
@@ -1168,14 +1168,36 @@ html, body {
 	height: 150px;
 }
 
+#props {
+    width: 95%;
+    margin: auto;
+}
+
 .recetteProp img {
 	max-height: 100px;
+    min-width: 150px;
+    max-width: 150px;
 }
 
 .recetteProp .well {
-    padding: 0px 40px;
+    padding: 0px;
     margin: 0;
+    width:150px;
+    text-align: center;
     height: 100px;
     line-height: 100px;
+}
+
+#planning_actions {
+    margin-bottom: 70px;
+}
+
+#generer_panier {
+    float: left;
+    margin-right: 10px;
+}
+
+#generer_planning {
+    float: left;
 }
 

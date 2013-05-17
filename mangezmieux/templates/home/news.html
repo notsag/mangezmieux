@@ -3,7 +3,7 @@
 		{% for news in latest_news %}
 		<div class="news">
 			<h3>{{ news.nom }}<span class="news-date">{{ news.date_pub }}</span></h3>
-			<p>{{ news.info }}</p>
+			<p>{{ news.info|linebreaks }}</p>
 		</div>	
 		{% endfor %}
 	 </div>
