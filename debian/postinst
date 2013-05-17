@@ -41,11 +41,15 @@ case "$1" in
         sed -i "s/'NAME':\ '.*'/'NAME':\ '${db_name}'/" ${settings}
         sed -i "s/'USER':\ '.*'/'USER':\ '${db_login}'/" ${settings}
         sed -i "s/'PASSWORD':\ '.*'/'PASSWORD':\ '${db_passwd}'/" ${settings}
+        sed -i 's/DEBUG\ =\ True/DEBUG\ = \False/' ${settings}
 
         # Install DB
         if [ "${install_req}" = "true" ]; then
             ${dbinstall} -H ${db_host} -d ${db_name} -u ${db_login} -p ${db_passwd}
         fi
+        
+        #Upload dir is rwx for everyone
+        chmod a+rwx ${install_dir}/upload
 
         # Configure Apache with WSGI
         a2ensite mangezmieux
