@@ -24,4 +24,27 @@
             </tr>
         {% endfor %}
     </table>
+	
+	<h3>Mes favoris</h3>
+	<table class="table table-hover">
+		<tr class="titleTab">
+			<th>Nom</th>
+			<th>Catégorie</th>
+			<th>Durée</th>
+			<th>Difficulté</th>
+		</tr>
+		{% for fav in favoris %}
+            <tr class="ligneTab">
+                <td><a href="/recette/detail/{{fav.pk}}">{{fav.recette.nom}}</a></td>
+                <td>
+                    {% for categorie in fav.recette.categorie.all %}
+                        {{categorie.nom}}
+                        {% if not forloop.last %} / {% endif %}
+                    {% endfor %}
+                </td>
+                <td>{{fav.recette.duree}}</td>
+                <td>{{fav.recette.difficulte}}</td>
+            </tr>
+        {% endfor %}
+	</table>
 {% endblock %}

@@ -317,8 +317,14 @@ def mes_recettes(request):
         fonction permettant d'obtenir la page "mes recettes"
     """
     recettes = recettesParCreateur(request.user)
+    favoris = recettesFavoritesParUser(request.user)
+    print favoris
 
     return render(request, 'recette/mesrecettes.html', locals())
+   
+def recettesFavoritesParUser(_user):
+    if _user != None:
+        return RecetteFavorite.objects.filter(utilisateur = _user)
     
 def recettesParCreateur(_user):
     """

@@ -13,22 +13,20 @@
 						</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="/recette/categorie"><i class="icon-list"></i> Parcourir</a>
-							</li>
-							<li>
 								<a href="/recette/recherche"><i class="icon-search"></i> Rechercher</a>
 							</li>
-							
+							<li>
+								<a href="/recette/categorie"><i class="icon-list"></i> Parcourir</a>
+							</li>
+														
 							{% if user.is_authenticated %}
+							<li>
+                                <a href="/recette/mesrecettes"><i class="icon-tasks"></i> Mes recettes</a>
+                            </li>
 							<li>
 								<a href="/recette/ajouter"><i class="icon-plus"></i> Ajouter</a>
 							</li>
-							{% endif %}
-                            {% if user.is_authenticated %}
-                            <li>
-                                <a href="/recette/mesrecettes"><i class="icon-tasks"></i> Mes recettes</a>
-                            </li>
-                            {% endif %}
+							{% endif %}                            
 						</ul>
 					</li>
                     <li class="dropdown"> 
@@ -38,11 +36,11 @@
 						</a>
 						<ul class="dropdown-menu">
 							<li>
-								<a href="/produit/type"><i class="icon-list"></i> Parcourir</a>
-							</li>
-							<li>
 								<a href="/produit/recherche"><i class="icon-search"></i> Rechercher</a>
 							</li>
+							<li>
+								<a href="/produit/type"><i class="icon-list"></i> Parcourir</a>
+							</li>							
 						</ul>
 					</li>
 					{% if user.is_authenticated %}
