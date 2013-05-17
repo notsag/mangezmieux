@@ -49,6 +49,7 @@ case "$1" in
         fi
         
         #Upload dir is rwx for everyone
+        chown -R www-data ${install_dir}
         chmod a+rwx ${install_dir}/upload
 
         # Configure Apache with WSGI
