@@ -475,7 +475,7 @@ html, body {
 #recetteButtons {
     margin-bottom:20px;
     width: 100%;
-    text-align: center;
+    text-align: left;
     margin-top: 10px;
 }
 
@@ -504,7 +504,7 @@ html, body {
 	float: left;
 	margin-right: 1.5em;
 	/* background-color: gray; */
-    text-align:center;
+    text-align:left;
     width: 220px;
 }
 

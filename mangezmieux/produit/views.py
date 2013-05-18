@@ -4,6 +4,7 @@ from core.models import *
 from planning.forms import *
 from forms import *
 from django.db.models import Q
+from auth.models import *
 
 def liste(request):
     produits = Produit.objects.all().order_by('nom')
@@ -64,6 +65,10 @@ def detail(request, id):
 	
 	form.fields["ordre"].initial = ordre
 	form.fields["date"].initial = date
+        
+        profil = ProfilUtilisateur.objects.get(user = request.user)
+        
+        form.fields["nbPersonne"].initial = profil.nbPersonnes
 	try:
 		del request.session['ordre']
 		del request.session['date']

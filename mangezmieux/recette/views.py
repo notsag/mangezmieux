@@ -60,6 +60,10 @@ def detail(request, id):
 		
 		form.fields["ordre"].initial = ordre
 		form.fields["date"].initial = date
+		profil = ProfilUtilisateur.objects.get(user = request.user)
+        
+		form.fields["nbPersonne"].initial = profil.nbPersonnes
+		
 		try:
 			del request.session['ordre']
 			del request.session['date']
