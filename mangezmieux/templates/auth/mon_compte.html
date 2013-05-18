@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Vos informations</h2>
+<div class="titleBox">
+    <h3>Vos informations</h3>
+</div>
+<div class="box" >
 <form action="." method="post" accept-charset="utf-8">
 	{% csrf_token %}
     {% if form.non_field_errors %}
@@ -34,4 +37,5 @@
 	</div>
 	<input class="btn" type="submit" value="Mettre à jour">
 </form>
+</div>
 {% endblock %}

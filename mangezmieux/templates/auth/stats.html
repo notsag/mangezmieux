@@ -2,7 +2,9 @@
 {% load static %}
 
 {% block content %}
-<h3>Statistiques nutritives</h3>
+<div class="titleBox">
+    <h3>Statistiques nutritives</h3>
+</div>
 <div id="entetePlanning">
 	<p>{{debutSemaine}} - {{finSemaine}}<br><br></p>
 	<a id="prevPlanning" class="carousel-control left" href="/stats?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>

@@ -2,7 +2,11 @@
 {% load static %}
 
 {% block content %}
-    <h2>Commandes</h2>
+<div class="titleBox">
+    <h3>Commandes</h3>
+</div>
+{% if commandes %}
+<div class="box">
     {% for commande in commandes %}
         <p>
             Numéro : {{commande.numero}}<br/>
@@ -10,5 +14,7 @@
             <a class="btn" href="detail/{{commande.id}}/">Détail</a>
         </p>
     {% endfor %}
+</div>
+{% endif %}
 {% endblock %}
 

@@ -2,12 +2,15 @@
 {% load static %}
 
 {% block content %}
-    <h1>Panier</h1>
+<div class="titleBox">
+    <h3>Panier</h3>
+</div>
     <!--{% for ligne in panier.lignes.all %}
         Produit : {{ligne.produit.nom}} <br/>
         Quantite : {{ligne.quantite}} <br/>
         <a class="btn" href="supprimer/{{ligne.id}}">Supprimer</a>
     {% endfor %}-->
+<div class="box">
 	<form action="/panier/generer" method="get">
 		<input class="btn" type="submit" value="Générer la période" />
 		<div id="dd" class="input-append date" data-date-format="yyyy-MM-dd">
@@ -25,7 +28,6 @@
 			</span>
 		</div>
 	</form>
-    
     <form action="{% url panier.views.home %}" method="post">{%csrf_token %}
     	{{ formset.management_form }}
 	    {% for forml in formset.forms %}
@@ -46,6 +48,7 @@
             <input class="btn btn-success" type="submit" value="Commander" disabled="true" />
         {% endif %}
     </form>
+</div>
     
 {% endblock %}
 
