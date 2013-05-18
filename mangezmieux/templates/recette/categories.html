@@ -2,12 +2,11 @@
 {% load static %}
 
 {% block content %}
+<div class="titleBox">
 	<h3>Catégories</h3>
-	<h6>Trouver la recette de toutes vos envies</h6>
-	
+</div>
 	{% for cat in categories %}
-		
-		<div class="categorieRecette span4">
+		<div class="span4 categorieRecette">
 			<a href="/recette/categorie/{{cat.id}}">
 			<div class="title">{{cat}}s</div>
 			<img src="{{cat.image.url}}"/>
@@ -15,6 +14,5 @@
 			<!--<a href="/recette/categorie/{{cat.id}}">{{cat}}s</a>-->
 			</a>
 		</div>
-		
 	{% endfor %}
 {% endblock %}

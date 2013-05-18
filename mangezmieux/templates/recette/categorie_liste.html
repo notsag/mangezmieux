@@ -6,7 +6,9 @@
 		<li><a href="/recette/categorie/">Categories</a> <span class="divider">/</span></li>
 		<li class="active">{{categorie.nom}}s</li>
     </ul>
+    <div class="titleBox">
 	<h3>Les {{categorie.nom|lower}}s</h3>
+    </div>
 	{% for recette in recettes %}
 		<div class="ligneRecette span3">
             {% if recette.image %}

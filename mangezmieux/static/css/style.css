@@ -855,6 +855,12 @@ html, body {
     width: 235px;
 }*/
 
+.categorieRecette{    
+    width: 290px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
 .categorieRecette:first-of-type, .ligneRecette:first-of-type {
     margin-left: 0;
 }
@@ -1201,3 +1207,30 @@ html, body {
     float: left;
 }
 
+.box {
+    background-color: white;
+    background-image: -webkit-linear-gradient(top,white,#F2F2F2);
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
+    -moz-box-shadow: 1px 0px 3px 0px #656565;
+    -webkit-box-shadow: 1px 0px 3px 0px #656565;
+    -o-box-shadow: 1px 0px 3px 0px #656565;
+    box-shadow: 1px 0px 3px 0px #656565;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
+    border-radius: 20px 20px 20px 20px;
+    padding: 15px 15px 5px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.titleBox {
+    background-color: white;
+    background-image: -webkit-linear-gradient(top,white,#F2F2F2);
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
+    -moz-box-shadow: 1px 0px 3px 0px #656565;
+    -webkit-box-shadow: 1px 0px 3px 0px #656565;
+    -o-box-shadow: 1px 0px 3px 0px #656565;
+    box-shadow: 1px 0px 3px 0px #656565;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
+    border-radius: 10px 10px 10px 10px;
+    padding-left: 15px;
+}

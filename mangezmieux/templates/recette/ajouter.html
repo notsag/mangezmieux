@@ -2,7 +2,10 @@
 {% load static %}
 
 {% block content %}
-	<h1>Nouvelle recette</h1>
+<div class="titleBox">
+	<h3>Nouvelle recette</h3>
+</div>
+<div class="box">
 	<form enctype="multipart/form-data" method="post">{% csrf_token %}
 	{% if form.non_field_errors %}
 		<div class="form_errors">
@@ -39,7 +42,7 @@
 	<br/><br/><br/><br/>	
 	<div><input class="btn" id="submit-ajouter-recette" type="submit" value="Ajouter" /></div>
 	</form>
-
+</div>
 	<script>
 		$("#id_produit").keyup(function() {
 			var val = $(this).attr('value');
