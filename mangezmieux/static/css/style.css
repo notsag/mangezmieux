@@ -959,7 +959,12 @@ html, body {
 }
 
 #recetteButtons {
+    margin-bottom:20px;
+    width: 100%;
+}
 
+#recetteButtons a {
+    font-size: 16px;
 }
 
 .roundabout-holder {
@@ -1234,3 +1239,30 @@ html, body {
     border-radius: 10px 10px 10px 10px;
     padding-left: 15px;
 }
+
+.tags{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.tags span {
+    font-size: 16px;
+}
+
+.box-right{
+    background-color: white;
+    background-image: -webkit-linear-gradient(top,white,#F2F2F2);
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
+    -moz-box-shadow: 1px 0px 3px 0px #656565;
+    -webkit-box-shadow: 1px 0px 3px 0px #656565;
+    -o-box-shadow: 1px 0px 3px 0px #656565;
+    box-shadow: 1px 0px 3px 0px #656565;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
+    border-radius: 20px 20px 20px 20px;
+    padding: 15px 15px 5px;
+    float: right;
+    width: 640px;
+}
+
+

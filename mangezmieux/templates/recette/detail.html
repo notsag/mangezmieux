@@ -11,9 +11,10 @@
   </ul>
   <div id="recetteDetail">
     <div id="titre">
-	<h3>{{recette.nom}}</h3>
-	<p class="createur">Recette crée par : {{recette.createur}}</p>
-	
+        <div class="titleBox">
+	        <h3>{{recette.nom}}</h3>
+	    <p class="createur">Recette crée par : {{recette.createur}}</p>
+        </div>
     </div>
     <div id="contenu">
       <div id="gauche">
@@ -22,19 +23,21 @@
         {% else %}
 	    <img src="/upload/default.jpg" alt="Illustration pour : {{recette.nom}}"/>
     {% endif %}
-    <p>Etiquettes : {% for tag in recette_tags %}<span class="label">{{ tag }}</span> {% endfor %}</p>
+    <div class="tags">
+    {% for tag in recette_tags %}<span class="label label-warning">{{ tag }}</span> {% endfor %}
+    </div>
 	<div id="recetteButtons">
 	  {% if user.is_authenticated %}
-	    <p><a class="btn btn-info" href="#myModal" data-toggle="modal">Ajouter à mon planning</a></p>
+      <a class="btn btn-info" href="#myModal" data-toggle="modal">Ajouter au planning</a>
 		  {% if estFavorite %}
-		    <p><a href="/recette/defavoriser/{{recette.pk}}/" class="btn btn-info"><img src="{% static 'img/etoile-pleine.png' %}" alt="étoile pleine" title="Retirer des favoris" width="25px" height="25px" class="img-rounded"/></a></p>
+		    <a href="/recette/defavoriser/{{recette.pk}}/" class="btn btn-info"><img src="{% static 'img/etoile-pleine.png' %}" alt="étoile pleine" title="Retirer des favoris" width="25px" height="25px" class="img-rounded"/></a>
 		  {% else %}
-		    <p><a href="/recette/favoriser/{{recette.pk}}/" class="btn btn-info"><img src="{% static 'img/etoile-vide.png' %}" alt="étoile vide" title="Ajouter aux favoris" width="25px" height="25px" class="img-rounded"/></a></p>
+		    <a href="/recette/favoriser/{{recette.pk}}/" class="btn btn-info"><img src="{% static 'img/etoile-vide.png' %}" alt="étoile vide" title="Ajouter aux favoris" width="25px" height="25px" class="img-rounded"/></a>
 		  {% endif %}
 	  {% endif %}
 	</div>
       </div>
-      <div id="info">
+      <div class="box-right">
 	<dl class="dl-horizontal">
 	  <dt>Durée :</dt><dd>{{recette.duree}} minutes</dd>
 	  <dt>Niveau :</dt><dd> {{recette.difficulte}} / 5</dd>
