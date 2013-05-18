@@ -13,6 +13,8 @@
 		</p>
 	</form>
 </div>
+
+{% if recettes %}
 <div class="titleBox">
 	<h3>Liste des recettes</h2>
 </div>
@@ -37,4 +39,5 @@
 			</tr>
 		{% endfor %}
 	</table>
+{% endif %}
 {% endblock %}	
