@@ -63,7 +63,14 @@ class FormulaireUtilisateur(UserChangeForm):
 		self.fields['password'].widget = HiddenInput()
 
 class FormulaireProfil(forms.ModelForm):
+	"""
+	Formulaire d'édition du profil utilisateur
+	"""
 	class Meta:
 		model = ProfilUtilisateur
 		fields = ('nbPersonnes', 'gouts')
+
+	def __init__(self, *args, **kwargs):
+		super(forms.ModelForm, self).__init__(*args, **kwargs)
+		self.fields['nbPersonnes'].label = "Nombre de personnes pour les repas"
 
