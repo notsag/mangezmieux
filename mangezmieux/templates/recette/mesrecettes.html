@@ -3,16 +3,16 @@
 
 {% block content %}
     <h3>Mes recettes</h3>
-    <table class="table table-hover">
-        <tr class="titleTab">
+    <table class="table table-hover table-striped titleTab">
+        <tr>
             <th>Nom</th>
             <th>Catégorie</th>
             <th>Durée</th>
             <th>Difficulté</th>
         </tr>
         {% for recette in recettes %}
-            <tr class="ligneTab">
-                <td><a href="/recette/detail/{{recette.pk}}">{{recette.nom}}</a></td>
+            <tr>
+                <th><a href="/recette/detail/{{recette.pk}}">{{recette.nom}}</a></th>
                 <td>
                     {% for categorie in recette.categorie.all %}
                         {{categorie.nom}}
@@ -26,16 +26,16 @@
     </table>
 	
 	<h3>Mes favoris</h3>
-	<table class="table table-hover">
-		<tr class="titleTab">
+	<table class="table table-hover table-striped titleTab">
+		<tr>
 			<th>Nom</th>
 			<th>Catégorie</th>
 			<th>Durée</th>
 			<th>Difficulté</th>
 		</tr>
 		{% for fav in favoris %}
-            <tr class="ligneTab">
-                <td><a href="/recette/detail/{{fav.pk}}">{{fav.recette.nom}}</a></td>
+            <tr>
+                <th><a href="/recette/detail/{{fav.pk}}">{{fav.recette.nom}}</a></th>
                 <td>
                     {% for categorie in fav.recette.categorie.all %}
                         {{categorie.nom}}

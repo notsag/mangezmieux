@@ -10,22 +10,20 @@
 		</p>
 	</form>
 	<h3>Liste des produits</h3>
-	<table class="table table-hover">
+	<table class="table table-hover table-striped titleTab">
 		<tr>
 			<th>Nom</th>
 			<th>Type</th>
 			<th>Valeur énergétique)</th>
 		</tr>
-        <tbody>
 		{% for produit in produits %}
 			<tr>
-				<td><a href="/produit/detail/{{produit.pk}}">{{produit.nom}}</a></td>
+				<th><a href="/produit/detail/{{produit.pk}}">{{produit.nom}}</a></th>
 				<td>
 						{{produit.type_produit}}
 				</td>
 				<td>{{produit.valeur_nutritionnelle.energie}} kJ</td>
 			</tr>
 		{% endfor %}
-        </tbody>
 	</table>
 {% endblock %}	

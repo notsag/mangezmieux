@@ -1117,11 +1117,10 @@ html, body {
 
 .titleTab {
     vertical-align: middle;
-    background-image: -webkit-linear-gradient(top,white,#F2F2F2);
+    background-color: #d0e274;
+   /* background-image: -webkit-linear-gradient(top,white,#F2F2F2);
     background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
-    font-weight: bold;
-    border-right: 1px solid #ebebeb;
-    
+    */
     -moz-box-shadow: 1px 0px 3px 0px #656565;
     -webkit-box-shadow: 1px 0px 3px 0px #656565;
     -o-box-shadow: 1px 0px 3px 0px #656565;
