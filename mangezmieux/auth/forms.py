@@ -65,5 +65,5 @@ class FormulaireUtilisateur(UserChangeForm):
 class FormulaireProfil(forms.ModelForm):
 	class Meta:
 		model = ProfilUtilisateur
-		fields = ('gouts',)
+		fields = ('nbPersonnes', 'gouts')
 

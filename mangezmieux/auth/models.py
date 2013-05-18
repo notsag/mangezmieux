@@ -15,6 +15,7 @@ class ProfilUtilisateur(models.Model):
 	"""
 	user = models.OneToOneField(User)
 	gouts = models.ManyToManyField(Tag, null = True, blank = True)
+	nbPersonnes = models.PositiveIntegerField(default = 1)
 	
 	def __unicode__(self):
 			return unicode(self.user)
