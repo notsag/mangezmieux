@@ -6,10 +6,11 @@
 		<li><a href="/produit/type/">Types</a> <span class="divider">/</span></li>
 		<li class="active">{{type}}</li>
     </ul>
+    <div class="box">
 	<ul>
 	{% for p in produits %}
 		<li><a href="/produit/detail/{{p.id}}">{{p.nom}}</a></li>
 	{% endfor %}
 	</ul>
-	
+    </div>
 {% endblock %}

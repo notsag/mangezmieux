@@ -732,13 +732,17 @@ html, body {
 	float: left;
 	margin-right: 1.5em;
 	margin-top: 1em;
+    text-align: center;
+    width: 220px;
 	/* background-color: gray; */
 }
 
 #recettePanelGauche img {
-	max-width: 250px;
-    max-height: 250px;
+	max-width: 220px;
+    max-height: 220px;
 	display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #produitPanelGauche {
@@ -746,12 +750,16 @@ html, body {
 	margin-right: 1.5em;
 	margin-top: 1em;
 	/* background-color: gray; */
+    text-align:center;
+    width: 220px;
 }
 
 #produitPanelGauche img {
-	max-width: 250px;
-        max-height: 250px;
+	max-width: 220px;
+    max-height: 220px;
 	display: block;
+    margin-left: auto;
+    margin-right:auto;
 }
 
 #suggestion {
@@ -961,6 +969,7 @@ html, body {
 #recetteButtons {
     margin-bottom:20px;
     width: 100%;
+    text-align: center;
 }
 
 #recetteButtons a {

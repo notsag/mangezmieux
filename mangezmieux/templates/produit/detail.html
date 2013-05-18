@@ -7,7 +7,9 @@
     	<li><a href="/produit/type/{{produit.type_produit.id}}">{{produit.type_produit.nom}}</a> <span class="divider">/</span></li>
     	<li class="active">{{produit.nom}}</li>
 	</ul>
+    <div class="titleBox">
     <h3>{{produit.nom}}</h3>
+    </div>
 		<div id="produitDetails">
 			<div id="produitPanelGauche">
 			{% if "openfoodfacts" in produit.image.path %}
@@ -16,15 +18,14 @@
 					<p><img src="{{produit.image.url}}" alt="Illustration pour : {{produit.nom}}"/></p>
 			{% endif %}
             {% if user.is_authenticated %}
-					<p><a class="btn" href="#myModal" data-toggle="modal">Ajouter à mon planning</a></p>
-					<p><a class="btn" href="/panier/ajouter/{{produit.id}}" data-toggle="modal">Ajouter à mon panier</a></p>
+					<p><a class="btn btn-info" href="#myModal" data-toggle="modal">Ajouter à mon planning</a></p>
+					<p><a class="btn btn-info" href="/panier/ajouter/{{produit.id}}" data-toggle="modal">Ajouter à mon panier</a></p>
             {% endif %}
 			</div>
-			<div id="produitInstructions">
+			<div id="produitInstructions" class="box-right">
 				<h3>Détails</h3>
-				<ul>
-					<li>Quantité : {{produit.quantite}} {{produit.unite.abreviation}}</li>
-					<li>{{produit.valeur_nutritionnelle.energie}} kJ
+                <p>Quantité : {{produit.quantite}} {{produit.unite.abreviation}}</p>
+                <p>{{produit.valeur_nutritionnelle.energie}} kJ</p>
 					<table class="titleTab table table-striped table-bordered">
 						<tr>
 							<th>Protéines</th><td>{{produit.valeur_nutritionnelle.proteines}}</td>
@@ -42,8 +43,6 @@
 							<th>Sodium</th><td>{{produit.valeur_nutritionnelle.sodium}}</td>
 						</tr>
 					</table>
-					</li>				
-				</ul>
 			</div>
 		</div>	
         <!-- Modal -->
