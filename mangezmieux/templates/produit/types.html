@@ -7,15 +7,24 @@
 </div>
 <div class="box">
     {% regroup types by nom.upper.0 as types_par_lettre %}
-    {% for lettre in types_par_lettre %}
+    <div class="pagination pagination-small pagination-centered">
     {{ lettre.grouper }}
-	<ul>
-	{% for t in lettre.list %}
-		{% if t.types.all %}
-			<li><a href="/produit/type/{{t.id}}">{{t}}</a></li>
-		{% endif %}
-	{% endfor %}
-	</ul>
+        {% for lettre in types_par_lettre %}
+        <ul>    
+            <li><a href="#">{{ lettre.grouper }}</a></li>
+        </ul>
+        {% endfor %}
+    </div>
+    {% for lettre in types_par_lettre %}
+    <div id="type_{{lettre.grouper}}">
+        <ul>
+        {% for t in lettre.list %}
+            {% if t.types.all %}
+                <li><a href="/produit/type/{{t.id}}">{{t}}</a></li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+	</div>
     {% endfor %}
 </div>
 {% endblock %}
