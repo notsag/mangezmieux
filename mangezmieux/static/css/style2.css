@@ -207,23 +207,25 @@ html, body {
 	position: relative;
 	height: 150px;
 	
-	background: rgb(239,253,168); 
+	/*background: rgb(239,253,168); 
 	background: -moz-linear-gradient(top,  rgba(239,253,168,1) 1%, rgba(208,226,116,1) 100%); 
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(239,253,168,1)), color-stop(100%,rgba(208,226,116,1))); 
 	background: -webkit-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
 	background: -o-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
 	background: -ms-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
 	background: linear-gradient(to bottom,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#effda8', endColorstr='#d0e274',GradientType=0 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#effda8', endColorstr='#d0e274',GradientType=0 );*/
 	
-	border-radius: 10px 10px 0 0;
+	background-color: #f9f9f9;
+	
+/*	border-radius: 10px 10px 0 0;
 	vertical-align: middle;
 	
 	-moz-box-shadow: 1px 0px 3px 0px #656565;
 	-webkit-box-shadow: 1px 0px 3px 0px #656565;
 	-o-box-shadow: 1px 0px 3px 0px #656565;
 	box-shadow: 1px 0px 3px 0px #656565;
-	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);*/
 	
 	
 	padding-left: 10px;

@@ -1,41 +1,43 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="titleBox">
-    <h3>Vos informations</h3>
-</div>
-<div class="box" >
-<form action="." method="post" accept-charset="utf-8">
-	{% csrf_token %}
-    {% if form.non_field_errors %}
-	<div class="form_errors">
-		{% for err in form.non_field_errors %}
-		<div class="form_error_message">{{ err }}</div>
-		{% endfor %}
-	</div>	
-	{% endif %}
-	{% for hidden in form.hidden_fields %}
-	{{ hidden }}
-	{% endfor %}
-	{% for field in form.visible_fields %}
-	<div {% if field.errors %}class="field_error"{% endif %}>
-		{{ field.label_tag }}
-		{{ field }}
-		{% for err in ufield.errors %}
-			<span class="error_message">{{ err }}</span>
-		{% endfor %}
+    <div class="container police">
+	<div class="titleBox">
+	    <h3 class="police">Vos informations</h3>
 	</div>
-	{% endfor %}
-	{% for field in formp %}
-		{{ field.label_tag }}
-		{{ field }}
-	{% endfor %}
-	<p>Maintenez appuyé « Ctrl », ou « Commande (touche pomme) » sur un Mac, pour en sélectionner plusieurs.</p>
-	<div>
-	<br/>
-	<p>Changer mon mot de passe : <a class="btn btn-small" href="/changer_mot_de_passe">Changer</a></p>
+	<div class="box" >
+	<form action="." method="post" accept-charset="utf-8">
+		{% csrf_token %}
+	    {% if form.non_field_errors %}
+		<div class="form_errors">
+			{% for err in form.non_field_errors %}
+			<div class="form_error_message">{{ err }}</div>
+			{% endfor %}
+		</div>	
+		{% endif %}
+		{% for hidden in form.hidden_fields %}
+		{{ hidden }}
+		{% endfor %}
+		{% for field in form.visible_fields %}
+		<div {% if field.errors %}class="field_error"{% endif %}>
+			{{ field.label_tag }}
+			{{ field }}
+			{% for err in ufield.errors %}
+				<span class="error_message">{{ err }}</span>
+			{% endfor %}
+		</div>
+		{% endfor %}
+		{% for field in formp %}
+			{{ field.label_tag }}
+			{{ field }}
+		{% endfor %}
+		<p>Maintenez appuyé « Ctrl », ou « Commande (touche pomme) » sur un Mac, pour en sélectionner plusieurs.</p>
+		<div>
+		<br/>
+		<p>Changer mon mot de passe : <a class="btn btn-small btn-warning" href="/changer_mot_de_passe">Changer</a></p>
+		</div>
+		<input class="btn btn-large btn-warning" type="submit" value="Mettre à jour">
+	</form>
 	</div>
-	<input class="btn" type="submit" value="Mettre à jour">
-</form>
-</div>
+    </div>
 {% endblock %}
