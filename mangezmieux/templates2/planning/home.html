@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+        
+    <div id="planning">
+        <div id="entetePlanning">
+            <p>{{debutSemaine}} - {{finSemaine}}<br><br></p>
+            <a id="prevPlanning" class="carousel-control left" href="/planning?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
+            <a id="nextPlanning" class="carousel-control right" href="/planning?d={{semaineSuivante|date:"Y-m-d"}}" data-slide="next">&rsaquo;</a> 
+        </div>
+        <div id="tableauPlanning">
+           <table class="table table-bordered">
+                <tr class="title">
+                    {% if day == "Monday" %}
+                        <td class="day">Lundi</td>
+                    {% else %}
+                        <td>Lundi</td>
+                    {% endif%}
+                    {% if day == "Tuesday" %}
+                        <td class="day">Mardi</td>
+                    {% else %}
+                        <td>Mardi</td>
+                    {% endif%}
+                    {% if day == "Wednesday" %}
+                        <td class="day">Mercredi</td>
+                    {% else %}
+                        <td>Mercredi</td>
+                    {% endif%}
+                    {% if day == "Thursday" %}
+                        <td class="day">Jeudi</td>
+                    {% else %}
+                        <td>Jeudi</td>
+                    {% endif%}
+                    {% if day == "Friday" %}
+                        <td class="day">Vendredi</td>
+                    {% else %}
+                        <td>Vendredi</td>
+                    {% endif%}
+                    {% if day == "Saturday" %}
+                        <td class="day">Samedi</td>
+                    {% else %}
+                        <td>Samedi</td>
+                    {% endif%}
+                    {% if day == "Sunday" %}
+                        <td class="day">Dimanche</td>
+                    {% else %}
+                        <td>Dimanche</td>
+                    {% endif%}
+                </tr>
+                {% for ligne in planning %} 
+                <tr>
+                    {% for col in ligne %}
+                    <td>
+                        <div class="accordion" id="accordion{{forloop.parentloop.counter}}{{forloop.counter}}">
+                            <div class="accordion-group">
+                                <div class="accordion-heading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion{{forloop.parentloop.counter}}{{forloop.counter}}" href="#collapse{{forloop.parentloop.counter}}{{forloop.counter}}">
+                                        {% if col.recette != None %}
+                                            {{col.recette.nom|truncatechars:13}}
+                                        {% elif col.produit.count > 0 %}
+                                            {{ col.produit.0.nom|truncatechars:13 }}
+                                        {% endif%}
+                                    </a>
+                                </div>
+                                <div id="collapse{{forloop.parentloop.counter}}{{forloop.counter}}" class="accordion-body collapse">
+                                    <div class="accordion-inner">
+                                         {% if col.recette != None %}
+                                            {{col.recette.nom|truncatechars:13}}
+                                        {% elif col.produit.count > 0 %}
+                                            {{ col.produit.0.nom|truncatechars:13 }}
+                                        {% else %}
+                                            <a href="#myModal" data-toggle="modal">Ajouter</a>
+                                        {% endif%}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+             
+            
+        </div>
+    </div>
+    
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Mes recettes</button>
+        
+{% endblock %}
+

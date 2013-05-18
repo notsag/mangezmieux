@@ -60,7 +60,7 @@ STATIC_ROOT = ''
 STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 TEMPLATE_DIRS = (
-    os.path.join(SITE_ROOT, 'templates/'),
+    os.path.join(SITE_ROOT, 'templates2/'),
 )
 
 

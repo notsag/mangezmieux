@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	<div class="container police">
+		<h3 class="police">Rechercher une recette</h3>
+		<form action="/recette/recherche" method="get">
+			{{form.as_p}}
+			<p>
+				<input class="btn btn-large btn-warning" type="submit" value="Rechercher" />
+			</p>
+		</form>
+		{% if recettes %}
+		<hr/>
+		<h3 class="police">Liste des recettes</h2>
+		<table class="table table-hover table-striped titleTab">
+			<tr class="titleTab">
+				<th>Nom</th>
+				<th>Catégorie</th>
+				<th>Durée</th>
+				<th>Difficulté</th>
+			</tr>
+			{% for recette in recettes %}
+				<tr>
+				<th><a href="/recette/detail/{{recette.pk}}">{{recette.nom}}</a></th>
+					<td>
+						{% for categorie in recette.categorie.all  %}
+							{{categorie.nom}}
+							{% if not forloop.last %} / {% endif %}
+						{% endfor %}
+					</td>
+					<td>{{recette.duree}}</td>
+					<td>{{recette.difficulte}}</td>
+				</tr>
+			{% endfor %}
+		</table>
+		{% endif %}
+	</div>
+	
+{% endblock %}	

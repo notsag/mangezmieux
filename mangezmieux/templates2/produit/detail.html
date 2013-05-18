@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	<div class="container police">
+	<ul class="breadcrumb">
+		<li><a href="/produit/type/">Types</a> <span class="divider">/</span></li>
+		<li><a href="/produit/type/{{produit.type_produit.id}}">{{produit.type_produit.nom}}</a> <span class="divider">/</span></li>
+    	<li class="active">{{produit.nom}}</li>
+	</ul>
+    <div class="titleBox">
+    <h3 class="police">{{produit.nom}}</h3>
+    </div>
+		<div id="produitDetails">
+			<div id="produitPanelGauche">
+			{% if "openfoodfacts" in produit.image.path %}
+					<p><img src="{{produit.image}}" alt="Illustration pour : {{produit.nom}}"/></p>
+			{% else %}
+					<p><img src="{{produit.image.url}}" alt="Illustration pour : {{produit.nom}}"/></p>
+			{% endif %}
+            {% if user.is_authenticated %}
+					<p><a class="btn btn-warning" href="#myModal" data-toggle="modal">Ajouter à mon planning</a></p>
+					<p><a class="btn btn-warning" href="/panier/ajouter/{{produit.id}}" data-toggle="modal">Ajouter à mon panier</a></p>
+            {% endif %}
+			</div>
+			<div id="produitInstructions" class="box-right">
+				<h3 class="police">Détails</h3>
+                <p>Quantité : {{produit.quantite}} {{produit.unite.abreviation}}</p>
+                <p>{{produit.valeur_nutritionnelle.energie}} kJ</p>
+					<table class="titleTab table table-striped table-bordered">
+						<tr>
+							<th>Protéines</th><td>{{produit.valeur_nutritionnelle.proteines}}</td>
+						</tr>
+						<tr>
+							<th>Glucides</th><td>{{produit.valeur_nutritionnelle.glucides}}</td>
+						</tr>
+						<tr>
+							<th>Lipides</th><td>{{produit.valeur_nutritionnelle.lipides}}</td>
+						</tr>
+						<tr>
+							<th>Fibres</th><td>{{produit.valeur_nutritionnelle.fibres}}</td>
+						</tr>
+						<tr>
+							<th>Sodium</th><td>{{produit.valeur_nutritionnelle.sodium}}</td>
+						</tr>
+					</table>
+			</div>
+		</div>
+	</div>
+        <!-- Modal -->
+        <div id="myModal" class="modal hide fade police" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            <h3 class="police" id="myModalLabel">Ajout d'un repas</h3>
+          </div>
+          <div class="modal-body">
+                <form action="{% url produit.views.detail id=id %}" method="post">{%csrf_token %}
+                    {{ form.non_field_errors }}
+
+                    <div class="fieldWrapper">
+                        {{ form.produit.errors }}
+                        <label for="id_recette">Produit :</label>
+                        {{ form.produit }}
+                    </div>
+                    
+                    <div class="fieldWrapper">
+                        {{ form.quantite.errors }}
+                        <label for="id_recette">Quantite :</label>
+                        {{ form.quantite }}
+                    </div>
+                    
+                    <div class="fieldWrapper">
+                        {{ form.unite.errors }}
+                        <label for="id_recette">Unite :</label>
+                        {{ form.unite }}
+                    </div>
+                    
+                    <div class="fieldWrapper">
+                        {{ form.date.errors }}
+                        <label for="id_date">Date :</label>
+                        <div id="datetimepicker" class="input-append date">
+                            {{ form.date }}
+                            <span class="add-on">
+                              <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                              </i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.ordre.errors }}
+                        <label for="id_ordre">Type :</label>
+                        {{ form.ordre }}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.nbPersonne.errors }}
+                        <label for="id_nbPersonne">Nombre de personnes :</label>
+                        {{ form.nbPersonne }}
+                    </div>
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
+                    <input type="submit" class="btn btn-warning" value="Enregistrer" />
+                </form>
+          </div>
+        </div>
+            
+        <script type="text/javascript">
+          $('#datetimepicker').datetimepicker({
+            pickTime: false,
+            format: 'yyyy-MM-dd',
+          });
+        </script>
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="container police">
+    <ul class="breadcrumb">
+      <li><a href="/recette/categorie/">Catégories</a> <span class="divider">/</span></li>
+      {% if cateName != None and cateId != None %}
+	<li><a href="/recette/categorie/{{cateId}}">{{cateName}}</a> <span class="divider">/</span></li>
+      {% endif %}
+      <li class="active">{{recette.nom}}</li>
+    </ul>
+    <div id="recetteDetail">
+      <div id="titre">
+	  <h3 class="police">{{recette.nom}}</h3>
+	  <p class="createur">Recette crée par : {{recette.createur}}</p>
+	  
+      </div>
+      <div id="contenu">
+	<div id="gauche">
+      {% if recette.image %}
+	      <img src="{{recette.image.url}}" alt="Illustration pour : {{recette.nom}}"/>
+	  {% else %}
+	      <img src="/upload/default.jpg" alt="Illustration pour : {{recette.nom}}"/>
+      {% endif %}
+	   <div class="tags">
+	  {% for tag in recette_tags %}<span class="label label-warning">{{ tag }}</span> {% endfor %}
+	  </div>
+	  <div id="recetteButtons">
+	    {% if user.is_authenticated %}
+	      <a class="btn btn-warning" href="#myModal" data-toggle="modal">Ajouter à mon planning</a>
+		    {% if estFavorite %}
+		      <a href="/recette/defavoriser/{{recette.pk}}/" class="btn btn-warning"><img src="{% static 'img/etoile-pleine.png' %}" alt="étoile pleine" title="Retirer des favoris" width="25px" height="25px" class="img-rounded"/></a>
+		    {% else %}
+		      <a href="/recette/favoriser/{{recette.pk}}/" class="btn btn-warning"><img src="{% static 'img/etoile-vide.png' %}" alt="étoile vide" title="Ajouter aux favoris" width="25px" height="25px" class="img-rounded"/></a>
+		    {% endif %}
+	    {% endif %}
+	  </div>
+	</div>
+	<div id="info">
+	  <dl class="dl-horizontal">
+	    <dt>Durée :</dt><dd>{{recette.duree}} minutes</dd>
+	    <dt>Niveau :</dt><dd> {{recette.difficulte}} / 5</dd>
+	    <dt>Personnes :</dt><dd> {{recette.nb_personne}}</dd>
+	    <dt>Ingrédients :</dt><dd>
+	    <ul>
+	      {% for ligne in recette.lignes.all %}
+		      <li>{{ligne.quantite}} {{ligne.unite.abreviation}} de <a href="/produit/detail/{{ligne.produit.id}}">{{ligne.produit.nom}}</a></li>
+	      {% endfor %}
+	    </ul></dd>
+	    <dt>Préparation :</dt><dd>
+	      {{recette.instructions|linebreaks}}</dd>			
+	  </dl>
+	</div>
+	
+	
+      </div>
+    </div>
+  </div>
+		
+        <!-- Modal -->
+        <div id="myModal" class="modal hide fade police" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            <h3 class="police" id="myModalLabel">Ajout d'un repas</h3>
+          </div>
+          <div class="modal-body">
+                <form action="{% url recette.views.detail id=id %}" method="post">{%csrf_token %}
+                    {{ form.non_field_errors }}
+
+                    <div class="fieldWrapper">
+                        {{ form.recette.errors }}
+                        <label for="id_recette">Recette :</label>
+                        {{ form.recette }}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.date.errors }}
+                        <label for="id_date">Date :</label>
+                        <div id="datetimepicker" class="input-append date">
+                            {{ form.date }}
+                            <span class="add-on">
+                              <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                              </i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.ordre.errors }}
+                        <label for="id_ordre">Type :</label>
+                        {{ form.ordre }}
+                    </div>
+                    <div class="fieldWrapper">
+                        {{ form.nbPersonne.errors }}
+                        <label for="id_nbPersonne">Nombre de personnes :</label>
+                        {{ form.nbPersonne }}
+                    </div>
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
+                    <input type="submit" class="btn btn-warning" value="Enregistrer" />
+                </form>
+          </div>
+        </div>
+            
+        <script type="text/javascript">
+          $('#datetimepicker').datetimepicker({
+            pickTime: false,
+            format: 'yyyy-MM-dd',
+	    language: 'fr',
+          });
+        </script>
+{% endblock %}	

@@ -1,0 +1,533 @@
+html, body {
+	height: 100%;
+}
+
+#wrap {
+	height: 100%;
+	min-height: 100%;
+	height: auto !important;
+	padding-bottom: -120px;
+}
+
+#content {
+	padding-top: 20px;
+	padding-bottom: 120px;
+	margin-bottom: -120px;
+}
+
+
+#menu{
+	margin-top: 0px;
+}
+
+#menu .container {
+	margin-right: auto;
+	margin-left: auto;
+	width: 940px;
+}
+
+#menu .navbar {
+    margin-bottom: 0px;
+}
+
+#header {
+    height: 113px;
+    /*
+     * THEME1*/
+    background-color: #d0e274;
+    
+    
+    /*
+     * THEME2 
+    background-color: #99432f;*/
+    
+}
+
+#logo {
+    float: left;
+    background-image: url("../img/logo3.png");
+    width: 332px;
+    height: 113px;
+}
+
+#footer {
+    
+    bottom: 0;
+	width: 100%;
+    height: 120px;
+    /*
+     * THEME1 */
+    background-color: #f9f9f9;
+    
+    
+    /*
+     * THEME2 
+    background-color: #99432f;*/
+}
+
+#footer-container {
+    padding-top: 15px;
+}
+
+#footer-container a {
+    /*
+     * THEME1*/
+    color: grey; 
+    
+    /*
+     * THEME2
+     
+    color: #fff88e;*/
+    
+    font-size: 11px;
+}
+
+#footer-container ul {
+    margin-left: 15px;
+}
+
+#footer-container li {
+    list-style: none;
+    height: 13px;
+}
+
+#footer-text {
+	float: left;
+	height: 105px;
+	margin-right: 100px;
+}
+
+#footer-text p {
+    margin-left: 15px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 0px;
+}
+
+#home-bottom h3 {
+	background-color: #ffde8d;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+#home-bottom p {
+	background-color: #fff8ad;
+	padding: 10px;
+	font-size: 15px;
+	height: 58px;
+	text-align: center;
+}
+
+#myCarousel {
+	margin-bottom: 0px;
+}
+
+#home-center {
+	background-color: #f9f9f9;
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+#home-center h2 {
+	text-align: center;
+	padding-top: 25px;
+	font-weight: normal;
+}
+
+.police {
+	font-family: Calibri, Verdana, Arial, 'sans serif';
+	font-weight: normal;
+}
+
+.ligne {
+	float: left;
+	
+	margin: 0;
+}
+
+.ligne h3 {
+	margin-top: 0px;
+}
+
+.ligneContent {
+	float: left;
+	width: 671px;
+	margin-left: 10px;
+}
+.news-date {
+	float: right;
+	color: gray;
+	font-size: 14px;
+	font-weight: lighter;
+	margin-right: 10px;
+}
+.news .newsContent {
+	background-color: #fff8ad;
+	margin-top: 0px;
+	padding: 10px;
+}
+
+#home-bottom .news h3 {
+	text-align: left;
+	padding-left: 10px;
+	
+}
+
+.news {
+	margin-left: 20px;
+}
+
+#planning4 td{
+	background-color: white;
+	text-align: center;
+	
+	width: 265px;
+	height: 210px;
+}
+
+#planning4 th{
+	text-align: center;
+}
+
+#planning4 .contenu-ligne {
+	height: 190px;
+}
+
+#planning4 #precedent {
+	float: left;
+}
+
+#planning4 #suivant {
+	float: right;
+}
+
+
+#suggestion {
+	margin-bottom: 20px;
+	position: relative;
+	height: 150px;
+	
+	background: rgb(239,253,168); 
+	background: -moz-linear-gradient(top,  rgba(239,253,168,1) 1%, rgba(208,226,116,1) 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(239,253,168,1)), color-stop(100%,rgba(208,226,116,1))); 
+	background: -webkit-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
+	background: -o-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
+	background: -ms-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
+	background: linear-gradient(to bottom,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#effda8', endColorstr='#d0e274',GradientType=0 );
+	
+	border-radius: 10px 10px 0 0;
+	vertical-align: middle;
+	
+	-moz-box-shadow: 1px 0px 3px 0px #656565;
+	-webkit-box-shadow: 1px 0px 3px 0px #656565;
+	-o-box-shadow: 1px 0px 3px 0px #656565;
+	box-shadow: 1px 0px 3px 0px #656565;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
+	
+	
+	padding-left: 10px;
+}
+
+.recetteProp {
+
+	background-image: -webkit-linear-gradient(top,white,#F2F2F2);
+	background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
+		
+	float: left;
+	margin-right: 25px;
+	/*-moz-box-shadow: 1px 0px 3px 0px #656565;
+	-webkit-box-shadow: 1px 0px 3px 0px #656565;
+	-o-box-shadow: 1px 0px 3px 0px #656565;
+	box-shadow: 1px 0px 3px 0px #656565;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);*/
+}
+
+#props {
+    width: 95%;
+    margin: auto;
+}
+
+.recetteProp img {
+	max-height: 100px;
+    min-width: 150px;
+    max-width: 150px;
+}
+
+.recetteProp .well {
+    padding: 0px;
+    margin: 0;
+    width:150px;
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+}
+
+#planning_actions {
+    margin-bottom: 70px;
+}
+
+#generer_panier {
+    float: left;
+    margin-right: 10px;
+}
+
+#generer_planning {
+    float: left;
+}
+
+#entetePlanning {
+    /*
+     * THEME 1 */
+    background: rgb(239,253,168); 
+    background: -moz-linear-gradient(top,  rgba(239,253,168,1) 1%, rgba(208,226,116,1) 100%); 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(239,253,168,1)), color-stop(100%,rgba(208,226,116,1))); 
+    background: -webkit-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
+    background: -o-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
+    background: -ms-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
+    background: linear-gradient(to bottom,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#effda8', endColorstr='#d0e274',GradientType=0 ); 
+    
+    
+    /*
+     * THEME 2 
+    background: rgb(200,113,93);
+    background: -moz-linear-gradient(top,  rgba(200,113,93,1) 0%, rgba(153,67,47,1) 72%); 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(200,113,93,1)), color-stop(72%,rgba(153,67,47,1))); 
+    background: -webkit-linear-gradient(top,  rgba(200,113,93,1) 0%,rgba(153,67,47,1) 72%); 
+    background: -o-linear-gradient(top,  rgba(200,113,93,1) 0%,rgba(153,67,47,1) 72%); 
+    background: -ms-linear-gradient(top,  rgba(200,113,93,1) 0%,rgba(153,67,47,1) 72%); 
+    background: linear-gradient(to bottom,  rgba(200,113,93,1) 0%,rgba(153,67,47,1) 72%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8715d', endColorstr='#99432f',GradientType=0 );*/
+
+    
+    border-radius: 10px 10px 0 0;
+    vertical-align: middle;
+    
+    -moz-box-shadow: 1px 0px 3px 0px #656565;
+    -webkit-box-shadow: 1px 0px 3px 0px #656565;
+    -o-box-shadow: 1px 0px 3px 0px #656565;
+    box-shadow: 1px 0px 3px 0px #656565;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
+
+}
+
+#entetePlanning p {
+    position: relative;
+    color: white;
+    font-family: 'arial', 'sans-serif';
+    font-size: 25px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0;
+    padding-top: 15px;
+    text-shadow: 0px 2px 3px #666;
+
+}
+
+#entetePlanning #nextPlanning {
+    position: relative;
+    float: right;
+    margin-top: -50px;
+}
+
+#entetePlanning #prevPlanning {
+    position: relative;
+    float: left;
+    margin-top: -50px;
+}
+
+.titleTab {
+    vertical-align: middle;
+    background-image: -webkit-linear-gradient(top,white,#F2F2F2);
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
+    font-weight: bold;
+    border-right: 1px solid #ebebeb;
+    
+    -moz-box-shadow: 1px 0px 3px 0px #656565;
+    -webkit-box-shadow: 1px 0px 3px 0px #656565;
+    -o-box-shadow: 1px 0px 3px 0px #656565;
+    box-shadow: 1px 0px 3px 0px #656565;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
+    
+    border-radius: 0px;
+}
+
+.categorieRecette{    
+    width: 290px;
+    margin-bottom: 25px;
+
+}
+
+.categorieRecette:first-of-type, .ligneRecette:first-of-type {
+    margin-left: 0;
+}
+.categorieRecette .title{
+    background-color: #FFDE8D;
+    color: white;
+    font-family: Calibri, Verdana, Arial, 'sans serif';
+    text-shadow: 0px 2px 3px #666;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 11px 10px 11px 15px;
+    height: 25px;
+}
+
+.categorieRecette .footer{
+    background-color: #D0E274;
+    padding: 6px 5px 6px 10px;
+}
+
+.categorieRecette .footer a, .categorieRecette .footer a:hover, .ligneRecette a, .ligneRecette a:hover{
+    color : grey;
+}
+
+.categorieRecette a:hover {
+	text-decoration: none;
+}
+
+#reponse-get {
+  position: absolute;
+  width: 220px;
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+}
+ 
+#reponse-get ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  max-height: 20em;
+  overflow: auto;
+}
+ 
+#reponse-get ul li:hover {
+    background-color: #FFDE8D;
+}
+ 
+#reponse-get ul li {
+  list-style-type:none;
+  display: block;
+  margin: 0;
+  padding: 2px;
+  cursor: pointer;
+}
+ 
+#reponse-get ul li span.informal {
+    /*color: grey;*/
+}
+
+#id_produit {
+    margin-bottom: 0px;
+}
+
+.createur {
+    color: grey;
+    margin: 0;
+}
+
+#recetteDetail h3{
+
+}
+
+#recetteDetail img {
+    max-width: 250px;
+    max-height: 250px;
+    position: relative;
+    float: left;
+}
+
+#recetteDetail #contenu {
+    margin-top: 20px;
+}
+
+#info {
+    position: relative;
+    float: left;
+    padding-left: 15px;
+    width: 675px;
+
+}
+
+#recetteDetail h5 {
+    margin: 0px;
+}
+
+#recetteDetail dl {
+    margin-top:0;
+}
+
+#recetteDetail dt {
+    width: 95px;
+}
+
+#recetteDetail dd {
+    margin-left: 100px;
+}
+
+#gauche {
+    width: 250px;
+    position: relative;
+    float: left;
+}
+
+#recetteButtons {
+    margin-bottom:20px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#recetteButtons a {
+    font-size: 16px;
+}
+
+#recettePanelGauche {
+	float: left;
+	margin-right: 1.5em;
+	margin-top: 1em;
+    text-align: center;
+    width: 220px;
+	/* background-color: gray; */
+}
+
+#recettePanelGauche img {
+	max-width: 220px;
+    max-height: 220px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#produitPanelGauche {
+	float: left;
+	margin-right: 1.5em;
+	/* background-color: gray; */
+    text-align:center;
+    width: 220px;
+}
+
+#produitPanelGauche img {
+	max-width: 220px;
+    max-height: 220px;
+	display: block;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+
+.ligneRecette {
+    background-color: #D0E274;
+}
+.ligneRecette img {
+    max-width: 80px;
+    max-height: 80px;
+    margin-right: 5px;
+}
+
+.ligneRecette .footer {
+    background-color: #f1f1f1;
+    font-size: 12px;
+    padding: 6px 5px 6px 10px;
+}

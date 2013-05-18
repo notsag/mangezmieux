@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	<div class="container police">
+		<h3 class="police">Rechercher un produit</h3>
+
+
+		<form action="/produit/recherche" method="get">
+			{{form.as_p}}
+			<p>
+				<input class="btn btn-large btn-warning" type="submit" value="Rechercher" />
+			</p>
+		</form>
+
+		
+		{% if produits %}
+		<hr/>
+		<h3 class="police">Liste des produits</h3>
+
+		<table class="table table-hover table-striped titleTab">
+			<tr>
+				<th>Nom</th>
+				<th>Type</th>
+				<th>Valeur énergétique)</th>
+			</tr>
+			{% for produit in produits %}
+				<tr>
+					<th><a href="/produit/detail/{{produit.pk}}">{{produit.nom}}</a></th>
+					<td>
+							{{produit.type_produit}}
+					</td>
+					<td>{{produit.valeur_nutritionnelle.energie}} kJ</td>
+				</tr>
+			{% endfor %}
+		</table>
+		{% endif %}
+	</div>
+
+{% endblock %}	

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="titleBox">
+    <h3>Détail d'une commande</h3>
+</div>
+<div class="box">
+    <p>
+        Date : {{commande.date}}<br/>
+        Numéro : {{commande.numero}}<br/>
+        {% for ligne in commande.lignes.all %}
+            Produit : {{ligne.produit.nom}} <br/>
+            Quantite : {{ligne.quantite}} <br/>
+        {% endfor %}
+        <a class="btn" href="/commande/">Retour</a>
+    </p>
+</div>
+{% endblock %}
+

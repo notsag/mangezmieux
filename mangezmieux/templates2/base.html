@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+	{% include "head.html" %}
+    <body>
+		<div id="wrap">
+			{% include "header.html" %}
+			{% include "menu.html" %}
+			<div id="content">
+				<div>
+					{% block content %}
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+        {% include "footer.html" %}
+    </body>
+</html>

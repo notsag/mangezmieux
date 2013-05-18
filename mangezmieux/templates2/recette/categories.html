@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	<div class="container police">
+		<h3 class="police">Catégories</h3>
+		<h5 class="police">Trouver la recette de toutes vos envies</h5>
+		
+		{% for cat in categories %}
+			
+			<div class="categorieRecette span4">
+				<a href="/recette/categorie/{{cat.id}}">
+				<div class="title">{{cat}}s</div>
+				<img src="{{cat.image.url}}"/>
+				<div class="footer">Voir les recettes : {{cat|lower}}s</div>
+				<!--<a href="/recette/categorie/{{cat.id}}">{{cat}}s</a>-->
+				</a>
+			</div>
+			
+		{% endfor %}	
+	</div>
+{% endblock %}
