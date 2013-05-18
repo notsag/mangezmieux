@@ -321,7 +321,6 @@ def mes_recettes(request):
     """
     recettes = recettesParCreateur(request.user)
     favoris = recettesFavoritesParUser(request.user)
-    print favoris
 
     return render(request, 'recette/mesrecettes.html', locals())
    
