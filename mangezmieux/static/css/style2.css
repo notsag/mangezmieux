@@ -10,7 +10,6 @@ html, body {
 }
 
 #content {
-	padding-top: 20px;
 	padding-bottom: 120px;
 	margin-bottom: -120px;
 }
@@ -200,7 +199,7 @@ html, body {
 #planning4 #suivant {
 	float: right;
 }
-.day {
+.currentDay {
     background-color: #F89C19;
     color: #fff;
     
@@ -536,4 +535,11 @@ html, body {
     background-color: #f1f1f1;
     font-size: 12px;
     padding: 6px 5px 6px 10px;
+}
+
+.produit input {
+	border: none;
+	background: none;
+	box-shadow: none;
+	cursor: auto;
 }

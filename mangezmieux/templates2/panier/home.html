@@ -12,33 +12,52 @@
 		<a class="btn" href="supprimer/{{ligne.id}}">Supprimer</a>
 	    {% endfor %}-->
 	<div class="box">
-		<form action="/panier/generer" method="get">
-			<input class="btn" type="submit" value="Générer la période" />
-			<div id="dd" class="input-append date" data-date-format="yyyy-MM-dd">
-				<label for="id_dd">De </label>
-				<input class="span2" type="text" size="16">
-				<span class="add-on">
-					<i class="icon-calendar"></i>
-				</span>
-			</div>
-			<div id="df" class="input-append date" data-date-format="yyyy-MM-dd">
-				<label for="id_df">à </label>
-				<input class="span2" type="text" size="16">
-				<span class="add-on">
-					<i class="icon-calendar"></i>
-				</span>
-			</div>
-		</form>
-	    <form action="{% url panier.views.home %}" method="post">{%csrf_token %}
-		{{ formset.management_form }}
-		    {% for forml in formset.forms %}
-			<div class="item">
-			{{ forml.as_p }}
-			<a class="btn" href="supprimer/{{forml.id.value}}">Supprimer</a>
-			</div>
-			<br/>
-		{% endfor %}
-		<input class="btn" type="submit" value="Valider" />
+	    <form>
+		    <a id="genererPanier" href="" class="btn btn-warning">Générer la période</a>
+		    <div id="dd" class="input-append date" data-date-format="yyyy-MM-dd">
+			    <label for="id_dd">De </label>
+			    <input id="inputDD" class="span2" type="text" size="16">
+			    <span class="add-on">
+				    <i class="icon-calendar"></i>
+			    </span>
+		    </div>
+		    <div id="df" class="input-append date" data-date-format="yyyy-MM-dd">
+			    <label for="id_df">à </label>
+			    <input id="inputDF" class="span2" type="text" size="16">
+			    <span class="add-on">
+				    <i class="icon-calendar"></i>
+			    </span>
+		    </div>
+	    </form>
+	    <form class="table table-hover table-striped" action="{% url panier.views.home %}" method="post">{%csrf_token %}
+	    {{ formset.management_form }}
+	    <table class="table">
+		<tr>
+		    <th>
+			Produit
+		    </th>
+		    <th>
+			Quantite
+		    </th>
+		    <th></th>
+		</tr>
+		{% for forml in formset.forms %}
+		    <tr>
+			<td class="produit">
+			{{ forml.produit.errors }}
+			{{ forml.produit}}
+			</td>
+			<td>
+			{{ forml.quantite.errors }}
+			{{ forml.quantite}}
+			</td>
+			<td>
+			<a class="btn btn-warning" href="supprimer/{{forml.id.value}}">Supprimer</a>
+			</td>
+		    </tr>
+		{% endfor %}	
+	    </table>
+	    <input class="btn btn-warning" type="submit" value="Mettre à jour" />
 	    </form>
 	
 	    <form action="/commande/commander/" method="post" >{% csrf_token %}
@@ -51,13 +70,45 @@
 	    </form>
 	</div>
     </div>
-    
-{% endblock %}
-
-<script type="text/javascript">
-	$('#datetimepicker').datetimepicker({
+    <script type="text/javascript">
+	$('#dd').datetimepicker({
             pickTime: false,
             format: 'yyyy-MM-dd',
 			language: 'fr',
           });
-</script>
+	$('#df').datetimepicker({
+            pickTime: false,
+            format: 'yyyy-MM-dd',
+			language: 'fr',
+          });
+	
+	//$('#dd').datetimepicker()
+	//.on('changeDate', function(ev){
+	//    var df = $('#df').val();
+	//    var dd = ev;
+	//    
+	//    $('#genererPanier').attr("href", "/panier/generer?dd="+dd+"&df="+df);
+	//    
+	//});
+	//
+	//$('#df').datetimepicker()
+	//.on('changeDate', function(ev){
+	//    var dd = $('#dd').getLocalDate();
+	//    var df = ev.date;
+	//    
+	//    $('#genererPanier').attr("href", "/panier/generer?dd="+dd+"&df="+df);
+	//    
+	//});
+	//
+	//$(document).ready(function() {
+	//    
+	//});
+	//
+	//function verifDates(dateDebut, dateFin) {
+	//    
+	//}
+    </script>
+    
+{% endblock %}
+
+
