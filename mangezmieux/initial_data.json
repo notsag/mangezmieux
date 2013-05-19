@@ -10713,10 +10713,10 @@
         "fields": {
             "energie": 615, 
             "fibres": 0, 
-            "glucides": 0.8, 
-            "lipides": 9.9, 
-            "proteines": 12.6, 
-            "sodium": 0.14
+            "glucides": "0.8", 
+            "lipides": "9.9", 
+            "proteines": "12.6", 
+            "sodium": "0.14"
         }, 
         "model": "produit.valeurnutritionnelle", 
         "pk": 616
