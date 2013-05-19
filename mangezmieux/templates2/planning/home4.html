@@ -79,8 +79,9 @@
 			    </div>
 			    <div class="ligneAjouter"><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r" class="icon-plus"></a>Recette<a class="icon-plus" href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p"></a>Produit</div>
 			{% else %}
+			    <div class="ligneRepas">Nombre de personnes : {{col.nb_personne}}</div>
 			    <div class="contenu-ligne">
-				{% for re in col.recette.all %}
+				{% for re in col.recette.all %} 
 				    <div class="ligneRepas"><a href="/recette/detail/{{re.id}}">{{re.nom}}</a><a class="icon-minus" href="retirer-recette/?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&r={{re.id}}"></a></div>
 				{% endfor %}
 	    
