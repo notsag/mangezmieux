@@ -29,19 +29,19 @@
                 <p>{{produit.valeur_nutritionnelle.energie}} kJ</p>
 					<table class="titleTab table table-striped table-bordered">
 						<tr>
-							<th>Protéines</th><td>{{produit.valeur_nutritionnelle.proteines}} g</td>
+                            <th>Protéines</th><td>{% if produit.valeur_nutritionnelle.proteines %}{{produit.valeur_nutritionnelle.proteines}} g{% else %} -{% endif %}</td>
 						</tr>
 						<tr>
-							<th>Glucides</th><td>{{produit.valeur_nutritionnelle.glucides}} g</td>
+                            <th>Glucides</th><td>{% if produit.valeur_nutritionnelle.glucides %}{{produit.valeur_nutritionnelle.glucides}} g{% else %} -{% endif %}</td>
 						</tr>
 						<tr>
-							<th>Lipides</th><td>{{produit.valeur_nutritionnelle.lipides}} g</td>
+                            <th>Lipidess</th><td>{% if produit.valeur_nutritionnelle.lipides %}{{produit.valeur_nutritionnelle.lipides}} g{% else %} -{% endif %}</td>
 						</tr>
 						<tr>
-							<th>Fibres</th><td>{{produit.valeur_nutritionnelle.fibres}} g</td>
+                            <th>Fibres</th><td>{% if produit.valeur_nutritionnelle.fibres %}{{produit.valeur_nutritionnelle.fibres}} g{% else %} -{% endif %}</td>
 						</tr>
 						<tr>
-							<th>Sodium</th><td>{{produit.valeur_nutritionnelle.sodium}} g</td>
+                            <th>Sodium</th><td>{% if produit.valeur_nutritionnelle.sodium %}{{produit.valeur_nutritionnelle.sodium}} g{% else %} -{% endif %}</td>
 						</tr>
 					</table>
 			</div>
