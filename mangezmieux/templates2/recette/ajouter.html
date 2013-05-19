@@ -26,21 +26,44 @@
 				{% endfor %}
 			</div>
 		{% endfor %}
-		<a id="add" href="#">Ajouter une ligne</a>
-		<br/><br/>
 		<!--<div id="reponse-get"></div>-->
 	
 		{{ formset.management_form }}
-		{% for forml in formset.forms %}
-		<div class="item">
-		{{ forml.as_p }}
-		<p style=""><a class="delete" href="#">Supprimer</a></p>
-		</div>
-		<br/>
-		{% endfor %}
-		
-		<br/><br/><br/><br/>	
-		<div><input class="btn btn-large btn-warning" id="submit-ajouter-recette" type="submit" value="Ajouter" /></div>
+		<table class="table table-hover table-striped">
+			<tr>
+			    <th>
+				Produit
+			    </th>
+			    <th>
+				Quantite
+			    </th>
+			    <th>
+				Unite
+			    </th>
+			    <th></th>
+			</tr>
+			{% for forml in formset.forms %}
+			    <tr class="item">
+				<td class="produit">
+				{{ forml.produit.errors }}
+				{{ forml.produit}}
+				</td>
+				<td>
+				{{ forml.quantite.errors }}
+				{{ forml.quantite}}
+				</td>
+				<td>
+				{{ forml.unite.errors }}
+				{{ forml.unite}}
+				</td>
+				<td>
+				<a class="btn btn-warning delete" href="">Supprimer</a>
+				</td>
+			    </tr>
+			{% endfor %}	
+		</table>
+		<a id="add" href="#" class="btn btn-small btn-warning">Ajouter un produit</a><br/><br/>
+		<div><input class="btn btn-large btn-warning" id="submit-ajouter-recette" type="submit" value="Ajouter la recette" /></div>
 		</form>
 	</div>
 

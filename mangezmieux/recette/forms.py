@@ -28,19 +28,21 @@ class AddForm(forms.Form):
 	#champs du formulaire
 	nom = forms.CharField(label='Nom de la recette', required=True)
 	instructions = forms.CharField(label='Instructions', required=True, widget=forms.Textarea)
-	duree = forms.IntegerField(label='Durée', required=True)
+	duree = forms.IntegerField(label='Durée (minutes)', required=True)
 	difficulte = forms.ChoiceField(label='Difficulté', choices=(), required=True)
 	categorie = forms.ChoiceField(label='Catégorie', choices=(), required=True)
 	tags = forms.CharField(label='Tags (séparés par un espace)', required=True)
 	nb_personne = forms.IntegerField(label='Nombre de personnes', required=True)
-	image = forms.ImageField(label='Image', required=False)
+	image = forms.ImageField(label='Image', required=True)
 	#produit = forms.CharField(label='Produit', required=False)
 	
 	def __init__(self, *args, **kwargs):
 		"""Constructeur du formulaire, c'est là que l'on rempli les listes déroulantes"""
 		#constucteur de l'objet parent
 		super(AddForm, self).__init__(*args, **kwargs)
-
+		
+		self.fields['instructions'].widget.attrs['class']='span12'
+		
 		#remplissage des listes
 		self.fields['difficulte'].choices = (('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'))
 		self.fields['categorie'].choices = [(cat.pk, cat.nom) for cat in Categorie.objects.all()]		

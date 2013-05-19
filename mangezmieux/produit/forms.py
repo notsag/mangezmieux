@@ -8,7 +8,7 @@ class FormulaireRechercheProduits(forms.Form):
 	"""
 	nom = forms.CharField(label='Nom du produit', required=False)
 	typeP = forms.ChoiceField(label='Type', choices=(), required=False)
-	valeur = forms.ChoiceField(label='Valeur ébergétique', choices=(), required=False)
+	valeur = forms.ChoiceField(label='Valeur énergétique', choices=(), required=False)
 
 	def __init__(self, *args, **kwargs):
 		super(FormulaireRechercheProduits, self).__init__(*args, **kwargs)
