@@ -6,6 +6,8 @@ from produit.models import *
 class LignePanier(models.Model):
     produit = models.ForeignKey(Produit)
     quantite = models.IntegerField()
+    class Meta:
+        verbose_name_plural = "Lignes de panier"
     
 class Panier(models.Model):
     utilisateur = models.ForeignKey(User)

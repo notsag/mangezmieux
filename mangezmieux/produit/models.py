@@ -14,6 +14,9 @@ class TypeProduit(models.Model):
     nom = models.CharField(max_length=30, unique=True)
     parent = models.ForeignKey('self', null = True, blank = True)
 
+    class Meta:
+        verbose_name_plural = "Types de produit"
+
     def __unicode__(self):
         return self.nom
 
@@ -25,6 +28,9 @@ class ValeurNutritionnelle(models.Model):
 	lipides = models.DecimalField(max_digits=5, decimal_places=2,null=True)
 	fibres = models.DecimalField(max_digits=5, decimal_places=2,null=True)
 	sodium = models.DecimalField(max_digits=5, decimal_places=2,null=True)
+
+	class Meta:
+		verbose_name_plural = "Valeurs nutritionnelles"
 
 	def __unicode__(self):
 		return unicode(self.energie)

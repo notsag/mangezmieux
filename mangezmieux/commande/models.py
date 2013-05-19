@@ -18,6 +18,9 @@ class LigneCommande(models.Model):
     quantite = models.IntegerField()
     commande = models.ForeignKey(Commande, null = False, blank = False, related_name='lignes')
     
+    class Meta:
+        verbose_name_plural = "Lignes de commande"
+
     def __unicode__(self):
         return u'%s - %s' % (self.commande.numero, unicode(self.produit))
 

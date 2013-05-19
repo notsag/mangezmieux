@@ -17,6 +17,9 @@ class LigneRecette(models.Model):
     quantite = models.IntegerField()
     unite = models.ForeignKey(Unite)
 
+    class Meta:
+        verbose_name_plural = "Lignes de recette"
+
     def __unicode__(self):
         return u'%d %s %s' % (self.quantite, self.unite, self.produit)      
 
@@ -26,6 +29,9 @@ class LigneProduit(models.Model):
     quantite = models.IntegerField()
     unite = models.ForeignKey(Unite)
 
+    class Meta:
+        verbose_name_plural = "Lignes de produit"
+
     def __unicode__(self):
         return u'%d %s %s' % (self.quantite, self.unite, self.produit)      
 	
@@ -33,6 +39,7 @@ class LigneProduit(models.Model):
 class Categorie(models.Model):
     nom = models.CharField(max_length=100)
     image = models.ImageField(upload_to='categorie/', null = True, blank = True)
+
     def __unicode__(self):
         return self.nom
         
@@ -66,10 +73,16 @@ class Repas(models.Model):
     produit = models.ManyToManyField(LigneProduit, null = True, blank = True)
     utilisateur = models.ForeignKey(User)
 
+    class Meta:
+        verbose_name_plural = "Repas"
+
 #Recette favorite
 class RecetteFavorite(models.Model):
     recette = models.ForeignKey(Recette, null = False, blank = False)
     utilisateur = models.ForeignKey(User, null = False, blank = False)
+
+    class Meta:
+        verbose_name_plural = "Recettes favorites"
 
     def __unicode__(self):
         return u'%s %s' % (self.recette.nom, unicode(self.utilisateur))

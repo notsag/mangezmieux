@@ -8,6 +8,10 @@ class News(models.Model):
 	nom = models.CharField(max_length=50)
 	info = models.TextField()
 	date_pub = models.DateTimeField(auto_now=True)
+
+	class Meta:
+		verbose_name = "News"
+		verbose_name_plural = "News"
 	
 	def __unicode__(self):
 		return self.nom
