@@ -10708,7 +10708,19 @@
         }, 
         "model": "produit.valeurnutritionnelle", 
         "pk": 615
-    }, 
+    },
+    {
+        "fields": {
+            "energie": 615, 
+            "fibres": 0, 
+            "glucides": 0.8, 
+            "lipides": 9.9, 
+            "proteines": 12.6, 
+            "sodium": 0.14
+        }, 
+        "model": "produit.valeurnutritionnelle", 
+        "pk": 616
+    },
     {
         "fields": {
             "image": "produit/steak-hache.jpg", 
@@ -10788,7 +10800,7 @@
             "quantite": 6, 
             "type_produit": 7, 
             "unite": 4, 
-            "valeur_nutritionnelle": 1
+            "valeur_nutritionnelle": 616
         }, 
         "model": "produit.produit", 
         "pk": 7
