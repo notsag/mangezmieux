@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-	<div class="container police">
+	<div class="container police containerPage">
 	<ul class="breadcrumb">
 		<li><a href="/produit/type/">Types</a> <span class="divider">/</span></li>
 		<li><a href="/produit/type/{{produit.type_produit.id}}">{{produit.type_produit.nom}}</a> <span class="divider">/</span></li>
@@ -29,19 +29,19 @@
                 <p>{{produit.valeur_nutritionnelle.energie}} kJ</p>
 					<table class="titleTab table table-striped table-bordered">
 						<tr>
-							<th>Protéines</th><td>{{produit.valeur_nutritionnelle.proteines}}</td>
+							<th>Protéines</th><td>{{produit.valeur_nutritionnelle.proteines}} g</td>
 						</tr>
 						<tr>
-							<th>Glucides</th><td>{{produit.valeur_nutritionnelle.glucides}}</td>
+							<th>Glucides</th><td>{{produit.valeur_nutritionnelle.glucides}} g</td>
 						</tr>
 						<tr>
-							<th>Lipides</th><td>{{produit.valeur_nutritionnelle.lipides}}</td>
+							<th>Lipides</th><td>{{produit.valeur_nutritionnelle.lipides}} g</td>
 						</tr>
 						<tr>
-							<th>Fibres</th><td>{{produit.valeur_nutritionnelle.fibres}}</td>
+							<th>Fibres</th><td>{{produit.valeur_nutritionnelle.fibres}} g</td>
 						</tr>
 						<tr>
-							<th>Sodium</th><td>{{produit.valeur_nutritionnelle.sodium}}</td>
+							<th>Sodium</th><td>{{produit.valeur_nutritionnelle.sodium}} g</td>
 						</tr>
 					</table>
 			</div>
