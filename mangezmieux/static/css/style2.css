@@ -592,3 +592,21 @@ html, body {
 .resultats {
     margin-top: 150px;
 }
+
+.user-infos {
+    float: left;
+    margin-left: 10px;
+}
+
+.user-profile {
+    float: left;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.user-submit {
+    margin-top: 280px;
+    float: right;
+    margin-right: 75px
+}
+
