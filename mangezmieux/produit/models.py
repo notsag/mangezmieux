@@ -39,7 +39,7 @@ class Produit(models.Model):
     image = models.ImageField(upload_to='produit/', null = True, blank = True)
 
     def __unicode__(self):
-        return self.nom
+        return self.nom + " (" + str(self.quantite) + " " + self.unite.nom +")" 
 
 
 

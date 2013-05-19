@@ -58,7 +58,9 @@ def detail(request, id):
             return redirect('/planning/?d=' + str(d))
     else:
 	form = RepasProduitForm()
-	
+        
+        convs = Conversion.objects.filter(uniteBase = produit.unite)      
+	form.fields["unite"].choices = [(conv.uniteSpecifique.pk, conv.uniteSpecifique.nom) for conv in convs]
 	form.fields["produit"].initial = produit.nom
 	ordre = request.session.get('ordre')
 	date = request.session.get('date')
