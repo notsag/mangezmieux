@@ -6,7 +6,13 @@
         {% include "home/carousel.html" %}
     </div>
     <div id="home-center" >
-	<h2 class="police">Commencez votre planning immédiatement <a class="btn btn-large btn-warning" href='/inscription'">S'inscrire</a></h2>
+        <h2 class="police">Commencez votre planning immédiatement 
+            {% if user.is_authenticated %}
+            <a class="btn btn-large btn-warning" href='/planning'>Mon planning</a>
+            {% else %}
+            <a class="btn btn-large btn-warning" href='/inscription'>S'inscrire</a>
+            {% endif %}
+        </h2>
     </div>
     <div id="home-bottom" class="container">
 	 {% if latest_news %}
