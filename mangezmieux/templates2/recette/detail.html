@@ -40,7 +40,21 @@
 	<div id="info">
 	  <dl class="dl-horizontal">
 	    <dt>Durée :</dt><dd>{{recette.duree}} minutes</dd>
-	    <dt>Niveau :</dt><dd> {{recette.difficulte}} / 5</dd>
+        <dt>Difficulté :</dt><dd>
+		{% if recette.difficulte = 1 %}
+		<i class="icon-star"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
+		{% elif recette.difficulte = 2 %}
+		<i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
+		{% elif recette.difficulte = 3 %}
+		<i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
+		{% elif recette.difficulte = 4 %}
+		<i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-empty"></i>
+		{% elif recette.difficulte = 5 %}
+		<i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
+		{% else %}
+		<i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
+		{% endif %}
+        </dd>
 	    <dt>Personnes :</dt><dd> {{recette.nb_personne}}</dd>
 	    <dt>Ingrédients :</dt><dd>
 	    <ul>
