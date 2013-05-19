@@ -64,6 +64,7 @@ urlpatterns = patterns('',
     url(r'^lignePaniers/supprimer/(?P<pk>[0-9]+)/$', LignePanierSuppression.as_view(), name='lignepanier-suppression'),
     
     url(r'^paniers/$', PanierDetail.as_view(), name='panier-detail'),
+    url(r'^paniers/generer/$', PanierGenerer.as_view(), name='panier-generer'),
     url(r'^paniers/supprimer/(?P<pk>[0-9]+)/$', PanierSuppression.as_view(), name='panier-suppression'),
 )
 

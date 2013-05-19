@@ -16,6 +16,109 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
+class PanierGenerer(generics.ListCreateAPIView):
+    """
+    API endpoint that represents a list of recettes.
+    """
+    model = Panier
+    serializer_class = PanierSerializer
+    
+    def get_queryset(self):
+	userId = self.request.QUERY_PARAMS.get('u', None)
+	dateDebutString = self.request.QUERY_PARAMS.get('dd', None)
+	dateFinString = self.request.QUERY_PARAMS.get('df', None)
+	user = User.objects.get(id = userId)
+	
+
+	dateDebut = parser.parse(dateDebutString).date()
+	dateFin = parser.parse(dateFinString).date()
+	
+	#On recupere les repas entre cet intervalle
+	repass = Repas.objects.filter(date__gte = dateDebut, date__lte = dateFin, utilisateur = user).order_by('date','ordre')
+	
+	prod = {}
+	
+	for repas in repass:
+	    for recette in repas.recette.all():
+		for ligne in recette.lignes.all():
+		    #Pour chaque ligne de la recette on recupere la quantite necessaire de produit
+		    uniteProduit = ligne.produit.unite
+		    uniteRecette = ligne.unite    
+		    conv = Conversion.objects.filter(uniteSpecifique = uniteRecette, uniteBase = uniteProduit)[0]
+		    quantiteRecette = ligne.quantite * conv.multiplicateur
+		    quantiteRecette = (quantiteRecette * repas.nb_personne) / recette.nb_personne
+		    
+		    if ligne.produit in prod:
+			prod[ligne.produit] = prod[ligne.produit] + quantiteRecette
+		    else:
+			prod[ligne.produit] = quantiteRecette
+	    for produit in repas.produit.all():
+		#Pour chaque ligne de la recette on recupere la quantite necessaire de produit
+		uniteProduit = produit.produit.unite
+		uniteRecette = produit.unite    
+		conv = Conversion.objects.filter(uniteSpecifique = uniteRecette, uniteBase = uniteProduit)[0]
+		quantiteRecette = produit.quantite * conv.multiplicateur
+		#quantiteRecette = quantiteRecette * repas.nb_personne
+		
+		if produit.produit in prod:
+		    prod[produit.produit] = prod[produit.produit] + quantiteRecette
+		else:
+		    prod[produit.produit] = quantiteRecette
+	
+	panierR = {}
+	paniers = Panier.objects.filter(utilisateur = user)
+	if paniers.count() == 0:
+	    panier = Panier()
+	    panier.utilisateur = user
+	    panier.save()
+	else:
+	    panier = paniers[0]
+	
+	
+	#On remplit le nombre de produits necessaire
+	for key in prod.keys():
+	    produit = key
+	    quantiteNec = prod[key]
+	    
+	    #On regarde si on n'a pas déjà des produits utiles dans notre panier
+	    lignesP = panier.lignes.filter(produit = produit)
+	    if lignesP.count() > 0:
+		quantite = lignesP[0].quantite * lignesP[0].produit.quantite
+	    else:
+		quantite = 0
+		
+	    nbProduit = 0
+	    while quantite < quantiteNec :
+		quantite = quantite + produit.quantite
+		nbProduit = nbProduit + 1
+	    
+	    panierR[produit] = nbProduit
+	
+	for key in panierR.keys():
+	    #si on a des lignes dans notre panier on regarde si on n'a pas déjà le produit en question pour juste ajouter la quantite
+	    if panier.lignes.count() > 0:
+		lignes = panier.lignes.filter(produit = produit)
+		if lignes.count() == 0:
+		    ligne = LignePanier()
+		    ligne.produit = key
+		    ligne.quantite = panierR[key]
+		else:
+		    ligne = lignes[0]
+		    ligne.quantite = panierR[key] + ligne.quantite
+	    else :
+		ligne = LignePanier()
+		ligne.produit = key
+		ligne.quantite = panierR[key]
+	
+	    ligneNom = ligne.produit.nom
+	    ligne.save()
+	    
+	    panier.lignes.add(ligne)
+	    panier.save()
+	    
+	    
+	return panier
+
 class RecetteSuggestion(generics.ListCreateAPIView):
     """
     API endpoint that represents a list of recettes.
