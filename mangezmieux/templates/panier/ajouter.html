@@ -2,32 +2,34 @@
 {% load static %}
 
 {% block content %}
-<div class="titleBox">
-    <h3>Ajouter produit panier</h3>
-</div>
-<div class="box">
-    <form action="{% url panier.views.ajouter id=produit.id %}" method="post">{% csrf_token %}
-    {% if form.non_field_errors %}
-            <div class="form_errors">
-            {% for err in form.non_field_errors %}
-                    <div class="form_error_message">{{ err }}</div>
-            {% endfor %}
-            </div>	
-    {% endif %}
-    {% for hidden in form.hidden_fields %}
-            {{ hidden }}
-    {% endfor %}
-    {% for field in form.visible_fields %}
-            <div {% if field.errors %}class="field_error"{% endif %}>
-                    {{ field.label_tag }}
-                    {{ field }}
-                    {% for err in field.errors %}
-                            <span class="error_message">{{ err }}</span>
-                    {% endfor %}
-            </div>
-    {% endfor %}
-    <input class="btn" type="submit" value="Ajouter" />
-    </form>
+    <div class="container police containerPage">
+    <div class="titleBox">
+        <h3 class="police">Ajouter produit panier</h3>
+    </div>
+    <div class="box">
+        <form action="{% url panier.views.ajouter id=produit.id %}" method="post">{% csrf_token %}
+        {% if form.non_field_errors %}
+                <div class="form_errors">
+                {% for err in form.non_field_errors %}
+                        <div class="form_error_message">{{ err }}</div>
+                {% endfor %}
+                </div>	
+        {% endif %}
+        {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+        {% endfor %}
+        {% for field in form.visible_fields %}
+                <div {% if field.errors %}class="field_error"{% endif %}>
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {% for err in field.errors %}
+                                <span class="error_message">{{ err }}</span>
+                        {% endfor %}
+                </div>
+        {% endfor %}
+        <input class="btn btn-warning" type="submit" value="Ajouter" />
+        </form>
+    </div>
 </div>
 {% endblock %}
 

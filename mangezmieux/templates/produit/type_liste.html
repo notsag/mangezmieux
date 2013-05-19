@@ -2,15 +2,18 @@
 {% load static %}
 
 {% block content %}
-	<ul class="breadcrumb">
-		<li><a href="/produit/type/">Types</a> <span class="divider">/</span></li>
-		<li class="active">{{type}}</li>
-    </ul>
-    <div class="box">
-	<ul>
-	{% for p in produits %}
-		<li><a href="/produit/detail/{{p.id}}">{{p.nom}}</a></li>
-	{% endfor %}
-	</ul>
+	<div class="container police containerPage">
+		<ul class="breadcrumb">
+			<li><a href="/produit/type/">Types</a> <span class="divider">/</span></li>
+			<li class="active">{{type}}</li>
+	    </ul>
+	    <div class="box">
+		<h3 class="police">{{type}}</h3>
+		<ul class="nav nav-pills nav-stacked">
+		{% for p in produits %}
+			<li><a href="/produit/detail/{{p.id}}">{{p.nom}}</a></li>
+		{% endfor %}
+		</ul>
+	    </div>
     </div>
 {% endblock %}

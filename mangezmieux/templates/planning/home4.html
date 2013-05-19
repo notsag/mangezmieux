@@ -2,24 +2,27 @@
 {% load static %}
 
 {% block content %}
+    <div class="police">
     <div id="suggestion">
-	<h5>Vous aimerez peut-etre</h5>
-        <div id="props">
-            {% for recetteProp in recettesProp %}
-            <div class="recetteProp">
-            {% if recetteProp.image %}
-                <a href="/recette/detail/{{recetteProp.id}}">
-                    <img src="{{recetteProp.image.url}}" class="" alt="Illustration pour : {{recetteProp.nom}}"/></a>
-            {% else %}
-            <div class="well"><a href="/recette/detail/{{recetteProp.id}}">{{recetteProp.nom}}</a></div>
-            {% endif %}
-            </div>
-            {% endfor %}
-        </div>
+	<div class="container">
+	    <h5>Vous aimerez peut-etre</h5>
+	    <div id="props">
+		{% for recetteProp in recettesProp %}
+		<div class="recetteProp">
+		{% if recetteProp.image %}
+		    <a href="/recette/detail/{{recetteProp.id}}">
+			<img src="{{recetteProp.image.url}}" class="" alt="Illustration pour : {{recetteProp.nom}}"/></a>
+		{% else %}
+		<div class="well"><a href="/recette/detail/{{recetteProp.id}}">{{recetteProp.nom}}</a></div>
+		{% endif %}
+		</div>
+		{% endfor %}
+	    </div>
+	</div>
     </div>
-    <div id="planning_actions">
-        <div id="generer_panier"><a href="/panier/generer?dd={{debutSemaine|date:"Y-m-d"}}&df={{finSemaine|date:"Y-m-d"}}" class="btn btn-info">Remplir le panier de la semaine</a></div>
-        <div id="generer_planning"><a href="/planning/generer-planning?d={{dateC|date:"Y-m-d"}}" class="btn btn-info">Generer le planning</a></div>
+    <div id="planning_actions" class="container">
+        <div id="generer_panier"><a href="/panier/generer?dd={{debutSemaine|date:"Y-m-d"}}&df={{finSemaine|date:"Y-m-d"}}" class="btn btn-warning">Remplir le panier de la semaine</a></div>
+        <div id="generer_planning"><a href="/planning/generer-planning?d={{dateC|date:"Y-m-d"}}" class="btn btn-warning">Generer le planning</a></div>
     </div>
     <div id="planning4">
 	<div id="entetePlanning">
@@ -27,15 +30,43 @@
             <a id="prevPlanning" class="carousel-control left" href="/planning?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
             <a id="nextPlanning" class="carousel-control right" href="/planning?d={{semaineSuivante|date:"Y-m-d"}}" data-slide="next">&rsaquo;</a> 
         </div>
-	<table class="table table-hover table-bordered" id="test" style="width: 940px"> 
+	<table class="table table-bordered" id="test"> 
 	    <tr class="titleTab">
-		<th class="1">Lundi</th>
-		<th class="2">Mardi</th>
-		<th class="3">Mercredi</th>
-		<th class="4"><a href="javascript:void(0);" id="precedent" class="icon-arrow-left"></a>Jeudi <a href="javascript:void(0);" id="suivant" class="icon-arrow-right"></a></th>
-		<th class="5">Vendredi</th>
-		<th class="6">Samedi</th>
-		<th class="7">Dimanche</th>
+		{% if day == "Monday" %}
+		    <th class="1 currentDay">Lundi</th>
+		{% else %}
+		    <th class="1">Lundi</th>
+		{% endif %}
+		{% if day == "Tuesday" %}
+		    <th class="2 currentDay">Mardi</th>
+		{% else %}
+		    <th class="2">Mardi</th>
+		{% endif %}
+		{% if day == "Wednesday" %}
+		    <th class="3 currentDay">Mercredi</th>
+		{% else %}
+		    <th class="3">Mercredi</th>
+		{% endif %}
+		{% if day == "Thursday" %}
+		    <th class="4 currentDay">Jeudi</th>
+		{% else %}
+		    <th class="4">Jeudi</th>
+		{% endif %}
+		{% if day == "Friday" %}
+		    <th class="5 currentDay">Vendredi</th>
+		{% else %}
+		    <th class="5">Vendredi</th>
+		{% endif %}
+		{% if day == "Saturday" %}
+		    <th class="6 currentDay">Samedi</th>
+		{% else %}
+		    <th class="6">Samedi</th>
+		{% endif %}
+		{% if day == "Sunday" %}
+		    <th class="7 currentDay">Dimanche</th>
+		{% else %}
+		    <th class="7">Dimanche</th>
+		{% endif %}
 	    </tr>
 	    {% for ligne in planning %}
 		<tr> 
@@ -48,8 +79,9 @@
 			    </div>
 			    <div class="ligneAjouter"><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r" class="icon-plus"></a>Recette<a class="icon-plus" href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p"></a>Produit</div>
 			{% else %}
+			    <div class="ligneRepas">Nombre de personnes : {{col.nb_personne}}</div>
 			    <div class="contenu-ligne">
-				{% for re in col.recette.all %}
+				{% for re in col.recette.all %} 
 				    <div class="ligneRepas"><a href="/recette/detail/{{re.id}}">{{re.nom}}</a><a class="icon-minus" href="retirer-recette/?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&r={{re.id}}"></a></div>
 				{% endfor %}
 	    
@@ -66,9 +98,10 @@
 	     
 	</table>
     </div>
+    </div>
     
     <script>
-	$(document).ready(function() {
+	/*$(document).ready(function() {
 	    $('.5').hide();
 	    $('.6').hide();
 	    $('.7').hide();
@@ -95,7 +128,7 @@
 	    
 	    $('#precedent').hide();
 	    $('#suivant').show();
-	});
+	});*/
     </script>
     
 {% endblock %}

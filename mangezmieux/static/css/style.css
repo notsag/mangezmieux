@@ -6,29 +6,20 @@ html, body {
 	height: 100%;
 	min-height: 100%;
 	height: auto !important;
-	margin-bottom: -120px;
-    /*
-     *THEME 1
-     */
-    background-image: url("../img/bg2.jpg");
-    /*
-     * THEME 2 
-    background: rgb(255,246,139);
-    background: -moz-linear-gradient(top,  rgba(255,246,139,1) 0%, rgba(255,217,94,1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,246,139,1)), color-stop(100%,rgba(255,217,94,1))); 
-    background: -webkit-linear-gradient(top,  rgba(255,246,139,1) 0%,rgba(255,217,94,1) 100%); 
-    background: -o-linear-gradient(top,  rgba(255,246,139,1) 0%,rgba(255,217,94,1) 100%); 
-    background: -ms-linear-gradient(top,  rgba(255,246,139,1) 0%,rgba(255,217,94,1) 100%);
-    background: linear-gradient(to bottom,  rgba(255,246,139,1) 0%,rgba(255,217,94,1) 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff68b', endColorstr='#ffd95e',GradientType=0 );*/
-
+	padding-bottom: -120px;
+	background-image: url("../img/bg2.jpg");
 }
-
+.containerPage {
+	background-color: white;
+	padding: 20px;
+	min-height: 100%;
+	height: auto;
+}
 #content {
-    padding-top: 20px;
 	padding-bottom: 120px;
 	margin-bottom: -120px;
 }
+
 
 #menu{
 	margin-top: 0px;
@@ -71,7 +62,7 @@ html, body {
     height: 120px;
     /*
      * THEME1 */
-    background-color: white;
+    background-color: #f9f9f9;
     
     
     /*
@@ -106,9 +97,9 @@ html, body {
 }
 
 #footer-text {
-    float: center;
-    height: 105px;
-    width: 608px;
+	float: left;
+	height: 105px;
+	margin-right: 50px;
 }
 
 #footer-text p {
@@ -118,402 +109,197 @@ html, body {
     margin-bottom: 0px;
 }
 
-#mangerbouger{
-    float: right;
-    background-image: url("../img/mangerbouger.gif");
-    width: 331px;
-    height: 93px;
+.images {
+	float: left;
+	margin-top: 20px;
 }
 
-#header-right {
-    float: right;
-    height: 113px;
-    width: 608px;
-}
-
-#home-top-right {
-    height: 288px;
-    /*
-     * THEME1*/
-    background-color: #d0e274;
-    
-    /*
-     * THEME2 
-    background-color: #cc7841;*/
-    
-    /*background-image: url("../img/home-right.png");*/
- 	width: 320px;   
-    margin-left: 0px;
-}
-
-#home-top-right p {
-    font-size: 40px;
-    line-height: 41px;
-    text-align: center;
-    width: 290px;
-    color: white;
-    text-shadow: 0px 2px 3px #666;
-    font-family: Calibri, Verdana, Arial, 'sans serif';
-    margin-top: 30px;
-    margin-left: 4px;
-}
-
-#home-top-right .btn {
-    /*
-     * THEME 1*/
-    background-color: #fcc46d; 
-    
-    /*
-     * THEME 2 
-    background-color: #b4cc00;*/
-    
-    width: 160px;
-    background-image: none;
-    text-shadow: 0px 2px 3px #666;
-    height: 50px;
-    font-size: 25px;
-    
-    -moz-box-shadow: 4px 4px 10px 0px #656565;
-    -webkit-box-shadow: 4px 4px 10px 0px #656565;
-    -o-box-shadow: 4px 4px 10px 0px #656565;
-    box-shadow: 4px 4px 10px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=10);
-}
-
-#home-top-right .btn:hover {
-    /*
-     * THEME 1*/
-    background-color: #ffd18a; 
-    
-    /*
-     * THEME 2 
-    background-color: #dbec5b;*/
-}
-
-#home-top {
-
-    font-family: Calibri, Verdana, Arial, 'sans serif';
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-
-#home-bottom, #home-news {
-    border-radius: 30px 30px 30px 30px;
-    padding-left: 10px;
-    height: 100%;
-    margin-left: 0px;
-    -moz-box-shadow: 4px 4px 30px 0px #656565;
-    -webkit-box-shadow: 4px 4px 30px 0px #656565;
-    -o-box-shadow: 4px 4px 30px 0px #656565;
-    box-shadow: 4px 4px 30px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=30);
-    background-color: white;
-	margin-bottom: 20px;
-	padding-bottom: 30px;
-}
-
-#home-news {
-	padding-bottom: 30px;
-}
-
-.news {
+#home-bottom {
+	background-color: white;
 	padding: 20px;
-	padding-bottom: 0px;
-    border-radius: 30px 30px 30px 30px;
 }
 
-.news p {
-	font-size: 16px;
-	line-height: 20px;
+#home-bottom h3 {
+	background-color: #ffde8d;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+#home-bottom p {
 	background-color: #fff8ad;
-	margin-top: -15px;
-	padding: 10px 10px 10px;
-	margin-bottom: -5px;
-}
-
-.news h3 {
-	font-size: 18px;
-	font-weight: bold;
-	line-height: 20px;
-	background-color: #ffde8d;	
 	padding: 10px;
+	font-size: 15px;
+	height: 58px;
+	text-align: center;
 }
 
+#myCarousel {
+	margin-bottom: -10px;
+}
+
+#home-center {
+	background-color: #f9f9f9;
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+#home-center h2 {
+	text-align: center;
+	padding-top: 25px;
+	font-weight: normal;
+}
+
+.police {
+	font-family: Calibri, Verdana, Arial, 'sans serif';
+	font-weight: normal;
+}
+
+.ligne {
+	float: left;
+	
+	margin: 0;
+}
+
+.ligne h3 {
+	margin-top: 0px;
+}
+
+.ligneContent {
+	float: left;
+	width: 671px;
+	margin-left: 10px;
+}
 .news-date {
 	float: right;
 	color: gray;
 	font-size: 14px;
 	font-weight: lighter;
+	margin-right: 10px;
+}
+.news .newsContent {
+	background-color: #fff8ad;
+	margin-top: 0px;
+	padding: 10px;
 }
 
-#home-bottom .col {
-    margin-left: 25px;
-    width: 280px;
+#home-bottom .news h3 {
+	text-align: left;
+	padding-left: 10px;
+	
 }
 
-.imgCol {
-    width: 259px;
-    height: 118px;
+.news {
+	margin-left: 20px;
+}
+
+#planning4 {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#planning4 td{
+	background-color: white;
+	text-align: center;
+	
+	width: 265px;
+	height: 210px;
+}
+
+#planning4 th{
+	text-align: center;
+}
+
+#planning4 .contenu-ligne {
+	height: 190px;
+}
+
+#planning4 #precedent {
+	float: left;
+}
+
+#planning4 #suivant {
+	float: right;
+}
+.currentDay {
+    background-color: #F89C19;
+    color: #fff;
     
-    /*
-     * THEME 1
-    box-shadow: 0 0 0 8px #ffde8d inset;*/
-    
-    /*
-     * THEME 2 
-    box-shadow: 0 0 0 8px #ffd95e inset;*/
-    
-    margin-top: 30px;
-}
-#imgCol1 {
-    background-image: url("../img/calendar.png");
-    
-}
-#imgCol2 {
-    background-image: url("../img/panier.png");
-   
-}
-#imgCol3 {
-    background-image: url("../img/miam.png");
 }
 
-.titleCol {
-    width: 259px;
-    height: 70px;
-    /*
-     * THEME 1*/
-    background-color: #ffde8d; 
-    
-    /*
-     * THEME 2 
-    background-color: #cc7841;*/
-    
-    margin-top: 10px;
+#suggestion {
+	margin-bottom: 20px;
+	position: relative;
+	height: 150px;
+	
+	/*background: rgb(239,253,168); 
+	background: -moz-linear-gradient(top,  rgba(239,253,168,1) 1%, rgba(208,226,116,1) 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(239,253,168,1)), color-stop(100%,rgba(208,226,116,1))); 
+	background: -webkit-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
+	background: -o-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
+	background: -ms-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
+	background: linear-gradient(to bottom,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#effda8', endColorstr='#d0e274',GradientType=0 );*/
+	
+	background-color: #f9f9f9;
+	
+/*	border-radius: 10px 10px 0 0;
+	vertical-align: middle;
+	
+	-moz-box-shadow: 1px 0px 3px 0px #656565;
+	-webkit-box-shadow: 1px 0px 3px 0px #656565;
+	-o-box-shadow: 1px 0px 3px 0px #656565;
+	box-shadow: 1px 0px 3px 0px #656565;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);*/
+	
+	
+	padding-left: 10px;
 }
 
-.titleCol p {
-    /* color: white; */
-    width: 228px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 9px;
-    font-family: Calibri, Verdana, Arial, 'sans serif';
-    /* text-shadow: 0px 2px 3px #666; */
-	font-weight: bold;
-    font-size: 20px;
-    line-height: 25px;
+.recetteProp {
 
+	background-image: -webkit-linear-gradient(top,white,#F2F2F2);
+	background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
+		
+	float: left;
+	margin-right: 25px;
+	/*-moz-box-shadow: 1px 0px 3px 0px #656565;
+	-webkit-box-shadow: 1px 0px 3px 0px #656565;
+	-o-box-shadow: 1px 0px 3px 0px #656565;
+	box-shadow: 1px 0px 3px 0px #656565;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);*/
 }
 
-.conCol {
-    width: 259px;
-    height: 150px;
-    /*
-     * THEME 1*/
-    background-color: #fff8ad; 
-    
-    /*
-     * THEME 2 
-    background: rgb(255,246,139); 
-    background: -moz-linear-gradient(top,  rgba(255,246,139,1) 0%, rgba(255,217,94,1) 100%); 
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,246,139,1)), color-stop(100%,rgba(255,217,94,1))); 
-    background: -webkit-linear-gradient(top,  rgba(255,246,139,1) 0%,rgba(255,217,94,1) 100%); 
-    background: -o-linear-gradient(top,  rgba(255,246,139,1) 0%,rgba(255,217,94,1) 100%); 
-    background: -ms-linear-gradient(top,  rgba(255,246,139,1) 0%,rgba(255,217,94,1) 100%);
-    background: linear-gradient(to bottom,  rgba(255,246,139,1) 0%,rgba(255,217,94,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff68b', endColorstr='#ffd95e',GradientType=0 );*/
-
+#props {
+    width: 95%;
+    margin: auto;
 }
 
-.conCol p {
-    width: 228px;
-    margin-left: 15px;
-    margin-right: 15px;
-    padding-top: 12px;
-    font-family: Calibri, Verdana, Arial, 'sans serif';
-    font-size: 16px;
-    line-height: 25px; 
+.recetteProp img {
+	max-height: 100px;
+    min-width: 150px;
+    max-width: 150px;
 }
 
-.ligne{
-    padding-left: 9px;
-    margin-left: 18px;
-    margin-top: 15px;
-}
-
-.imgLig {
-    width: 259px;
-    height: 118px;
-    /*
-     * THEME 1 
-    box-shadow: 0 0 0 8px #ffde8d inset;*/
-    
-    /*
-     * THEME 2 
-    box-shadow: 0 0 0 8px #ffd95e inset;*/
-    
-    float: left;
-    margin-top: 15px;
-}
-
-#imgLig1 {
-    background-image: url("../img/varie.png");
-}
-
-.titleLig {
-    float: left;
-    margin-left: 10px;
-    width: 598px;
-	height: 40px;
-    /*
-     * THEME 1*/
-    background-color: #ffde8d; 
-    
-    /*
-     * THEME 2 
-    background-color: #cc7841;*/
-    
-    margin-top: 15px;
-}
-
-.titleLig p {
-    /* color: white; */
-    font-weight: bold;
-    font-family: Calibri, Verdana, Arial, 'sans serif';
-    margin-left: 10px;
-    font-size: 20px;
-    padding-top: 9px;
-	/* text-shadow: 0px 2px 3px #666; */
-	line-height: 25px;
-}
-
-.conLig {
-    width: 598px;
-    height: 78px;
-    /*
-     * THEME 1*/
-    background-color: #fff8ad; 
-    
-    /*
-     * THEME 2 
-    background: rgb(255,246,139);
-    background: -moz-linear-gradient(top,  rgba(255,246,139,1) 0%, rgba(255,217,94,1) 100%); 
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,246,139,1)), color-stop(100%,rgba(255,217,94,1))); 
-    background: -webkit-linear-gradient(top,  rgba(255,246,139,1) 0%,rgba(255,217,94,1) 100%); 
-    background: -o-linear-gradient(top,  rgba(255,246,139,1) 0%,rgba(255,217,94,1) 100%); 
-    background: -ms-linear-gradient(top,  rgba(255,246,139,1) 0%,rgba(255,217,94,1) 100%); 
-    background: linear-gradient(to bottom,  rgba(255,246,139,1) 0%,rgba(255,217,94,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff68b', endColorstr='#ffd95e',GradientType=0 ); */
-
-    
-    float: left;
-    margin-left: 10px;
-}
-
-.conLig p {
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-top: 8px;
-    font-family: Calibri, Verdana, Arial, 'sans serif';
-    font-size: 16px;
-    line-height: 15px; 
-}
-
-#planning td {
-    width: 130px;
-    padding: 0;
-    height: 36px;
+.recetteProp .well {
+    padding: 0px;
+    margin: 0;
+    width:150px;
     text-align: center;
-    border: none;
-    
-    /*
-     * THEME 1 */
-    background: rgb(255,250,177);
-    background: -moz-linear-gradient(top,  rgba(255,250,177,1) 0%, rgba(255,246,115,1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,250,177,1)), color-stop(100%,rgba(255,246,115,1)));
-    background: -webkit-linear-gradient(top,  rgba(255,250,177,1) 0%,rgba(255,246,115,1) 100%);
-    background: -o-linear-gradient(top,  rgba(255,250,177,1) 0%,rgba(255,246,115,1) 100%); 
-    background: -ms-linear-gradient(top,  rgba(255,250,177,1) 0%,rgba(255,246,115,1) 100%);
-    background: linear-gradient(to bottom,  rgba(255,250,177,1) 0%,rgba(255,246,115,1) 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffab1', endColorstr='#fff673',GradientType=0 );
-    
-    
-    
+    height: 100px;
+    line-height: 100px;
 }
 
-#planning .accordion {
-    margin-bottom: 0;
-}
-#planning .accordion-group {
-    border: none;
-    margin-bottom: 0px;
-}
-#planning .accordion-inner {
-    border: none;
-    min-height: 20px;
+#planning_actions {
+    margin-bottom: 70px;
 }
 
-#planning .accordion-heading {
-    /*
-     * THEME 1 */
-    background-color: #ffd95e;
-    
-    
-    /*
-     * THEME 2 
-    background: rgb(252,252,252);
-    background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); 
-    background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); 
-    background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%);
-    background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); 
-    background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 );*/
-
-
-
-    border: none;
-    font-family:  'arial', 'sans-serif';
-    font-weight: bold;
-    min-height: 36px;
-    
-    -moz-box-shadow: 1px 0px 3px 0px #656565;
-    -webkit-box-shadow: 1px 0px 3px 0px #656565;
-    -o-box-shadow: 1px 0px 3px 0px #656565;
-    box-shadow: 1px 0px 3px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
-}
-#planning .accordion-body {
-
-    background-color: white;
-    border: none;
-    font-family: 'arial', 'sans-serif';
-    -moz-box-shadow: 1px 0px 3px 0px #656565;
-    -webkit-box-shadow: 1px 0px 3px 0px #656565;
-    -o-box-shadow: 1px 0px 3px 0px #656565;
-    box-shadow: 1px 0px 3px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
-   
+#generer_panier {
+    float: left;
+    margin-right: 10px;
 }
 
-#planning .accordion-toggle {
-    color: white;
-    text-decoration: none;
-    min-height: 20px;
-}
-
-#planning .accordion-heading:hover {
-    background-color: #ffd18a;
-
-}
-
-#planning table {
-   border: none; 
-}
-
-#planning tr{
-   border: none; 
+#generer_planning {
+    float: left;
 }
 
 #entetePlanning {
@@ -552,22 +338,6 @@ html, body {
 
 }
 
-#planning .title td {
-    vertical-align: middle;
-    background-image: -webkit-linear-gradient(top,white,#F2F2F2);
-    background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
-    font-weight: bold;
-    border-right: 1px solid #ebebeb;
-    
-    -moz-box-shadow: 1px 0px 3px 0px #656565;
-    -webkit-box-shadow: 1px 0px 3px 0px #656565;
-    -o-box-shadow: 1px 0px 3px 0px #656565;
-    box-shadow: 1px 0px 3px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
-    
-    border-radius: 0px;
-}
-
 #entetePlanning p {
     position: relative;
     color: white;
@@ -593,17 +363,7 @@ html, body {
     margin-top: -50px;
 }
 
-#planning td.day {
-    box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.3) inset,1px 0px 3px 0px #656565;
-    border-radius: 0px;
-    
-}
-/* ----------------------------------------------------------------------------- */
-
-#planning2 {
-	width: 670px;
-}
-#planning2 .title {
+.titleTab {
     vertical-align: middle;
     background-image: -webkit-linear-gradient(top,white,#F2F2F2);
     background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
@@ -617,195 +377,40 @@ html, body {
     filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
     
     border-radius: 0px;
-    
-    height: 30px;
-    padding-left: 10px;
-    padding-top: 10px;
 }
 
-#planning2 .accordion {
-    margin-bottom: 20px;
-}
-#planning2 .accordion-group {
-    border: none;
-    margin-bottom: 0px;
-}
-#planning2 .accordion-inner {
-    border: none;
-    min-height: 40px;
-    padding: 0;
-}
-
-#planning2 .accordion-heading {
-    /*
-     * THEME 1 */
-    background-color: #ffd95e;
-    
-    
-    /*
-     * THEME 2 
-    background: rgb(252,252,252);
-    background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); 
-    background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); 
-    background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%);
-    background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); 
-    background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 );*/
-
-
-
-    border: none;
-    font-family:  'arial', 'sans-serif';
-    font-weight: bold;
-    min-height: 36px;
-    
-    -moz-box-shadow: 1px 0px 3px 0px #656565;
-    -webkit-box-shadow: 1px 0px 3px 0px #656565;
-    -o-box-shadow: 1px 0px 3px 0px #656565;
-    box-shadow: 1px 0px 3px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
-}
-#planning2 .accordion-body {
-
-    background-color: white;
-    
-    border: none;
-    font-family: 'arial', 'sans-serif';
-    -moz-box-shadow: 1px 0px 3px 0px #656565;
-    -webkit-box-shadow: 1px 0px 3px 0px #656565;
-    -o-box-shadow: 1px 0px 3px 0px #656565;
-    box-shadow: 1px 0px 3px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
-   
-}
-
-#planning2 .accordion-toggle {
-    color: white;
-    text-decoration: none;
-    min-height: 20px;
-}
-
-#planning2 .accordion-heading:hover {
-    background-color: #ffe48d;
+.categorieRecette{    
+    width: 290px;
+    margin-bottom: 25px;
 
 }
 
-#planning2 .day {
-    box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.3) inset,1px 0px 3px 0px #656565;
-    border-radius: 0px;  
-}
-
-#planning2 .ligneRepas {   
-    height: 35px;
-    padding-top: 15px;
-    padding-left: 10px;
-}
-
-#planning2 .ligneRepas:hover {   
-    background-color: #f9f9f9
-}
-
-#planning2 .vide{   
-    font-style: italic;
-    text-align: center;
-}
-
-.ligneRepas a {
-    color: black;
-}
-
-.infoRecette {
-    float: right;
-}
-
-#recettePanelGauche {
-	float: left;
-	margin-right: 1.5em;
-	margin-top: 1em;
-    text-align: center;
-    width: 220px;
-	/* background-color: gray; */
-}
-
-#recettePanelGauche img {
-	max-width: 220px;
-    max-height: 220px;
-	display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#produitPanelGauche {
-	float: left;
-	margin-right: 1.5em;
-	margin-top: 1em;
-	/* background-color: gray; */
-    text-align:center;
-    width: 220px;
-}
-
-#produitPanelGauche img {
-	max-width: 220px;
-    max-height: 220px;
-	display: block;
-    margin-left: auto;
-    margin-right:auto;
-}
-
-#suggestion {
-    background: rgb(239,253,168); 
-    background: -moz-linear-gradient(top,  rgba(239,253,168,1) 1%, rgba(208,226,116,1) 100%); 
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(239,253,168,1)), color-stop(100%,rgba(208,226,116,1))); 
-    background: -webkit-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
-    background: -o-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
-    background: -ms-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
-    background: linear-gradient(to bottom,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#effda8', endColorstr='#d0e274',GradientType=0 );
-    
-    border-radius: 10px 10px 0 0;
-    vertical-align: middle;
-    
-    -moz-box-shadow: 1px 0px 3px 0px #656565;
-    -webkit-box-shadow: 1px 0px 3px 0px #656565;
-    -o-box-shadow: 1px 0px 3px 0px #656565;
-    box-shadow: 1px 0px 3px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
-    
-    
-    padding-left: 10px;
-}
-
-.recetteProp {
-
-	background-image: -webkit-linear-gradient(top,white,#F2F2F2);
-	background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
-		
-	float: left;
-	margin-right: 25px;
-	/*-moz-box-shadow: 1px 0px 3px 0px #656565;
-	-webkit-box-shadow: 1px 0px 3px 0px #656565;
-	-o-box-shadow: 1px 0px 3px 0px #656565;
-	box-shadow: 1px 0px 3px 0px #656565;
-	filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);*/
-}
-
-/*#reponse-get {
-    width: 220px;
-}
-
-#reponse-get .nav-list{
-    padding-left: 0;
-    padding-right: 0;
-    background-color: white;
-}
-
-#reponse-get a {
+.categorieRecette:first-of-type, .ligneRecette:first-of-type {
     margin-left: 0;
-    padding-left: 0;
+}
+.categorieRecette .title{
+    background-color: #FFDE8D;
+    color: white;
+    font-family: Calibri, Verdana, Arial, 'sans serif';
+    text-shadow: 0px 2px 3px #666;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 11px 10px 11px 15px;
+    height: 25px;
+}
 
-    margin-right: 0;
-}*/
+.categorieRecette .footer{
+    background-color: #D0E274;
+    padding: 6px 5px 6px 10px;
+}
+
+.categorieRecette .footer a, .categorieRecette .footer a:hover, .ligneRecette a, .ligneRecette a:hover{
+    color : grey;
+}
+
+.categorieRecette a:hover {
+	text-decoration: none;
+}
 
 #reponse-get {
   position: absolute;
@@ -843,77 +448,13 @@ html, body {
     margin-bottom: 0px;
 }
 
-/*.item {
-    position: relative;
-    width: 940px;
-}
-
-.item p {
-    position: relative;
-    float: left;
-    width: 235px;
-}*/
-
-.categorieRecette{    
-    width: 290px;
-    margin-bottom: 25px;
-    margin-top: 25px;
-}
-
-.categorieRecette:first-of-type, .ligneRecette:first-of-type {
-    margin-left: 0;
-}
-.categorieRecette .title{
-    background-color: #FFDE8D;
-    color: white;
-    font-family: Calibri, Verdana, Arial, 'sans serif';
-    text-shadow: 0px 2px 3px #666;
-    font-weight: bold;
-    font-size: 20px;
-    padding: 11px 10px 11px 15px;
-    height: 25px;
-}
-
-.categorieRecette .footer{
-    background-color: #D0E274;
-    padding: 6px 5px 6px 10px;
-}
-
-.categorieRecette .footer a, .categorieRecette .footer a:hover, .ligneRecette a, .ligneRecette a:hover{
-    color : grey;
-}
-
-.categorieRecette a:hover {
-	text-decoration: none;
-}
-
-.ligneRecette {
-    background-color: #D0E274;
-}
-.ligneRecette img {
-    max-width: 80px;
-    max-height: 80px;
-    margin-right: 5px;
-}
-
-.ligneRecette .footer {
-    background-color: #f1f1f1;
-    font-size: 12px;
-    padding: 6px 5px 6px 10px;
-}
-
-#content-page {
-    background-color: white;
-    padding: 10px;
-}
-
 .createur {
     color: grey;
     margin: 0;
 }
 
 #recetteDetail h3{
-    margin-bottom: 0;
+
 }
 
 #recetteDetail img {
@@ -960,309 +501,112 @@ html, body {
 #recetteButtons {
     margin-bottom:20px;
     width: 100%;
-    text-align: center;
+    text-align: left;
+    margin-top: 10px;
 }
 
 #recetteButtons a {
     font-size: 16px;
 }
 
-.roundabout-holder {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    height: 600px;
-    width: 380px;
- }
- .roundabout-moveable-item {
-    height: 600px;
-    width: 380px;
-    cursor: pointer;
-    background-color: #ffd95e;
-
- }
- .roundabout-in-focus {
-    cursor: auto;
- }
- 
- #planning3 {
-    margin-left: 200px;
- }
- 
- #entetePlanning2 {
-    /*
-     * THEME 1 */
-    background: rgb(239,253,168); 
-    background: -moz-linear-gradient(top,  rgba(239,253,168,1) 1%, rgba(208,226,116,1) 100%); 
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(239,253,168,1)), color-stop(100%,rgba(208,226,116,1))); 
-    background: -webkit-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
-    background: -o-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
-    background: -ms-linear-gradient(top,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
-    background: linear-gradient(to bottom,  rgba(239,253,168,1) 1%,rgba(208,226,116,1) 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#effda8', endColorstr='#d0e274',GradientType=0 ); 
-    
-    
-    /*
-     * THEME 2 
-    background: rgb(200,113,93);
-    background: -moz-linear-gradient(top,  rgba(200,113,93,1) 0%, rgba(153,67,47,1) 72%); 
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(200,113,93,1)), color-stop(72%,rgba(153,67,47,1))); 
-    background: -webkit-linear-gradient(top,  rgba(200,113,93,1) 0%,rgba(153,67,47,1) 72%); 
-    background: -o-linear-gradient(top,  rgba(200,113,93,1) 0%,rgba(153,67,47,1) 72%); 
-    background: -ms-linear-gradient(top,  rgba(200,113,93,1) 0%,rgba(153,67,47,1) 72%); 
-    background: linear-gradient(to bottom,  rgba(200,113,93,1) 0%,rgba(153,67,47,1) 72%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8715d', endColorstr='#99432f',GradientType=0 );*/
-
-    
-    border-radius: 10px 10px 0 0;
-    vertical-align: middle;
-    
-    -moz-box-shadow: 1px 0px 3px 0px #656565;
-    -webkit-box-shadow: 1px 0px 3px 0px #656565;
-    -o-box-shadow: 1px 0px 3px 0px #656565;
-    box-shadow: 1px 0px 3px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
-
-}
-
- #entetePlanning2 p {
-    position: relative;
-    color: white;
-    font-family: 'arial', 'sans-serif';
-    font-size: 20px;
-    text-align: center;
-    vertical-align: middle;
-    margin: 0;
-    padding-top: 15px;
-    text-shadow: 0px 2px 3px #666;
-
-}
-
-#entetePlanning2 #nextPlanning {
-    position: relative;
-    float: right;
-    margin-top: -50px;
-}
-
-#entetePlanning2 #prevPlanning {
-    position: relative;
-    float: left;
-    margin-top: -50px;
-}
-
-#planning3 .round{
-    margin-left: 2px;
-}
-
-#planning3 .title {
-    vertical-align: middle;
-    background-image: -webkit-linear-gradient(top,white,#F2F2F2);
-    background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
-    font-weight: bold;
-    border-right: 1px solid #ebebeb;
-    
-    -moz-box-shadow: 1px 0px 3px 0px #656565;
-    -webkit-box-shadow: 1px 0px 3px 0px #656565;
-    -o-box-shadow: 1px 0px 3px 0px #656565;
-    box-shadow: 1px 0px 3px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
-    
-    border-radius: 0px;
-    
-    height: 30px;
-    padding-left: 10px;
-    padding-top: 10px;
-}
-
-#planning3 .slide {
-    -moz-box-shadow: 1px 0px 3px 0px #656565;
-    -webkit-box-shadow: 1px 0px 3px 0px #656565;
-    -o-box-shadow: 1px 0px 3px 0px #656565;
-    box-shadow: 1px 0px 3px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
-    
-    
-}
-
-#planning3 .tab {
-    width: 126px;
-    text-align: center;
-}
-
-#planning3 .onglets {
-    background-color: white;
-}
-
-#planning3 .ligneRepas img{
-	max-height: 80px;
-	margin-right: 10px;
-}
-
-#planning3 .tab-content {
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	background-color: white;
-}
-
-#planning3 .infoRecette {
-	float:left;
-}
-
-#planning3 .ligneRepas {
-	margin-bottom: 30px;
-}
-#planning3 .ligneRepas:hover {   
-    /*background-color: #f9f9f9*/
-}
-#planning3 .supprimer {
-	float:right;
-	margin-top: 24px;
-}
-
-#planning3 .vide{   
-    font-style: italic;
-    text-align: center;
-}
-
-.titleTab {
-    vertical-align: middle;
-    background-color: #d0e274;
-   /* background-image: -webkit-linear-gradient(top,white,#F2F2F2);
-    background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
-    */
-    -moz-box-shadow: 1px 0px 3px 0px #656565;
-    -webkit-box-shadow: 1px 0px 3px 0px #656565;
-    -o-box-shadow: 1px 0px 3px 0px #656565;
-    box-shadow: 1px 0px 3px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
-    
-    border-radius: 0px;
-}
-
-.ligneTab {
-	background-color: white;
-}
-
-#planning4{
-	
-}
-
-#planning4 td{
-	background-color: white;
-	text-align: center;
-	
-	width: 265px;
-	height: 210px;
-}
-
-#planning4 th{
-	text-align: center;
-}
-
-#planning4 .contenu-ligne {
-	height: 190px;
-}
-
-#planning4 #precedent {
+#recettePanelGauche {
 	float: left;
-}
-
-#planning4 #suivant {
-	float: right;
-}
-
-#suggestion {
-	margin-bottom: 20px;
-	position: relative;
-	height: 150px;
-}
-
-#props {
-    width: 95%;
-    margin: auto;
-}
-
-.recetteProp img {
-	max-height: 100px;
-    min-width: 150px;
-    max-width: 150px;
-}
-
-.recetteProp .well {
-    padding: 0px;
-    margin: 0;
-    width:150px;
+	margin-right: 1.5em;
+	margin-top: 1em;
     text-align: center;
-    height: 100px;
-    line-height: 100px;
+    width: 220px;
+	/* background-color: gray; */
 }
 
-#planning_actions {
-    margin-bottom: 70px;
+#recettePanelGauche img {
+	max-width: 220px;
+    max-height: 220px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#generer_panier {
+#produitPanelGauche {
+	float: left;
+	margin-right: 1.5em;
+	/* background-color: gray; */
+    text-align:left;
+    width: 220px;
+}
+
+#produitPanelGauche img {
+	max-width: 220px;
+    max-height: 220px;
+	display: block;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+
+.ligneRecette {
+    background-color: #D0E274;
+}
+.ligneRecette img {
+    max-width: 80px;
+    max-height: 80px;
+    margin-right: 5px;
+}
+
+.ligneRecette .footer {
+    background-color: #f1f1f1;
+    font-size: 12px;
+    padding: 6px 5px 6px 10px;
+}
+
+.produit input {
+	border: none;
+	background: none;
+	box-shadow: none;
+	cursor: auto;
+}
+
+.form-recherche {
+    text-align: right;
+}
+
+.form-recherche-submit {
+    margin-top: 10px
+}
+
+.left-search {
     float: left;
-    margin-right: 10px;
+    margin-left: 15px;
 }
 
-#generer_planning {
-    float: left;
-}
-
-.box {
-    background-color: white;
-    background-image: -webkit-linear-gradient(top,white,#F2F2F2);
-    background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
-    -moz-box-shadow: 1px 0px 3px 0px #656565;
-    -webkit-box-shadow: 1px 0px 3px 0px #656565;
-    -o-box-shadow: 1px 0px 3px 0px #656565;
-    box-shadow: 1px 0px 3px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
-    border-radius: 20px 20px 20px 20px;
-    padding: 15px 15px 5px;
-    margin-bottom: 30px;
-    margin-top: 10px;
-}
-
-.titleBox {
-    background-color: white;
-    background-image: -webkit-linear-gradient(top,white,#F2F2F2);
-    background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
-    -moz-box-shadow: 1px 0px 3px 0px #656565;
-    -webkit-box-shadow: 1px 0px 3px 0px #656565;
-    -o-box-shadow: 1px 0px 3px 0px #656565;
-    box-shadow: 1px 0px 3px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
-    border-radius: 10px 10px 10px 10px;
-    padding-left: 15px;
-}
-
-.tags{
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-size: 16px;
-}
-
-.tags span {
-    font-size: 16px;
-}
-
-.box-right{
-    background-color: white;
-    background-image: -webkit-linear-gradient(top,white,#F2F2F2);
-    background-image: -moz-linear-gradient(center top , #FFFFFF, #F2F2F2);
-    -moz-box-shadow: 1px 0px 3px 0px #656565;
-    -webkit-box-shadow: 1px 0px 3px 0px #656565;
-    -o-box-shadow: 1px 0px 3px 0px #656565;
-    box-shadow: 1px 0px 3px 0px #656565;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=90, Strength=3);
-    border-radius: 20px 20px 20px 20px;
-    padding: 15px 15px 5px;
+.right-search {
     float: right;
-    width: 640px;
 }
 
+.submit-search {
+    float: right;    
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 75px;
+}
+
+.resultats {
+    margin-top: 150px;
+}
+
+.user-infos {
+    float: left;
+    margin-left: 10px;
+}
+
+.user-profile {
+    float: left;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.user-submit {
+    margin-top: 280px;
+    float: right;
+    margin-right: 75px
+}
 

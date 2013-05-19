@@ -2,29 +2,43 @@
 {% load static %}
 
 {% block content %}
-<div class="titleBox">
-	<h3>Types de produits</h3>
+	<div class="container police containerPage">
+		<div class="titleBox">
+			<h3 class="police">Types de produits</h3>
+		</div>
+		<div class="box">
+		    {% regroup types by nom.upper.0 as types_par_lettre %}
+		    <div class="pagination pagination-small pagination-centered">
+		    {{ lettre.grouper }}
+			{% for lettre in types_par_lettre %}
+			<ul>    
+			    <li><a class="page" value="{{ lettre.grouper }}" href="#">{{ lettre.grouper }}</a></li>
+			</ul>
+			{% endfor %}
+		    </div>
+		    {% for lettre in types_par_lettre %}
+		    <div class="groupe" id="type_{{lettre.grouper}}">
+			<ul class="nav nav-pills nav-stacked">
+			{% for t in lettre.list %}
+			    {% if t.types.all %}
+				<li><a href="/produit/type/{{t.id}}">{{t}}</a></li>
+			    {% endif %}
+			{% endfor %}
+			</ul>
+			</div>
+		    {% endfor %}
+		</div>
 </div>
-<div class="box">
-    {% regroup types by nom.upper.0 as types_par_lettre %}
-    <div class="pagination pagination-small pagination-centered">
-    {{ lettre.grouper }}
-        {% for lettre in types_par_lettre %}
-        <ul>    
-            <li><a href="#">{{ lettre.grouper }}</a></li>
-        </ul>
-        {% endfor %}
-    </div>
-    {% for lettre in types_par_lettre %}
-    <div id="type_{{lettre.grouper}}">
-        <ul>
-        {% for t in lettre.list %}
-            {% if t.types.all %}
-                <li><a href="/produit/type/{{t.id}}">{{t}}</a></li>
-            {% endif %}
-        {% endfor %}
-        </ul>
-	</div>
-    {% endfor %}
-</div>
+	
+	<script>
+	$(document).ready(function() {
+	    $('.groupe').hide();
+	});
+	
+	$('.page').click(function() {
+	    $('.groupe').hide();
+	    var id = $(this).attr("value");
+	    $('#type_' + id).show();
+	});
+	</script>
 {% endblock %}

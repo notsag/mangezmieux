@@ -2,19 +2,30 @@
 {% load static %}
 
 {% block content %}
-<div class="titleBox">
-    <h3>Détail d'une commande</h3>
-</div>
-<div class="box">
-    <p>
-        Date : {{commande.date}}<br/>
-        Numéro : {{commande.numero}}<br/>
-        {% for ligne in commande.lignes.all %}
-            Produit : {{ligne.produit.nom}} <br/>
-            Quantite : {{ligne.quantite}} <br/>
-        {% endfor %}
-        <a class="btn" href="/commande/">Retour</a>
-    </p>
+<div class="container police containerPage">
+    <div class="titleBox">
+        <h3 class="police">Détail d'une commande</h3>
+    </div>
+    <div class="box">
+        <p>
+            Date : {{commande.date|date:"d-m-Y"}}<br/>
+            Numéro : {{commande.numero}}<br/>
+            <table class="table table-hover table-striped">
+                <tr>
+                    <th>Produit</th>
+                    <th>Quantite</th>
+                </tr>
+                {% for ligne in commande.lignes.all %}
+                    <tr>
+                        <td>{{ligne.produit.nom}}</td>
+                        <td>{{ligne.quantite}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+           
+            <a class="btn btn-warning" href="/commande/">Retour</a>
+        </p>
+    </div>
 </div>
 {% endblock %}
 

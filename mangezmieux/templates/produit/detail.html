@@ -2,13 +2,14 @@
 {% load static %}
 
 {% block content %}
+	<div class="container police containerPage">
 	<ul class="breadcrumb">
-    	<li><a href="/produit/type/">Types</a> <span class="divider">/</span></li>
-    	<li><a href="/produit/type/{{produit.type_produit.id}}">{{produit.type_produit.nom}}</a> <span class="divider">/</span></li>
+		<li><a href="/produit/type/">Types</a> <span class="divider">/</span></li>
+		<li><a href="/produit/type/{{produit.type_produit.id}}">{{produit.type_produit.nom}}</a> <span class="divider">/</span></li>
     	<li class="active">{{produit.nom}}</li>
 	</ul>
     <div class="titleBox">
-    <h3>{{produit.nom}}</h3>
+    <h3 class="police">{{produit.nom}}</h3>
     </div>
 		<div id="produitDetails">
 			<div id="produitPanelGauche">
@@ -18,38 +19,39 @@
 					<p><img src="{{produit.image.url}}" alt="Illustration pour : {{produit.nom}}"/></p>
 			{% endif %}
             {% if user.is_authenticated %}
-					<p><a class="btn btn-info" href="#myModal" data-toggle="modal">Ajouter à mon planning</a></p>
-					<p><a class="btn btn-info" href="/panier/ajouter/{{produit.id}}" data-toggle="modal">Ajouter à mon panier</a></p>
+					<p><a class="btn btn-warning" href="#myModal" data-toggle="modal">Ajouter à mon planning</a></p>
+					<p><a class="btn btn-warning" href="/panier/ajouter/{{produit.id}}" data-toggle="modal">Ajouter à mon panier</a></p>
             {% endif %}
 			</div>
 			<div id="produitInstructions" class="box-right">
-				<h3>Détails</h3>
+				<h3 class="police">Détails</h3>
                 <p>Quantité : {{produit.quantite}} {{produit.unite.abreviation}}</p>
                 <p>{{produit.valeur_nutritionnelle.energie}} kJ</p>
 					<table class="titleTab table table-striped table-bordered">
 						<tr>
-							<th>Protéines</th><td>{{produit.valeur_nutritionnelle.proteines}}</td>
+                            <th>Protéines</th><td>{% if produit.valeur_nutritionnelle.proteines %}{{produit.valeur_nutritionnelle.proteines}} g{% else %} -{% endif %}</td>
 						</tr>
 						<tr>
-							<th>Glucides</th><td>{{produit.valeur_nutritionnelle.glucides}}</td>
+                            <th>Glucides</th><td>{% if produit.valeur_nutritionnelle.glucides %}{{produit.valeur_nutritionnelle.glucides}} g{% else %} -{% endif %}</td>
 						</tr>
 						<tr>
-							<th>Lipides</th><td>{{produit.valeur_nutritionnelle.lipides}}</td>
+                            <th>Lipidess</th><td>{% if produit.valeur_nutritionnelle.lipides %}{{produit.valeur_nutritionnelle.lipides}} g{% else %} -{% endif %}</td>
 						</tr>
 						<tr>
-							<th>Fibres</th><td>{{produit.valeur_nutritionnelle.fibres}}</td>
+                            <th>Fibres</th><td>{% if produit.valeur_nutritionnelle.fibres %}{{produit.valeur_nutritionnelle.fibres}} g{% else %} -{% endif %}</td>
 						</tr>
 						<tr>
-							<th>Sodium</th><td>{{produit.valeur_nutritionnelle.sodium}}</td>
+                            <th>Sodium</th><td>{% if produit.valeur_nutritionnelle.sodium %}{{produit.valeur_nutritionnelle.sodium}} g{% else %} -{% endif %}</td>
 						</tr>
 					</table>
 			</div>
-		</div>	
+		</div>
+	</div>
         <!-- Modal -->
-        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="myModal" class="modal hide fade police" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-            <h3 id="myModalLabel">Ajout d'un repas</h3>
+            <h3 class="police" id="myModalLabel">Ajout d'un repas</h3>
           </div>
           <div class="modal-body">
                 <form action="{% url produit.views.detail id=id %}" method="post">{%csrf_token %}
@@ -95,7 +97,7 @@
                         {{ form.nbPersonne }}
                     </div>
                     <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
-                    <input type="submit" class="btn btn-primary" value="Enregistrer" />
+                    <input type="submit" class="btn btn-warning" value="Enregistrer" />
                 </form>
           </div>
         </div>

@@ -2,47 +2,71 @@
 {% load static %}
 
 {% block content %}
-<div class="titleBox">
-	<h3>Nouvelle recette</h3>
-</div>
-<div class="box">
-	<form enctype="multipart/form-data" method="post">{% csrf_token %}
-	{% if form.non_field_errors %}
-		<div class="form_errors">
-		{% for err in form.non_field_errors %}
-			<div class="form_error_message">{{ err }}</div>
-		{% endfor %}
-		</div>	
-	{% endif %}
-	{% for hidden in form.hidden_fields %}
-		{{ hidden }}
-	{% endfor %}
-	{% for field in form.visible_fields %}
-		<div {% if field.errors %}class="field_error"{% endif %}>
-			{{ field.label_tag }}
-			{{ field }}
-			{% for err in field.errors %}
-				<span class="error_message">{{ err }}</span>
-			{% endfor %}
-		</div>
-	{% endfor %}
-	<a id="add" href="#">Ajouter une ligne</a>
-	<br/><br/>
-	<!--<div id="reponse-get"></div>-->
-
-	{{ formset.management_form }}
-	{% for forml in formset.forms %}
-	<div class="item">
-	{{ forml.as_p }}
-	<p style=""><a class="delete" href="#">Supprimer</a></p>
-	</div>
-	<br/>
-	{% endfor %}
+	<div class="container police containerPage">
+		<h3 class="police">Nouvelle recette</h3>
 	
-	<br/><br/><br/><br/>	
-	<div><input class="btn" id="submit-ajouter-recette" type="submit" value="Ajouter" /></div>
-	</form>
-</div>
+	
+		<form enctype="multipart/form-data" method="post">{% csrf_token %}
+		{% if form.non_field_errors %}
+			<div class="form_errors">
+			{% for err in form.non_field_errors %}
+				<div class="form_error_message">{{ err }}</div>
+			{% endfor %}
+			</div>	
+		{% endif %}
+		{% for hidden in form.hidden_fields %}
+			{{ hidden }}
+		{% endfor %}
+		{% for field in form.visible_fields %}
+			<div {% if field.errors %}class="field_error"{% endif %}>
+				{{ field.label_tag }}
+				{{ field }}
+				{% for err in field.errors %}
+					<span class="error_message">{{ err }}</span>
+				{% endfor %}
+			</div>
+		{% endfor %}
+		<!--<div id="reponse-get"></div>-->
+	
+		{{ formset.management_form }}
+		<table class="table table-hover table-striped">
+			<tr>
+			    <th>
+				Produit
+			    </th>
+			    <th>
+				Quantite
+			    </th>
+			    <th>
+				Unite
+			    </th>
+			    <th></th>
+			</tr>
+			{% for forml in formset.forms %}
+			    <tr class="item">
+				<td class="produit">
+				{{ forml.produit.errors }}
+				{{ forml.produit}}
+				</td>
+				<td>
+				{{ forml.quantite.errors }}
+				{{ forml.quantite}}
+				</td>
+				<td>
+				{{ forml.unite.errors }}
+				{{ forml.unite}}
+				</td>
+				<td>
+				<a class="btn btn-warning delete" href="">Supprimer</a>
+				</td>
+			    </tr>
+			{% endfor %}	
+		</table>
+		<a id="add" href="#" class="btn btn-small btn-warning">Ajouter un produit</a><br/><br/>
+		<div><input class="btn btn-large btn-warning" id="submit-ajouter-recette" type="submit" value="Ajouter la recette" /></div>
+		</form>
+	</div>
+
 	<script>
 		$("#id_produit").keyup(function() {
 			var val = $(this).attr('value');
