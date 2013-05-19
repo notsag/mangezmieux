@@ -7,6 +7,7 @@ html, body {
 	min-height: 100%;
 	height: auto !important;
 	padding-bottom: -120px;
+	/*background-image: url("../img/bg2.jpg");*/
 }
 
 #content {
@@ -93,7 +94,7 @@ html, body {
 #footer-text {
 	float: left;
 	height: 105px;
-	margin-right: 100px;
+	margin-right: 50px;
 }
 
 #footer-text p {
@@ -101,6 +102,11 @@ html, body {
     font-weight: bold;
     color: black;
     margin-bottom: 0px;
+}
+
+.images {
+	float: left;
+	margin-top: 20px;
 }
 
 #home-bottom h3 {
@@ -174,6 +180,11 @@ html, body {
 
 .news {
 	margin-left: 20px;
+}
+
+#planning4 {
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 #planning4 td{
