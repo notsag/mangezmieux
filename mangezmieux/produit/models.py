@@ -20,11 +20,11 @@ class TypeProduit(models.Model):
 #Valeurs nutritionnelles pour 100g
 class ValeurNutritionnelle(models.Model):
 	energie = models.IntegerField() #en kJ
-	proteines = models.IntegerField(null=True)
-	glucides = models.IntegerField(null=True)
-	lipides = models.IntegerField(null=True)
-	fibres = models.IntegerField(null=True)
-	sodium = models.IntegerField(null=True)
+	proteines = models.DecimalField(max_digits=5, decimal_places=2,null=True)
+	glucides = models.DecimalField(max_digits=5, decimal_places=2,null=True)
+	lipides = models.DecimalField(max_digits=5, decimal_places=2,null=True)
+	fibres = models.DecimalField(max_digits=5, decimal_places=2,null=True)
+	sodium = models.DecimalField(max_digits=5, decimal_places=2,null=True)
 
 	def __unicode__(self):
 		return unicode(self.energie)
