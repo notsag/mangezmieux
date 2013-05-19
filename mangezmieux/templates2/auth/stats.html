@@ -2,58 +2,62 @@
 {% load static %}
 
 {% block content %}
-<div class="titleBox">
-    <h3>Statistiques nutritives</h3>
+    <div class="container police">
+    <div class="titleBox">
+	<h3 class="police">Statistiques nutritives</h3>
+    </div>
+    <div id="stats">
+	<div id="entetePlanning">
+		<p>{{debutSemaine}} - {{finSemaine}}<br><br></p>
+		<a id="prevPlanning" class="carousel-control left" href="/stats?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
+		<a id="nextPlanning" class="carousel-control right" href="/stats?d={{semaineSuivante|date:"Y-m-d"}}" data-slide="next">&rsaquo;</a> 
+	</div>
+	<div id="container"></div>
+    </div>
+    <table style="visibility: hidden" id="datatable">
+	    <thead>
+		    <tr>
+			    <th></th>
+			    <th>Proteines</th>
+			    <th>Glucides</th>
+			    <th>Lipides</th>
+			    <th>Fibres</th>
+			    <th>Sodium</th>
+		    </tr>
+	    </thead>
+	    <tbody>
+		    {% for ligne in stats %}
+			    <tr>
+				    {% if forloop.counter == 1 %}
+					    <th>Lundi</th>
+				    {% endif %}
+				    {% if forloop.counter == 2 %}
+					    <th>Mardi</th>
+				    {% endif %}
+				    {% if forloop.counter == 3 %}
+					    <th>Mercredi</th>
+				    {% endif %}
+				    {% if forloop.counter == 4 %}
+					    <th>Jeudi</th>
+				    {% endif %}
+				    {% if forloop.counter == 5 %}
+					    <th>Vendredi</th>
+				    {% endif %}
+				    {% if forloop.counter == 6 %}
+					    <th>Samedi</th>
+				    {% endif %}
+				    {% if forloop.counter == 7 %}
+					    <th>Dimanche</th>
+				    {% endif %}
+				    
+			    {% for col in ligne %}
+				    <td>{{col}}</td>
+			    {% endfor %}
+			    </tr>
+		    {% endfor %}
+	    </tbody>
+    </table>
 </div>
-<div id="entetePlanning">
-	<p>{{debutSemaine}} - {{finSemaine}}<br><br></p>
-	<a id="prevPlanning" class="carousel-control left" href="/stats?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
-	<a id="nextPlanning" class="carousel-control right" href="/stats?d={{semaineSuivante|date:"Y-m-d"}}" data-slide="next">&rsaquo;</a> 
-</div>
-<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
-<table style="visibility: hidden" id="datatable">
-	<thead>
-		<tr>
-			<th></th>
-			<th>Proteines</th>
-			<th>Glucides</th>
-			<th>Lipides</th>
-			<th>Fibres</th>
-			<th>Sodium</th>
-		</tr>
-	</thead>
-	<tbody>
-		{% for ligne in stats %}
-			<tr>
-				{% if forloop.counter == 1 %}
-					<th>Lundi</th>
-				{% endif %}
-				{% if forloop.counter == 2 %}
-					<th>Mardi</th>
-				{% endif %}
-				{% if forloop.counter == 3 %}
-					<th>Mercredi</th>
-				{% endif %}
-				{% if forloop.counter == 4 %}
-					<th>Jeudi</th>
-				{% endif %}
-				{% if forloop.counter == 5 %}
-					<th>Vendredi</th>
-				{% endif %}
-				{% if forloop.counter == 6 %}
-					<th>Samedi</th>
-				{% endif %}
-				{% if forloop.counter == 7 %}
-					<th>Dimanche</th>
-				{% endif %}
-				
-			{% for col in ligne %}
-				<td>{{col}}</td>
-			{% endfor %}
-			</tr>
-		{% endfor %}
-	</tbody>
-</table>
 
 <script>
     $(function () {
