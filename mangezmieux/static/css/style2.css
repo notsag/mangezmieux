@@ -7,9 +7,14 @@ html, body {
 	min-height: 100%;
 	height: auto !important;
 	padding-bottom: -120px;
-	/*background-image: url("../img/bg2.jpg");*/
+	background-image: url("../img/bg2.jpg");
 }
-
+.containerPage {
+	background-color: white;
+	padding: 20px;
+	min-height: 100%;
+	height: auto;
+}
 #content {
 	padding-bottom: 120px;
 	margin-bottom: -120px;
@@ -107,6 +112,11 @@ html, body {
 .images {
 	float: left;
 	margin-top: 20px;
+}
+
+#home-bottom {
+	background-color: white;
+	padding: 20px;
 }
 
 #home-bottom h3 {
