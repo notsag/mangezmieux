@@ -554,3 +554,31 @@ html, body {
 	box-shadow: none;
 	cursor: auto;
 }
+
+.form-recherche {
+    text-align: right;
+}
+
+.form-recherche-submit {
+    margin-top: 10px
+}
+
+.left-search {
+    float: left;
+    margin-left: 15px;
+}
+
+.right-search {
+    float: right;
+}
+
+.submit-search {
+    float: right;    
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 75px;
+}
+
+.resultats {
+    margin-top: 150px;
+}

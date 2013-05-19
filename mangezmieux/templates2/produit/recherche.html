@@ -6,11 +6,9 @@
 		<h3 class="police">Rechercher un produit</h3>
 
 
-		<form action="/produit/recherche" method="get">
-			{{form.as_p}}
-			<p>
-				<input class="btn btn-large btn-warning" type="submit" value="Rechercher" />
-			</p>
+		<form action="/produit/recherche" method="get" class="form-inline form-recherche">
+			{{form}}
+				<input class="btn btn-large btn-warning form-recherche-submit" type="submit" value="Rechercher" />
 		</form>
 
 		
