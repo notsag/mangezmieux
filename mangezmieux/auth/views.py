@@ -83,17 +83,17 @@ def stats(request):
 						sodium = sodium + ligne.produit.valeur_nutritionnelle.sodium
 			if ordre.recette != False :
 				for ligne in ordre.produit.all():
-					proteine = proteine + ligne.produit.valeur_nutritionnelle.proteines
-					glucide = glucide + ligne.produit.valeur_nutritionnelle.glucides
-					lipide = lipide + ligne.produit.valeur_nutritionnelle.lipides
-					fibre = fibre + ligne.produit.valeur_nutritionnelle.fibres
-					sodium = sodium + ligne.produit.valeur_nutritionnelle.sodium
+					proteine += ligne.produit.valeur_nutritionnelle.proteines
+					glucide += ligne.produit.valeur_nutritionnelle.glucides
+					lipide += ligne.produit.valeur_nutritionnelle.lipides
+					fibre += ligne.produit.valeur_nutritionnelle.fibres
+					sodium += ligne.produit.valeur_nutritionnelle.sodium
 		
-		stats[i][0] = proteine
-		stats[i][1] = glucide
-		stats[i][2] = lipide
-		stats[i][3] = fibre
-		stats[i][4] = sodium
+		stats[i][0] = int(proteine)
+		stats[i][1] = int(glucide)
+		stats[i][2] = int(lipide)
+		stats[i][3] = int(fibre)
+		stats[i][4] = int(sodium)
 		i = i + 1
 		
 
