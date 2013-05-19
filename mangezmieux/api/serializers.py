@@ -20,6 +20,7 @@ class UserSerializer(serializers.Serializer):
 	last_name= fields.Field()
 	email = fields.Field()
 	gouts = TagSerializer(source="get_profile.gouts")
+	nbPersonnes = fields.Field(source="get_profile.nbPersonnes")
                 
 class UniteSerializer(serializers.ModelSerializer):
 	class Meta:
