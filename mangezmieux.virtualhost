@@ -1,2 +1,26 @@
-WSGIScriptAlias / /usr/share/mangezmieux/wsgi.py
-WSGIPassAuthorization On
+<VirtualHost *:80>
+        DocumentRoot /usr/share/mangezmieux/
+
+        Alias /static /var/www/mangezmieux/statics
+        Alias /templates /usr/share/mangezmieux/templates
+        Alias /upload /usr/share/mangezmieux/upload
+
+        <Directory /var/www/mangezmieux/statics>
+            Order allow,deny
+            Allow from all
+        </Directory>
+
+        <Directory /usr/share/mangezmieux/templates>
+            Order allow,deny
+            Allow from all
+        </Directory>
+
+        <Directory /usr/share/mangezmieux/upload>
+            Order allow,deny
+            Allow from all
+        </Directory>
+
+    WSGIScriptAlias / /usr/share/mangezmieux/wsgi.py
+    WSGIPassAuthorization On
+</VirtualHost>
+

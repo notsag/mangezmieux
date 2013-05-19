@@ -21,6 +21,7 @@ set -e
 . /usr/share/debconf/confmodule
 
 install_dir="/usr/share/mangezmieux"
+statics_dir="/var/www/mangezmieux"
 dbinstall="${install_dir}/scripts/db_install.sh"
 settings="${install_dir}/settings.py"
 
@@ -50,6 +51,7 @@ case "$1" in
         
         #Upload dir is rwx for everyone
         chown -R www-data ${install_dir}
+        chown -R www-data ${statics_dir}
         chmod a+rwx ${install_dir}/upload
 
         # Configure Apache with WSGI

@@ -56,7 +56,7 @@ SITE_ID = 1
 # Chemins HTML, CSS, JS et Upload
 MEDIA_ROOT = os.path.join(SITE_ROOT, 'upload/')
 MEDIA_URL = '/upload/'
-STATIC_ROOT = ''
+STATIC_ROOT = '/var/www/mangezmieux'
 STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 TEMPLATE_DIRS = (
