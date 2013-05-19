@@ -20,7 +20,7 @@
 	    </div>
 	</div>
     </div>
-    <div id="planning_actions">
+    <div id="planning_actions" class="container">
         <div id="generer_panier"><a href="/panier/generer?dd={{debutSemaine|date:"Y-m-d"}}&df={{finSemaine|date:"Y-m-d"}}" class="btn btn-warning">Remplir le panier de la semaine</a></div>
         <div id="generer_planning"><a href="/planning/generer-planning?d={{dateC|date:"Y-m-d"}}" class="btn btn-warning">Generer le planning</a></div>
     </div>
@@ -30,15 +30,43 @@
             <a id="prevPlanning" class="carousel-control left" href="/planning?d={{semainePrecedente|date:"Y-m-d"}}" data-slide="prev">&lsaquo;</a>
             <a id="nextPlanning" class="carousel-control right" href="/planning?d={{semaineSuivante|date:"Y-m-d"}}" data-slide="next">&rsaquo;</a> 
         </div>
-	<table class="table table-hover table-bordered" id="test"> 
+	<table class="table table-bordered" id="test"> 
 	    <tr class="titleTab">
-		<th class="1">Lundi</th>
-		<th class="2">Mardi</th>
-		<th class="3">Mercredi</th>
-		<th class="4">Jeudi</th>
-		<th class="5">Vendredi</th>
-		<th class="6">Samedi</th>
-		<th class="7">Dimanche</th>
+		{% if day == "Monday" %}
+		    <th class="1 day">Lundi</th>
+		{% else %}
+		    <th class="1">Lundi</th>
+		{% endif %}
+		{% if day == "Tuesday" %}
+		    <th class="2 day">Mardi</th>
+		{% else %}
+		    <th class="2">Mardi</th>
+		{% endif %}
+		{% if day == "Wednesday" %}
+		    <th class="3 day">Mercredi</th>
+		{% else %}
+		    <th class="3">Mercredi</th>
+		{% endif %}
+		{% if day == "Thursday" %}
+		    <th class="4 day">Jeudi</th>
+		{% else %}
+		    <th class="4">Jeudi</th>
+		{% endif %}
+		{% if day == "Friday" %}
+		    <th class="5 day">Vendredi</th>
+		{% else %}
+		    <th class="5">Vendredi</th>
+		{% endif %}
+		{% if day == "Saturday" %}
+		    <th class="6 day">Samedi</th>
+		{% else %}
+		    <th class="6">Samedi</th>
+		{% endif %}
+		{% if day == "Sunday" %}
+		    <th class="7 day">Dimanche</th>
+		{% else %}
+		    <th class="7">Dimanche</th>
+		{% endif %}
 	    </tr>
 	    {% for ligne in planning %}
 		<tr> 

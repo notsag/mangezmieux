@@ -200,7 +200,11 @@ html, body {
 #planning4 #suivant {
 	float: right;
 }
-
+.day {
+    background-color: #F89C19;
+    color: #fff;
+    
+}
 
 #suggestion {
 	margin-bottom: 20px;
