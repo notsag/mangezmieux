@@ -16,6 +16,103 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
+class PlanningGenerer(generics.ListCreateAPIView):
+    """
+    API endpoint that represents a list of recettes.
+    """
+    model = Repas
+    serializer_class = RepasSerializer
+    
+    def get_queryset(self):
+	userId = self.request.QUERY_PARAMS.get('u', None)
+	user = User.objects.get(id = userId)
+	
+	"""
+        On recupere la date passee en parametre get
+	"""
+	dateS = self.request.QUERY_PARAMS.get('d', None)
+	if dateS != None:
+	    try:
+		dateC = parser.parse(dateS).date()
+	    except:
+		dateC = date.today()
+	else:
+	    dateC = date.today()
+	
+	"""
+	    On calcule la date de debut de semaine
+	"""
+	debutSemaine = dateC
+	debutSemaineJour = debutSemaine.strftime('%A')
+	while debutSemaineJour != "Monday":
+	    debutSemaine = debutSemaine + timedelta(days=-1)
+	    debutSemaineJour = debutSemaine.strftime('%A')
+	
+	"""
+	    On calcule la date de fin de semaine
+	"""
+	finSemaine = dateC
+	finSemaineJour = debutSemaine.strftime('%A')
+	while finSemaineJour != "Sunday":
+	    finSemaine = finSemaine + timedelta(days=1)
+	    finSemaineJour = finSemaine.strftime('%A')
+	
+	"""
+	    On verifie si on est dans la semaine courange pour mettre en valeur le jour courant
+	"""
+	if date.today() < finSemaine and date.today() > debutSemaine:
+	    ok = True
+	    day = date.today().strftime('%A')
+	
+	"""
+	    On recupere les repas de la semaine courante
+	"""
+	if user.is_authenticated():
+	    repass = Repas.objects.filter(date__gte = debutSemaine, date__lte = finSemaine, utilisateur = user).order_by('date','ordre')
+	else :
+	    repass = Repas.objects.filter(date__gte = debutSemaine, date__lte = finSemaine).order_by('date','ordre')
+	
+	"""
+	    On cree un tableau 3*7 qui represente la semaine courante
+	"""
+	planning = remplirPlanning(repass, debutSemaine)
+	
+	for jour in planning:
+	    for ordre in jour:
+		if ordre.nb_personne == 0:
+		    #Si petit dej
+		    if ordre.ordre == 0:
+			recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Petit déjeuner')).order_by('?')[:1].get()
+			repas = Repas()
+			repas.date = ordre.date
+			repas.nb_personne = 1
+			repas.ordre = ordre.ordre
+			repas.utilisateur = user
+			repas.save()
+			repas.recette.add(recette)
+			repas.save()
+		    #Si dej ou diner
+		    if ordre.ordre == 1 or ordre.ordre == 2:
+			recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Entrée')).order_by('?')[:1].get()
+			repas = Repas()
+			repas.date = ordre.date
+			profil = ProfilUtilisateur.objects.get(user = user)
+			repas.nb_personne = profil.nbPersonnes
+			repas.ordre = ordre.ordre
+			repas.utilisateur = user
+			repas.save()
+			repas.recette.add(recette)
+			repas.save()
+			
+			recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Plat')).order_by('?')[:1].get()
+			repas.recette.add(recette)
+			repas.save()
+			
+			recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Dessert')).order_by('?')[:1].get()
+			repas.recette.add(recette)
+			repas.save()
+        return Repas.objects.filter(date__gte = debutSemaine, date__lte = finSemaine, utilisateur = user).order_by('date','ordre')
+
 class PanierGenerer(generics.ListCreateAPIView):
     """
     API endpoint that represents a list of recettes.

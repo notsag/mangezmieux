@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     
 #    url(r'^repas/ajouter-repas/$', 'core.api.ajouter_repas'),
     url(r'^repas/retirerRecette/(?P<pk>\d+)/$', RepasRetirer.as_view(), name='repas-retirer'),
+    url(r'^planning/generer/$', PlanningGenerer.as_view(), name='planning-generer'),
     
     url(r'^unites/$', UniteList.as_view(), name='unite-list'),
     url(r'^unites/(?P<pk>\d+)/$', UniteDetail.as_view(), name='unite-detail'),
