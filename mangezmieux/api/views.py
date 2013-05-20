@@ -438,6 +438,10 @@ class TypeProduitList(generics.ListCreateAPIView):
     """
     model = TypeProduit
     serializer_class = TypeProduitSerializer
+    
+    def get_queryset(self):
+        return TypeProduit.objects.all().order_by("nom")
+
         
 class TypeProduitDetail(generics.RetrieveUpdateDestroyAPIView):
     """
