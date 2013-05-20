@@ -76,18 +76,28 @@ def stats(request):
 			if ordre.recette != False :
 				for recette in ordre.recette.all():
 					for ligne in recette.lignes.all():
-						proteine = proteine + ligne.produit.valeur_nutritionnelle.proteines
-						glucide = glucide + ligne.produit.valeur_nutritionnelle.glucides
-						lipide = lipide + ligne.produit.valeur_nutritionnelle.lipides
-						fibre = fibre + ligne.produit.valeur_nutritionnelle.fibres
-						sodium = sodium + ligne.produit.valeur_nutritionnelle.sodium
+						if ligne.produit.valeur_nutritionnelle.proteines:
+							proteine += ligne.produit.valeur_nutritionnelle.proteines						
+						if ligne.produit.valeur_nutritionnelle.glucides:
+							glucide += ligne.produit.valeur_nutritionnelle.glucides
+						if ligne.produit.valeur_nutritionnelle.lipides:
+							lipide += ligne.produit.valeur_nutritionnelle.lipides
+						if ligne.produit.valeur_nutritionnelle.fibres:
+							fibre += ligne.produit.valeur_nutritionnelle.fibres
+						if ligne.produit.valeur_nutritionnelle.sodium:
+							sodium += ligne.produit.valeur_nutritionnelle.sodium
 			if ordre.recette != False :
 				for ligne in ordre.produit.all():
-					proteine += ligne.produit.valeur_nutritionnelle.proteines
-					glucide += ligne.produit.valeur_nutritionnelle.glucides
-					lipide += ligne.produit.valeur_nutritionnelle.lipides
-					fibre += ligne.produit.valeur_nutritionnelle.fibres
-					sodium += ligne.produit.valeur_nutritionnelle.sodium
+					if ligne.produit.valeur_nutritionnelle.proteines:
+						proteine += ligne.produit.valeur_nutritionnelle.proteines
+					if ligne.produit.valeur_nutritionnelle.glucides:
+						glucide += ligne.produit.valeur_nutritionnelle.glucides
+					if ligne.produit.valeur_nutritionnelle.lipides:
+						lipide += ligne.produit.valeur_nutritionnelle.lipides
+					if ligne.produit.valeur_nutritionnelle.fibres:
+						fibre += ligne.produit.valeur_nutritionnelle.fibres
+					if ligne.produit.valeur_nutritionnelle.sodium:
+						sodium += ligne.produit.valeur_nutritionnelle.sodium
 		
 		stats[i][0] = int(proteine)
 		stats[i][1] = int(glucide)
