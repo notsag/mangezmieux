@@ -1,3 +1,9 @@
+mangezmieux (0.8-5) stable; urgency=low
+
+  * Corrections de bugs + données initiales
+
+ -- Maxime GASTON <maxime.gaston@gmail.com>  Mon, 20 May 2013 15:47:10 +0200
+
 mangezmieux (0.8-4) stable; urgency=low
 
   * Améliorations + corrections de bugs + déploiement des statics par Apache
