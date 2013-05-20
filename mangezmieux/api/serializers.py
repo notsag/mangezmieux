@@ -62,7 +62,7 @@ class LigneProduitSerializer(serializers.ModelSerializer):
 class CategorieSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Categorie
-		fields = ('id','nom',)
+		fields = ('id','nom','image')
 		
 class CommandeSerializer(serializers.ModelSerializer):
 	client = UserSerializer()
