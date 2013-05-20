@@ -10694,6 +10694,78 @@
         }
     },
     {
+        "pk": 634,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.00",
+            "proteines": "0.00",
+            "glucides": "19.50",
+            "energie": 198,
+            "fibres": "0.00",
+            "lipides": "0.30"
+        }
+    },
+    {
+        "pk": 635,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.00",
+            "proteines": "1.30",
+            "glucides": "7.10",
+            "energie": 142,
+            "fibres": "2.10",
+            "lipides": "0.20"
+        }
+    },
+    {
+        "pk": 636,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "25.00",
+            "proteines": "3.60",
+            "glucides": "3.30",
+            "energie": 202,
+            "fibres": "8.00",
+            "lipides": "0.80"
+        }
+    },
+    {
+        "pk": 637,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.02",
+            "proteines": "1.00",
+            "glucides": "4.00",
+            "energie": 69,
+            "fibres": "1.20",
+            "lipides": "0.00"
+        }
+    },
+    {
+        "pk": 638,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.00",
+            "proteines": "0.00",
+            "glucides": "0.00",
+            "energie": 506,
+            "fibres": "0.00",
+            "lipides": "14.00"
+        }
+    },
+    {
+        "pk": 639,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.04",
+            "proteines": "4.40",
+            "glucides": "1.40",
+            "energie": 98,
+            "fibres": "6.00",
+            "lipides": "0.50"
+        }
+    },
+    {
         "pk": 1,
         "model": "produit.produit",
         "fields": {
@@ -15614,6 +15686,102 @@
         }
     },
     {
+        "pk": 413,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Boulghour",
+            "quantite": 500,
+            "type_produit": 190,
+            "valeur_nutritionnelle": 634,
+            "image": "produit/boulghour.jpg",
+            "unite": 1
+        }
+    },
+    {
+        "pk": 414,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Oignons blancs",
+            "quantite": 100,
+            "type_produit": 3,
+            "valeur_nutritionnelle": 635,
+            "image": "produit/oignons.jpg",
+            "unite": 1
+        }
+    },
+    {
+        "pk": 415,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Bouquet de menthe",
+            "quantite": 1,
+            "type_produit": 3,
+            "valeur_nutritionnelle": 636,
+            "image": "produit/menthe.jpg",
+            "unite": 4
+        }
+    },
+    {
+        "pk": 416,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Poivron rouge",
+            "quantite": 1000,
+            "type_produit": 3,
+            "valeur_nutritionnelle": 637,
+            "image": "produit/poivron_rouge.jpeg",
+            "unite": 1
+        }
+    },
+    {
+        "pk": 417,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Poivron vert",
+            "quantite": 1000,
+            "type_produit": 3,
+            "valeur_nutritionnelle": 637,
+            "image": "produit/poivron_vert.jpeg",
+            "unite": 1
+        }
+    },
+    {
+        "pk": 418,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Poivron jaune",
+            "quantite": 1000,
+            "type_produit": 3,
+            "valeur_nutritionnelle": 637,
+            "image": "produit/poivron_jaune.jpeg",
+            "unite": 1
+        }
+    },
+    {
+        "pk": 419,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Huile d'olive",
+            "quantite": 750,
+            "type_produit": 208,
+            "valeur_nutritionnelle": 638,
+            "image": "produit/huile_olive.jpg",
+            "unite": 5
+        }
+    },
+    {
+        "pk": 420,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Bouquet de persil",
+            "quantite": 1,
+            "type_produit": 207,
+            "valeur_nutritionnelle": 639,
+            "image": "produit/persil.jpeg",
+            "unite": 4
+        }
+    },
+    {
         "pk": 1,
         "model": "recette.tag",
         "fields": {
@@ -15879,6 +16047,132 @@
         }
     },
     {
+        "pk": 25,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 136,
+            "quantite": 8,
+            "unite": 3
+        }
+    },
+    {
+        "pk": 26,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 402,
+            "quantite": 4,
+            "unite": 3
+        }
+    },
+    {
+        "pk": 27,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 3,
+            "quantite": 150,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 28,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 7,
+            "quantite": 4,
+            "unite": 4
+        }
+    },
+    {
+        "pk": 29,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 413,
+            "quantite": 200,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 30,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 8,
+            "quantite": 400,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 31,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 414,
+            "quantite": 100,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 32,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 415,
+            "quantite": 1,
+            "unite": 4
+        }
+    },
+    {
+        "pk": 33,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 418,
+            "quantite": 100,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 34,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 103,
+            "quantite": 50,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 35,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 419,
+            "quantite": 2,
+            "unite": 9
+        }
+    },
+    {
+        "pk": 36,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 420,
+            "quantite": 1,
+            "unite": 4
+        }
+    },
+    {
+        "pk": 37,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 416,
+            "quantite": 45,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 38,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 417,
+            "quantite": 45,
+            "unite": 1
+        }
+    },
+    {
         "pk": 1,
         "model": "recette.ligneproduit",
         "fields": {
@@ -15956,7 +16250,7 @@
             "is_active": true,
             "is_superuser": true,
             "is_staff": true,
-            "last_login": "2013-02-20T18:12:28",
+            "last_login": "2013-05-20T15:03:53",
             "groups": [],
             "user_permissions": [],
             "password": "pbkdf2_sha256$10000$oTWrTghMQiMC$e9wtzxGzHCrYxvlMI/EWa/py/foG512ZODGxfH9N+Uw=",
@@ -16661,6 +16955,126 @@
         }
     },
     {
+        "pk": 9,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Croques monsieur",
+            "categorie": [
+                2
+            ],
+            "est_valide": true,
+            "tags": "jambon fromage snack",
+            "createur": 4,
+            "duree": 10,
+            "difficulte": 1,
+            "nb_personne": 2,
+            "lignes": [
+                25,
+                26,
+                27
+            ],
+            "image": "recette/croque_monsieur.jpg",
+            "instructions": "Mettre un peu de fromage rap\u00e9 sur une tranche de pain.\r\nY d\u00e9poser une tranche de jambon pli\u00e9e en deux.\r\nRemettre un peu de fromage.\r\nAjouter une seconde tranche de pain.\r\nFaire cuire dans un appareil pour croque-monsieur."
+        }
+    },
+    {
+        "pk": 10,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Croque madame",
+            "categorie": [
+                2
+            ],
+            "est_valide": true,
+            "tags": "jambon fromage snack oeuf",
+            "createur": 5,
+            "duree": 15,
+            "difficulte": 1,
+            "nb_personne": 2,
+            "lignes": [
+                25,
+                26,
+                27,
+                28
+            ],
+            "image": "recette/croque_madame.jpg",
+            "instructions": "Mettre un peu de fromage rap\u00e9 sur une tranche de pain.\r\nY d\u00e9poser une tranche de jambon pli\u00e9e en deux.\r\nRemettre un peu de fromage.\r\nAjouter une seconde tranche de pain.\r\nFaire cuire les oeufs sur le plat.\r\nFaire cuire dans un appareil pour croque-monsieur.\r\nD\u00e9poser un oeuf sur le croque."
+        }
+    },
+    {
+        "pk": 11,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Haricots aux lardons",
+            "categorie": [
+                2
+            ],
+            "est_valide": true,
+            "tags": "haricots lardons poell\u00e9e",
+            "createur": 6,
+            "duree": 10,
+            "difficulte": 1,
+            "nb_personne": 1,
+            "lignes": [
+                18,
+                24
+            ],
+            "image": "recette/haricots_verts_lardons.jpg",
+            "instructions": "Faire cuire les lardons dans une poelle.\r\nFaire de m\u00eame avec les haricots.\r\nServez"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Taboul\u00e9",
+            "categorie": [
+                1
+            ],
+            "est_valide": true,
+            "tags": "semoule menthe persil poivron",
+            "createur": 2,
+            "duree": 60,
+            "difficulte": 2,
+            "nb_personne": 4,
+            "lignes": [
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36
+            ],
+            "image": "recette/taboule.jpeg",
+            "instructions": "Rincez le boulghour pour enlever l\u2019amidon, \u00e9gouttez-le, puis mettez-le dans un saladier.\r\n\r\nVersez de l\u2019eau froide \u00e0 hauteur (15 cl environ). Laissez gonfler 1h \u00e0 1h30. Les grains restent un peu fermes. Pendant ce temps mettez \u00e0 tremper les raisins secs dans un bol d\u2019eau froide.\r\n\r\nPressez les citrons, \u00e9queutez le persil et la menthe. Ciselez ces herbes s\u00e9par\u00e9ment afin d\u2019obtenir un bol rempli de persil et un demi-bol de menthe. \r\nPartagez les tomates en deux, \u00e9p\u00e9pinez-les, puis d\u00e9taillez-les en petits d\u00e9s.\r\n\r\nEbarbez, pelez et hachez les oignons blancs avec un peu de leur tige verte. \r\nTaillez le poivron (facultatif) en petits cubes.\r\n\r\nVersez le boulghour dans une passoire, laissez-le \u00e9goutter puis essorez-le avec les doigts pour enlever l\u2019exc\u00e9dent d\u2019eau. Versez-le dans un plat creux et ajoutez la menthe, les tomates, le poivron, les oignons et les raisins secs \u00e9goutt\u00e9s.\r\n\r\nMettez une cuiller\u00e9e \u00e0 caf\u00e9 de sel dans un bol, ajoutez une bonne pinc\u00e9e de poivre,  l\u2019huile d\u2019olive. \r\nM\u00e9langez puis versez cette vinaigrette sur le boulghour ; m\u00e9langez de nouveau laisser mac\u00e9rer 2 h au r\u00e9frig\u00e9rateur avant de servir."
+        }
+    },
+    {
+        "pk": 13,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Omelette aux poivrons",
+            "categorie": [
+                2
+            ],
+            "est_valide": true,
+            "tags": "oeuf poivron",
+            "createur": 4,
+            "duree": 10,
+            "difficulte": 1,
+            "nb_personne": 2,
+            "lignes": [
+                4,
+                37,
+                38
+            ],
+            "image": "recette/omelette_poivrons.jpeg",
+            "instructions": "Cassez le oeufs dans un plat puis les battres.\r\nCouper les poivrons en fines lamelles et les faire revenir \u00e0 la poelle.\r\nAjouter ensuite les oeufs battus et laisser cuire 2 minutes de chaque cot\u00e9.\r\n\r\n"
+        }
+    },
+    {
         "pk": "3244fcf07e59afd4dd241e172bc677467f20c972",
         "model": "authtoken.token",
         "fields": {
@@ -16782,7 +17196,7 @@
             "is_active": true,
             "is_superuser": true,
             "is_staff": true,
-            "last_login": "2013-02-20T18:12:28",
+            "last_login": "2013-05-20T15:03:53",
             "groups": [],
             "user_permissions": [],
             "password": "pbkdf2_sha256$10000$oTWrTghMQiMC$e9wtzxGzHCrYxvlMI/EWa/py/foG512ZODGxfH9N+Uw=",
