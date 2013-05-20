@@ -11,7 +11,7 @@
 		<h3 class="police">Les {{categorie.nom|lower}}s</h3>
 	    </div>
 		{% for recette in recettes %}
-			<div class="ligneRecette span3">
+			<div class="ligneRecette span4">
 		    {% if recette.image %}
 				<img src="{{recette.image.url}}" alt="Illustration pour : {{recette.nom}}"/>
 		    {% else %}
