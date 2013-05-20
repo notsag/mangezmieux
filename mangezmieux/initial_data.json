@@ -12427,7 +12427,7 @@
         "fields": {
             "nom": "Filets de limande meuni\u00e8re, pr\u00e9frits, surgel\u00e9s",
             "quantite": 400,
-            "type_produit": 9,
+            "type_produit": 4,
             "valeur_nutritionnelle": 196,
             "image": "http://fr.openfoodfacts.org/images/products/359/671/033/8887/front.15.400.jpg",
             "unite": 4
@@ -14683,7 +14683,7 @@
         "fields": {
             "nom": "Sardines \u00e0 l'huile",
             "quantite": 120,
-            "type_produit": 9,
+            "type_produit": 4,
             "valeur_nutritionnelle": 494,
             "image": "http://fr.openfoodfacts.org/images/products/560/491/241/0299/front.4.400.jpg",
             "unite": 1
@@ -14695,7 +14695,7 @@
         "fields": {
             "nom": "Sardines",
             "quantite": 111,
-            "type_produit": 9,
+            "type_produit": 4,
             "valeur_nutritionnelle": 495,
             "image": "http://fr.openfoodfacts.org/images/products/560/105/484/1141/front.5.400.jpg",
             "unite": 1
