@@ -17,7 +17,7 @@
 		    {% else %}
 		    <img src="/upload/default.jpg" alt="Illustration pour : {{recette.nom}}"/>
 		    {% endif %}
-				<a href="/recette/detail/{{recette.id}}?id={{categorie.id}}&name={{categorie.nom}}s">{{recette.nom|truncatechars:18}}</a>
+				<a href="/recette/detail/{{recette.id}}?id={{categorie.id}}&name={{categorie.nom}}s">{{recette.nom|truncatechars:30}}</a>
 				<div class="footer">{{recette.instructions|truncatechars:50}}</div>
 			</div>
 		{% endfor %}
