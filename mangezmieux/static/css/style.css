@@ -414,17 +414,18 @@ html, body {
 
 #reponse-get {
   position: absolute;
-  width: 220px;
+  width: 235px;
   background-color: white;
   margin: 0px;
   padding: 0px;
+  z-index: 1;
 }
  
 #reponse-get ul {
   list-style-type: none;
   margin: 0px;
   padding: 0px;
-  max-height: 20em;
+  max-height: 19em;
   overflow: auto;
 }
  
