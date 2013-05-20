@@ -380,7 +380,7 @@ def genererPlanning(request):
             if ordre.nb_personne == 0:
                 #Si petit dej
                 if ordre.ordre == 0:
-                    recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Dessert')).order_by('?')[:1].get()
+                    recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Petit déjeuner')).order_by('?')[:1].get()
                     repas = Repas()
                     repas.date = ordre.date
                     repas.nb_personne = 1
