@@ -274,8 +274,15 @@ class PanierDetail(generics.ListCreateAPIView):
 		user = User.objects.get(id = userId)
 		
 		if user != None:
-			return Panier.objects.get(utilisateur = user)
-	
+			try:
+				return Panier.objects.get(utilisateur = user)
+			except:
+				panier = Panier()
+				panier.utilisateur = user
+				panier.save()
+				
+				return panier
+				
 class UserList(generics.ListCreateAPIView):
 	"""
 	Point de l'API pour lister les utilisateurs
@@ -357,7 +364,8 @@ class ProduitList(generics.ListCreateAPIView):
             else:
                 produits = produits.filter(valeur_energetique__gte=valeur)
 
-        return produits
+		
+        return produits.exclude(nom__isnull=True).exclude(nom__exact='').order_by('nom')
 
 class ProduitDetail(generics.RetrieveUpdateDestroyAPIView):
     """
