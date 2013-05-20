@@ -386,7 +386,7 @@ html, body {
 }
 
 .categorieRecette:first-of-type, .ligneRecette:first-of-type {
-    margin-left: 0;
+    /*margin-left: 0;*/
 }
 .categorieRecette .title{
     background-color: #FFDE8D;
