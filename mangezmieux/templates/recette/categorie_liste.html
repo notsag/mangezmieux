@@ -19,7 +19,8 @@
 		    {% endif %}
 				<a href="/recette/detail/{{recette.id}}?id={{categorie.id}}&name={{categorie.nom}}s">{{recette.nom|truncatechars:30}}</a>
                 <div class="footer" >
-                <span class="difficulte-recette">
+                <span>
+                    Difficulté : 
                 {% if recette.difficulte = 1 %}
                     <i class="icon-star"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
                 {% elif recette.difficulte = 2 %}
