@@ -236,7 +236,7 @@
         "pk": "bb048c4edaae60f8b3f7f373de900f21",
         "model": "sessions.session",
         "fields": {
-            "expire_date": "2013-06-04T16:51:01",
+            "expire_date": "2013-06-04T17:12:20",
             "session_data": "Mjk2NmRlYmM5ZDRkNDU0MTQ4MmYzODhlMzE0ODc2YzgwYTExMDcyNjqAAn1xAShVDV9hdXRoX3Vz\nZXJfaWSKAQJVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmR1Lg==\n"
         }
     },
@@ -3351,6 +3351,14 @@
         "model": "produit.typeproduit",
         "fields": {
             "nom": "Moutarde",
+            "parent": null
+        }
+    },
+    {
+        "pk": 370,
+        "model": "produit.typeproduit",
+        "fields": {
+            "nom": "Alcool",
             "parent": null
         }
     },
@@ -11179,6 +11187,30 @@
         }
     },
     {
+        "pk": 653,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.00",
+            "proteines": "0.00",
+            "glucides": "0.00",
+            "energie": 40,
+            "fibres": "0.00",
+            "lipides": "0.00"
+        }
+    },
+    {
+        "pk": 654,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.00",
+            "proteines": "22.00",
+            "glucides": "0.00",
+            "energie": 1016,
+            "fibres": "0.00",
+            "lipides": "17.00"
+        }
+    },
+    {
         "pk": 1,
         "model": "produit.produit",
         "fields": {
@@ -16351,6 +16383,30 @@
         }
     },
     {
+        "pk": 434,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Rhum",
+            "quantite": 750,
+            "type_produit": 370,
+            "valeur_nutritionnelle": 653,
+            "image": "produit/rhum.jpg",
+            "unite": 5
+        }
+    },
+    {
+        "pk": 435,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Boeuf hach\u00e9e",
+            "quantite": 400,
+            "type_produit": 1,
+            "valeur_nutritionnelle": 654,
+            "image": "produit/viande_hachee.jpg",
+            "unite": 1
+        }
+    },
+    {
         "pk": 1,
         "model": "recette.tag",
         "fields": {
@@ -16537,6 +16593,27 @@
         "model": "recette.tag",
         "fields": {
             "texte": "creme"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "flambe"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "puree"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "gratin"
         }
     },
     {
@@ -17193,6 +17270,105 @@
         "fields": {
             "produit": 422,
             "quantite": 100,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 74,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 39,
+            "quantite": 25,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 75,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 406,
+            "quantite": 100,
+            "unite": 5
+        }
+    },
+    {
+        "pk": 76,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 12,
+            "quantite": 10,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 77,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 434,
+            "quantite": 200,
+            "unite": 5
+        }
+    },
+    {
+        "pk": 78,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 435,
+            "quantite": 600,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 79,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 414,
+            "quantite": 100,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 80,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 420,
+            "quantite": 1,
+            "unite": 4
+        }
+    },
+    {
+        "pk": 81,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 4,
+            "quantite": 1500,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 82,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 39,
+            "quantite": 100,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 83,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 406,
+            "quantite": 200,
+            "unite": 5
+        }
+    },
+    {
+        "pk": 84,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 3,
+            "quantite": 50,
             "unite": 1
         }
     },
@@ -18042,7 +18218,12 @@
         "pk": 2,
         "model": "auth.profilutilisateur",
         "fields": {
-            "gouts": [],
+            "gouts": [
+                1,
+                4,
+                23,
+                27
+            ],
             "nbPersonnes": 1,
             "user": 2
         }
@@ -18468,6 +18649,328 @@
         }
     },
     {
+        "pk": 69,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                10,
+                15,
+                17
+            ],
+            "ordre": 2,
+            "nb_personne": 1,
+            "date": "2013-05-26"
+        }
+    },
+    {
+        "pk": 68,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                4,
+                10,
+                12
+            ],
+            "ordre": 2,
+            "nb_personne": 1,
+            "date": "2013-05-25"
+        }
+    },
+    {
+        "pk": 67,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                8,
+                11,
+                20
+            ],
+            "ordre": 2,
+            "nb_personne": 1,
+            "date": "2013-05-24"
+        }
+    },
+    {
+        "pk": 66,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                3,
+                7,
+                21
+            ],
+            "ordre": 2,
+            "nb_personne": 1,
+            "date": "2013-05-23"
+        }
+    },
+    {
+        "pk": 65,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                3,
+                9,
+                15
+            ],
+            "ordre": 2,
+            "nb_personne": 1,
+            "date": "2013-05-22"
+        }
+    },
+    {
+        "pk": 64,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                8,
+                13,
+                20
+            ],
+            "ordre": 2,
+            "nb_personne": 1,
+            "date": "2013-05-21"
+        }
+    },
+    {
+        "pk": 63,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                2,
+                15,
+                16
+            ],
+            "ordre": 2,
+            "nb_personne": 1,
+            "date": "2013-05-20"
+        }
+    },
+    {
+        "pk": 62,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                4,
+                12,
+                14
+            ],
+            "ordre": 1,
+            "nb_personne": 1,
+            "date": "2013-05-26"
+        }
+    },
+    {
+        "pk": 61,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                1,
+                12,
+                21
+            ],
+            "ordre": 1,
+            "nb_personne": 1,
+            "date": "2013-05-25"
+        }
+    },
+    {
+        "pk": 60,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                8,
+                13,
+                15
+            ],
+            "ordre": 1,
+            "nb_personne": 1,
+            "date": "2013-05-24"
+        }
+    },
+    {
+        "pk": 59,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                3,
+                14,
+                19
+            ],
+            "ordre": 1,
+            "nb_personne": 1,
+            "date": "2013-05-23"
+        }
+    },
+    {
+        "pk": 58,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                9,
+                12,
+                15
+            ],
+            "ordre": 1,
+            "nb_personne": 1,
+            "date": "2013-05-22"
+        }
+    },
+    {
+        "pk": 57,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                8,
+                9,
+                19
+            ],
+            "ordre": 1,
+            "nb_personne": 1,
+            "date": "2013-05-21"
+        }
+    },
+    {
+        "pk": 56,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                8,
+                11,
+                15
+            ],
+            "ordre": 1,
+            "nb_personne": 1,
+            "date": "2013-05-20"
+        }
+    },
+    {
+        "pk": 55,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                6
+            ],
+            "ordre": 0,
+            "nb_personne": 1,
+            "date": "2013-05-26"
+        }
+    },
+    {
+        "pk": 54,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                6
+            ],
+            "ordre": 0,
+            "nb_personne": 1,
+            "date": "2013-05-25"
+        }
+    },
+    {
+        "pk": 53,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                5
+            ],
+            "ordre": 0,
+            "nb_personne": 1,
+            "date": "2013-05-24"
+        }
+    },
+    {
+        "pk": 52,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                6
+            ],
+            "ordre": 0,
+            "nb_personne": 1,
+            "date": "2013-05-23"
+        }
+    },
+    {
+        "pk": 51,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                5
+            ],
+            "ordre": 0,
+            "nb_personne": 1,
+            "date": "2013-05-22"
+        }
+    },
+    {
+        "pk": 50,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                5
+            ],
+            "ordre": 0,
+            "nb_personne": 1,
+            "date": "2013-05-21"
+        }
+    },
+    {
+        "pk": 49,
+        "model": "recette.repas",
+        "fields": {
+            "produit": [],
+            "utilisateur": 2,
+            "recette": [
+                6
+            ],
+            "ordre": 0,
+            "nb_personne": 1,
+            "date": "2013-05-20"
+        }
+    },
+    {
         "pk": 6,
         "model": "recette.recette",
         "fields": {
@@ -18530,8 +19033,8 @@
             "difficulte": 1,
             "nb_personne": 1,
             "lignes": [
-                6,
-                7
+                7,
+                6
             ],
             "image": "recette/carottes.jpg",
             "instructions": "Raper 50g de carottes. Ajouter la vinaigrette. Servir."
@@ -18552,8 +19055,8 @@
             "difficulte": 2,
             "nb_personne": 4,
             "lignes": [
-                8,
-                9
+                9,
+                8
             ],
             "image": "recette/tartepommes.jpg",
             "instructions": "Mouler la pate. Pr\u00e9chauffer le four thermostat 7. Ajouter les pommes coup\u00e9es en rondelles. Cuire 15 minutes. Servir ti\u00e8de."
@@ -18597,9 +19100,9 @@
             "difficulte": 1,
             "nb_personne": 2,
             "lignes": [
-                17,
+                19,
                 18,
-                19
+                17
             ],
             "image": "recette/steak_haricots_pates.jpg",
             "instructions": "Faire cuire les pates\r\nLaisser cuire le steak 2 min du chaque cot\u00e9 \u00e0 feu vif\r\nAjouter les haricots verts avec le steak et laisser \u00e0 feu doux\r\nServez et d\u00e9gustez"
@@ -18693,8 +19196,8 @@
             "difficulte": 1,
             "nb_personne": 1,
             "lignes": [
-                18,
-                24
+                24,
+                18
             ],
             "image": "recette/haricots_verts_lardons.jpg",
             "instructions": "Faire cuire les lardons dans une poelle.\r\nFaire de m\u00eame avec les haricots.\r\nServez"
@@ -18816,9 +19319,9 @@
             "difficulte": 1,
             "nb_personne": 2,
             "lignes": [
-                7,
+                47,
                 30,
-                47
+                7
             ],
             "image": "recette/tomates_mozza.jpg",
             "instructions": "Laver les tomates.\r\n\r\nCouper les tomates et la mozzarella en tranches.\r\n\r\nDisposer dans une assiette une tranche de mozarella puis une tranche de tomate et ainsi de suite.\r\n\r\nVerser la vinaigrette dessus et servez."
@@ -18990,6 +19493,59 @@
         }
     },
     {
+        "pk": 22,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Omelette antillaise",
+            "categorie": [
+                2
+            ],
+            "est_valide": true,
+            "tags": "oeuf flambe",
+            "createur": 6,
+            "duree": 10,
+            "difficulte": 3,
+            "nb_personne": 4,
+            "lignes": [
+                72,
+                74,
+                75,
+                76,
+                77
+            ],
+            "image": "recette/omelette_antillaise.jpg",
+            "instructions": "Dans un grand bol pr\u00e9parer l'omelette. \r\nPr\u00e9chauffer un plat \u00e0 tarte. \r\n \r\nDans une grande po\u00eale, fondre le beurre et cuire sur les 2 faces.\r\nD\u00e9poser l'omelette sur le plat et saupoudrer de sucre.\r\nRouler comme une cr\u00eape.\r\n \r\nDans une petite casserole chauffer le rhum, arroser sur l'omelette et flamber. "
+        }
+    },
+    {
+        "pk": 23,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Hachis parmentier",
+            "categorie": [
+                2
+            ],
+            "est_valide": true,
+            "tags": "boeuf puree gratin fromage",
+            "createur": 2,
+            "duree": 60,
+            "difficulte": 3,
+            "nb_personne": 6,
+            "lignes": [
+                66,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84
+            ],
+            "image": "recette/hachis.jpg",
+            "instructions": "R\u00e9aliser la pur\u00e9e :\r\nCuire les pommes de terres \u00e9pluch\u00e9es et coup\u00e9es en cubes d\u00e9part eau froide sal\u00e9e.\r\nChauffer le lait et la cr\u00e8me.\r\nEgoutter les pommes de terre cuites et les \u00e9craser en ajoutant le m\u00e9lange lait et cr\u00e8me. \r\nAjouter le beurre en parcelles et rectifier l'assaisonnement.\r\n\r\nR\u00e9aliser le hachis :\r\nAjouter la viande de boeuf hach\u00e9 et les oignons et le persil cisel\u00e9s.\r\n\r\nR\u00e9aliser le gratin :\r\nDisposer une couche de pur\u00e9e au fond du plat beurr\u00e9.\r\nAlterner les couches de hachis et de pur\u00e9e.\r\nSaupoudrer de gruy\u00e8re r\u00e2p\u00e9 et gratiner au four chaud \u00e0 180\u00b0C.\r\n"
+        }
+    },
+    {
         "pk": "3244fcf07e59afd4dd241e172bc677467f20c972",
         "model": "authtoken.token",
         "fields": {
@@ -19027,6 +19583,279 @@
         "fields": {
             "user": 3,
             "created": "2013-02-20T18:13:04"
+        }
+    },
+    {
+        "pk": 85,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T17:12:14",
+            "object_repr": "gratin",
+            "object_id": "30",
+            "change_message": "",
+            "user": 2,
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 84,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T17:12:10",
+            "object_repr": "puree",
+            "object_id": "29",
+            "change_message": "",
+            "user": 2,
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 83,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T17:11:54",
+            "object_repr": "Hachis parmentier",
+            "object_id": "23",
+            "change_message": "",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 82,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T17:08:42",
+            "object_repr": "50 Grammes Gruy\u00e8re rap\u00e9 (250 Grammes)",
+            "object_id": "84",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 81,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T17:07:36",
+            "object_repr": "200 Millilitres Lait en brique (1 Litres)",
+            "object_id": "83",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 80,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T17:07:02",
+            "object_repr": "100 Grammes Beurre (250 Grammes)",
+            "object_id": "82",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 79,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T17:06:23",
+            "object_repr": "1500 Grammes Pommes de terre (2000 Grammes)",
+            "object_id": "81",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 78,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T17:05:58",
+            "object_repr": "1 Unit\u00e9s Bouquet de persil (1 Unit\u00e9s)",
+            "object_id": "80",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 77,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T17:05:12",
+            "object_repr": "100 Grammes Oignons blancs (100 Grammes)",
+            "object_id": "79",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 76,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T17:04:55",
+            "object_repr": "600 Grammes Boeuf hach\u00e9e (400 Grammes)",
+            "object_id": "78",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 75,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T17:04:40",
+            "object_repr": "Boeuf hach\u00e9e (400 Grammes)",
+            "object_id": "435",
+            "change_message": "",
+            "user": 2,
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 74,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T17:04:37",
+            "object_repr": "1016",
+            "object_id": "654",
+            "change_message": "",
+            "user": 2,
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 73,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T17:01:27",
+            "object_repr": "flambe",
+            "object_id": "28",
+            "change_message": "",
+            "user": 2,
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 72,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T17:01:14",
+            "object_repr": "Omelette antillaise",
+            "object_id": "22",
+            "change_message": "",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 71,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:59:36",
+            "object_repr": "200 Millilitres Rhum (750 Millilitres)",
+            "object_id": "77",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 70,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:59:24",
+            "object_repr": "Rhum (750 Millilitres)",
+            "object_id": "434",
+            "change_message": "",
+            "user": 2,
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 69,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:58:51",
+            "object_repr": "40",
+            "object_id": "653",
+            "change_message": "",
+            "user": 2,
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 68,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:58:32",
+            "object_repr": "Alcool",
+            "object_id": "370",
+            "change_message": "",
+            "user": 2,
+            "content_type": 12
+        }
+    },
+    {
+        "pk": 67,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:58:06",
+            "object_repr": "10 Grammes Sucre (1000 Grammes)",
+            "object_id": "76",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 66,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:57:47",
+            "object_repr": "100 Millilitres Lait en brique (1 Litres)",
+            "object_id": "75",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 65,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:57:31",
+            "object_repr": "25 Grammes Beurre (250 Grammes)",
+            "object_id": "74",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
         }
     },
     {
@@ -19874,7 +20703,12 @@
         "pk": 2,
         "model": "auth.profilutilisateur",
         "fields": {
-            "gouts": [],
+            "gouts": [
+                1,
+                4,
+                23,
+                27
+            ],
             "nbPersonnes": 1,
             "user": 2
         }
