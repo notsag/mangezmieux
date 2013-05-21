@@ -210,7 +210,7 @@ html, body {
 }
 
 #planning4 .contenu-ligne {
-	height: 190px;
+	height: 300px;
 }
 
 #planning4 #precedent {
@@ -613,5 +613,14 @@ html, body {
 
 .duree-recette {
     margin-left: 15px;
+}
+
+.ligneRepas {
+    text-align: center;
+}
+
+.img-repas-planning {
+    width: 75px;
+    height: 50px;
 }
 

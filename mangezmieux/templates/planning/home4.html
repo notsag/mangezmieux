@@ -77,19 +77,20 @@
 			    <div class="contenu-ligne">
 				<div class="ligneRepas vide">Aucun repas</div>
 			    </div>
-			    <div class="ligneAjouter"><a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r" class="icon-plus"></a>Recette<a class="icon-plus" href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p"></a>Produit</div>
+                <div class="ligneAjouter">
+                    <a href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r" class="icon-plus"></a>Recette <a class="icon-plus" href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p"></a>Produit</div>
 			{% else %}
 			    <div class="ligneRepas">Nombre de personnes : {{col.nb_personne}}</div>
 			    <div class="contenu-ligne">
 				{% for re in col.recette.all %} 
-				    <div class="ligneRepas"><a href="/recette/detail/{{re.id}}">{{re.nom}}</a><a class="icon-minus" href="retirer-recette/?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&r={{re.id}}"></a></div>
+                <div class="ligneRepas"><a href="/recette/detail/{{re.id}}"><img class="img-repas-planning"src="{{re.image.url}}" alt="Illustration pour : {{re.nom}}"></img><br/>{{re.nom}}</a><a class="icon-minus" href="retirer-recette/?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&r={{re.id}}"></a></div>
 				{% endfor %}
 	    
 				{% for pr in col.produit.all %}
 				    <div class="ligneRepas"><a href="/produit/detail/{{pr.produit.id}}">{{pr.produit.nom}}</a> ({{pr.quantite}} {{pr.unite.abreviation}}.)<a class="icon-minus" href="retirer-produit/?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&p={{pr.id}}"><a></div>
 				{% endfor %}
 			    </div>
-			    <div class="ligneAjouter"><a class="icon-plus" href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r"></a>Recette<a class="icon-plus" href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p"></a>Produit</div>
+			    <div class="ligneAjouter"><a class="icon-plus" href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=r"></a>Recette <a class="icon-plus" href="ajouter-repas?d={{col.date|date:"Y-m-d"}}&o={{col.ordre}}&t=p"></a>Produit</div>
 			{% endif%}
 		    </td> 
 		{% endfor%}
