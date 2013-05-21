@@ -162,6 +162,15 @@
         }
     },
     {
+        "pk": 19,
+        "model": "core.conversion",
+        "fields": {
+            "uniteSpecifique": 7,
+            "uniteBase": 5,
+            "multiplicateur": 5.0
+        }
+    },
+    {
         "pk": 1,
         "model": "produit.unite",
         "fields": {
