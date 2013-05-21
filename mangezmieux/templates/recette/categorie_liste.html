@@ -12,12 +12,13 @@
 	    </div>
 		{% for recette in recettes %}
 			<div class="ligneRecette span5">
+                <a href="/recette/detail/{{recette.id}}?id={{categorie.id}}&name={{categorie.nom}}s">
 		    {% if recette.image %}
 				<img src="{{recette.image.url}}" alt="Illustration pour : {{recette.nom}}"/>
 		    {% else %}
 		    <img src="/upload/default.jpg" alt="Illustration pour : {{recette.nom}}"/>
 		    {% endif %}
-				<a href="/recette/detail/{{recette.id}}?id={{categorie.id}}&name={{categorie.nom}}s">{{recette.nom|truncatechars:30}}</a>
+                    {{recette.nom|truncatechars:30}}</a>
                 <div class="footer" >
                 <span>
                     Difficulté : 

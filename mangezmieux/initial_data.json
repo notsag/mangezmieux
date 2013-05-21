@@ -90,69 +90,6 @@
         }
     },
     {
-        "pk": 11,
-        "model": "core.conversion",
-        "fields": {
-            "uniteSpecifique": 4,
-            "uniteBase": 1,
-            "multiplicateur": 50.0
-        }
-    },
-    {
-        "pk": 12,
-        "model": "core.conversion",
-        "fields": {
-            "uniteSpecifique": 10,
-            "uniteBase": 2,
-            "multiplicateur": 0.125
-        }
-    },
-    {
-        "pk": 13,
-        "model": "core.conversion",
-        "fields": {
-            "uniteSpecifique": 3,
-            "uniteBase": 1,
-            "multiplicateur": 20.0
-        }
-    },
-    {
-        "pk": 14,
-        "model": "core.conversion",
-        "fields": {
-            "uniteSpecifique": 3,
-            "uniteBase": 3,
-            "multiplicateur": 1.0
-        }
-    },
-    {
-        "pk": 15,
-        "model": "core.conversion",
-        "fields": {
-            "uniteSpecifique": 5,
-            "uniteBase": 5,
-            "multiplicateur": 1.0
-        }
-    },
-    {
-        "pk": 16,
-        "model": "core.conversion",
-        "fields": {
-            "uniteSpecifique": 9,
-            "uniteBase": 5,
-            "multiplicateur": 20.0
-        }
-    },
-    {
-        "pk": 17,
-        "model": "core.conversion",
-        "fields": {
-            "uniteSpecifique": 3,
-            "uniteBase": 4,
-            "multiplicateur": 1.0
-        }
-    },
-    {
         "pk": 1,
         "model": "produit.unite",
         "fields": {
@@ -3157,6 +3094,22 @@
         "model": "produit.typeproduit",
         "fields": {
             "nom": "Sucre",
+            "parent": null
+        }
+    },
+    {
+        "pk": 368,
+        "model": "produit.typeproduit",
+        "fields": {
+            "nom": "Farine",
+            "parent": null
+        }
+    },
+    {
+        "pk": 369,
+        "model": "produit.typeproduit",
+        "fields": {
+            "nom": "Moutarde",
             "parent": null
         }
     },
@@ -10829,6 +10782,66 @@
         }
     },
     {
+        "pk": 640,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.00",
+            "proteines": "7.00",
+            "glucides": "50.00",
+            "energie": 1005,
+            "fibres": "2.00",
+            "lipides": "1.00"
+        }
+    },
+    {
+        "pk": 641,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.00",
+            "proteines": "21.00",
+            "glucides": "40.00",
+            "energie": 873,
+            "fibres": "0.00",
+            "lipides": "29.00"
+        }
+    },
+    {
+        "pk": 642,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.40",
+            "proteines": "19.90",
+            "glucides": "0.40",
+            "energie": 1080,
+            "fibres": "0.00",
+            "lipides": "19.40"
+        }
+    },
+    {
+        "pk": 643,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.01",
+            "proteines": "1.10",
+            "glucides": "2.70",
+            "energie": 117,
+            "fibres": "1.00",
+            "lipides": "0.30"
+        }
+    },
+    {
+        "pk": 644,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "2.00",
+            "proteines": "7.00",
+            "glucides": "2.40",
+            "energie": 683,
+            "fibres": "0.00",
+            "lipides": "14.00"
+        }
+    },
+    {
         "pk": 1,
         "model": "produit.produit",
         "fields": {
@@ -15845,6 +15858,66 @@
         }
     },
     {
+        "pk": 421,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Farine",
+            "quantite": 1000,
+            "type_produit": 368,
+            "valeur_nutritionnelle": 640,
+            "image": "produit/farine.jpg",
+            "unite": 1
+        }
+    },
+    {
+        "pk": 422,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Chocolat \u00e0 cuire",
+            "quantite": 100,
+            "type_produit": 59,
+            "valeur_nutritionnelle": 641,
+            "image": "produit/chocolat.jpg",
+            "unite": 1
+        }
+    },
+    {
+        "pk": 423,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Mozarella",
+            "quantite": 220,
+            "type_produit": 182,
+            "valeur_nutritionnelle": 642,
+            "image": "produit/mozzarella.jpg",
+            "unite": 1
+        }
+    },
+    {
+        "pk": 424,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Courgettes",
+            "quantite": 1000,
+            "type_produit": 3,
+            "valeur_nutritionnelle": 643,
+            "image": "produit/courgette.jpg",
+            "unite": 1
+        }
+    },
+    {
+        "pk": 425,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Moutarde",
+            "quantite": 200,
+            "type_produit": 369,
+            "valeur_nutritionnelle": 644,
+            "image": "produit/moutarde.jpg",
+            "unite": 5
+        }
+    },
+    {
         "pk": 1,
         "model": "recette.tag",
         "fields": {
@@ -15891,6 +15964,90 @@
         "model": "recette.tag",
         "fields": {
             "texte": "pomme"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "cheeseburger"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "poivron"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "snack"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "jambon"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "haricots"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "lardons"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "poell\u00e9e"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "boeuf"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "pates"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "steak"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "chocolat"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "sucre"
         }
     },
     {
@@ -16236,6 +16393,105 @@
         }
     },
     {
+        "pk": 39,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 1,
+            "quantite": 400,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 40,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 67,
+            "quantite": 4,
+            "unite": 4
+        }
+    },
+    {
+        "pk": 41,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 407,
+            "quantite": 4,
+            "unite": 3
+        }
+    },
+    {
+        "pk": 42,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 7,
+            "quantite": 5,
+            "unite": 4
+        }
+    },
+    {
+        "pk": 43,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 12,
+            "quantite": 100,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 44,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 39,
+            "quantite": 100,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 45,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 421,
+            "quantite": 4,
+            "unite": 9
+        }
+    },
+    {
+        "pk": 46,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 422,
+            "quantite": 200,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 47,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 423,
+            "quantite": 220,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 48,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 424,
+            "quantite": 250,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 49,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 425,
+            "quantite": 1,
+            "unite": 7
+        }
+    },
+    {
         "pk": 1,
         "model": "recette.ligneproduit",
         "fields": {
@@ -16313,7 +16569,7 @@
             "is_active": true,
             "is_superuser": true,
             "is_staff": true,
-            "last_login": "2013-05-20T15:03:53",
+            "last_login": "2013-05-20T15:41:34",
             "groups": [],
             "user_permissions": [],
             "password": "pbkdf2_sha256$10000$oTWrTghMQiMC$e9wtzxGzHCrYxvlMI/EWa/py/foG512ZODGxfH9N+Uw=",
@@ -16832,7 +17088,7 @@
         }
     },
     {
-        "pk": 1,
+        "pk": 6,
         "model": "recette.recette",
         "fields": {
             "nom": "Omelette du fromage",
@@ -17138,6 +17394,109 @@
         }
     },
     {
+        "pk": 14,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Cheeseburger",
+            "categorie": [
+                2
+            ],
+            "est_valide": true,
+            "tags": "cheeseburger fromage pain",
+            "createur": 6,
+            "duree": 25,
+            "difficulte": 1,
+            "nb_personne": 4,
+            "lignes": [
+                1,
+                5,
+                39,
+                40,
+                41
+            ],
+            "image": "recette/burger.jpg",
+            "instructions": "Former 4 grands burgers (ils doivent \u00eatre au moins aussi larges que le pain).\r\n\r\nDans une grande po\u00eale, faire chauffer de l'huile. Laisser cuire les burgers 5 min de chaque c\u00f4t\u00e9 \u00e0 feu moyen.\r\nPendant ce temps, couper les tomates en fines rondelles.\r\n\r\nOuvrir les pains, les chauffer quelques secondes au four \u00e0 micro-ondes. Sur le fond, poser les steak, du fromage, 2 tranches de tomates, le bacon et enfin le couvercle."
+        }
+    },
+    {
+        "pk": 15,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Fondant au chocolat",
+            "categorie": [
+                3
+            ],
+            "est_valide": true,
+            "tags": "chocolat sucre",
+            "createur": 2,
+            "duree": 40,
+            "difficulte": 3,
+            "nb_personne": 6,
+            "lignes": [
+                42,
+                43,
+                44,
+                45,
+                46
+            ],
+            "image": "recette/fondant_choco.jpg",
+            "instructions": "Faire fondre le chocolat et le beurre au bain marie \u00e0 feu doux, ou au micro ondes sur le programme 'd\u00e9cong\u00e9lation'.\r\n\r\nQuand c'est bien fondu, ajouter les jaunes d\u2019\u0153ufs. Bien battre. Ajouter ensuite le sucre et la farine, puis incorporer les blancs d\u2019\u0153ufs mont\u00e9s en neige bien ferme.\r\n\r\nBien graisser et fariner un moule \u00e0 manqu\u00e9.\r\n\r\nCuire \u00e0 four moyen (180\u00b0C environ) pendant 20 min."
+        }
+    },
+    {
+        "pk": 16,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Salade tomates-mozza",
+            "categorie": [
+                1
+            ],
+            "est_valide": true,
+            "tags": "tomate fromage",
+            "createur": 5,
+            "duree": 5,
+            "difficulte": 1,
+            "nb_personne": 2,
+            "lignes": [
+                7,
+                30,
+                47
+            ],
+            "image": "recette/tomates_mozza.jpg",
+            "instructions": "Laver les tomates.\r\n\r\nCouper les tomates et la mozzarella en tranches.\r\n\r\nDisposer dans une assiette une tranche de mozarella puis une tranche de tomate et ainsi de suite.\r\n\r\nVerser la vinaigrette dessus et servez."
+        }
+    },
+    {
+        "pk": 1,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Tourte printani\u00e8re",
+            "categorie": [
+                2
+            ],
+            "est_valide": true,
+            "tags": "l\u00e9gume oeuf fromage tarte",
+            "createur": 3,
+            "duree": 60,
+            "difficulte": 3,
+            "nb_personne": 4,
+            "lignes": [
+                1,
+                6,
+                9,
+                13,
+                22,
+                31,
+                35,
+                37,
+                48,
+                49
+            ],
+            "image": "recette/tourte_printaniere.png",
+            "instructions": "Pr\u00e9parez les l\u00e9gumes : coupez l'oignon et le poivron en lamelles, \u00e9pluchez et d\u00e9taillez en gros d\u00e9s les carottes et les courgettes.\r\n\r\nDans une sauteuse, versez un peu d'huile d'olive et faites revenir tous les l\u00e9gumes sur feu moyen (pour ne pas qu'ils roussissent), salez, poivrez.\r\n\r\nQuand les l\u00e9gumes commencent \u00e0 \u00eatre tendres (attention ils doivent rester croquants), retirez la sauteuse du feu.\r\n\r\nDans un bol, versez la cr\u00e8me fra\u00eeche et battez la pour la rendre liquide. Ajoutez les oeufs et battez pour lier le tout.\r\n\r\nDans un moule \u00e0 g\u00e2teau (diam\u00e8tre moins grand et bords plus haut qu'un plat \u00e0 tarte), posez la p\u00e2te bris\u00e9e et percez quelques trous avec une fourchette.\r\n\r\nBadigeonnez le fond de la moutarde, plus versez les l\u00e9gumes et enfin la pr\u00e9paration aux oeufs. \r\n\r\nParsemez de gruy\u00e8re r\u00e2p\u00e9 et rabattez les bords de la p\u00e2te vers l'int\u00e9rieur (ainsi les bords seront fondants).\r\n\r\nLaissez cuire \u00e0 180\u00b0C pendant 25 mn."
+        }
+    },
+    {
         "pk": "3244fcf07e59afd4dd241e172bc677467f20c972",
         "model": "authtoken.token",
         "fields": {
@@ -17259,7 +17618,7 @@
             "is_active": true,
             "is_superuser": true,
             "is_staff": true,
-            "last_login": "2013-05-20T15:03:53",
+            "last_login": "2013-05-20T15:41:34",
             "groups": [],
             "user_permissions": [],
             "password": "pbkdf2_sha256$10000$oTWrTghMQiMC$e9wtzxGzHCrYxvlMI/EWa/py/foG512ZODGxfH9N+Uw=",
