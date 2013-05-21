@@ -383,7 +383,8 @@ def genererPlanning(request):
                     recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Petit déjeuner')).order_by('?')[:1].get()
                     repas = Repas()
                     repas.date = ordre.date
-                    repas.nb_personne = 1
+                    profil = ProfilUtilisateur.objects.get(user = user)
+                    repas.nb_personne = profil.nbPersonnes
                     repas.ordre = ordre.ordre
                     repas.utilisateur = user
                     repas.save()
