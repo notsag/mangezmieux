@@ -1,5 +1,246 @@
 [
     {
+        "pk": 18,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "categorie",
+            "name": "categorie",
+            "app_label": "recette"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "commande",
+            "name": "commande",
+            "app_label": "commande"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "contenttype",
+            "name": "content type",
+            "app_label": "contenttypes"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "conversion",
+            "name": "conversion",
+            "app_label": "core"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "group",
+            "name": "group",
+            "app_label": "auth"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "lignecommande",
+            "name": "ligne commande",
+            "app_label": "commande"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "lignepanier",
+            "name": "ligne panier",
+            "app_label": "panier"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "ligneproduit",
+            "name": "ligne produit",
+            "app_label": "recette"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "lignerecette",
+            "name": "ligne recette",
+            "app_label": "recette"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "logentry",
+            "name": "log entry",
+            "app_label": "admin"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "news",
+            "name": "News",
+            "app_label": "home"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "panier",
+            "name": "panier",
+            "app_label": "panier"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "permission",
+            "name": "permission",
+            "app_label": "auth"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "produit",
+            "name": "produit",
+            "app_label": "produit"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "profilutilisateur",
+            "name": "profil utilisateur",
+            "app_label": "auth"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "recette",
+            "name": "recette",
+            "app_label": "recette"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "recettefavorite",
+            "name": "recette favorite",
+            "app_label": "recette"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "repas",
+            "name": "repas",
+            "app_label": "recette"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "session",
+            "name": "session",
+            "app_label": "sessions"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "tag",
+            "name": "tag",
+            "app_label": "recette"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "token",
+            "name": "token",
+            "app_label": "authtoken"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "typeproduit",
+            "name": "type produit",
+            "app_label": "produit"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "unite",
+            "name": "unite",
+            "app_label": "produit"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "user",
+            "name": "user",
+            "app_label": "auth"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "contenttypes.contenttype",
+        "fields": {
+            "model": "valeurnutritionnelle",
+            "name": "valeur nutritionnelle",
+            "app_label": "produit"
+        }
+    },
+    {
+        "pk": "8637a563eda88d57007190f485a029dd",
+        "model": "sessions.session",
+        "fields": {
+            "expire_date": "2013-06-04T13:28:31",
+            "session_data": "OTdjMWM0MmY5Y2ViMmIyMzYwNDM5ZjhmNDFhODczZDVjODgxMmRiOTqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRVDV9h\ndXRoX3VzZXJfaWSKAQd1Lg==\n"
+        }
+    },
+    {
+        "pk": "bb048c4edaae60f8b3f7f373de900f21",
+        "model": "sessions.session",
+        "fields": {
+            "expire_date": "2013-06-04T15:52:45",
+            "session_data": "YmZkNWI1OWIyMzBlNGMzNzNjNWZhZTkxZjRkZjVhM2FmYzZkNGM2ODqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRVDV9h\ndXRoX3VzZXJfaWSKAQJ1Lg==\n"
+        }
+    },
+    {
         "pk": 1,
         "model": "core.conversion",
         "fields": {
@@ -10842,6 +11083,78 @@
         }
     },
     {
+        "pk": 645,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "1.00",
+            "proteines": "2.30",
+            "glucides": "26.50",
+            "energie": 732,
+            "fibres": "0.50",
+            "lipides": "0.20"
+        }
+    },
+    {
+        "pk": 646,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.00",
+            "proteines": "2.50",
+            "glucides": "16.00",
+            "energie": 430,
+            "fibres": "0.00",
+            "lipides": "1.40"
+        }
+    },
+    {
+        "pk": 647,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.00",
+            "proteines": "6.55",
+            "glucides": "12.30",
+            "energie": 342,
+            "fibres": "5.00",
+            "lipides": "0.48"
+        }
+    },
+    {
+        "pk": 648,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.00",
+            "proteines": "35.70",
+            "glucides": "0.01",
+            "energie": 748,
+            "fibres": "0.00",
+            "lipides": "26.50"
+        }
+    },
+    {
+        "pk": 649,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.06",
+            "proteines": "2.70",
+            "glucides": "0.80",
+            "energie": 67,
+            "fibres": "9.30",
+            "lipides": "0.40"
+        }
+    },
+    {
+        "pk": 650,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.02",
+            "proteines": "2.10",
+            "glucides": "2.80",
+            "energie": 77,
+            "fibres": "6.30",
+            "lipides": "0.50"
+        }
+    },
+    {
         "pk": 1,
         "model": "produit.produit",
         "fields": {
@@ -15918,6 +16231,78 @@
         }
     },
     {
+        "pk": 426,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Riz basmati",
+            "quantite": 500,
+            "type_produit": 320,
+            "valeur_nutritionnelle": 645,
+            "image": "produit/basmati.jpeg",
+            "unite": 1
+        }
+    },
+    {
+        "pk": 427,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Boite de mais",
+            "quantite": 3,
+            "type_produit": 3,
+            "valeur_nutritionnelle": 646,
+            "image": "produit/mais.jpg",
+            "unite": 4
+        }
+    },
+    {
+        "pk": 428,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Petits pois",
+            "quantite": 300,
+            "type_produit": 3,
+            "valeur_nutritionnelle": 647,
+            "image": "produit/petits_pois.jpg",
+            "unite": 1
+        }
+    },
+    {
+        "pk": 429,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Parmesan",
+            "quantite": 200,
+            "type_produit": 182,
+            "valeur_nutritionnelle": 648,
+            "image": "produit/parmesan.jpeg",
+            "unite": 1
+        }
+    },
+    {
+        "pk": 430,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Epinards",
+            "quantite": 100,
+            "type_produit": 3,
+            "valeur_nutritionnelle": 649,
+            "image": "produit/epinards.jpg",
+            "unite": 1
+        }
+    },
+    {
+        "pk": 431,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Brocolis",
+            "quantite": 200,
+            "type_produit": 3,
+            "valeur_nutritionnelle": 650,
+            "image": "produit/brocolis.jpg",
+            "unite": 1
+        }
+    },
+    {
         "pk": 1,
         "model": "recette.tag",
         "fields": {
@@ -16048,6 +16433,41 @@
         "model": "recette.tag",
         "fields": {
             "texte": "sucre"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "riz"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "surimi"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "poisson"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "crudit\u00e9s"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "fruits"
         }
     },
     {
@@ -16492,6 +16912,150 @@
         }
     },
     {
+        "pk": 50,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 426,
+            "quantite": 250,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 51,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 418,
+            "quantite": 45,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 52,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 8,
+            "quantite": 200,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 53,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 427,
+            "quantite": 1,
+            "unite": 4
+        }
+    },
+    {
+        "pk": 54,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 414,
+            "quantite": 50,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 55,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 7,
+            "quantite": 3,
+            "unite": 4
+        }
+    },
+    {
+        "pk": 56,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 366,
+            "quantite": 95,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 57,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 426,
+            "quantite": 400,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 58,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 225,
+            "quantite": 20,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 59,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 428,
+            "quantite": 200,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 60,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 414,
+            "quantite": 50,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 61,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 429,
+            "quantite": 50,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 62,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 430,
+            "quantite": 100,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 63,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 431,
+            "quantite": 150,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 64,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 146,
+            "quantite": 1,
+            "unite": 4
+        }
+    },
+    {
+        "pk": 65,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 419,
+            "quantite": 2,
+            "unite": 9
+        }
+    },
+    {
         "pk": 1,
         "model": "recette.ligneproduit",
         "fields": {
@@ -16542,6 +17106,681 @@
         }
     },
     {
+        "pk": 19,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_logentry",
+            "name": "Can add log entry",
+            "content_type": 7
+        }
+    },
+    {
+        "pk": 20,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_logentry",
+            "name": "Can change log entry",
+            "content_type": 7
+        }
+    },
+    {
+        "pk": 21,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_logentry",
+            "name": "Can delete log entry",
+            "content_type": 7
+        }
+    },
+    {
+        "pk": 4,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_group",
+            "name": "Can add group",
+            "content_type": 2
+        }
+    },
+    {
+        "pk": 5,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_group",
+            "name": "Can change group",
+            "content_type": 2
+        }
+    },
+    {
+        "pk": 6,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_group",
+            "name": "Can delete group",
+            "content_type": 2
+        }
+    },
+    {
+        "pk": 1,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_permission",
+            "name": "Can add permission",
+            "content_type": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_permission",
+            "name": "Can change permission",
+            "content_type": 1
+        }
+    },
+    {
+        "pk": 3,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_permission",
+            "name": "Can delete permission",
+            "content_type": 1
+        }
+    },
+    {
+        "pk": 10,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_profilutilisateur",
+            "name": "Can add profil utilisateur",
+            "content_type": 4
+        }
+    },
+    {
+        "pk": 11,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_profilutilisateur",
+            "name": "Can change profil utilisateur",
+            "content_type": 4
+        }
+    },
+    {
+        "pk": 12,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_profilutilisateur",
+            "name": "Can delete profil utilisateur",
+            "content_type": 4
+        }
+    },
+    {
+        "pk": 7,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_user",
+            "name": "Can add user",
+            "content_type": 3
+        }
+    },
+    {
+        "pk": 8,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_user",
+            "name": "Can change user",
+            "content_type": 3
+        }
+    },
+    {
+        "pk": 9,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_user",
+            "name": "Can delete user",
+            "content_type": 3
+        }
+    },
+    {
+        "pk": 22,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_token",
+            "name": "Can add token",
+            "content_type": 8
+        }
+    },
+    {
+        "pk": 23,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_token",
+            "name": "Can change token",
+            "content_type": 8
+        }
+    },
+    {
+        "pk": 24,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_token",
+            "name": "Can delete token",
+            "content_type": 8
+        }
+    },
+    {
+        "pk": 70,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_commande",
+            "name": "Can add commande",
+            "content_type": 24
+        }
+    },
+    {
+        "pk": 71,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_commande",
+            "name": "Can change commande",
+            "content_type": 24
+        }
+    },
+    {
+        "pk": 72,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_commande",
+            "name": "Can delete commande",
+            "content_type": 24
+        }
+    },
+    {
+        "pk": 73,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_lignecommande",
+            "name": "Can add ligne commande",
+            "content_type": 25
+        }
+    },
+    {
+        "pk": 74,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_lignecommande",
+            "name": "Can change ligne commande",
+            "content_type": 25
+        }
+    },
+    {
+        "pk": 75,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_lignecommande",
+            "name": "Can delete ligne commande",
+            "content_type": 25
+        }
+    },
+    {
+        "pk": 13,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_contenttype",
+            "name": "Can add content type",
+            "content_type": 5
+        }
+    },
+    {
+        "pk": 14,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_contenttype",
+            "name": "Can change content type",
+            "content_type": 5
+        }
+    },
+    {
+        "pk": 15,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_contenttype",
+            "name": "Can delete content type",
+            "content_type": 5
+        }
+    },
+    {
+        "pk": 25,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_conversion",
+            "name": "Can add conversion",
+            "content_type": 9
+        }
+    },
+    {
+        "pk": 26,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_conversion",
+            "name": "Can change conversion",
+            "content_type": 9
+        }
+    },
+    {
+        "pk": 27,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_conversion",
+            "name": "Can delete conversion",
+            "content_type": 9
+        }
+    },
+    {
+        "pk": 28,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_news",
+            "name": "Can add News",
+            "content_type": 10
+        }
+    },
+    {
+        "pk": 29,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_news",
+            "name": "Can change News",
+            "content_type": 10
+        }
+    },
+    {
+        "pk": 30,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_news",
+            "name": "Can delete News",
+            "content_type": 10
+        }
+    },
+    {
+        "pk": 64,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_lignepanier",
+            "name": "Can add ligne panier",
+            "content_type": 22
+        }
+    },
+    {
+        "pk": 65,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_lignepanier",
+            "name": "Can change ligne panier",
+            "content_type": 22
+        }
+    },
+    {
+        "pk": 66,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_lignepanier",
+            "name": "Can delete ligne panier",
+            "content_type": 22
+        }
+    },
+    {
+        "pk": 67,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_panier",
+            "name": "Can add panier",
+            "content_type": 23
+        }
+    },
+    {
+        "pk": 68,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_panier",
+            "name": "Can change panier",
+            "content_type": 23
+        }
+    },
+    {
+        "pk": 69,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_panier",
+            "name": "Can delete panier",
+            "content_type": 23
+        }
+    },
+    {
+        "pk": 40,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_produit",
+            "name": "Can add produit",
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 41,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_produit",
+            "name": "Can change produit",
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 42,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_produit",
+            "name": "Can delete produit",
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 34,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_typeproduit",
+            "name": "Can add type produit",
+            "content_type": 12
+        }
+    },
+    {
+        "pk": 35,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_typeproduit",
+            "name": "Can change type produit",
+            "content_type": 12
+        }
+    },
+    {
+        "pk": 36,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_typeproduit",
+            "name": "Can delete type produit",
+            "content_type": 12
+        }
+    },
+    {
+        "pk": 31,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_unite",
+            "name": "Can add unite",
+            "content_type": 11
+        }
+    },
+    {
+        "pk": 32,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_unite",
+            "name": "Can change unite",
+            "content_type": 11
+        }
+    },
+    {
+        "pk": 33,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_unite",
+            "name": "Can delete unite",
+            "content_type": 11
+        }
+    },
+    {
+        "pk": 37,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_valeurnutritionnelle",
+            "name": "Can add valeur nutritionnelle",
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 38,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_valeurnutritionnelle",
+            "name": "Can change valeur nutritionnelle",
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 39,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_valeurnutritionnelle",
+            "name": "Can delete valeur nutritionnelle",
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 52,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_categorie",
+            "name": "Can add categorie",
+            "content_type": 18
+        }
+    },
+    {
+        "pk": 53,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_categorie",
+            "name": "Can change categorie",
+            "content_type": 18
+        }
+    },
+    {
+        "pk": 54,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_categorie",
+            "name": "Can delete categorie",
+            "content_type": 18
+        }
+    },
+    {
+        "pk": 49,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_ligneproduit",
+            "name": "Can add ligne produit",
+            "content_type": 17
+        }
+    },
+    {
+        "pk": 50,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_ligneproduit",
+            "name": "Can change ligne produit",
+            "content_type": 17
+        }
+    },
+    {
+        "pk": 51,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_ligneproduit",
+            "name": "Can delete ligne produit",
+            "content_type": 17
+        }
+    },
+    {
+        "pk": 46,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_lignerecette",
+            "name": "Can add ligne recette",
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 47,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_lignerecette",
+            "name": "Can change ligne recette",
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 48,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_lignerecette",
+            "name": "Can delete ligne recette",
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 55,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_recette",
+            "name": "Can add recette",
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 56,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_recette",
+            "name": "Can change recette",
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 57,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_recette",
+            "name": "Can delete recette",
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 61,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_recettefavorite",
+            "name": "Can add recette favorite",
+            "content_type": 21
+        }
+    },
+    {
+        "pk": 62,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_recettefavorite",
+            "name": "Can change recette favorite",
+            "content_type": 21
+        }
+    },
+    {
+        "pk": 63,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_recettefavorite",
+            "name": "Can delete recette favorite",
+            "content_type": 21
+        }
+    },
+    {
+        "pk": 58,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_repas",
+            "name": "Can add repas",
+            "content_type": 20
+        }
+    },
+    {
+        "pk": 59,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_repas",
+            "name": "Can change repas",
+            "content_type": 20
+        }
+    },
+    {
+        "pk": 60,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_repas",
+            "name": "Can delete repas",
+            "content_type": 20
+        }
+    },
+    {
+        "pk": 43,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_tag",
+            "name": "Can add tag",
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 44,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_tag",
+            "name": "Can change tag",
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 45,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_tag",
+            "name": "Can delete tag",
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 16,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_session",
+            "name": "Can add session",
+            "content_type": 6
+        }
+    },
+    {
+        "pk": 17,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_session",
+            "name": "Can change session",
+            "content_type": 6
+        }
+    },
+    {
+        "pk": 18,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_session",
+            "name": "Can delete session",
+            "content_type": 6
+        }
+    },
+    {
         "pk": 1,
         "model": "auth.user",
         "fields": {
@@ -16569,7 +17808,7 @@
             "is_active": true,
             "is_superuser": true,
             "is_staff": true,
-            "last_login": "2013-05-20T15:41:34",
+            "last_login": "2013-05-21T15:37:47",
             "groups": [],
             "user_permissions": [],
             "password": "pbkdf2_sha256$10000$oTWrTghMQiMC$e9wtzxGzHCrYxvlMI/EWa/py/foG512ZODGxfH9N+Uw=",
@@ -17091,22 +18330,25 @@
         "pk": 6,
         "model": "recette.recette",
         "fields": {
-            "nom": "Omelette du fromage",
+            "nom": "Petit d\u00e9jeuner sal\u00e9",
             "categorie": [
-                2
+                4
             ],
             "est_valide": true,
-            "tags": "oeuf fromage",
-            "createur": 4,
-            "duree": 5,
+            "tags": "bacon fruits oeuf",
+            "createur": 3,
+            "duree": 2,
             "difficulte": 1,
-            "nb_personne": 2,
+            "nb_personne": 1,
             "lignes": [
-                1,
-                2
+                11,
+                13,
+                14,
+                15,
+                16
             ],
-            "image": "recette/omelette.jpg",
-            "instructions": "Battre les oeufs puis ajouter le fromage. Cuire \u00e0 la pelle le m\u00e9lange. D\u00e9guster"
+            "image": "recette/petitdejsal\u00e9.jpg",
+            "instructions": "Faites cuire les oeufs sur le plat\r\nGriller le bacon 15s de chaque cot\u00e9\r\nServir le bacon et les oeufs sur des tranches de pain de mie\r\nD\u00e9gustez avec un grand verre de jus d'orange et un verre de lait"
         }
     },
     {
@@ -17141,7 +18383,7 @@
                 1
             ],
             "est_valide": true,
-            "tags": "carotte l\u00e9gume",
+            "tags": "carotte l\u00e9gume crudit\u00e9s",
             "createur": 6,
             "duree": 2,
             "difficulte": 1,
@@ -17163,7 +18405,7 @@
                 3
             ],
             "est_valide": true,
-            "tags": "tarte pomme",
+            "tags": "tarte pomme fruits",
             "createur": 3,
             "duree": 20,
             "difficulte": 2,
@@ -17197,31 +18439,6 @@
             ],
             "image": "recette/ptidej.jpg",
             "instructions": "Commencez la journ\u00e9e de bonne humeur avec un petit d\u00e9jeuner \u00e9quilibr\u00e9 : \r\n1 verre de jus de fruit\r\n1 verre de lait \r\n1 pain au chocolat"
-        }
-    },
-    {
-        "pk": 6,
-        "model": "recette.recette",
-        "fields": {
-            "nom": "Petit d\u00e9jeuner sal\u00e9",
-            "categorie": [
-                4
-            ],
-            "est_valide": true,
-            "tags": "bacon fruits oeuf",
-            "createur": 3,
-            "duree": 2,
-            "difficulte": 1,
-            "nb_personne": 1,
-            "lignes": [
-                11,
-                13,
-                14,
-                15,
-                16
-            ],
-            "image": "recette/petitdejsal\u00e9.jpg",
-            "instructions": "Faites cuire les oeufs sur le plat\r\nGriller le bacon 15s de chaque cot\u00e9\r\nServir le bacon et les oeufs sur des tranches de pain de mie\r\nD\u00e9gustez avec un grand verre de jus d'orange et un verre de lait"
         }
     },
     {
@@ -17452,7 +18669,7 @@
                 1
             ],
             "est_valide": true,
-            "tags": "tomate fromage",
+            "tags": "tomate fromage crudit\u00e9s",
             "createur": 5,
             "duree": 5,
             "difficulte": 1,
@@ -17497,6 +18714,66 @@
         }
     },
     {
+        "pk": 17,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Salade de riz au thon",
+            "categorie": [
+                1
+            ],
+            "est_valide": true,
+            "tags": "riz thon l\u00e9gume oeuf crudit\u00e9s",
+            "createur": 4,
+            "duree": 25,
+            "difficulte": 2,
+            "nb_personne": 4,
+            "lignes": [
+                37,
+                38,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56
+            ],
+            "image": "recette/salade_riz_surimi.jpg",
+            "instructions": "Cuire le riz, d\u00e9part eau bouillante sal\u00e9e pendant 12 minutes.\r\nGo\u00fbter quelques grains pour v\u00e9rifier la cuisson. \u00e9goutter. \r\n\r\nFaire bouillir les oeufs dans de l'eau pendant 10 min\r\nTailler en cubes les 3 poivrons.\r\nMonder, \u00e9p\u00e9piner et tailler en cubes les tomates.\r\nCiseler les oignons.\r\n\r\nDans un saladier m\u00e9langer le riz , les poivrons, la boite de thon \u00e9goutt\u00e9e et \u00e9miett\u00e9e, la boite de grains de ma\u00efs, les oignons taill\u00e9s, les oeufs durs coup\u00e9s en morceaux"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Risotto aux petits l\u00e9gumes",
+            "categorie": [
+                2
+            ],
+            "est_valide": true,
+            "tags": "l\u00e9gume riz fromage",
+            "createur": 2,
+            "duree": 60,
+            "difficulte": 5,
+            "nb_personne": 4,
+            "lignes": [
+                18,
+                48,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65
+            ],
+            "image": "recette/risotto_aux_petits_legumes_.jpeg",
+            "instructions": "Mesurer le volume de riz et faire chauffer de l'eau (le double du volume de riz) sans \u00e9bullition dans une casserole, en ajoutant un bouillon de volaille en poudre.\r\n\r\nHacher l'oignon, le faire fondre dans une po\u00eale sans coloration avec de l'huile d'olive 2/3 min. \r\nAjouter le riz et une fois les grains devenus translucides, ajouter le vin blanc et le laisser s'\u00e9vaporer compl\u00e8tement.\r\n\r\nMouiller \u00e0 hauteur avec le bouillon. \r\nRemuer jusqu'\u00e0 ce que le riz ait commenc\u00e9 \u00e0 absorber le bouillon. \r\nLaisser cuire tout en remuant r\u00e9guli\u00e8rement tout au long de sa cuisson.\r\n\r\nLorsque le riz a absorb\u00e9 tout le liquide, remouiller \u00e0 hauteur. \r\nRenouveler l'op\u00e9ration cinq ou six fois jusqu'\u00e0 ce qu'il n'y ait plus de bouillon. \r\nLe riz doit \u00eatre fondant et l\u00e9g\u00e8rement ferme \u00e0 la fois.\r\n\r\nPr\u00e9parer les l\u00e9gumes, les cuire \u00e0 l\u2019eau en les gardant croquants. \r\nLes \u00e9goutter puis les ajouter au risotto et m\u00e9langer sans \u00e9craser les grains de riz.\r\n\r\nEn fin de cuisson, incorporer au risotto la Mayonnaise et le parmesan r\u00e2p\u00e9. \r\nServir d\u00e9cor\u00e9 avec les l\u00e9gumes.\r\n"
+        }
+    },
+    {
         "pk": "3244fcf07e59afd4dd241e172bc677467f20c972",
         "model": "authtoken.token",
         "fields": {
@@ -17534,6 +18811,526 @@
         "fields": {
             "user": 3,
             "created": "2013-02-20T18:13:04"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:52:16",
+            "object_repr": "Risotto aux petits l\u00e9gumes",
+            "object_id": "18",
+            "change_message": "",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 39,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:50:18",
+            "object_repr": "2 Cuill\u00e8re \u00e0 soupe Huile d'olive (750 Millilitres)",
+            "object_id": "65",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 38,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:49:53",
+            "object_repr": "1 Unit\u00e9s Cubes de bouillon (140 Unit\u00e9s)",
+            "object_id": "64",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 37,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:49:00",
+            "object_repr": "150 Grammes Brocolis (200 Grammes)",
+            "object_id": "63",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 35,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:48:54",
+            "object_repr": "77",
+            "object_id": "650",
+            "change_message": "",
+            "user": 2,
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 36,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:48:54",
+            "object_repr": "Brocolis (200 Grammes)",
+            "object_id": "431",
+            "change_message": "",
+            "user": 2,
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 34,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:47:18",
+            "object_repr": "100 Grammes Epinards (100 Grammes)",
+            "object_id": "62",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 33,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:47:08",
+            "object_repr": "Epinards (100 Grammes)",
+            "object_id": "430",
+            "change_message": "",
+            "user": 2,
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 32,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:47:07",
+            "object_repr": "67",
+            "object_id": "649",
+            "change_message": "",
+            "user": 2,
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 31,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:45:16",
+            "object_repr": "50 Grammes Parmesan (200 Grammes)",
+            "object_id": "61",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 30,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:45:06",
+            "object_repr": "Parmesan (200 Grammes)",
+            "object_id": "429",
+            "change_message": "",
+            "user": 2,
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 29,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:45:03",
+            "object_repr": "748",
+            "object_id": "648",
+            "change_message": "",
+            "user": 2,
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 28,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:43:16",
+            "object_repr": "50 Grammes Oignons blancs (100 Grammes)",
+            "object_id": "60",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 27,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:43:01",
+            "object_repr": "200 Grammes Petits pois (300 Grammes)",
+            "object_id": "59",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 26,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:42:50",
+            "object_repr": "Petits pois (300 Grammes)",
+            "object_id": "428",
+            "change_message": "",
+            "user": 2,
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 25,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:42:48",
+            "object_repr": "342",
+            "object_id": "647",
+            "change_message": "",
+            "user": 2,
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 24,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:40:39",
+            "object_repr": "20 Grammes Mayonnaise all\u00e9g\u00e9e (255 Grammes)",
+            "object_id": "58",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 23,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:40:13",
+            "object_repr": "400 Grammes Riz basmati (500 Grammes)",
+            "object_id": "57",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 22,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2013-05-21T15:01:27",
+            "object_repr": "Tarte aux pommes",
+            "object_id": "4",
+            "change_message": "Modifi\u00e9 tags.",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 21,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T15:01:15",
+            "object_repr": "fruits",
+            "object_id": "24",
+            "change_message": "",
+            "user": 2,
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 20,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:58:42",
+            "object_repr": "crudit\u00e9s",
+            "object_id": "23",
+            "change_message": "",
+            "user": 2,
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 19,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2013-05-21T14:58:30",
+            "object_repr": "Salade tomates-mozza",
+            "object_id": "16",
+            "change_message": "Modifi\u00e9 tags.",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 18,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2013-05-21T14:58:24",
+            "object_repr": "Carottes rap\u00e9es",
+            "object_id": "3",
+            "change_message": "Modifi\u00e9 tags.",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 17,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2013-05-21T14:58:05",
+            "object_repr": "Salade de riz au thon",
+            "object_id": "17",
+            "change_message": "Modifi\u00e9 nom, instructions et tags.",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 16,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:56:52",
+            "object_repr": "poisson",
+            "object_id": "22",
+            "change_message": "",
+            "user": 2,
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 15,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:56:28",
+            "object_repr": "surimi",
+            "object_id": "21",
+            "change_message": "",
+            "user": 2,
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 14,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:56:14",
+            "object_repr": "riz",
+            "object_id": "20",
+            "change_message": "",
+            "user": 2,
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 13,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:55:52",
+            "object_repr": "Salade de riz au surimi",
+            "object_id": "17",
+            "change_message": "",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 12,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:55:10",
+            "object_repr": "95 Grammes Thon \u00e0 l'huile (95 Grammes)",
+            "object_id": "56",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 11,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:54:55",
+            "object_repr": "3 Unit\u00e9s Oeufs (6 Unit\u00e9s)",
+            "object_id": "55",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 10,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:54:42",
+            "object_repr": "50 Grammes Oignons blancs (100 Grammes)",
+            "object_id": "54",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 9,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:54:21",
+            "object_repr": "1 Unit\u00e9s Boite de mais (3 Unit\u00e9s)",
+            "object_id": "53",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 8,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:54:16",
+            "object_repr": "Boite de mais (3 Unit\u00e9s)",
+            "object_id": "427",
+            "change_message": "",
+            "user": 2,
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 7,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:54:13",
+            "object_repr": "430",
+            "object_id": "646",
+            "change_message": "",
+            "user": 2,
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 6,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:51:52",
+            "object_repr": "200 Grammes Tomates (1000 Grammes)",
+            "object_id": "52",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 5,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:51:18",
+            "object_repr": "45 Grammes Poivron jaune (1000 Grammes)",
+            "object_id": "51",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 4,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:50:30",
+            "object_repr": "250 Grammes Riz basmati (500 Grammes)",
+            "object_id": "50",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 3,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:50:00",
+            "object_repr": "Riz basmati (500 Grammes)",
+            "object_id": "426",
+            "change_message": "",
+            "user": 2,
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 2,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T14:49:57",
+            "object_repr": "732",
+            "object_id": "645",
+            "change_message": "",
+            "user": 2,
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 1,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 3,
+            "action_time": "2013-05-21T14:04:39",
+            "object_repr": "JohnBob",
+            "object_id": "7",
+            "change_message": "",
+            "user": 2,
+            "content_type": 3
         }
     },
     {
@@ -17618,7 +19415,7 @@
             "is_active": true,
             "is_superuser": true,
             "is_staff": true,
-            "last_login": "2013-05-20T15:41:34",
+            "last_login": "2013-05-21T15:37:47",
             "groups": [],
             "user_permissions": [],
             "password": "pbkdf2_sha256$10000$oTWrTghMQiMC$e9wtzxGzHCrYxvlMI/EWa/py/foG512ZODGxfH9N+Uw=",
@@ -17696,6 +19493,681 @@
             "password": "pbkdf2_sha256$10000$HmZ7iATvGmoF$t1z/TI0gAUyEewwMxHEwvLssV+V4PPNXQBKFkT1WfOY=",
             "email": "jeremy@mangezmieux.fr",
             "date_joined": "2013-02-20T18:14:37"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_logentry",
+            "name": "Can add log entry",
+            "content_type": 7
+        }
+    },
+    {
+        "pk": 20,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_logentry",
+            "name": "Can change log entry",
+            "content_type": 7
+        }
+    },
+    {
+        "pk": 21,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_logentry",
+            "name": "Can delete log entry",
+            "content_type": 7
+        }
+    },
+    {
+        "pk": 4,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_group",
+            "name": "Can add group",
+            "content_type": 2
+        }
+    },
+    {
+        "pk": 5,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_group",
+            "name": "Can change group",
+            "content_type": 2
+        }
+    },
+    {
+        "pk": 6,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_group",
+            "name": "Can delete group",
+            "content_type": 2
+        }
+    },
+    {
+        "pk": 1,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_permission",
+            "name": "Can add permission",
+            "content_type": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_permission",
+            "name": "Can change permission",
+            "content_type": 1
+        }
+    },
+    {
+        "pk": 3,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_permission",
+            "name": "Can delete permission",
+            "content_type": 1
+        }
+    },
+    {
+        "pk": 10,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_profilutilisateur",
+            "name": "Can add profil utilisateur",
+            "content_type": 4
+        }
+    },
+    {
+        "pk": 11,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_profilutilisateur",
+            "name": "Can change profil utilisateur",
+            "content_type": 4
+        }
+    },
+    {
+        "pk": 12,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_profilutilisateur",
+            "name": "Can delete profil utilisateur",
+            "content_type": 4
+        }
+    },
+    {
+        "pk": 7,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_user",
+            "name": "Can add user",
+            "content_type": 3
+        }
+    },
+    {
+        "pk": 8,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_user",
+            "name": "Can change user",
+            "content_type": 3
+        }
+    },
+    {
+        "pk": 9,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_user",
+            "name": "Can delete user",
+            "content_type": 3
+        }
+    },
+    {
+        "pk": 22,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_token",
+            "name": "Can add token",
+            "content_type": 8
+        }
+    },
+    {
+        "pk": 23,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_token",
+            "name": "Can change token",
+            "content_type": 8
+        }
+    },
+    {
+        "pk": 24,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_token",
+            "name": "Can delete token",
+            "content_type": 8
+        }
+    },
+    {
+        "pk": 70,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_commande",
+            "name": "Can add commande",
+            "content_type": 24
+        }
+    },
+    {
+        "pk": 71,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_commande",
+            "name": "Can change commande",
+            "content_type": 24
+        }
+    },
+    {
+        "pk": 72,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_commande",
+            "name": "Can delete commande",
+            "content_type": 24
+        }
+    },
+    {
+        "pk": 73,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_lignecommande",
+            "name": "Can add ligne commande",
+            "content_type": 25
+        }
+    },
+    {
+        "pk": 74,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_lignecommande",
+            "name": "Can change ligne commande",
+            "content_type": 25
+        }
+    },
+    {
+        "pk": 75,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_lignecommande",
+            "name": "Can delete ligne commande",
+            "content_type": 25
+        }
+    },
+    {
+        "pk": 13,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_contenttype",
+            "name": "Can add content type",
+            "content_type": 5
+        }
+    },
+    {
+        "pk": 14,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_contenttype",
+            "name": "Can change content type",
+            "content_type": 5
+        }
+    },
+    {
+        "pk": 15,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_contenttype",
+            "name": "Can delete content type",
+            "content_type": 5
+        }
+    },
+    {
+        "pk": 25,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_conversion",
+            "name": "Can add conversion",
+            "content_type": 9
+        }
+    },
+    {
+        "pk": 26,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_conversion",
+            "name": "Can change conversion",
+            "content_type": 9
+        }
+    },
+    {
+        "pk": 27,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_conversion",
+            "name": "Can delete conversion",
+            "content_type": 9
+        }
+    },
+    {
+        "pk": 28,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_news",
+            "name": "Can add News",
+            "content_type": 10
+        }
+    },
+    {
+        "pk": 29,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_news",
+            "name": "Can change News",
+            "content_type": 10
+        }
+    },
+    {
+        "pk": 30,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_news",
+            "name": "Can delete News",
+            "content_type": 10
+        }
+    },
+    {
+        "pk": 64,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_lignepanier",
+            "name": "Can add ligne panier",
+            "content_type": 22
+        }
+    },
+    {
+        "pk": 65,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_lignepanier",
+            "name": "Can change ligne panier",
+            "content_type": 22
+        }
+    },
+    {
+        "pk": 66,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_lignepanier",
+            "name": "Can delete ligne panier",
+            "content_type": 22
+        }
+    },
+    {
+        "pk": 67,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_panier",
+            "name": "Can add panier",
+            "content_type": 23
+        }
+    },
+    {
+        "pk": 68,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_panier",
+            "name": "Can change panier",
+            "content_type": 23
+        }
+    },
+    {
+        "pk": 69,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_panier",
+            "name": "Can delete panier",
+            "content_type": 23
+        }
+    },
+    {
+        "pk": 40,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_produit",
+            "name": "Can add produit",
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 41,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_produit",
+            "name": "Can change produit",
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 42,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_produit",
+            "name": "Can delete produit",
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 34,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_typeproduit",
+            "name": "Can add type produit",
+            "content_type": 12
+        }
+    },
+    {
+        "pk": 35,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_typeproduit",
+            "name": "Can change type produit",
+            "content_type": 12
+        }
+    },
+    {
+        "pk": 36,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_typeproduit",
+            "name": "Can delete type produit",
+            "content_type": 12
+        }
+    },
+    {
+        "pk": 31,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_unite",
+            "name": "Can add unite",
+            "content_type": 11
+        }
+    },
+    {
+        "pk": 32,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_unite",
+            "name": "Can change unite",
+            "content_type": 11
+        }
+    },
+    {
+        "pk": 33,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_unite",
+            "name": "Can delete unite",
+            "content_type": 11
+        }
+    },
+    {
+        "pk": 37,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_valeurnutritionnelle",
+            "name": "Can add valeur nutritionnelle",
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 38,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_valeurnutritionnelle",
+            "name": "Can change valeur nutritionnelle",
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 39,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_valeurnutritionnelle",
+            "name": "Can delete valeur nutritionnelle",
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 52,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_categorie",
+            "name": "Can add categorie",
+            "content_type": 18
+        }
+    },
+    {
+        "pk": 53,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_categorie",
+            "name": "Can change categorie",
+            "content_type": 18
+        }
+    },
+    {
+        "pk": 54,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_categorie",
+            "name": "Can delete categorie",
+            "content_type": 18
+        }
+    },
+    {
+        "pk": 49,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_ligneproduit",
+            "name": "Can add ligne produit",
+            "content_type": 17
+        }
+    },
+    {
+        "pk": 50,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_ligneproduit",
+            "name": "Can change ligne produit",
+            "content_type": 17
+        }
+    },
+    {
+        "pk": 51,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_ligneproduit",
+            "name": "Can delete ligne produit",
+            "content_type": 17
+        }
+    },
+    {
+        "pk": 46,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_lignerecette",
+            "name": "Can add ligne recette",
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 47,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_lignerecette",
+            "name": "Can change ligne recette",
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 48,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_lignerecette",
+            "name": "Can delete ligne recette",
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 55,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_recette",
+            "name": "Can add recette",
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 56,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_recette",
+            "name": "Can change recette",
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 57,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_recette",
+            "name": "Can delete recette",
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 61,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_recettefavorite",
+            "name": "Can add recette favorite",
+            "content_type": 21
+        }
+    },
+    {
+        "pk": 62,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_recettefavorite",
+            "name": "Can change recette favorite",
+            "content_type": 21
+        }
+    },
+    {
+        "pk": 63,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_recettefavorite",
+            "name": "Can delete recette favorite",
+            "content_type": 21
+        }
+    },
+    {
+        "pk": 58,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_repas",
+            "name": "Can add repas",
+            "content_type": 20
+        }
+    },
+    {
+        "pk": 59,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_repas",
+            "name": "Can change repas",
+            "content_type": 20
+        }
+    },
+    {
+        "pk": 60,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_repas",
+            "name": "Can delete repas",
+            "content_type": 20
+        }
+    },
+    {
+        "pk": 43,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_tag",
+            "name": "Can add tag",
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 44,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_tag",
+            "name": "Can change tag",
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 45,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_tag",
+            "name": "Can delete tag",
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 16,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "add_session",
+            "name": "Can add session",
+            "content_type": 6
+        }
+    },
+    {
+        "pk": 17,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "change_session",
+            "name": "Can change session",
+            "content_type": 6
+        }
+    },
+    {
+        "pk": 18,
+        "model": "auth.permission",
+        "fields": {
+            "codename": "delete_session",
+            "name": "Can delete session",
+            "content_type": 6
         }
     }
 ]
