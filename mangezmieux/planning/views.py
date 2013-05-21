@@ -377,38 +377,39 @@ def genererPlanning(request):
     
     for jour in planning:
 	for ordre in jour:
-            if ordre.nb_personne == 0:
-                #Si petit dej
-                if ordre.ordre == 0:
-                    recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Petit déjeuner')).order_by('?')[:1].get()
-                    repas = Repas()
-                    repas.date = ordre.date
-                    profil = ProfilUtilisateur.objects.get(user = user)
-                    repas.nb_personne = profil.nbPersonnes
-                    repas.ordre = ordre.ordre
-                    repas.utilisateur = user
-                    repas.save()
-                    repas.recette.add(recette)
-                    repas.save()
-                #Si dej ou diner
-                if ordre.ordre == 1 or ordre.ordre == 2:
-                    recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Entrée')).order_by('?')[:1].get()
-                    repas = Repas()
-                    repas.date = ordre.date
-                    profil = ProfilUtilisateur.objects.get(user = user)
-                    repas.nb_personne = profil.nbPersonnes
-                    repas.ordre = ordre.ordre
-                    repas.utilisateur = user
-                    repas.save()
-                    repas.recette.add(recette)
-                    repas.save()
-                    
-                    recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Plat')).order_by('?')[:1].get()
-                    repas.recette.add(recette)
-                    repas.save()
-                    
-                    recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Dessert')).order_by('?')[:1].get()
-                    repas.recette.add(recette)
-                    repas.save()
+            if ordre.date >= date.today():
+                if ordre.nb_personne == 0:
+                    #Si petit dej
+                    if ordre.ordre == 0:
+                        recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Petit déjeuner')).order_by('?')[:1].get()
+                        repas = Repas()
+                        repas.date = ordre.date
+                        profil = ProfilUtilisateur.objects.get(user = user)
+                        repas.nb_personne = profil.nbPersonnes
+                        repas.ordre = ordre.ordre
+                        repas.utilisateur = user
+                        repas.save()
+                        repas.recette.add(recette)
+                        repas.save()
+                    #Si dej ou diner
+                    if ordre.ordre == 1 or ordre.ordre == 2:
+                        recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Entrée')).order_by('?')[:1].get()
+                        repas = Repas()
+                        repas.date = ordre.date
+                        profil = ProfilUtilisateur.objects.get(user = user)
+                        repas.nb_personne = profil.nbPersonnes
+                        repas.ordre = ordre.ordre
+                        repas.utilisateur = user
+                        repas.save()
+                        repas.recette.add(recette)
+                        repas.save()
+                        
+                        recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Plat')).order_by('?')[:1].get()
+                        repas.recette.add(recette)
+                        repas.save()
+                        
+                        recette = Recette.objects.filter(categorie__in=Categorie.objects.filter(nom='Dessert')).order_by('?')[:1].get()
+                        repas.recette.add(recette)
+                        repas.save()
 
     return redirect('/planning?d='+str(dateC))
