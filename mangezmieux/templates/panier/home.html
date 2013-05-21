@@ -12,7 +12,7 @@
 		<a class="btn" href="supprimer/{{ligne.id}}">Supprimer</a>
 	    {% endfor %}-->
 	<div class="box">
-	    <form>
+	    <!--<form>
 		    <a id="genererPanier" href="" class="btn btn-warning">Générer la période</a>
 		    <div id="dd" class="input-append date" data-date-format="yyyy-MM-dd">
 			    <label for="id_dd">De </label>
@@ -28,7 +28,7 @@
 				    <i class="icon-calendar"></i>
 			    </span>
 		    </div>
-	    </form>
+	    </form>-->
 	    <form class="table table-hover table-striped" action="{% url panier.views.home %}" method="post">{%csrf_token %}
 	    {{ formset.management_form }}
 	    <table class="table">
