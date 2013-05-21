@@ -548,8 +548,8 @@ html, body {
     background-color: #D0E274;
 }
 .ligneRecette img {
-    max-width: 80px;
-    max-height: 80px;
+    width: 150px;
+    height: 120px;
     margin-right: 5px;
 }
 
@@ -609,5 +609,13 @@ html, body {
     margin-top: 280px;
     float: right;
     margin-right: 75px
+}
+
+.difficulte-recette {
+    margin-left: 10px;
+}
+
+.duree-recette {
+    margin-left: 40px;
 }
 

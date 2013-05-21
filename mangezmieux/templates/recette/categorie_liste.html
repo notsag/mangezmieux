@@ -11,14 +11,31 @@
 		<h3 class="police">Les {{categorie.nom|lower}}s</h3>
 	    </div>
 		{% for recette in recettes %}
-			<div class="ligneRecette span4">
+			<div class="ligneRecette span5">
 		    {% if recette.image %}
 				<img src="{{recette.image.url}}" alt="Illustration pour : {{recette.nom}}"/>
 		    {% else %}
 		    <img src="/upload/default.jpg" alt="Illustration pour : {{recette.nom}}"/>
 		    {% endif %}
 				<a href="/recette/detail/{{recette.id}}?id={{categorie.id}}&name={{categorie.nom}}s">{{recette.nom|truncatechars:30}}</a>
-				<div class="footer">{{recette.instructions|truncatechars:50}}</div>
+                <div class="footer" >
+                <span class="difficulte-recette">
+                {% if recette.difficulte = 1 %}
+                    <i class="icon-star"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
+                {% elif recette.difficulte = 2 %}
+                    <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
+                {% elif recette.difficulte = 3 %}
+                    <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
+                {% elif recette.difficulte = 4 %}
+                    <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-empty"></i>
+                {% elif recette.difficulte = 5 %}
+                    <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
+                {% else %}
+                    <i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i><i class="icon-star-empty"></i>
+                {% endif %}
+                </span>
+                <span class="label label-warning duree-recette">Durée : {{recette.duree}} minutes</span>
+                </div>
 			</div>
 		{% endfor %}
 	
