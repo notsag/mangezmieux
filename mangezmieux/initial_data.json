@@ -236,8 +236,8 @@
         "pk": "bb048c4edaae60f8b3f7f373de900f21",
         "model": "sessions.session",
         "fields": {
-            "expire_date": "2013-06-04T15:52:45",
-            "session_data": "YmZkNWI1OWIyMzBlNGMzNzNjNWZhZTkxZjRkZjVhM2FmYzZkNGM2ODqAAn1xAShVEl9hdXRoX3Vz\nZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRVDV9h\ndXRoX3VzZXJfaWSKAQJ1Lg==\n"
+            "expire_date": "2013-06-04T16:51:01",
+            "session_data": "Mjk2NmRlYmM5ZDRkNDU0MTQ4MmYzODhlMzE0ODc2YzgwYTExMDcyNjqAAn1xAShVDV9hdXRoX3Vz\nZXJfaWSKAQJVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5k\ncy5Nb2RlbEJhY2tlbmR1Lg==\n"
         }
     },
     {
@@ -11155,6 +11155,30 @@
         }
     },
     {
+        "pk": 651,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.00",
+            "proteines": "0.06",
+            "glucides": "12.60",
+            "energie": 687,
+            "fibres": "0.00",
+            "lipides": "0.06"
+        }
+    },
+    {
+        "pk": 652,
+        "model": "produit.valeurnutritionnelle",
+        "fields": {
+            "sodium": "0.00",
+            "proteines": "0.00",
+            "glucides": "100.00",
+            "energie": 150,
+            "fibres": "0.00",
+            "lipides": "0.00"
+        }
+    },
+    {
         "pk": 1,
         "model": "produit.produit",
         "fields": {
@@ -16303,6 +16327,30 @@
         }
     },
     {
+        "pk": 432,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Gousse de vanille",
+            "quantite": 1,
+            "type_produit": 8,
+            "valeur_nutritionnelle": 651,
+            "image": "produit/vanille.jpg",
+            "unite": 4
+        }
+    },
+    {
+        "pk": 433,
+        "model": "produit.produit",
+        "fields": {
+            "nom": "Cassonade",
+            "quantite": 500,
+            "type_produit": 367,
+            "valeur_nutritionnelle": 652,
+            "image": "produit/cassonade.jpg",
+            "unite": 1
+        }
+    },
+    {
         "pk": 1,
         "model": "recette.tag",
         "fields": {
@@ -16468,6 +16516,27 @@
         "model": "recette.tag",
         "fields": {
             "texte": "fruits"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "vanille"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "caramel"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "recette.tag",
+        "fields": {
+            "texte": "creme"
         }
     },
     {
@@ -17053,6 +17122,78 @@
             "produit": 419,
             "quantite": 2,
             "unite": 9
+        }
+    },
+    {
+        "pk": 66,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 124,
+            "quantite": 1,
+            "unite": 4
+        }
+    },
+    {
+        "pk": 67,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 406,
+            "quantite": 120,
+            "unite": 5
+        }
+    },
+    {
+        "pk": 68,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 432,
+            "quantite": 1,
+            "unite": 4
+        }
+    },
+    {
+        "pk": 69,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 12,
+            "quantite": 60,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 70,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 433,
+            "quantite": 60,
+            "unite": 1
+        }
+    },
+    {
+        "pk": 71,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 406,
+            "quantite": 500,
+            "unite": 5
+        }
+    },
+    {
+        "pk": 72,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 7,
+            "quantite": 6,
+            "unite": 4
+        }
+    },
+    {
+        "pk": 73,
+        "model": "recette.lignerecette",
+        "fields": {
+            "produit": 422,
+            "quantite": 100,
+            "unite": 1
         }
     },
     {
@@ -18774,6 +18915,81 @@
         }
     },
     {
+        "pk": 19,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Cr\u00e8me brul\u00e9e",
+            "categorie": [
+                3
+            ],
+            "est_valide": true,
+            "tags": "vanille sucre creme caramel",
+            "createur": 2,
+            "duree": 60,
+            "difficulte": 3,
+            "nb_personne": 4,
+            "lignes": [
+                42,
+                66,
+                67,
+                68,
+                69,
+                70
+            ],
+            "image": "recette/creme_brulee.jpg",
+            "instructions": "M\u00e9langez les jaunes d'oeufs et le sucre \u00e0 l'aide d'un fouet.\r\nVersez le lait dans une casserole.\r\n\r\nOuvrez la gousse de vanille en deux et grattez (\u00e0 l'aide d'une pointe de couteau) les grains. \r\nAjoutez-les au lait et faites chauffer.\r\n\r\nVersez le m\u00e9lange bien chaud sur les jaunes et fouettez \u00e9nergiquement. \r\nAjoutez la cr\u00e8me et fouettez encore.\r\n\r\nLaissez refroidir le m\u00e9lange et r\u00e9servez au frais une heure.\r\n\r\nAu bout d'une heure, pr\u00e9chauffez votre four \u00e0 120\u00b0 en versant de l'eau dans le l\u00e8che-frite de votre four.\r\n\r\nVersez la pr\u00e9paration dans des plats \u00e0 cr\u00e8mes br\u00fbl\u00e9es et enfournez pendant une heure, au bain-Marie.\r\n\r\nAu bout d'une heure \u00e9teignez votre four et laissez les cr\u00e8mes environ 10 mn dedans. \r\nSortez du four et laissez refroidir. Mettre au frais.\r\n\r\nAu moment de servir, saupoudrez de cassonade sur les cr\u00e8mes et colorez \u00e0 l'aide d'un chalumeau, ou d'un fer \u00e0 cr\u00e8mes br\u00fbl\u00e9e ou sous le grill de votre four. "
+        }
+    },
+    {
+        "pk": 20,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Cr\u00e8me vanille",
+            "categorie": [
+                3
+            ],
+            "est_valide": true,
+            "tags": "vanille sucre creme",
+            "createur": 3,
+            "duree": 40,
+            "difficulte": 2,
+            "nb_personne": 4,
+            "lignes": [
+                68,
+                69,
+                71,
+                72
+            ],
+            "image": "recette/creme_vanille.jpg",
+            "instructions": "Pr\u00e9chauffez le four \u00e0 180 \u00b0C (th. 6).\r\n\r\nPortez le lait \u00e0 \u00e9bullition avec la vanille fendue et gratt\u00e9e. \r\nMaintenez au chaud. \r\n\r\nDans un saladier m\u00e9langez 5 jaunes et 1 oeuf entier avec 2 cuill\u00e8res \u00e0 soupe d'eau froide, versez lentement le sucre. \r\nM\u00e9langez jusqu'\u00e0 ce que l'ensemble blanchisse, puis ajoutez le lait bouillant. \r\nM\u00e9langez rapidement et versez la pr\u00e9paration dans 4 petits pots ou ramequins, install\u00e9s dans un plat \u00e0 gratin rempli d'eau ti\u00e8de jusqu'\u00e0 la moiti\u00e9 de leur hauteur.\r\n\r\nMettez au four pendant 20 min. \r\nSurveillez attentivement pour que l'eau du plat ne bouille pas. \r\nAjoutez \u00e9ventuellement de l'eau froide pour faire baisser la temp\u00e9rature.\r\n\r\nLaissez refroidir avant de servir."
+        }
+    },
+    {
+        "pk": 21,
+        "model": "recette.recette",
+        "fields": {
+            "nom": "Cr\u00e8me au chocolat",
+            "categorie": [
+                3
+            ],
+            "est_valide": true,
+            "tags": "vanille sucre chocolat creme",
+            "createur": 5,
+            "duree": 45,
+            "difficulte": 2,
+            "nb_personne": 4,
+            "lignes": [
+                68,
+                69,
+                71,
+                72,
+                73
+            ],
+            "image": "recette/creme_chocolat.jpg",
+            "instructions": "Pr\u00e9chauffez le four \u00e0 180 \u00b0C (th. 6).\r\n\r\nPortez le lait \u00e0 \u00e9bullition avec la vanille fendue et gratt\u00e9e. \r\nMaintenez au chaud. \r\n\r\nFaire fondre le chocolat dans une casserole.\r\n\r\nDans un saladier m\u00e9langez 5 jaunes et 1 oeuf entier avec 2 cuill\u00e8res \u00e0 soupe d'eau froide, versez lentement le sucre. \r\nM\u00e9langez jusqu'\u00e0 ce que l'ensemble blanchisse, puis ajoutez le lait bouillant. \r\n\r\nIncorporer le chocolat.\r\n\r\nM\u00e9langez rapidement et versez la pr\u00e9paration dans 4 petits pots ou ramequins, install\u00e9s dans un plat \u00e0 gratin rempli d'eau ti\u00e8de jusqu'\u00e0 la moiti\u00e9 de leur hauteur.\r\n\r\nMettez au four pendant 20 min. \r\nSurveillez attentivement pour que l'eau du plat ne bouille pas. \r\nAjoutez \u00e9ventuellement de l'eau froide pour faire baisser la temp\u00e9rature.\r\n\r\nLaissez refroidir avant de servir."
+        }
+    },
+    {
         "pk": "3244fcf07e59afd4dd241e172bc677467f20c972",
         "model": "authtoken.token",
         "fields": {
@@ -18811,6 +19027,318 @@
         "fields": {
             "user": 3,
             "created": "2013-02-20T18:13:04"
+        }
+    },
+    {
+        "pk": 64,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:51:00",
+            "object_repr": "creme",
+            "object_id": "27",
+            "change_message": "",
+            "user": 2,
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 63,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:50:56",
+            "object_repr": "caramel",
+            "object_id": "26",
+            "change_message": "",
+            "user": 2,
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 62,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2013-05-21T16:50:19",
+            "object_repr": "Cr\u00e8me vanille",
+            "object_id": "20",
+            "change_message": "Modifi\u00e9 instructions.",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 61,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2013-05-21T16:50:05",
+            "object_repr": "Cr\u00e8me brul\u00e9e",
+            "object_id": "19",
+            "change_message": "Modifi\u00e9 tags.",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 60,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2013-05-21T16:49:53",
+            "object_repr": "Cr\u00e8me brul\u00e9e",
+            "object_id": "19",
+            "change_message": "Modifi\u00e9 tags.",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 59,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2013-05-21T16:49:42",
+            "object_repr": "Cr\u00e8me vanille",
+            "object_id": "20",
+            "change_message": "Modifi\u00e9 tags.",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 58,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:49:34",
+            "object_repr": "Cr\u00e8me au chocolat",
+            "object_id": "21",
+            "change_message": "",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 57,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:46:21",
+            "object_repr": "100 Grammes Chocolat \u00e0 cuire (100 Grammes)",
+            "object_id": "73",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 56,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:45:26",
+            "object_repr": "Cr\u00e8me vanille",
+            "object_id": "20",
+            "change_message": "",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 55,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:42:53",
+            "object_repr": "6 Unit\u00e9s Oeufs (6 Unit\u00e9s)",
+            "object_id": "72",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 54,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:42:35",
+            "object_repr": "500 Millilitres Lait en brique (1 Litres)",
+            "object_id": "71",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 53,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2013-05-21T16:39:28",
+            "object_repr": "Cr\u00e8me brul\u00e9e",
+            "object_id": "19",
+            "change_message": "Modifi\u00e9 instructions.",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 52,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 2,
+            "action_time": "2013-05-21T16:38:36",
+            "object_repr": "Cr\u00e8me brul\u00e9e",
+            "object_id": "19",
+            "change_message": "Modifi\u00e9 lignes.",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 51,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:38:28",
+            "object_repr": "60 Grammes Cassonade (500 Grammes)",
+            "object_id": "70",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 50,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:36:13",
+            "object_repr": "vanille",
+            "object_id": "25",
+            "change_message": "",
+            "user": 2,
+            "content_type": 15
+        }
+    },
+    {
+        "pk": 49,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:36:06",
+            "object_repr": "Cr\u00e8me brul\u00e9e",
+            "object_id": "19",
+            "change_message": "",
+            "user": 2,
+            "content_type": 19
+        }
+    },
+    {
+        "pk": 48,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:35:06",
+            "object_repr": "Cassonade (500 Grammes)",
+            "object_id": "433",
+            "change_message": "",
+            "user": 2,
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 47,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:35:02",
+            "object_repr": "150",
+            "object_id": "652",
+            "change_message": "",
+            "user": 2,
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 46,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:33:51",
+            "object_repr": "60 Grammes Sucre (1000 Grammes)",
+            "object_id": "69",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 45,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:33:32",
+            "object_repr": "1 Unit\u00e9s Gousse de vanille (1 Unit\u00e9s)",
+            "object_id": "68",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 44,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:33:26",
+            "object_repr": "Gousse de vanille (1 Unit\u00e9s)",
+            "object_id": "432",
+            "change_message": "",
+            "user": 2,
+            "content_type": 14
+        }
+    },
+    {
+        "pk": 43,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:33:24",
+            "object_repr": "687",
+            "object_id": "651",
+            "change_message": "",
+            "user": 2,
+            "content_type": 13
+        }
+    },
+    {
+        "pk": 42,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:31:18",
+            "object_repr": "120 Millilitres Lait en brique (1 Litres)",
+            "object_id": "67",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
+        }
+    },
+    {
+        "pk": 41,
+        "model": "admin.logentry",
+        "fields": {
+            "action_flag": 1,
+            "action_time": "2013-05-21T16:30:55",
+            "object_repr": "1 Unit\u00e9s cr\u00e8me fraiche liquide st\u00e9rilis\u00e9e UHT (3 Unit\u00e9s)",
+            "object_id": "66",
+            "change_message": "",
+            "user": 2,
+            "content_type": 16
         }
     },
     {
