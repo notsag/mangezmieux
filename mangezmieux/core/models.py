@@ -18,3 +18,6 @@ class Conversion(models.Model):
     uniteSpecifique = models.ForeignKey(Unite,related_name='specifique')
     uniteBase = models.ForeignKey(Unite,related_name='base')
     multiplicateur = models.FloatField()
+    
+    def __unicode__(self):
+        return unicode(self.uniteSpecifique) + u' = ' + unicode(self.uniteBase) + u' x ' + unicode(self.multiplicateur)
