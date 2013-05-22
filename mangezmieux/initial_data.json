@@ -90,6 +90,87 @@
         }
     },
     {
+        "pk": 11,
+        "model": "core.conversion",
+        "fields": {
+            "uniteSpecifique": 4,
+            "uniteBase": 1,
+            "multiplicateur": 50.0
+        }
+    },
+    {
+        "pk": 12,
+        "model": "core.conversion",
+        "fields": {
+            "uniteSpecifique": 10,
+            "uniteBase": 2,
+            "multiplicateur": 0.125
+        }
+    },
+    {
+        "pk": 13,
+        "model": "core.conversion",
+        "fields": {
+            "uniteSpecifique": 3,
+            "uniteBase": 1,
+            "multiplicateur": 20.0
+        }
+    },
+    {
+        "pk": 14,
+        "model": "core.conversion",
+        "fields": {
+            "uniteSpecifique": 3,
+            "uniteBase": 3,
+            "multiplicateur": 1.0
+        }
+    },
+    {
+        "pk": 15,
+        "model": "core.conversion",
+        "fields": {
+            "uniteSpecifique": 5,
+            "uniteBase": 5,
+            "multiplicateur": 1.0
+        }
+    },
+    {
+        "pk": 16,
+        "model": "core.conversion",
+        "fields": {
+            "uniteSpecifique": 9,
+            "uniteBase": 5,
+            "multiplicateur": 20.0
+        }
+    },
+    {
+        "pk": 17,
+        "model": "core.conversion",
+        "fields": {
+            "uniteSpecifique": 3,
+            "uniteBase": 4,
+            "multiplicateur": 1.0
+        }
+    },
+    {
+        "pk": 18,
+        "model": "core.conversion",
+        "fields": {
+            "uniteSpecifique": 1,
+            "uniteBase": 4,
+            "multiplicateur": 0.02
+        }
+    },
+    {
+        "pk": 19,
+        "model": "core.conversion",
+        "fields": {
+            "uniteSpecifique": 7,
+            "uniteBase": 5,
+            "multiplicateur": 5.0
+        }
+    },
+    {
         "pk": 1,
         "model": "produit.unite",
         "fields": {
