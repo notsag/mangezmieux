@@ -624,3 +624,10 @@ html, body {
     height: 50px;
 }
 
+.lien-inscription {
+    margin-top: 50px;
+    float: right;
+    line-height: 25px;
+    margin-right: 260px;
+}
+

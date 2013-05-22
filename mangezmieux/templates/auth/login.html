@@ -6,8 +6,12 @@
 	<div class="titleBox">
 	    <h3 class="police">Connexion</h3>
 	</div>
+    <div class="lien-inscription">
+        Vous n'avez pas encore de compte sur <strong>MangezMieux</strong>? <br/
+        ><a href="/inscription"><label class="btn btn-warning">Inscrivez-vous</label></a>
+    </div>
 	<div class="box">
-	<form method="post">{% csrf_token %}
+	<form  method="post">{% csrf_token %}
 	{% if form.non_field_errors %}
 		<div class="form_errors">
 		{% for err in form.non_field_errors %}

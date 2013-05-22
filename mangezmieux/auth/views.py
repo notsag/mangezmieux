@@ -164,7 +164,7 @@ def inscription(request):
 			user.save()
 			new_user = authenticate(username=username, password=password)
 			login(request, new_user)
-			return HttpResponseRedirect('/') #On redirige vers la selection des goûts
+			return HttpResponseRedirect('/mon_compte') #On redirige vers la selection des goûts
 	else:
 		form = FormulaireInscription()
 	return render_to_response('auth/inscription.html',{'form': form,},context_instance=RequestContext(request))
