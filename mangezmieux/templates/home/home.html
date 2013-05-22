@@ -20,7 +20,7 @@
 		{% for news in latest_news %}
 		<div class="news">
 			<h3 class="police">{{ news.nom }}<span class="news-date">{{ news.date_pub }}</span></h3>
-			<h4 class="newsContent police">{{ news.info }}</h4>
+			<h4 class="newsContent police">{{ news.info|linebreaks }}</h4>
 			<hr/>
 		</div>	
 		{% endfor %}
