@@ -16,20 +16,21 @@
     </div>
     <div id="home-bottom" class="container">
 	 {% if latest_news %}
-	 <div id="home-news" class="row">
+	 <div id="home-news" class="well">
 		{% for news in latest_news %}
 		<div class="news">
 			<h3 class="police">{{ news.nom }}<span class="news-date">{{ news.date_pub }}</span></h3>
-			<h4 class="newsContent police">{{ news.info|linebreaks }}</h4>
 			<hr/>
+			<h4 class="newsContent police">{{ news.info|linebreaks }}</h4>
 		</div>	
 		{% endfor %}
 	 </div>
 	{% endif %}
 	<div class="row">
-	    <div class="span4 col">
+	    <div class="span4 well">
 		<img src="{% static 'img/calendar.png' %}">
 		<h3 class="police">Plannifiez vos repas</h3>
+        <hr/>
 		<p class="police">
 		    Faites votre planning 
                     de la semaine pour vous 
@@ -37,19 +38,20 @@
                     large sélection de recettes. 
 		</p>
 	    </div><!-- /.span4 -->
-	    <div class="span4 col">
+	    <div class="span4 well">
 		<img src="{% static 'img/panier.png' %}">
 		<h3 class="police">Commandez</h3>
+        <hr/>
 		<p class="police">
-                    Commandez l'ensemble 
-                    des ingredients nécessaires 
-                    à la préparation de 
-                    vos recettes.
+                    Commandez via nos partenaires l'ensemble 
+                    des ingredients nécessaires à la 
+                    préparation de vos recettes.
                 </p>
 	    </div><!-- /.span4 -->
-	    <div class="span4 col">
+	    <div class="span4 well">
 		<img src="{% static 'img/miam.png' %}">
 		<h3 class="police">Cuisinez et dégustez</h3>
+        <hr/>
 		<p class="police">
                     A la réception de vos 
                     produits, enfilez votre 
@@ -59,14 +61,14 @@
                 </p>
 	    </div><!-- /.span4 -->
 	</div><!-- /.row -->
-	<hr/>
-	<div class="row ligne span12">
+	<div class=" span12 well">
 	    <img style="float: left;" src="{% static 'img/varie.png' %}">
 	    <div class="ligneContent">
 		<h3 class="police">Mangez varié</h3>
 		<p class="police">
-			Nous vous proposons différentes recettes selon vos préferences, 
-			vos objectifs, les repas de saison...
+        Nous vous proposons différentes recettes selon vos goûts, vos
+        préferences, vos objectifs.<br/>
+        Faites vous plaisir et mangez de nouveaux plats aux saveurs de votre choix.
 		</p>
 	    </div>
 	</div>
