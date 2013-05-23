@@ -38,7 +38,7 @@
 		</tr>
 		{% for fav in favoris %}
 	    <tr>
-		<th><a href="/recette/detail/{{fav.pk}}">{{fav.recette.nom}}</a></th>
+		<th><a href="/recette/detail/{{fav.recette.pk}}">{{fav.recette.nom}}</a></th>
 		<td>
 		    {% for categorie in fav.recette.categorie.all %}
 			{{categorie.nom}}

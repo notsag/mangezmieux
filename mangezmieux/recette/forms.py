@@ -18,7 +18,7 @@ class SearchForm(forms.Form):
 
 		#remplissage des listes
 		self.fields['duree'].choices = (('-1', '-'), ('30', '< 30 min'), ('60', '< 1 h'), ('90', '< 1 h 30'), ('91', '> 1 h 30'))
-		self.fields['difficulte'].choices = (('-1', '-'), ('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'))
+		self.fields['difficulte'].choices = (('-1', '-'), ('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'))
 		self.fields['categorie'].choices = [('-1', '-')] + [(cat.pk, cat.nom) for cat in Categorie.objects.all()]		
 
 

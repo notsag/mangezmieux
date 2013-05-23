@@ -390,7 +390,7 @@ class UserList(generics.ListCreateAPIView):
 	def get_queryset(self):
 		userLogin = self.request.QUERY_PARAMS.get('u', None)
 		if userLogin != None:
-			user = User.objects.get(username = userLogin)
+			user = User.objects.filter(username = userLogin)
 		else:
 			user = User.objects.all()
 			
